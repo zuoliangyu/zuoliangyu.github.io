@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-01-21T22:20:13.994Z</updated>
+  <updated>2023-01-22T10:30:28.946Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/p/0.html"/>
+    <id>http://example.com/p/0.html</id>
+    <published>2023-01-22T10:29:58.734Z</published>
+    <updated>2023-01-22T10:30:28.946Z</updated>
+    
+    <content type="html"><![CDATA[<p>删除templates目录</p><p>删除settings.py中的这句话</p><p><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671936282179-f4a16861-8638-4d03-bd8d-e750e4cb05ee.png" alt="img"><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671936288197-27787d29-1a7d-4d1d-9e49-f7198edc927b.png" alt="img"></p><h1 id="默认项目文件"><a href="#默认项目文件" class="headerlink" title="默认项目文件"></a>默认项目文件</h1><p>mysite</p><p>├── manage.py 【项目的管理，启动项目、创建app、数据管理】【不要动】【<strong><em>常常用</em></strong>】</p><p>└── mysite</p><p>├── <strong>init</strong>.py</p><p>├── settings.py 【项目配置】 【<strong><em>常常修改</em></strong>】</p><p>├── urls.py 【URL和函数的对应关系】【<strong><em>常常修改</em></strong>】</p><p>├── asgi.py 【接收网络请求】【不要动】</p><p>└── wsgi.py 【接收网络请求】【不要动】</p><h1 id="创建app"><a href="#创建app" class="headerlink" title="创建app"></a>创建app</h1><p>- 项目</p><p>- app，用户管理【表结构、函数、HTML模板、CSS】</p><p>- app，订单管理【表结构、函数、HTML模板、CSS】</p><p>- app，后台管理【表结构、函数、HTML模板、CSS】</p><p>- app，网站 【表结构、函数、HTML模板、CSS】</p><p>- app，API 【表结构、函数、HTML模板、CSS】</p><p>..</p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">py  manage.py startapp app01</span><br></pre></td></tr></tbody></table></figure><p><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671936523724-d76c90da-c51c-4dca-8905-85aa77ade198.png" alt="img"></p><h2 id="app的结构"><a href="#app的结构" class="headerlink" title="app的结构"></a>app的结构</h2><p>├── app01</p><p>│     ├── <strong>init</strong>.py</p><p>│     ├── admin.py 【固定，不用动】django默认提供了admin后台管理。</p><p>│     ├── apps.py 【固定，不用动】app启动类</p><p>│     ├── migrations 【固定，不用动】数据库变更记录</p><p>│     │     └── <strong>init</strong>.py</p><p>│     ├── models.py 【<strong>重要</strong>】，对数据库操作。</p><p>│     ├── tests.py 【固定，不用动】单元测试</p><p>│     └── views.py 【<strong>重要</strong>】，函数。</p><p>├── manage.py</p><p>└── mysite2</p><p>├── <strong>init</strong>.py</p><p>├── asgi.py</p><p> ├── settings.py</p><p>├── urls.py 【URL-&gt;函数】</p><p>└── wsgi.py</p><h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><h3 id="注册app-setting-py"><a href="#注册app-setting-py" class="headerlink" title="注册app[setting.py]"></a>注册app[setting.py]</h3><p><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671937450580-5eeb6eec-f33e-4854-a0a3-955dd9d6cc2c.png" alt="img"></p><h3 id="编写URL和视图函数的对应关系-urls-py"><a href="#编写URL和视图函数的对应关系-urls-py" class="headerlink" title="编写URL和视图函数的对应关系[urls.py]"></a>编写URL和视图函数的对应关系[urls.py]</h3><p><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671937607296-034b3f4c-ec84-47ef-9602-883c9782d028.png" alt="img"></p><h3 id="编写视图函数-view-py"><a href="#编写视图函数-view-py" class="headerlink" title="编写视图函数[view.py]"></a>编写视图函数[view.py]</h3><p><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671937773976-92ace1e4-66f0-48d9-bf57-3a83ddbcd122.png" alt="img"></p><h3 id="启动django项目"><a href="#启动django项目" class="headerlink" title="启动django项目"></a>启动django项目</h3><p>命令行启动</p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></tbody></table></figure><h3 id="页面查看"><a href="#页面查看" class="headerlink" title="页面查看"></a>页面查看</h3><p><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671940497083-b9f3c55b-f9be-4c64-8a46-3597c75a28c5.png" alt="img"></p><p>运行message.py后输入相应的网址后缀即可调用函数</p><p><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671940599395-798bb6c3-187c-4471-8d04-57a28fe641d5.png" alt="img"><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671940618407-3eec93d4-6a91-48ce-bc73-81f08004a2f7.png" alt="img"></p><p><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671940555067-b3a729b5-f5a8-459e-8d97-c7f41adfe291.png" alt="img"></p><h1 id="templates模板文件"><a href="#templates模板文件" class="headerlink" title="templates模板文件"></a>templates模板文件</h1><p><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671964447086-f1c90c8a-7325-4bb6-92df-ed81b2e4b1bd.png" alt="img"></p><p>通过返回templates中的网址实现网页调用</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> render(request, <span class="string">"user_list.html"</span>)</span><br></pre></td></tr></tbody></table></figure><h1 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h1><ul><li>图片</li><li>CSS</li><li>JavaScript</li><li>插件</li></ul><h2 id="static目录"><a href="#static目录" class="headerlink" title="static目录"></a>static目录</h2><p><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671963305887-78945f37-bef3-49ef-97b9-feb0c11c4c9e.png" alt="img"></p><p>在app的文件夹新建static文件夹</p><h3 id="引入静态文件"><a href="#引入静态文件" class="headerlink" title="引入静态文件"></a>引入静态文件</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% load static %}</span><br></pre></td></tr></tbody></table></figure><p><img src="./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671970010740-58c5daf0-c6d4-4781-bc08-97a4df56e219.png" alt="img"></p><p>#</p><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;删除templates目录&lt;/p&gt;
+&lt;p&gt;删除settings.py中的这句话&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./../../../images/pycharm%E9%85%8D%E7%BD%AE/1671936282179-f4a16861-8638-4d03-bd8</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>GO语言测试</title>
