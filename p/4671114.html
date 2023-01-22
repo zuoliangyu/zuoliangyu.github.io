@@ -5,8 +5,15 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, ">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="ORM, ">
+    <meta name="description" content="ORM简介
+创建、修改、删除数据库中的的表（不用自己写mysql语句）【无法创建数据库】
+操作表中的数据（不用自己写mysql语句）
+
+123insert into ...updateselect ... 
+流程创建数据库
+启动mysql
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +25,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 左岚的博客</title>
+    <title>ORM | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -377,12 +384,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">ORM</h1>
                 </div>
             </div>
         </div>
@@ -404,12 +411,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/django/">
+                                <span class="chip bg-color">django</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -418,28 +438,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-19
+                    2023-01-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-20
+                    2023-01-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -459,15 +479,59 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>创建、修改、删除数据库中的的表（不用自己写mysql语句）【无法创建数据库】</li>
+<li>操作表中的数据（不用自己写mysql语句）</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">insert into ...</span><br><span class="line">update</span><br><span class="line">select ... </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><ul>
+<li>启动mysql</li>
+<li>自带工具创建数据库</li>
+</ul>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名字 DEFAULT CHARSET utf8 COLLATE utf8_general_ci;</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Django连接数据库"><a href="#Django连接数据库" class="headerlink" title="Django连接数据库"></a>Django连接数据库</h3><p>在settings.py文件中配置和修改</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = {</span><br><span class="line">    <span class="string">'default'</span>: {</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'gx_day15'</span>, <span class="comment"># 数据库名字</span></span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>,</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'root123'</span>,</span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'127.0.0.1'</span>, <span class="comment"># 那台机器安装了MySQL</span></span><br><span class="line">        <span class="string">'PORT'</span>: <span class="number">3306</span>,</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Django操作表"><a href="#Django操作表" class="headerlink" title="Django操作表"></a>Django操作表</h3><h4 id="创建-修改表（models-py）"><a href="#创建-修改表（models-py）" class="headerlink" title="创建/修改表（models.py）"></a>创建/修改表（models.py）</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfo</span>(models.Model):</span><br><span class="line">    name = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line">    password = models.CharField(max_length=<span class="number">64</span>)</span><br><span class="line">    age = models.IntegerField()</span><br><span class="line">    </span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">等同于下方mysql语句</span></span><br><span class="line"><span class="string">create table app01_UserInfo(</span></span><br><span class="line"><span class="string">    id bigint auto_increment primary key,</span></span><br><span class="line"><span class="string">    name varchar(32),</span></span><br><span class="line"><span class="string">    password varchar(64),</span></span><br><span class="line"><span class="string">    age int</span></span><br><span class="line"><span class="string">)</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">py manage.py makemigrations</span><br><span class="line">py manage.py migrate</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="删除表（models-py）"><a href="#删除表（models-py）" class="headerlink" title="删除表（models.py）"></a>删除表（models.py）</h4><p>将models.py中对应的类注释/删除，再次执行命令后即可删除表</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">py manage.py makemigrations</span><br><span class="line">py manage.py migrate</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h4><p>已经有这张表对里面的数据进行增加</p>
+<ul>
+<li>设置一个默认值（比如size）</li>
+<li>允许为空（比如data）</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">size = models.IntegerField(default=<span class="number">0</span>)</span><br><span class="line">data = models.IntegerField(null=<span class="literal">True</span>, blank=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="操作数据库表中的数据"><a href="#操作数据库表中的数据" class="headerlink" title="操作数据库表中的数据"></a>操作数据库表中的数据</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ###1.新建数据###</span></span><br><span class="line">   models.Department.objects.create(title=<span class="string">"销售部"</span>)</span><br><span class="line">   models.Department.objects.create(title=<span class="string">"执法部"</span>)</span><br><span class="line">   models.Department.objects.create(title=<span class="string">"行政部"</span>)</span><br><span class="line">   models.UserInfo.objects.create(name=<span class="string">"haze"</span>, password=<span class="string">"123456"</span>, age=<span class="number">13</span>)</span><br><span class="line">   models.UserInfo.objects.create(name=<span class="string">"dsad"</span>, password=<span class="string">"123456"</span>, age=<span class="number">13</span>)</span><br><span class="line">   models.UserInfo.objects.create(name=<span class="string">"asdf"</span>, password=<span class="string">"123456"</span>, age=<span class="number">13</span>)</span><br><span class="line">   <span class="comment"># ###2.删除数据###</span></span><br><span class="line">   <span class="comment"># 删除id为3的信息</span></span><br><span class="line">   models.UserInfo.objects.<span class="built_in">filter</span>(<span class="built_in">id</span>=<span class="number">3</span>).delete()</span><br><span class="line">   <span class="comment"># 删除这张表全部信息</span></span><br><span class="line">   models.UserInfo.objects.<span class="built_in">all</span>().delete()</span><br><span class="line">   <span class="comment"># ###3.获取数据###</span></span><br><span class="line">   <span class="comment"># 获取这张表全部信息</span></span><br><span class="line">   <span class="comment"># data_list=[行对象,行对象] QuerySet类型</span></span><br><span class="line">   data_list = models.UserInfo.objects.<span class="built_in">all</span>()</span><br><span class="line">   <span class="built_in">print</span>(data_list)</span><br><span class="line">   <span class="keyword">for</span> obj <span class="keyword">in</span> data_list:</span><br><span class="line">       <span class="built_in">print</span>(obj.<span class="built_in">id</span>, obj.name, obj.password, obj.age)</span><br><span class="line">   data_list = models.UserInfo.objects.<span class="built_in">filter</span>(<span class="built_in">id</span>=<span class="number">20</span>)</span><br><span class="line">   <span class="built_in">print</span>(data_list)</span><br><span class="line">   <span class="comment"># 获取第一条数据</span></span><br><span class="line">   row_obj = models.UserInfo.objects.<span class="built_in">filter</span>(<span class="built_in">id</span>=<span class="number">20</span>).first()</span><br><span class="line">   <span class="built_in">print</span>(row_obj.<span class="built_in">id</span>, row_obj.name, row_obj.password, row_obj.age)</span><br><span class="line"><span class="comment"># ###4.更新数据###</span></span><br><span class="line">   models.UserInfo.objects.<span class="built_in">all</span>().update(password=<span class="number">999</span>)</span><br><span class="line">   models.UserInfo.objects.<span class="built_in">filter</span>(<span class="built_in">id</span>=<span class="number">20</span>).update(password=<span class="number">99</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h1><h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><h3 id="mysql-pymysql"><a href="#mysql-pymysql" class="headerlink" title="mysql+pymysql"></a>mysql+pymysql</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.连接MySQL</span></span><br><span class="line">conn = pymysql.connect(host=<span class="string">"127.0.0.1"</span>, port=<span class="number">3306</span>, user=<span class="string">'haze'</span>, passwd=<span class="string">"123968574"</span>, charset=<span class="string">'utf8'</span>, db=<span class="string">'unicom'</span>)</span><br><span class="line">cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)</span><br><span class="line"><span class="comment"># 2.发送指令</span></span><br><span class="line">cursor.execute(<span class="string">"insert into admin(username,password,mobile) values('wupeiqi','qwe123','15155555555')"</span>)</span><br><span class="line">conn.commit()</span><br><span class="line"><span class="comment"># 3.关闭</span></span><br><span class="line">cursor.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Django开发数据库ORM框架"><a href="#Django开发数据库ORM框架" class="headerlink" title="Django开发数据库ORM框架"></a>Django开发数据库ORM框架</h3><p><img src="./../images/ORM/1672061193216-edbb2ab1-aa7a-408d-801b-b0f3478a7180.png" alt="img"></p>
+<h2 id="安装第三方模块"><a href="#安装第三方模块" class="headerlink" title="安装第三方模块"></a>安装第三方模块</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mysqlclient</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="案例——用户管理"><a href="#案例——用户管理" class="headerlink" title="案例——用户管理"></a>案例——用户管理</h1><h2 id="展示用户列表"><a href="#展示用户列表" class="headerlink" title="展示用户列表"></a>展示用户列表</h2><ul>
+<li>URL</li>
+<li><p>函数</p>
+</li>
+<li><ul>
+<li>获取所有用户信息</li>
+<li>HTML渲染</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>INFO列表<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">th</span>&gt;</span>ID<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">th</span>&gt;</span>密码<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">th</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">        {% for obj in data_list %}</span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">td</span>&gt;</span>{{ obj.id }}<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">td</span>&gt;</span>{{ obj.name }}<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">td</span>&gt;</span>{{ obj.password }}<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">td</span>&gt;</span>{{ obj.age }}<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        {% endfor %}</span><br><span class="line">      <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line">def info_list(request):</span><br><span class="line">    # 1.获取数据库中所有的用户信息</span><br><span class="line">    data_list = models.UserInfo.objects.all()</span><br><span class="line">    # 2.渲染，返回给用户</span><br><span class="line">    return render(request, "info_list.html", {"data_list": data_list})</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><ul>
+<li>URL</li>
+<li><p>函数</p>
+</li>
+<li><ul>
+<li>GET，看到页面，输入内容</li>
+<li>POST，提交-&gt;写入到数据库</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>添加用户<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">      {% csrf_token %}</span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"user"</span> <span class="attr">placeholder</span>=<span class="string">"用户名"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"pwd"</span> <span class="attr">placeholder</span>=<span class="string">"密码"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">placeholder</span>=<span class="string">"年龄"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line">def info_add(request):</span><br><span class="line">    if request.method == "GET":</span><br><span class="line">        return render(request, "info_add.html")</span><br><span class="line">    else:</span><br><span class="line">        # 获取用户提交的数据</span><br><span class="line">        user = request.POST.get("user")</span><br><span class="line">        pwd = request.POST.get("pwd")</span><br><span class="line">        age = request.POST.get("age")</span><br><span class="line"></span><br><span class="line">        # 添加到数据库</span><br><span class="line">        models.UserInfo.objects.create(name=user, password=pwd, age=age)</span><br><span class="line"></span><br><span class="line">        return HttpResponse("添加成功")</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><ul>
+<li>URL</li>
+<li>函数</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">info_delete</span>(<span class="params">request</span>):</span><br><span class="line">    nid = request.GET.get(<span class="string">"nid"</span>)</span><br><span class="line">    models.UserInfo.objects.<span class="built_in">filter</span>(<span class="built_in">id</span>=nid).delete()</span><br><span class="line">    <span class="comment"># return HttpResponse("删除成功")</span></span><br><span class="line">    <span class="keyword">return</span> redirect(<span class="string">"/info/list/"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="总体实现"><a href="#总体实现" class="headerlink" title="总体实现"></a>总体实现</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">info_list</span>(<span class="params">request</span>):</span><br><span class="line">    <span class="comment"># 1.获取数据库中所有的用户信息</span></span><br><span class="line">    data_list = models.UserInfo.objects.<span class="built_in">all</span>()</span><br><span class="line">    <span class="comment"># 2.渲染，返回给用户</span></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">"info_list.html"</span>, {<span class="string">"data_list"</span>: data_list})</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">info_add</span>(<span class="params">request</span>):</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"GET"</span>:</span><br><span class="line">        <span class="keyword">return</span> render(request, <span class="string">"info_add.html"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 获取用户提交的数据</span></span><br><span class="line">        user = request.POST.get(<span class="string">"user"</span>)</span><br><span class="line">        pwd = request.POST.get(<span class="string">"pwd"</span>)</span><br><span class="line">        age = request.POST.get(<span class="string">"age"</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 添加到数据库</span></span><br><span class="line">        models.UserInfo.objects.create(name=user, password=pwd, age=age)</span><br><span class="line">        <span class="comment"># return HttpResponse("添加成功")</span></span><br><span class="line">        <span class="keyword">return</span> redirect(<span class="string">"/info/list/"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">info_delete</span>(<span class="params">request</span>):</span><br><span class="line">    nid = request.GET.get(<span class="string">"nid"</span>)</span><br><span class="line">    models.UserInfo.objects.<span class="built_in">filter</span>(<span class="built_in">id</span>=nid).delete()</span><br><span class="line">    <span class="comment"># return HttpResponse("删除成功")</span></span><br><span class="line">    <span class="keyword">return</span> redirect(<span class="string">"/info/list/"</span>)</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">	&lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;h1&gt;INFO列表&lt;/h1&gt;</span><br><span class="line">	&lt;a href=<span class="string">"/info/add/"</span>&gt;&lt;h3&gt;添加&lt;/h3&gt;&lt;/a&gt;</span><br><span class="line">	&lt;table border=<span class="string">"1"</span>&gt;</span><br><span class="line">		&lt;thead&gt;</span><br><span class="line">		&lt;tr&gt;</span><br><span class="line">			&lt;th&gt;ID&lt;/th&gt;</span><br><span class="line">			&lt;th&gt;姓名&lt;/th&gt;</span><br><span class="line">			&lt;th&gt;密码&lt;/th&gt;</span><br><span class="line">			&lt;th&gt;年龄&lt;/th&gt;</span><br><span class="line">			&lt;th&gt;操作&lt;/th&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">		&lt;/thead&gt;</span><br><span class="line">		&lt;tbody&gt;</span><br><span class="line">		{% <span class="keyword">for</span> obj <span class="keyword">in</span> data_list %}</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;{{ obj.<span class="built_in">id</span> }}&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;{{ obj.name }}&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;{{ obj.password }}&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;{{ obj.age }}&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;a href=<span class="string">"/info/delete/?nid={{ obj.id }}"</span>&gt;删除&lt;/a&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">		{% endfor %}</span><br><span class="line">		&lt;/tbody&gt;</span><br><span class="line">	&lt;/table&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
             </div>
@@ -494,7 +558,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/p/3eeb.html">http://example.com/p/3eeb.html</a>
+                    <a href="http://example.com/p/4671114.html">http://example.com/p/4671114.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -531,7 +595,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/django/">
+                                    <span class="chip bg-color">django</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -612,13 +680,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/p/c014.html">
+                <a href="/p/4b6ab007.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.webp" class="responsive-img" alt="GO语言快的原因">
+                        <img src="/medias/featureimages/14.webp" class="responsive-img" alt="员工管理系统">
                         
-                        <span class="card-title">GO语言快的原因</span>
+                        <span class="card-title">员工管理系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -629,19 +697,27 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/django/">
+                        <span class="chip bg-color">django</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -653,13 +729,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/p/faac.html">
+                <a href="/p/d692047e.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.webp" class="responsive-img" alt="GO语言实战汇总">
+                        <img src="/medias/featureimages/16.webp" class="responsive-img" alt="请求和响应">
                         
-                        <span class="card-title">GO语言实战汇总</span>
+                        <span class="card-title">请求和响应</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -670,19 +746,27 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/django/">
+                        <span class="chip bg-color">django</span>
+                    </a>
+                    
                 </div>
                 
             </div>

@@ -6,16 +6,13 @@
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
     <meta name="keywords" content="GO语言依赖管理, ">
-    <meta name="description" content="依赖管理
-背景
-
+    <meta name="description" content="依赖管理背景
 
 工程项目不可能基于标准库0-1编码搭建
 管理依赖库
 
 
 Go依赖管理演进
-
 
 不同环境（项目）依赖的版本不同
 控制依赖库的版本
@@ -24,8 +21,7 @@ GOPATH-&amp;gt;Go Vendor-&amp;gt;Go Module
 
 GOPATH
 
-
-">
+环境变量">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -460,7 +456,7 @@ GOPATH
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    840
+                    838
                 </div>
                 
 
@@ -487,145 +483,119 @@ GOPATH
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>依赖管理</h1>
-<h2 id="背景">背景</h2>
-<blockquote>
+                <h1 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
 <ul>
 <li>工程项目不可能基于标准库0-1编码搭建</li>
 <li>管理依赖库</li>
 </ul>
 </blockquote>
-<h2 id="Go依赖管理演进">Go依赖管理演进</h2>
-<blockquote>
+<h2 id="Go依赖管理演进"><a href="#Go依赖管理演进" class="headerlink" title="Go依赖管理演进"></a>Go依赖管理演进</h2><blockquote>
 <ul>
 <li>不同环境（项目）依赖的版本不同</li>
 <li>控制依赖库的版本</li>
 <li>GOPATH-&gt;Go Vendor-&gt;Go Module</li>
 </ul>
 </blockquote>
-<h3 id="GOPATH">GOPATH</h3>
-<blockquote>
+<h3 id="GOPATH"><a href="#GOPATH" class="headerlink" title="GOPATH"></a>GOPATH</h3><blockquote>
 <ul>
 <li>环境变量GOPATH</li>
 <li>项目代码直接依赖src下的代码</li>
-<li>go get下载最新版本的包到src目录下</li>
+<li>go get下载最新版本的包到src目录下 </li>
 </ul>
 </blockquote>
-<h4 id="弊端">弊端</h4>
-<blockquote>
+<h4 id="弊端"><a href="#弊端" class="headerlink" title="弊端"></a>弊端</h4><blockquote>
 <ul>
-<li>场景
-<ul>
+<li>场景<ul>
 <li>A和B依赖于某一package的不同版本</li>
 </ul>
 </li>
-<li>问题
-<ul>
+<li>问题<ul>
 <li>无法实现package的多版本控制</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="Go-Vendor">Go Vendor</h3>
-<blockquote>
+<h3 id="Go-Vendor"><a href="#Go-Vendor" class="headerlink" title="Go Vendor"></a>Go Vendor</h3><blockquote>
 <ul>
 <li>项目目录下增加vendor文件，所有依赖包副本形式放在ProjectRoot/vendor</li>
 <li>依赖寻址方式vendor=&gt;GOPATH</li>
 <li>通过每个项目引入一份依赖副本，解决了多个项目需要同一个package依赖的冲突问题</li>
 </ul>
 </blockquote>
-<h4 id="弊端-2">弊端</h4>
-<blockquote>
+<h4 id="弊端-1"><a href="#弊端-1" class="headerlink" title="弊端"></a>弊端</h4><blockquote>
 <ul>
 <li>无法控制依赖的版本</li>
 <li>更新项目可能出现依赖冲突，导致编译出错</li>
 </ul>
 </blockquote>
-<h3 id="Go-Module">Go Module</h3>
-<blockquote>
+<h3 id="Go-Module"><a href="#Go-Module" class="headerlink" title="Go Module"></a>Go Module</h3><blockquote>
 <ul>
 <li>通过go.mod文件管理依赖包版本</li>
 <li>通过go get/go mod指令工具管理依赖包</li>
 </ul>
-</blockquote>
-<blockquote>
 <p>终极目标</p>
 <ul>
 <li>定义版本规则和管理项目依赖关系</li>
 </ul>
 </blockquote>
-<h2 id="依赖管理三要素">依赖管理三要素</h2>
-<blockquote>
+<h2 id="依赖管理三要素"><a href="#依赖管理三要素" class="headerlink" title="依赖管理三要素"></a>依赖管理三要素</h2><blockquote>
 <ul>
 <li>配置文件，描述依赖 -&gt; go.mod</li>
 <li>中心仓库管理依赖库 -&gt; Proxy</li>
 <li>本地工具                   -&gt; go get/mod</li>
 </ul>
 </blockquote>
-<h2 id="依赖配置">依赖配置</h2>
-<h3 id="go-mod">go.mod</h3>
-<blockquote>
+<h2 id="依赖配置"><a href="#依赖配置" class="headerlink" title="依赖配置"></a>依赖配置</h2><h3 id="go-mod"><a href="#go-mod" class="headerlink" title="go.mod"></a>go.mod</h3><blockquote>
 <ul>
-<li>
-<p>依赖管理基本单元</p>
+<li><p>依赖管理基本单元</p>
 <ul>
 <li>module example/project/app</li>
 </ul>
 </li>
-<li>
-<p>原生库</p>
+<li><p>原生库</p>
 <ul>
 <li>go 1.16</li>
 </ul>
 </li>
-<li>
-<p>单元依赖</p>
+<li><p>单元依赖</p>
 <ul>
-<li>
-<p>require(<br>
-example/lib1 v1.0.2</p>
-<p>​	example/lib2 v1.0.0 /indirect</p>
-<p>​	examp1e/Lib3v0.1.0-20190725025543-5a5fe074e612</p>
-<p>​	example/lib4 v0.0.0-20180306012644-bacd9c7ef1dd /indirect</p>
-<p>​	example/lib5/v3v3.0.2</p>
-<p>​	example/lib6 v3.2.0+incompatible</p>
+<li><p>require(</p>
+<pre><code>example/lib1 v1.0.2
+</code></pre><p>​    example/lib2 v1.0.0 /indirect</p>
+<p>​    examp1e/Lib3v0.1.0-20190725025543-5a5fe074e612</p>
+<p>​    example/lib4 v0.0.0-20180306012644-bacd9c7ef1dd /indirect</p>
+<p>​    example/lib5/v3v3.0.2</p>
+<p>​    example/lib6 v3.2.0+incompatible</p>
 <p>)</p>
 </li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="version">version</h3>
-<blockquote>
+<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><blockquote>
 <ul>
-<li>
-<p>语义化版本</p>
+<li><p>语义化版本</p>
 <blockquote>
 <p>{MAJOR}.{MINOR}.[PATCH}</p>
 <p>大版本(可以不兼容).新增函数或功能(前后兼容).代码bug的修复</p>
-<p>V1.3.0<br>
-V2.3.0</p>
+<p>V1.3.0<br>V2.3.0</p>
 </blockquote>
 </li>
-<li>
-<p>基于commit伪版本</p>
+<li><p>基于commit伪版本</p>
 <blockquote>
 <p>vX.0.0-yyyymmddhhmmss-abcdefgh1234</p>
 <p>v大版本&lt;主版本&gt;(可以不兼容).新增函数或功能(前后兼容).代码bug的修复-发行时间戳-12位哈希码前缀</p>
-<p>v0.0.0-20220401081311-c38fb59326b7<br>
-v1.0.0-20201130134442-10cb98267c6c</p>
+<p>v0.0.0-20220401081311-c38fb59326b7<br>v1.0.0-20201130134442-10cb98267c6c</p>
 </blockquote>
 </li>
 </ul>
 </blockquote>
-<h3 id="indirect">indirect</h3>
-<blockquote>
+<h3 id="indirect"><a href="#indirect" class="headerlink" title="indirect"></a>indirect</h3><blockquote>
 <p>依赖关系-&gt;非直接依赖</p>
 <p>A依赖于B，B依赖于C</p>
 <p>A间接依赖于C-&gt;非直接依赖，标记为// indirect</p>
 </blockquote>
-<h3 id="incompatible">incompatible</h3>
-<blockquote>
+<h3 id="incompatible"><a href="#incompatible" class="headerlink" title="incompatible"></a>incompatible</h3><blockquote>
 <p>依赖关系-&gt;直接依赖</p>
 <p>A依赖于B-&gt;直接依赖，标记为+incompatible</p>
 <ul>
@@ -633,8 +603,7 @@ v1.0.0-20201130134442-10cb98267c6c</p>
 <li>对于没有go.mod版本并且主版本2+的依赖，会+incompatible</li>
 </ul>
 </blockquote>
-<h3 id="依赖图">依赖图</h3>
-<blockquote>
+<h3 id="依赖图"><a href="#依赖图" class="headerlink" title="依赖图"></a>依赖图</h3><blockquote>
 <p>如果X项目依赖了A、B两个项目，且A、B分别依赖了C项目的v1.3、v1.4两个版本，最终编译时所使用的C项目的版本为如下哪个选项？(B)</p>
 <p>选择最低兼容的版本</p>
 <blockquote>
@@ -643,47 +612,40 @@ v1.0.0-20201130134442-10cb98267c6c</p>
 <p>C,A用到c时用V1,3编译，B用到c时用v1.4编译</p>
 </blockquote>
 </blockquote>
-<h2 id="依赖分发">依赖分发</h2>
-<h3 id="回源">回源</h3>
-<blockquote>
+<h2 id="依赖分发"><a href="#依赖分发" class="headerlink" title="依赖分发"></a>依赖分发</h2><h3 id="回源"><a href="#回源" class="headerlink" title="回源"></a>回源</h3><blockquote>
 <p>可以直接引用代码托管平台github等来进行依赖分发</p>
 <ul>
-<li>无法保证构建稳定性
-<ul>
+<li>无法保证构建稳定性<ul>
 <li>增加/修改/删除软件版本</li>
 </ul>
 </li>
-<li>无法保证依赖可用性
-<ul>
+<li>无法保证依赖可用性<ul>
 <li>删除软件</li>
 </ul>
 </li>
-<li>增加第三方压力
-<ul>
+<li>增加第三方压力<ul>
 <li>代码托管平台负载问题</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="Proxy">Proxy</h3>
-<blockquote>
+<h3 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h3><blockquote>
 <ul>
 <li>一个服务站点</li>
 <li>缓存源站中的软件内容</li>
 <li>缓存的软件版本不会改变</li>
 </ul>
 </blockquote>
-<h3 id="变量GOPROXY">变量GOPROXY</h3>
-<blockquote>
-<p>GOPROXY=“<a target="_blank" rel="noopener" href="https://proxy1.cn">https://proxy1.cn</a>,<a target="_blank" rel="noopener" href="https://proxy2.cn">https://proxy2.cn</a>,direct”</p>
+<h3 id="变量GOPROXY"><a href="#变量GOPROXY" class="headerlink" title="变量GOPROXY"></a>变量GOPROXY</h3><blockquote>
+<p>GOPROXY=”<a target="_blank" rel="noopener" href="https://proxy1.cn,https://proxy2.cn,direct">https://proxy1.cn,https://proxy2.cn,direct</a>“</p>
 <p>服务站点URL列表，“direct”表示源站</p>
 </blockquote>
 <pre class="mermaid">graph LR;
-	Proxy1--&gt;Proxy2;
-	Proxy2--&gt;Direct;</pre>
-<h3 id="工具-go-get">工具-go get</h3>
-<blockquote>
-<p>go get <a target="_blank" rel="noopener" href="http://example.org/pkg">example.org/pkg</a></p>
+    Proxy1--&gt;Proxy2;
+    Proxy2--&gt;Direct;</pre>
+
+<h3 id="工具-go-get"><a href="#工具-go-get" class="headerlink" title="工具-go get"></a>工具-go get</h3><blockquote>
+<p>go get example.org/pkg</p>
 <ul>
 <li>@upadte 拉取最新的（默认）</li>
 <li>@none     删除依赖</li>
@@ -1134,7 +1096,7 @@ v1.0.0-20201130134442-10cb98267c6c</p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.1k</span>
+                        class="white-color">20.1k</span>
             
             
             

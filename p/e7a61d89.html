@@ -6,34 +6,26 @@
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
     <meta name="keywords" content="GO语言进阶与依赖管理, ">
-    <meta name="description" content="语言进阶
-GO语言快的原因
-
+    <meta name="description" content="语言进阶GO语言快的原因
 GO可以发挥多核优势高效运行
 
-
-
 并发
-
 多线程程序在一个核的CPU上运行
 
 
 并行
-
 多线程程序在多个核的CPU上运行
 
 
 
 
 Gorotine
-
 适合高并发是因为GO语言创建多个协程
 
-
-
 协程
-
-用户态">
+用户态
+轻量级线程
+栈MB">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -495,104 +487,82 @@ Gorotine
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>语言进阶</h1>
-<h2 id="GO语言快的原因">GO语言快的原因</h2>
-<blockquote>
+                <h1 id="语言进阶"><a href="#语言进阶" class="headerlink" title="语言进阶"></a>语言进阶</h1><h2 id="GO语言快的原因"><a href="#GO语言快的原因" class="headerlink" title="GO语言快的原因"></a>GO语言快的原因</h2><blockquote>
 <p>GO可以发挥多核优势高效运行</p>
-</blockquote>
-<blockquote>
 <ul>
-<li>并发
-<ul>
+<li>并发<ul>
 <li>多线程程序在一个核的CPU上运行</li>
 </ul>
 </li>
-<li>并行
-<ul>
+<li>并行<ul>
 <li>多线程程序在多个核的CPU上运行</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h2 id="Gorotine">Gorotine</h2>
-<blockquote>
+<h2 id="Gorotine"><a href="#Gorotine" class="headerlink" title="Gorotine"></a>Gorotine</h2><blockquote>
 <p>适合高并发是因为GO语言创建多个协程</p>
-</blockquote>
-<blockquote>
 <ul>
-<li>协程
-<ul>
+<li>协程<ul>
 <li>用户态</li>
 <li>轻量级线程</li>
 <li>栈MB级别</li>
 </ul>
 </li>
-<li>线程
-<ul>
+<li>线程<ul>
 <li>内核态</li>
 <li>线程跑多个协程</li>
-<li>栈KB级别</li>
+<li>栈KB级别 </li>
 </ul>
 </li>
 </ul>
+<p>只需要在调用函数的时候在函数前加上一个<em>go</em>的关键词即可</p>
 </blockquote>
-<blockquote>
-<p>只需要在调用函数的时候在函数前加上一个_go_的关键词即可</p>
-</blockquote>
-<h4 id="举例——快速打印Hello-goroutine">举例——快速打印Hello goroutine</h4>
-<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hello</span><span class="params">(i <span class="type">int</span>)</span></span> {</span><br><span class="line">	<span class="built_in">println</span>(<span class="string">"hello goroutine : "</span> + fmt.Sprint(i))</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">HelloGORoutine</span><span class="params">()</span></span> {</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ {</span><br><span class="line">		<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">(j <span class="type">int</span>)</span></span> {</span><br><span class="line">			hello(j)</span><br><span class="line">		}(i)</span><br><span class="line">	}</span><br><span class="line">	time.Sleep(time.Second)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="CSP（Communicating-Sequential-Processes）">CSP（Communicating Sequential Processes）</h2>
-<blockquote>
+<h4 id="举例——快速打印Hello-goroutine"><a href="#举例——快速打印Hello-goroutine" class="headerlink" title="举例——快速打印Hello goroutine"></a>举例——快速打印Hello goroutine</h4><figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hello</span><span class="params">(i <span class="type">int</span>)</span></span> {</span><br><span class="line">	<span class="built_in">println</span>(<span class="string">"hello goroutine : "</span> + fmt.Sprint(i))</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">HelloGORoutine</span><span class="params">()</span></span> {</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ {</span><br><span class="line">		<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">(j <span class="type">int</span>)</span></span> {</span><br><span class="line">			hello(j)</span><br><span class="line">		}(i)</span><br><span class="line">	}</span><br><span class="line">	time.Sleep(time.Second)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="CSP（Communicating-Sequential-Processes）"><a href="#CSP（Communicating-Sequential-Processes）" class="headerlink" title="CSP（Communicating Sequential Processes）"></a>CSP（Communicating Sequential Processes）</h2><blockquote>
 <p>通过通信来实现共享内存，而不是通过内存来实现共享通信</p>
 </blockquote>
-<h2 id="Channel（引用类型）-通信来实现共享内存">Channel（引用类型）&lt;通信来实现共享内存&gt;</h2>
-<blockquote>
+<h2 id="Channel（引用类型）-lt-通信来实现共享内存-gt"><a href="#Channel（引用类型）-lt-通信来实现共享内存-gt" class="headerlink" title="Channel（引用类型）<通信来实现共享内存>"></a>Channel（引用类型）&lt;通信来实现共享内存&gt;</h2><blockquote>
 <p>make(chan 元素类型,[缓冲大小])</p>
 <ul>
-<li>无缓冲通道			make(chan int)
-<ul>
+<li>无缓冲通道            make(chan int)<ul>
 <li>接受和发送的Gorotine和发送的Gorotine同步化&lt;同步通道&gt;</li>
 </ul>
 </li>
-<li>有缓冲通道            make(chan int ,2)
-<ul>
+<li>有缓冲通道            make(chan int ,2)<ul>
 <li>接受和发送的Gorotine和发送的Gorotine异步化&lt;异步通道&gt;</li>
 </ul>
 </li>
-<li>使用缓冲通道保证顺序性-&gt;保证并发安全
-<ul>
+<li>使用缓冲通道保证顺序性-&gt;保证并发安全<ul>
 <li>消费者的逻辑复杂-&gt;消费速度慢</li>
 <li>生产者的逻辑简单-&gt;生产速度快</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="举例——A子协程发送0-9，B子协程计算输入数字的平方，主协程输出最后的平方数">举例——A子协程发送0-9，B子协程计算输入数字的平方，主协程输出最后的平方数</h3>
-<blockquote>
+<h3 id="举例——A子协程发送0-9，B子协程计算输入数字的平方，主协程输出最后的平方数"><a href="#举例——A子协程发送0-9，B子协程计算输入数字的平方，主协程输出最后的平方数" class="headerlink" title="举例——A子协程发送0-9，B子协程计算输入数字的平方，主协程输出最后的平方数"></a>举例——A子协程发送0-9，B子协程计算输入数字的平方，主协程输出最后的平方数</h3><blockquote>
 <p>使用缓冲通道保证顺序性-&gt;保证并发安全</p>
 <p>此时A子协程就是生产者-&gt;快速生产</p>
 <p>B子协程就是消费者-&gt;慢速消费</p>
 </blockquote>
 <figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {</span><br><span class="line">	src := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>)</span><br><span class="line">	dest := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>, <span class="number">3</span>)</span><br><span class="line">	<span class="comment">//A</span></span><br><span class="line">	<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> {</span><br><span class="line">		<span class="keyword">defer</span> <span class="built_in">close</span>(src)</span><br><span class="line">		<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ {</span><br><span class="line">			src &lt;- i</span><br><span class="line">		}</span><br><span class="line">	}()</span><br><span class="line">	<span class="comment">//B</span></span><br><span class="line">	<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> {</span><br><span class="line">		<span class="keyword">defer</span> <span class="built_in">close</span>(dest)</span><br><span class="line">		<span class="keyword">for</span> i := <span class="keyword">range</span> src {</span><br><span class="line">			dest &lt;- i * i</span><br><span class="line">		}</span><br><span class="line">	}()</span><br><span class="line">	<span class="comment">//M</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="keyword">range</span> dest {</span><br><span class="line">		<span class="built_in">println</span>(i)</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="并发安全Lock-内存实现通信">并发安全Lock&lt;内存实现通信&gt;</h2>
-<blockquote>
+<h2 id="并发安全Lock-lt-内存实现通信-gt"><a href="#并发安全Lock-lt-内存实现通信-gt" class="headerlink" title="并发安全Lock<内存实现通信>"></a>并发安全Lock&lt;内存实现通信&gt;</h2><blockquote>
 <p>多种Gorotine同时操作一块内存资源-&gt;数据并发</p>
 <ul>
 <li>通过对权限的控制来保证并发安全</li>
 </ul>
 </blockquote>
-<h3 id="举例——对变量执行2000-1次操作，5个协程并发进行">举例——对变量执行2000+1次操作，5个协程并发进行</h3>
-<blockquote>
+<h3 id="举例——对变量执行2000-1次操作，5个协程并发进行"><a href="#举例——对变量执行2000-1次操作，5个协程并发进行" class="headerlink" title="举例——对变量执行2000+1次操作，5个协程并发进行"></a>举例——对变量执行2000+1次操作，5个协程并发进行</h3><blockquote>
 <p>通过结果可以发现没有Lock的打印结果并非10000，并且无规律</p>
 </blockquote>
 <figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"sync"</span></span><br><span class="line">	<span class="string">"time"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	x    <span class="type">int64</span></span><br><span class="line">	lock sync.Mutex</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addWithLock</span><span class="params">()</span></span> {</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">2000</span>; i++ {</span><br><span class="line">		lock.Lock()</span><br><span class="line">		x += <span class="number">1</span></span><br><span class="line">		lock.Unlock()</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addWithoutLock</span><span class="params">()</span></span> {</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">2000</span>; i++ {</span><br><span class="line">		x += <span class="number">1</span></span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {</span><br><span class="line">	x = <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ {</span><br><span class="line">		<span class="keyword">go</span> addWithoutLock()</span><br><span class="line">	}</span><br><span class="line">	time.Sleep(time.Second)</span><br><span class="line">	<span class="built_in">println</span>(<span class="string">"WithoutLock : "</span>, x)</span><br><span class="line">	x = <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ {</span><br><span class="line">		<span class="keyword">go</span> addWithLock()</span><br><span class="line">	}</span><br><span class="line">	time.Sleep(time.Second)</span><br><span class="line">	<span class="built_in">println</span>(<span class="string">"withLock : "</span>, x)</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="WaitGroup">WaitGroup</h2>
-<blockquote>
+<h2 id="WaitGroup"><a href="#WaitGroup" class="headerlink" title="WaitGroup"></a>WaitGroup</h2><blockquote>
 <p>无法精确知道协程进行的时间</p>
 <ul>
 <li>通过设置一个精确的sleep的时间——WaitGroup包</li>
 </ul>
 </blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -615,6 +585,7 @@ Gorotine
 </tr>
 </tbody>
 </table>
+</div>
 <blockquote>
 <ul>
 <li>执行所有子协程之前使用Add函数记录数目</li>
@@ -622,145 +593,119 @@ Gorotine
 <li>执行完子协程的函数在Wait处等待其他子协程执行结束</li>
 </ul>
 </blockquote>
-<h1>依赖管理</h1>
-<h2 id="背景">背景</h2>
-<blockquote>
+<h1 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
 <ul>
 <li>工程项目不可能基于标准库0-1编码搭建</li>
 <li>管理依赖库</li>
 </ul>
 </blockquote>
-<h2 id="Go依赖管理演进">Go依赖管理演进</h2>
-<blockquote>
+<h2 id="Go依赖管理演进"><a href="#Go依赖管理演进" class="headerlink" title="Go依赖管理演进"></a>Go依赖管理演进</h2><blockquote>
 <ul>
 <li>不同环境（项目）依赖的版本不同</li>
 <li>控制依赖库的版本</li>
 <li>GOPATH-&gt;Go Vendor-&gt;Go Module</li>
 </ul>
 </blockquote>
-<h3 id="GOPATH">GOPATH</h3>
-<blockquote>
+<h3 id="GOPATH"><a href="#GOPATH" class="headerlink" title="GOPATH"></a>GOPATH</h3><blockquote>
 <ul>
 <li>环境变量GOPATH</li>
 <li>项目代码直接依赖src下的代码</li>
-<li>go get下载最新版本的包到src目录下</li>
+<li>go get下载最新版本的包到src目录下 </li>
 </ul>
 </blockquote>
-<h4 id="弊端">弊端</h4>
-<blockquote>
+<h4 id="弊端"><a href="#弊端" class="headerlink" title="弊端"></a>弊端</h4><blockquote>
 <ul>
-<li>场景
-<ul>
+<li>场景<ul>
 <li>A和B依赖于某一package的不同版本</li>
 </ul>
 </li>
-<li>问题
-<ul>
+<li>问题<ul>
 <li>无法实现package的多版本控制</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="Go-Vendor">Go Vendor</h3>
-<blockquote>
+<h3 id="Go-Vendor"><a href="#Go-Vendor" class="headerlink" title="Go Vendor"></a>Go Vendor</h3><blockquote>
 <ul>
 <li>项目目录下增加vendor文件，所有依赖包副本形式放在ProjectRoot/vendor</li>
 <li>依赖寻址方式vendor=&gt;GOPATH</li>
 <li>通过每个项目引入一份依赖副本，解决了多个项目需要同一个package依赖的冲突问题</li>
 </ul>
 </blockquote>
-<h4 id="弊端-2">弊端</h4>
-<blockquote>
+<h4 id="弊端-1"><a href="#弊端-1" class="headerlink" title="弊端"></a>弊端</h4><blockquote>
 <ul>
 <li>无法控制依赖的版本</li>
 <li>更新项目可能出现依赖冲突，导致编译出错</li>
 </ul>
 </blockquote>
-<h3 id="Go-Module">Go Module</h3>
-<blockquote>
+<h3 id="Go-Module"><a href="#Go-Module" class="headerlink" title="Go Module"></a>Go Module</h3><blockquote>
 <ul>
 <li>通过go.mod文件管理依赖包版本</li>
 <li>通过go get/go mod指令工具管理依赖包</li>
 </ul>
-</blockquote>
-<blockquote>
 <p>终极目标</p>
 <ul>
 <li>定义版本规则和管理项目依赖关系</li>
 </ul>
 </blockquote>
-<h2 id="依赖管理三要素">依赖管理三要素</h2>
-<blockquote>
+<h2 id="依赖管理三要素"><a href="#依赖管理三要素" class="headerlink" title="依赖管理三要素"></a>依赖管理三要素</h2><blockquote>
 <ul>
 <li>配置文件，描述依赖 -&gt; go.mod</li>
 <li>中心仓库管理依赖库 -&gt; Proxy</li>
 <li>本地工具                   -&gt; go get/mod</li>
 </ul>
 </blockquote>
-<h2 id="依赖配置">依赖配置</h2>
-<h3 id="go-mod">go.mod</h3>
-<blockquote>
+<h2 id="依赖配置"><a href="#依赖配置" class="headerlink" title="依赖配置"></a>依赖配置</h2><h3 id="go-mod"><a href="#go-mod" class="headerlink" title="go.mod"></a>go.mod</h3><blockquote>
 <ul>
-<li>
-<p>依赖管理基本单元</p>
+<li><p>依赖管理基本单元</p>
 <ul>
 <li>module example/project/app</li>
 </ul>
 </li>
-<li>
-<p>原生库</p>
+<li><p>原生库</p>
 <ul>
 <li>go 1.16</li>
 </ul>
 </li>
-<li>
-<p>单元依赖</p>
+<li><p>单元依赖</p>
 <ul>
-<li>
-<p>require(<br>
-example/lib1 v1.0.2</p>
-<p>​	example/lib2 v1.0.0 /indirect</p>
-<p>​	examp1e/Lib3v0.1.0-20190725025543-5a5fe074e612</p>
-<p>​	example/lib4 v0.0.0-20180306012644-bacd9c7ef1dd /indirect</p>
-<p>​	example/lib5/v3v3.0.2</p>
-<p>​	example/lib6 v3.2.0+incompatible</p>
+<li><p>require(</p>
+<pre><code>example/lib1 v1.0.2
+</code></pre><p>​    example/lib2 v1.0.0 /indirect</p>
+<p>​    examp1e/Lib3v0.1.0-20190725025543-5a5fe074e612</p>
+<p>​    example/lib4 v0.0.0-20180306012644-bacd9c7ef1dd /indirect</p>
+<p>​    example/lib5/v3v3.0.2</p>
+<p>​    example/lib6 v3.2.0+incompatible</p>
 <p>)</p>
 </li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="version">version</h3>
-<blockquote>
+<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><blockquote>
 <ul>
-<li>
-<p>语义化版本</p>
+<li><p>语义化版本</p>
 <blockquote>
 <p>{MAJOR}.{MINOR}.[PATCH}</p>
 <p>大版本(可以不兼容).新增函数或功能(前后兼容).代码bug的修复</p>
-<p>V1.3.0<br>
-V2.3.0</p>
+<p>V1.3.0<br>V2.3.0</p>
 </blockquote>
 </li>
-<li>
-<p>基于commit伪版本</p>
+<li><p>基于commit伪版本</p>
 <blockquote>
 <p>vX.0.0-yyyymmddhhmmss-abcdefgh1234</p>
 <p>v大版本&lt;主版本&gt;(可以不兼容).新增函数或功能(前后兼容).代码bug的修复-发行时间戳-12位哈希码前缀</p>
-<p>v0.0.0-20220401081311-c38fb59326b7<br>
-v1.0.0-20201130134442-10cb98267c6c</p>
+<p>v0.0.0-20220401081311-c38fb59326b7<br>v1.0.0-20201130134442-10cb98267c6c</p>
 </blockquote>
 </li>
 </ul>
 </blockquote>
-<h3 id="indirect">indirect</h3>
-<blockquote>
+<h3 id="indirect"><a href="#indirect" class="headerlink" title="indirect"></a>indirect</h3><blockquote>
 <p>依赖关系-&gt;非直接依赖</p>
 <p>A依赖于B，B依赖于C</p>
 <p>A间接依赖于C-&gt;非直接依赖，标记为// indirect</p>
 </blockquote>
-<h3 id="incompatible">incompatible</h3>
-<blockquote>
+<h3 id="incompatible"><a href="#incompatible" class="headerlink" title="incompatible"></a>incompatible</h3><blockquote>
 <p>依赖关系-&gt;直接依赖</p>
 <p>A依赖于B-&gt;直接依赖，标记为+incompatible</p>
 <ul>
@@ -768,8 +713,7 @@ v1.0.0-20201130134442-10cb98267c6c</p>
 <li>对于没有go.mod版本并且主版本2+的依赖，会+incompatible</li>
 </ul>
 </blockquote>
-<h3 id="依赖图">依赖图</h3>
-<blockquote>
+<h3 id="依赖图"><a href="#依赖图" class="headerlink" title="依赖图"></a>依赖图</h3><blockquote>
 <p>如果X项目依赖了A、B两个项目，且A、B分别依赖了C项目的v1.3、v1.4两个版本，最终编译时所使用的C项目的版本为如下哪个选项？(B)</p>
 <p>选择最低兼容的版本</p>
 <blockquote>
@@ -778,47 +722,40 @@ v1.0.0-20201130134442-10cb98267c6c</p>
 <p>C,A用到c时用V1,3编译，B用到c时用v1.4编译</p>
 </blockquote>
 </blockquote>
-<h2 id="依赖分发">依赖分发</h2>
-<h3 id="回源">回源</h3>
-<blockquote>
+<h2 id="依赖分发"><a href="#依赖分发" class="headerlink" title="依赖分发"></a>依赖分发</h2><h3 id="回源"><a href="#回源" class="headerlink" title="回源"></a>回源</h3><blockquote>
 <p>可以直接引用代码托管平台github等来进行依赖分发</p>
 <ul>
-<li>无法保证构建稳定性
-<ul>
+<li>无法保证构建稳定性<ul>
 <li>增加/修改/删除软件版本</li>
 </ul>
 </li>
-<li>无法保证依赖可用性
-<ul>
+<li>无法保证依赖可用性<ul>
 <li>删除软件</li>
 </ul>
 </li>
-<li>增加第三方压力
-<ul>
+<li>增加第三方压力<ul>
 <li>代码托管平台负载问题</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="Proxy">Proxy</h3>
-<blockquote>
+<h3 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h3><blockquote>
 <ul>
 <li>一个服务站点</li>
 <li>缓存源站中的软件内容</li>
 <li>缓存的软件版本不会改变</li>
 </ul>
 </blockquote>
-<h3 id="变量GOPROXY">变量GOPROXY</h3>
-<blockquote>
-<p>GOPROXY=“<a target="_blank" rel="noopener" href="https://proxy1.cn">https://proxy1.cn</a>,<a target="_blank" rel="noopener" href="https://proxy2.cn">https://proxy2.cn</a>,direct”</p>
+<h3 id="变量GOPROXY"><a href="#变量GOPROXY" class="headerlink" title="变量GOPROXY"></a>变量GOPROXY</h3><blockquote>
+<p>GOPROXY=”<a target="_blank" rel="noopener" href="https://proxy1.cn,https://proxy2.cn,direct">https://proxy1.cn,https://proxy2.cn,direct</a>“</p>
 <p>服务站点URL列表，“direct”表示源站</p>
 </blockquote>
 <pre class="mermaid">graph LR;
-	Proxy1--&gt;Proxy2;
-	Proxy2--&gt;Direct;</pre>
-<h3 id="工具-go-get">工具-go get</h3>
-<blockquote>
-<p>go get <a target="_blank" rel="noopener" href="http://example.org/pkg">example.org/pkg</a></p>
+    Proxy1--&gt;Proxy2;
+    Proxy2--&gt;Direct;</pre>
+
+<h3 id="工具-go-get"><a href="#工具-go-get" class="headerlink" title="工具-go get"></a>工具-go get</h3><blockquote>
+<p>go get example.org/pkg</p>
 <ul>
 <li>@upadte 拉取最新的（默认）</li>
 <li>@none     删除依赖</li>
@@ -1269,7 +1206,7 @@ v1.0.0-20201130134442-10cb98267c6c</p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.1k</span>
+                        class="white-color">20.1k</span>
             
             
             

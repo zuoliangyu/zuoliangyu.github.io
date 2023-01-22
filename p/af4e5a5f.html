@@ -5,8 +5,18 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, ">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="模板语法, ">
+    <meta name="description" content="
+语法书写
+列表访问直接使用”.i”代替”[i]”
+
+for循环
+字典访问
+使用“.”访问key对应的value ，key，键值对
+
+列表套字典访问
+条件语句if-else
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +28,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 左岚的博客</title>
+    <title>模板语法 | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -377,12 +387,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">模板语法</h1>
                 </div>
             </div>
         </div>
@@ -404,12 +414,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/django/">
+                                <span class="chip bg-color">django</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -418,21 +441,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-19
+                    2023-01-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-20
+                    2023-01-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    48
                 </div>
                 
 
@@ -459,15 +482,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <p><img src="./../images/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/1671970611029-32651def-8257-42a5-872d-2eefdae477cf.png" alt="img"></p>
+<h1 id="语法书写"><a href="#语法书写" class="headerlink" title="语法书写"></a>语法书写</h1><p><img src="./../images/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/1671971010557-01b74abc-da83-4cb0-a28f-e1fbce976bdc.png" alt="img"></p>
+<h2 id="列表访问"><a href="#列表访问" class="headerlink" title="列表访问"></a>列表访问</h2><p>直接使用”.i”代替”[i]”</p>
+<p><img src="./../images/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/1671971164492-c79a2479-9149-4348-bcbb-b8e6b4d4d0a4.png" alt="img"></p>
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p><img src="./../images/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/1671971370537-4e258d7d-f71d-45bd-b0b5-2544f7174030.png" alt="img"></p>
+<h2 id="字典访问"><a href="#字典访问" class="headerlink" title="字典访问"></a>字典访问</h2><p><img src="./../images/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/1671977523736-700e468f-33ea-463e-88fb-7dcabb5d19fe.png" alt="img"></p>
+<p>使用“.”访问key对应的value ，key，键值对</p>
+<p><img src="./../images/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/1671977984723-bba23edb-1c63-44bb-9a50-6bf6ac288eaa.png" alt="img"></p>
+<h2 id="列表套字典访问"><a href="#列表套字典访问" class="headerlink" title="列表套字典访问"></a>列表套字典访问</h2><p><img src="./../images/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/1671978644514-2064bc7e-6d1e-4fd5-824b-6111d5989f28.png" alt="img"></p>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><h3 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h3><p><img src="./../images/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/1672027128185-02599916-a2d5-4c79-ac8a-201cdd169ced.png" alt="img"></p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
             </div>
@@ -494,7 +518,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/p/3eeb.html">http://example.com/p/3eeb.html</a>
+                    <a href="http://example.com/p/af4e5a5f.html">http://example.com/p/af4e5a5f.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -531,7 +555,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/django/">
+                                    <span class="chip bg-color">django</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -612,13 +640,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/p/c014.html">
+                <a href="/p/d692047e.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.webp" class="responsive-img" alt="GO语言快的原因">
+                        <img src="/medias/featureimages/16.webp" class="responsive-img" alt="请求和响应">
                         
-                        <span class="card-title">GO语言快的原因</span>
+                        <span class="card-title">请求和响应</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -629,19 +657,27 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/django/">
+                        <span class="chip bg-color">django</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -653,13 +689,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/p/faac.html">
+                <a href="/p/d3bf9880.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.webp" class="responsive-img" alt="GO语言实战汇总">
+                        <img src="/medias/featureimages/15.webp" class="responsive-img" alt="pycharm配置">
                         
-                        <span class="card-title">GO语言实战汇总</span>
+                        <span class="card-title">pycharm配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -670,19 +706,27 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Django/">
+                        <span class="chip bg-color">Django</span>
+                    </a>
+                    
                 </div>
                 
             </div>
