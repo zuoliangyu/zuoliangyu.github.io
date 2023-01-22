@@ -7,27 +7,33 @@
     <meta charset="utf-8">
     <meta name="keywords" content="GO语言快的原因, ">
     <meta name="description" content="GO语言快的原因
+
 GO可以发挥多核优势高效运行
 
+
+
 并发
+
 多线程程序在一个核的CPU上运行
 
 
 并行
+
 多线程程序在多个核的CPU上运行
 
 
 
 
 Gorotine
+
 适合高并发是因为GO语言创建多个协程
 
-协程
-用户态
-轻量级线程
-栈MB级别
 
-">
+
+协程
+
+用户态
+轻量级线">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -74,9 +80,9 @@ Gorotine
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="左岚的博客" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="左岚的博客" type="application/atom+xml">
 </head>
 
 
@@ -462,7 +468,7 @@ Gorotine
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    727
+                    728
                 </div>
                 
 
@@ -489,82 +495,103 @@ Gorotine
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="GO语言快的原因"><a href="#GO语言快的原因" class="headerlink" title="GO语言快的原因"></a>GO语言快的原因</h1><blockquote>
+                <h1>GO语言快的原因</h1>
+<blockquote>
 <p>GO可以发挥多核优势高效运行</p>
+</blockquote>
+<blockquote>
 <ul>
-<li>并发<ul>
+<li>并发
+<ul>
 <li>多线程程序在一个核的CPU上运行</li>
 </ul>
 </li>
-<li>并行<ul>
+<li>并行
+<ul>
 <li>多线程程序在多个核的CPU上运行</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h2 id="Gorotine"><a href="#Gorotine" class="headerlink" title="Gorotine"></a>Gorotine</h2><blockquote>
+<h2 id="Gorotine">Gorotine</h2>
+<blockquote>
 <p>适合高并发是因为GO语言创建多个协程</p>
+</blockquote>
+<blockquote>
 <ul>
-<li>协程<ul>
+<li>协程
+<ul>
 <li>用户态</li>
 <li>轻量级线程</li>
 <li>栈MB级别</li>
 </ul>
 </li>
-<li>线程<ul>
+<li>线程
+<ul>
 <li>内核态</li>
 <li>线程跑多个协程</li>
-<li>栈KB级别 </li>
+<li>栈KB级别</li>
 </ul>
 </li>
 </ul>
-<p>只需要在调用函数的时候在函数前加上一个<em>go</em>的关键词即可</p>
 </blockquote>
-<h4 id="举例——快速打印Hello-goroutine"><a href="#举例——快速打印Hello-goroutine" class="headerlink" title="举例——快速打印Hello goroutine"></a>举例——快速打印Hello goroutine</h4><figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hello</span><span class="params">(i <span class="type">int</span>)</span></span> {</span><br><span class="line">	<span class="built_in">println</span>(<span class="string">"hello goroutine : "</span> + fmt.Sprint(i))</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">HelloGORoutine</span><span class="params">()</span></span> {</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ {</span><br><span class="line">		<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">(j <span class="type">int</span>)</span></span> {</span><br><span class="line">			hello(j)</span><br><span class="line">		}(i)</span><br><span class="line">	}</span><br><span class="line">	time.Sleep(time.Second)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="CSP（Communicating-Sequential-Processes）"><a href="#CSP（Communicating-Sequential-Processes）" class="headerlink" title="CSP（Communicating Sequential Processes）"></a>CSP（Communicating Sequential Processes）</h2><blockquote>
+<blockquote>
+<p>只需要在调用函数的时候在函数前加上一个_go_的关键词即可</p>
+</blockquote>
+<h4 id="举例——快速打印Hello-goroutine">举例——快速打印Hello goroutine</h4>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hello</span><span class="params">(i <span class="type">int</span>)</span></span> {</span><br><span class="line">	<span class="built_in">println</span>(<span class="string">"hello goroutine : "</span> + fmt.Sprint(i))</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">HelloGORoutine</span><span class="params">()</span></span> {</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ {</span><br><span class="line">		<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">(j <span class="type">int</span>)</span></span> {</span><br><span class="line">			hello(j)</span><br><span class="line">		}(i)</span><br><span class="line">	}</span><br><span class="line">	time.Sleep(time.Second)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="CSP（Communicating-Sequential-Processes）">CSP（Communicating Sequential Processes）</h2>
+<blockquote>
 <p>通过通信来实现共享内存，而不是通过内存来实现共享通信</p>
 </blockquote>
-<h2 id="Channel（引用类型）-lt-通信来实现共享内存-gt"><a href="#Channel（引用类型）-lt-通信来实现共享内存-gt" class="headerlink" title="Channel（引用类型）<通信来实现共享内存>"></a>Channel（引用类型）&lt;通信来实现共享内存&gt;</h2><blockquote>
+<h2 id="Channel（引用类型）-通信来实现共享内存">Channel（引用类型）&lt;通信来实现共享内存&gt;</h2>
+<blockquote>
 <p>make(chan 元素类型,[缓冲大小])</p>
 <ul>
-<li>无缓冲通道            make(chan int)<ul>
+<li>无缓冲通道			make(chan int)
+<ul>
 <li>接受和发送的Gorotine和发送的Gorotine同步化&lt;同步通道&gt;</li>
 </ul>
 </li>
-<li>有缓冲通道            make(chan int ,2)<ul>
+<li>有缓冲通道            make(chan int ,2)
+<ul>
 <li>接受和发送的Gorotine和发送的Gorotine异步化&lt;异步通道&gt;</li>
 </ul>
 </li>
-<li>使用缓冲通道保证顺序性-&gt;保证并发安全<ul>
+<li>使用缓冲通道保证顺序性-&gt;保证并发安全
+<ul>
 <li>消费者的逻辑复杂-&gt;消费速度慢</li>
 <li>生产者的逻辑简单-&gt;生产速度快</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="举例——A子协程发送0-9，B子协程计算输入数字的平方，主协程输出最后的平方数"><a href="#举例——A子协程发送0-9，B子协程计算输入数字的平方，主协程输出最后的平方数" class="headerlink" title="举例——A子协程发送0-9，B子协程计算输入数字的平方，主协程输出最后的平方数"></a>举例——A子协程发送0-9，B子协程计算输入数字的平方，主协程输出最后的平方数</h3><blockquote>
+<h3 id="举例——A子协程发送0-9，B子协程计算输入数字的平方，主协程输出最后的平方数">举例——A子协程发送0-9，B子协程计算输入数字的平方，主协程输出最后的平方数</h3>
+<blockquote>
 <p>使用缓冲通道保证顺序性-&gt;保证并发安全</p>
 <p>此时A子协程就是生产者-&gt;快速生产</p>
 <p>B子协程就是消费者-&gt;慢速消费</p>
 </blockquote>
 <figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {</span><br><span class="line">	src := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>)</span><br><span class="line">	dest := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>, <span class="number">3</span>)</span><br><span class="line">	<span class="comment">//A</span></span><br><span class="line">	<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> {</span><br><span class="line">		<span class="keyword">defer</span> <span class="built_in">close</span>(src)</span><br><span class="line">		<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ {</span><br><span class="line">			src &lt;- i</span><br><span class="line">		}</span><br><span class="line">	}()</span><br><span class="line">	<span class="comment">//B</span></span><br><span class="line">	<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> {</span><br><span class="line">		<span class="keyword">defer</span> <span class="built_in">close</span>(dest)</span><br><span class="line">		<span class="keyword">for</span> i := <span class="keyword">range</span> src {</span><br><span class="line">			dest &lt;- i * i</span><br><span class="line">		}</span><br><span class="line">	}()</span><br><span class="line">	<span class="comment">//M</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="keyword">range</span> dest {</span><br><span class="line">		<span class="built_in">println</span>(i)</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="并发安全Lock-lt-内存实现通信-gt"><a href="#并发安全Lock-lt-内存实现通信-gt" class="headerlink" title="并发安全Lock<内存实现通信>"></a>并发安全Lock&lt;内存实现通信&gt;</h2><blockquote>
+<h2 id="并发安全Lock-内存实现通信">并发安全Lock&lt;内存实现通信&gt;</h2>
+<blockquote>
 <p>多种Gorotine同时操作一块内存资源-&gt;数据并发</p>
 <ul>
 <li>通过对权限的控制来保证并发安全</li>
 </ul>
 </blockquote>
-<h3 id="举例——对变量执行2000-1次操作，5个协程并发进行"><a href="#举例——对变量执行2000-1次操作，5个协程并发进行" class="headerlink" title="举例——对变量执行2000+1次操作，5个协程并发进行"></a>举例——对变量执行2000+1次操作，5个协程并发进行</h3><blockquote>
+<h3 id="举例——对变量执行2000-1次操作，5个协程并发进行">举例——对变量执行2000+1次操作，5个协程并发进行</h3>
+<blockquote>
 <p>通过结果可以发现没有Lock的打印结果并非10000，并且无规律</p>
 </blockquote>
 <figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"sync"</span></span><br><span class="line">	<span class="string">"time"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	x    <span class="type">int64</span></span><br><span class="line">	lock sync.Mutex</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addWithLock</span><span class="params">()</span></span> {</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">2000</span>; i++ {</span><br><span class="line">		lock.Lock()</span><br><span class="line">		x += <span class="number">1</span></span><br><span class="line">		lock.Unlock()</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addWithoutLock</span><span class="params">()</span></span> {</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">2000</span>; i++ {</span><br><span class="line">		x += <span class="number">1</span></span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {</span><br><span class="line">	x = <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ {</span><br><span class="line">		<span class="keyword">go</span> addWithoutLock()</span><br><span class="line">	}</span><br><span class="line">	time.Sleep(time.Second)</span><br><span class="line">	<span class="built_in">println</span>(<span class="string">"WithoutLock : "</span>, x)</span><br><span class="line">	x = <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ {</span><br><span class="line">		<span class="keyword">go</span> addWithLock()</span><br><span class="line">	}</span><br><span class="line">	time.Sleep(time.Second)</span><br><span class="line">	<span class="built_in">println</span>(<span class="string">"withLock : "</span>, x)</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="WaitGroup"><a href="#WaitGroup" class="headerlink" title="WaitGroup"></a>WaitGroup</h2><blockquote>
+<h2 id="WaitGroup">WaitGroup</h2>
+<blockquote>
 <p>无法精确知道协程进行的时间</p>
 <ul>
 <li>通过设置一个精确的sleep的时间——WaitGroup包</li>
 </ul>
 </blockquote>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -587,7 +614,6 @@ Gorotine
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <ul>
 <li>执行所有子协程之前使用Add函数记录数目</li>
@@ -1033,7 +1059,7 @@ Gorotine
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">15.7k</span>
+                        class="white-color">15.8k</span>
             
             
             
