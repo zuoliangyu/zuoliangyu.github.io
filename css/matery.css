@@ -34,11 +34,16 @@
 }
 
 body {
-    background-color: #eaeaea;
+    /*background-color: #eaeaea;
     margin: 0;
     color: #34495e;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: auto;*/
+    background-color: #eaeaea;
+    background: url('https://i.328888.xyz/2023/01/20/OV69A.jpeg');
+    background-attachment: fixed;
+    margin: 0;
+    color: #34495e;
 }
 
 h1 {
