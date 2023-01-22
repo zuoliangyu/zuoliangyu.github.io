@@ -1,0 +1,7 @@
+/* Here is your custom css styles. */
+*{
+    cursor: url("/medias/Arrow.cur"),auto!important;
+}
+:active{
+    cursor: url("/medias/Pin.cur"),auto!important;
+}
