@@ -6,17 +6,21 @@
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
     <meta name="keywords" content="GO语言测试, ">
-    <meta name="description" content="单元测试流程
+    <meta name="description" content="单元测试
+流程
+
 输入-&amp;gt;测试单元-&amp;gt;输出-&amp;gt;校对
 
 规则
+
 
 所有测试文件以_test.go结尾
 func TestXxx(*testing.T)
 初始化逻辑放到TestMain中
 
 
-案例123456package test">
+案例
+123456package ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -478,50 +482,68 @@ func TestXxx(*testing.T)
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h1><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><blockquote>
+                <h1>单元测试</h1>
+<h2 id="流程">流程</h2>
+<blockquote>
 <p>输入-&gt;测试单元-&gt;输出-&gt;校对</p>
 </blockquote>
-<h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><blockquote>
+<h2 id="规则">规则</h2>
+<blockquote>
 <ul>
 <li>所有测试文件以_test.go结尾</li>
 <li>func TestXxx(*testing.T)</li>
 <li>初始化逻辑放到TestMain中</li>
 </ul>
 </blockquote>
-<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test06</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">HelloTom</span><span class="params">()</span></span> <span class="type">string</span> {</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"Jerry"</span></span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="案例">案例</h2>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test06</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">HelloTom</span><span class="params">()</span></span> <span class="type">string</span> {</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"Jerry"</span></span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test06</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"testing"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestHelloTom</span><span class="params">(t *testing.T)</span></span> {</span><br><span class="line">	output := HelloTom()</span><br><span class="line">	expectOutput := <span class="string">"Tom"</span></span><br><span class="line">	<span class="keyword">if</span> output != expectOutput {</span><br><span class="line">		t.Errorf(<span class="string">"Expected: %s, Got: %s"</span>, expectOutput, output)</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><blockquote>
-<p>=== RUN   TestHelloTom<br>        HelloTom_test.go:9: Expected: Tom, Got: Jerry<br>        —- FAIL: TestHelloTom (0.00s)</p>
+<h3 id="结果">结果</h3>
+<blockquote>
+<p>=== RUN   TestHelloTom<br>
+HelloTom_test.go:9: Expected: Tom, Got: Jerry<br>
+— FAIL: TestHelloTom (0.00s)</p>
 </blockquote>
-<h2 id="覆盖率"><a href="#覆盖率" class="headerlink" title="覆盖率"></a>覆盖率</h2><blockquote>
+<h2 id="覆盖率">覆盖率</h2>
+<blockquote>
 <ul>
-<li><p>如何衡量代码是否经过了足够的测试？</p>
+<li>
+<p>如何衡量代码是否经过了足够的测试？</p>
 </li>
-<li><p>如何评价项目的测试水准？</p>
+<li>
+<p>如何评价项目的测试水准？</p>
 </li>
-<li><p>如何评估项目是否达到了高水准测试等级？</p>
+<li>
+<p>如何评估项目是否达到了高水准测试等级？</p>
 </li>
 </ul>
+</blockquote>
+<blockquote>
 <p>计算路过了代码的多少行，比如下面的样例就在代码第二行的位置return了，代码有效行数为3，所以覆盖率为2/3=66.7%</p>
 <ul>
 <li>可以通过不断改变测试条件，让测试覆盖率较高即可</li>
 </ul>
 </blockquote>
-<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test06</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">JudgePassLine</span><span class="params">(socre <span class="type">int16</span>)</span></span> <span class="type">bool</span> {</span><br><span class="line">	<span class="keyword">if</span> socre &gt;= <span class="number">60</span> {</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	} <span class="keyword">else</span> {</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="样例">样例</h3>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test06</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">JudgePassLine</span><span class="params">(socre <span class="type">int16</span>)</span></span> <span class="type">bool</span> {</span><br><span class="line">	<span class="keyword">if</span> socre &gt;= <span class="number">60</span> {</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	} <span class="keyword">else</span> {</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test06</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"github.com/stretchr/testify/assert"</span></span><br><span class="line">	<span class="string">"testing"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestJudgePassLineTrue</span><span class="params">(t *testing.T)</span></span> {</span><br><span class="line">	isPass := JudgePassLine(<span class="number">70</span>)</span><br><span class="line">	assert.Equal(t, <span class="literal">true</span>, isPass)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h3><blockquote>
+<h3 id="结果-2">结果</h3>
+<blockquote>
 <p>command-line-arguments  0.237s  coverage: 66.7% of statements</p>
 </blockquote>
-<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><blockquote>
+<h2 id="重点">重点</h2>
+<blockquote>
 <ul>
 <li>一般覆盖率：50%-60%；较高覆盖率80%+</li>
 <li>测试分支相互独立、全面覆盖</li>
 <li>测试单元粒度足够小，函数单一职责</li>
 </ul>
 </blockquote>
-<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><blockquote>
+<h2 id="依赖">依赖</h2>
+<blockquote>
 <ul>
-<li>单元<ul>
+<li>单元
+<ul>
 <li>File</li>
 <li>DB</li>
 <li>Cache</li>
@@ -530,32 +552,38 @@ func TestXxx(*testing.T)
 </ul>
 <hr>
 <ul>
-<li>Mock<ul>
+<li>Mock
+<ul>
 <li>幂等</li>
 <li>稳定（任何函数在任何时间段独立运行）</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h2 id="文件处理"><a href="#文件处理" class="headerlink" title="文件处理"></a>文件处理</h2><blockquote>
-<p> 下文普通测试时是没有问题的，但是一旦测试文件（“log”）被修改，就会出错</p>
+<h2 id="文件处理">文件处理</h2>
+<blockquote>
+<p>下文普通测试时是没有问题的，但是一旦测试文件（“log”）被修改，就会出错</p>
 </blockquote>
 <figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test06</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"bufio"</span></span><br><span class="line">	<span class="string">"os"</span></span><br><span class="line">	<span class="string">"strings"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReadFirstLine</span><span class="params">()</span></span> <span class="type">string</span> {</span><br><span class="line">	open, err := os.Open(<span class="string">"log"</span>)</span><br><span class="line">	<span class="keyword">defer</span> open.Close()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">	}</span><br><span class="line">	scanner := bufio.NewScanner(open)</span><br><span class="line">	<span class="keyword">for</span> scanner.Scan() {</span><br><span class="line">		<span class="keyword">return</span> scanner.Text()</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ProcessFirstLine</span><span class="params">()</span></span> <span class="type">string</span> {</span><br><span class="line">	line := ReadFirstLine()</span><br><span class="line">	destLine := strings.ReplaceAll(line, <span class="string">"11"</span>, <span class="string">"00"</span>)</span><br><span class="line">	<span class="keyword">return</span> destLine</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test06</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"github.com/stretchr/testify/assert"</span></span><br><span class="line">	<span class="string">"testing"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestReadFirstLine</span><span class="params">(t *testing.T)</span></span> {</span><br><span class="line">	firstLine := ProcessFirstLine()</span><br><span class="line">	assert.Equal(t, <span class="string">"line00"</span>, firstLine)</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Mock测试"><a href="#Mock测试" class="headerlink" title="Mock测试"></a>Mock测试</h2><blockquote>
+<h2 id="Mock测试">Mock测试</h2>
+<blockquote>
 <ul>
 <li>为一个函数打桩</li>
 <li>为一个方法打桩</li>
 </ul>
 </blockquote>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><blockquote>
+<h3 id="优点">优点</h3>
+<blockquote>
 <p>不用依赖本地文件</p>
 </blockquote>
 <figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestProcessFirstLineWithMock</span><span class="params">(t *testing.T)</span></span> {</span><br><span class="line">	monkey.Patch(ReadFirstLine, <span class="function"><span class="keyword">func</span><span class="params">()</span></span> <span class="type">string</span> {</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"line110"</span></span><br><span class="line">	})</span><br><span class="line">	<span class="keyword">defer</span> monkey.Unpatch(ReadFirstLine)</span><br><span class="line">	line := ProcessFirstLine()</span><br><span class="line">	assert.Equal(t, <span class="string">"line000"</span>, line)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="基准测试"><a href="#基准测试" class="headerlink" title="基准测试"></a>基准测试</h2><blockquote>
+<h2 id="基准测试">基准测试</h2>
+<blockquote>
 <ul>
 <li>优化代码，需要对当前代码分析</li>
-<li>内置的测试框架提供了基准测试的能力<ul>
+<li>内置的测试框架提供了基准测试的能力
+<ul>
 <li>使用了第三方SDK</li>
 <li>降低了并发的性能</li>
 </ul>
@@ -707,13 +735,13 @@ func TestXxx(*testing.T)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/p/d3bf9880.html">
+                <a href="/p/34c22d84.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/15.webp" class="responsive-img" alt="pycharm配置">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="GO/go语言工程项目实践.md">
                         
-                        <span class="card-title">pycharm配置</span>
+                        <span class="card-title">GO/go语言工程项目实践.md</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -724,27 +752,19 @@ func TestXxx(*testing.T)
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    GO语言
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/django/">
-                        <span class="chip bg-color">django</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1013,7 +1033,7 @@ func TestXxx(*testing.T)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">20.6k</span>
+                        class="white-color">16.3k</span>
             
             
             
