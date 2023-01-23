@@ -614,13 +614,8 @@
                         <div class="summary block-with-text">
                             
                                 展示用户列表
-
-
 URL
-
-
 函数
-
 
 
 获取所有用户信息
@@ -628,7 +623,7 @@ HTML渲染
 
 
 
-1234567891011121314151617181920212223242526272829303132333435&lt;!DOCTYPE html&g
+1234567891011121314151617181920212223242526272829303132333435&lt;!DOCTYPE html&gt;&lt
                             
                         </div>
                         <div class="publish-info">
@@ -674,16 +669,14 @@ HTML渲染
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1.创建项目
-删除setting.py中的文件路径
+                                1.创建项目删除setting.py中的文件路径
 
-2.创建app
-1py manage.py startapp app01
+2.创建app1py manage.py startapp app01
 开启manage.py task服务后直接输入startapp+名字即可
 
 setting.py中注册app
 
-
+3.
                             
                         </div>
                         <div class="publish-info">
@@ -729,17 +722,14 @@ setting.py中注册app
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                ORM
-简介
-
+                                ORM简介
 创建、修改、删除数据库中的的表（不用自己写mysql语句）【无法创建数据库】
 操作表中的数据（不用自己写mysql语句）
 
 123insert into ...updateselect ... 
-流程
-创建数据库
+流程创建数据库
+启动mysql
 
-启动my
                             
                         </div>
                         <div class="publish-info">
@@ -785,10 +775,9 @@ setting.py中注册app
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                重定向
-采取第二种方式，使用redirect后浏览器自己去访问重定向的网址
+                                重定向采取第二种方式，使用redirect后浏览器自己去访问重定向的网址
 
-1234567891011121314def something(request):    # request是一个对象，封装了用户通过浏览器发送过来的所有请求相
+1234567891011121314def something(request):    # request是一个对象，封装了用户通过浏览器发送过来的所有请求相关
                             
                         </div>
                         <div class="publish-info">
@@ -836,21 +825,14 @@ setting.py中注册app
                             
                                 
 语法书写
-
-列表访问
-直接使用".i"代替"[i]"
+列表访问直接使用”.i”代替”[i]”
 
 for循环
-
 字典访问
-
 使用“.”访问key对应的value ，key，键值对
 
 列表套字典访问
-
-条件语句
-if-else
-
+条件语句if-else
 
                             
                         </div>
@@ -900,12 +882,11 @@ if-else
                                 删除templates目录
 删除settings.py中的这句话
 
-默认项目文件
-mysite
+默认项目文件mysite
 ├── manage.py 【项目的管理，启动项目、创建app、数据管理】【不要动】【常常用】
 └── mysite
 ├── init.py
-├
+├─
                             
                         </div>
                         <div class="publish-info">
@@ -1013,7 +994,7 @@ mysite
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">20.7k</span>
+                        class="white-color">20.6k</span>
             
             
             
@@ -1397,7 +1378,7 @@ $(function () {
       src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"
     ></script>
     <script type="text/javascript" src="/js/fireworks.js"></script>
-  
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1410,5 +1391,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>
