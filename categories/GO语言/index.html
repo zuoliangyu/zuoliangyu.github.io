@@ -552,7 +552,7 @@
                 
                 
                 
-                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" title="GO语言: 9">
+                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" title="GO语言: 10">
                     <div class="moleskine-wrapper">
                         <div class="moleskine-notebook">
                             <div class="chip notebook-cover center-align waves-effect waves-light
@@ -601,6 +601,59 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/p/34c22d84.html">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/loading.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="GO/go语言工程项目实践.md">
+                            
+                            <span class="card-title">GO/go语言工程项目实践.md</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                需求设计需求背景
+
+支持回帖、点赞
+对回帖可以进行回复
+开发一个单页面设计服务端的小功能
+
+
+需求描述
+社区话题页面
+
+展示话题（标题，文字描述）和回帖列表
+暂不考虑前端页面实现，仅仅实现一个本地web服务
+话题和回帖数据用文件存储
+
+
+需
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    GO语言
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/p/43b1e79d.html">
                         <div class="card-image tag-image">
                             
@@ -613,21 +666,17 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                单元测试
-流程
-
+                                单元测试流程
 输入-&gt;测试单元-&gt;输出-&gt;校对
 
 规则
-
 
 所有测试文件以_test.go结尾
 func TestXxx(*testing.T)
 初始化逻辑放到TestMain中
 
 
-案例
-123456package 
+案例123456package test
                             
                         </div>
                         <div class="publish-info">
@@ -665,34 +714,26 @@ func TestXxx(*testing.T)
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                语言进阶
-GO语言快的原因
-
+                                语言进阶GO语言快的原因
 GO可以发挥多核优势高效运行
 
-
-
 并发
-
 多线程程序在一个核的CPU上运行
 
 
 并行
-
 多线程程序在多个核的CPU上运行
 
 
 
 
 Gorotine
-
 适合高并发是因为GO语言创建多个协程
 
-
-
 协程
-
 用户态
+轻量级线程
+栈MB
                             
                         </div>
                         <div class="publish-info">
@@ -730,16 +771,13 @@ Gorotine
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                依赖管理
-背景
-
+                                依赖管理背景
 
 工程项目不可能基于标准库0-1编码搭建
 管理依赖库
 
 
 Go依赖管理演进
-
 
 不同环境（项目）依赖的版本不同
 控制依赖库的版本
@@ -748,8 +786,7 @@ GOPATH-&gt;Go Vendor-&gt;Go Module
 
 GOPATH
 
-
-
+环境变量
                             
                         </div>
                         <div class="publish-info">
@@ -788,33 +825,27 @@ GOPATH
                         <div class="summary block-with-text">
                             
                                 GO语言快的原因
-
 GO可以发挥多核优势高效运行
 
-
-
 并发
-
 多线程程序在一个核的CPU上运行
 
 
 并行
-
 多线程程序在多个核的CPU上运行
 
 
 
 
 Gorotine
-
 适合高并发是因为GO语言创建多个协程
 
-
-
 协程
-
 用户态
-轻量级线
+轻量级线程
+栈MB级别
+
+
                             
                         </div>
                         <div class="publish-info">
@@ -852,14 +883,12 @@ Gorotine
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                猜谜游戏
-规则介绍
-
-在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测
-每次玩家需要输入一个数字
+                                猜谜游戏规则介绍
+在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测 
+每次玩家需要输入一个数字 
 程序则会告诉玩家这个猜测的数字到底是高于还是低于那个秘密的随机数
-并且让玩家再次猜测
-如果猜对了的话 就告诉玩家胜利并且
+并且让玩家再次猜测 
+如果猜对了的话 就告诉玩家胜利并
                             
                         </div>
                         <div class="publish-info">
@@ -897,24 +926,18 @@ Gorotine
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                SOCKS5
-代理原理及介绍
-
-
+                                SOCKS5代理原理及介绍
 
 需要代理方向服务器发出请求信息
 
-
 代理方应答
-
 
 需要代理方接到应答后发送向代理方发送目的ip和端口
 
-
 代理方与目的连接
 
-
-代理方将需要代理方发出的信息传到目的方，将目的方发出的信息传到需要代理方。
+代理方将需要代理方发出的信息传到目的方，将目的方发出的信息传到需要代理方。代理完成
+由于
                             
                         </div>
                         <div class="publish-info">
@@ -952,14 +975,12 @@ Gorotine
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                猜谜游戏
-规则介绍
-
-在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测
-每次玩家需要输入一个数字
+                                猜谜游戏规则介绍
+在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测 
+每次玩家需要输入一个数字 
 程序则会告诉玩家这个猜测的数字到底是高于还是低于那个秘密的随机数
-并且让玩家再次猜测
-如果猜对了的话 就告诉玩家胜利并且
+并且让玩家再次猜测 
+如果猜对了的话 就告诉玩家胜利并
                             
                         </div>
                         <div class="publish-info">
@@ -997,28 +1018,20 @@ Gorotine
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                在线词典
-规则介绍
-
-
+                                在线词典规则介绍
 
 输入单词
 
-
 输出音标、中文含义、词性.
-
 
 使用第三方的API进行查询
 
 
-
-操作步骤
-抓包
-
+操作步骤抓包
 
 彩云小译 - 在线翻译 (caiyunapp.com)
 在开发者视图中的网络框里进行数据流分析
-在翻译框里输入数据
+在翻译框里输入数据后点击翻译查看网
                             
                         </div>
                         <div class="publish-info">
@@ -1056,11 +1069,9 @@ Gorotine
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                基础语法
-Hello world
-使用package main表示属于main包的一部分（注意，如果不使用的话会导致报错）
+                                基础语法Hello world使用package main表示属于main包的一部分（注意，如果不使用的话会导致报错）
 import 导入包（和python类似）
-12345678910package mainimport (	"fmt
+12345678910package mainimport (	"fmt")
                             
                         </div>
                         <div class="publish-info">
@@ -1160,7 +1171,7 @@ import 导入包（和python类似）
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">20.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1544,7 +1555,7 @@ $(function () {
       src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"
     ></script>
     <script type="text/javascript" src="/js/fireworks.js"></script>
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script>
+  
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1557,5 +1568,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
 </html>

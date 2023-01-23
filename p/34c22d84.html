@@ -5,11 +5,23 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="请求和响应, ">
-    <meta name="description" content="重定向
-采取第二种方式，使用redirect后浏览器自己去访问重定向的网址
+    <meta name="keywords" content="GO/go语言工程项目实践.md, ">
+    <meta name="description" content="需求设计需求背景
 
-1234567891011121314def something(request):    # request是一个对象，封装了用户通过浏览器发送过来的所有请求相">
+支持回帖、点赞
+对回帖可以进行回复
+开发一个单页面设计服务端的小功能
+
+
+需求描述
+社区话题页面
+
+展示话题（标题，文字描述）和回帖列表
+暂不考虑前端页面实现，仅仅实现一个本地web服务
+话题和回帖数据用文件存储
+
+
+需">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +33,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>请求和响应 | 左岚的博客</title>
+    <title>GO/go语言工程项目实践.md | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -380,12 +392,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">请求和响应</h1>
+                    <h1 class="description center-align post-title">GO/go语言工程项目实践.md</h1>
                 </div>
             </div>
         </div>
@@ -407,13 +419,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/django/">
-                                <span class="chip bg-color">django</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -421,8 +429,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category">
-                                python
+                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
+                                GO语言
                             </a>
                         
                     </div>
@@ -434,28 +442,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-22
+                    2023-01-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-22
+                    2023-01-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    396
+                    560
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -475,17 +483,104 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>重定向</h1>
-<p>采取第二种方式，使用redirect后浏览器自己去访问重定向的网址</p>
-<p><img src="/medias/loading.gif" data-original="./../images/%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94/1672043752727-71f5f94c-ccb7-48cc-933e-bc91e42f8fe4.png" alt="img"></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">something</span>(<span class="params">request</span>):</span><br><span class="line">    <span class="comment"># request是一个对象，封装了用户通过浏览器发送过来的所有请求相关数据</span></span><br><span class="line">    <span class="comment"># 1.获取请求方式GET/POST</span></span><br><span class="line">    <span class="built_in">print</span>(request.method)</span><br><span class="line">    <span class="comment"># 2.在URL传值</span></span><br><span class="line">    <span class="built_in">print</span>(request.GET)</span><br><span class="line">    <span class="comment"># 3.在请求体中提交数据</span></span><br><span class="line">    <span class="built_in">print</span>(request.POST)</span><br><span class="line">    <span class="comment"># 4.[响应]HttpResponse("返回内容"),内容字符串返回给请求者</span></span><br><span class="line">    <span class="comment"># return HttpResponse("返回内容")</span></span><br><span class="line">    <span class="comment"># 5.[响应]读取HTML内容 +渲染（替换） -&gt;字符串，返回给用户浏览器</span></span><br><span class="line">    <span class="comment"># return render(request, 'something.html', {'title': "来了"})</span></span><br><span class="line">    <span class="comment"># 6.[响应]让浏览器重定向到其他页面</span></span><br><span class="line">    <span class="keyword">return</span> redirect(<span class="string">"http://www.baidu.com"</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>三个请求与三个响应</p>
-<p><img src="/medias/loading.gif" data-original="./../images/%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94/1672044788077-4c215159-dfdd-4d28-b557-ed0a30428ce0.png" alt="img"></p>
-<h1>案例——用户登录</h1>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% csrf_token %}</span><br></pre></td></tr></tbody></table></figure>
-<p>在提交的表单中需要添加上面的代码否则会阻拦导致</p>
-<p><img src="/medias/loading.gif" data-original="./../images/%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94/1672045970676-f1eb1b0c-0931-4023-85dd-ea652971f13b.png" alt="img"></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>(<span class="params">request</span>):</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"GET"</span>:</span><br><span class="line">        <span class="keyword">return</span> render(request, <span class="string">"login.html"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 如果是post请求，获取用户提交的数据</span></span><br><span class="line">        <span class="built_in">print</span>(request.POST)</span><br><span class="line">        username = request.POST.get(<span class="string">'user'</span>)</span><br><span class="line">        password = request.POST.get(<span class="string">'pwd'</span>)</span><br><span class="line">        <span class="comment"># 账号密码校验</span></span><br><span class="line">        <span class="keyword">if</span> username == <span class="string">'root'</span> <span class="keyword">and</span> password == <span class="string">'123456'</span>:</span><br><span class="line">            <span class="comment"># return HttpResponse("登录成功")</span></span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># return HttpResponse("密码错误")</span></span><br><span class="line">            <span class="built_in">str</span> = <span class="string">"用户名或密码错误"</span></span><br><span class="line">            <span class="keyword">return</span> render(request, <span class="string">"login.html"</span>, {<span class="string">"error_msg"</span>: <span class="built_in">str</span>})</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;h1&gt;用户登录&lt;/h1&gt;</span><br><span class="line">    &lt;form method=<span class="string">"post"</span> action=<span class="string">"/login/"</span>&gt;</span><br><span class="line">      {% csrf_token %}</span><br><span class="line">      &lt;<span class="built_in">input</span> <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"user"</span> placeholder=<span class="string">"用户名"</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">input</span> <span class="built_in">type</span>=<span class="string">"password"</span> name=<span class="string">"pwd"</span> placeholder=<span class="string">"密码"</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">input</span> <span class="built_in">type</span>=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">      &lt;span style=<span class="string">"color :red;"</span>&gt;{{ error_msg }}&lt;/span&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+                <h1 id="需求设计"><a href="#需求设计" class="headerlink" title="需求设计"></a>需求设计</h1><h2 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h2><blockquote>
+<ul>
+<li>支持回帖、点赞</li>
+<li>对回帖可以进行回复</li>
+<li>开发一个单页面设计服务端的小功能</li>
+</ul>
+</blockquote>
+<h2 id="需求描述"><a href="#需求描述" class="headerlink" title="需求描述"></a>需求描述</h2><blockquote>
+<p>社区话题页面</p>
+<ul>
+<li>展示话题（标题，文字描述）和回帖列表</li>
+<li>暂不考虑前端页面实现，仅仅实现一个本地web服务</li>
+<li>话题和回帖数据用文件存储</li>
+</ul>
+</blockquote>
+<h2 id="需求用例"><a href="#需求用例" class="headerlink" title="需求用例"></a>需求用例</h2><blockquote>
+<p>面向浏览消费用户 </p>
+<ul>
+<li>Topic       -&gt; 话题</li>
+<li>PostList  -&gt;  回帖历史</li>
+</ul>
+</blockquote>
+<h2 id="E-R"><a href="#E-R" class="headerlink" title="E-R"></a>E-R</h2><blockquote>
+<ul>
+<li>Topic&lt;话题&gt;<ul>
+<li>id</li>
+<li>title</li>
+<li>content</li>
+<li>create_time</li>
+</ul>
+</li>
+<li>Post&lt;帖子&gt;<ul>
+<li>id</li>
+<li>topic_id</li>
+<li>content</li>
+<li>create_time</li>
+</ul>
+</li>
+</ul>
+<p>Topic和Post的关系是一对多</p>
+</blockquote>
+<h2 id="分层结构"><a href="#分层结构" class="headerlink" title="分层结构"></a>分层结构</h2><blockquote>
+<ul>
+<li>数据层Repostitory<ul>
+<li>数据Model，外部数据的增删改查</li>
+</ul>
+</li>
+<li>逻辑层Service<ul>
+<li>业务Entity，处理核心业务逻辑输出</li>
+</ul>
+</li>
+<li>视图层Controller<ul>
+<li>视图view，处理和外部的交互逻辑</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="组件工具"><a href="#组件工具" class="headerlink" title="组件工具"></a>组件工具</h2><blockquote>
+<blockquote>
+<p> Gin高性能go web框架</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/gin-gonic/gin#installation">https://github.com/gin-gonic/gin#installation</a></p>
+<p>Go Mod</p>
+<p>go mod init</p>
+<p>go get gopkg.in/gin-gonic/gin.v1@v1.3.0</p>
+</blockquote>
+</blockquote>
+<h1 id="代码开发"><a href="#代码开发" class="headerlink" title="代码开发"></a>代码开发</h1><h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><h3 id="index"><a href="#index" class="headerlink" title="index"></a>index</h3><blockquote>
+<p>元数据 -&gt; 索引</p>
+<p>数据行 -&gt; 内存map</p>
+</blockquote>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	topicIndexMap <span class="keyword">map</span>[<span class="type">int64</span>]*Topic</span><br><span class="line">	postIndexMap  <span class="keyword">map</span>[<span class="type">int64</span>]*Post</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>初始化话题数据索引</p>
+</blockquote>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">initTopicIndexMap</span><span class="params">(filePath <span class="type">string</span>)</span></span> <span class="type">error</span> {</span><br><span class="line">	open, err := os.Open(filePath + <span class="string">"topic"</span>)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	}</span><br><span class="line">	scanner := bufio.NewScanner(open)</span><br><span class="line">	topicTmpMap := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int64</span>]*Topic)</span><br><span class="line">	<span class="keyword">for</span> scanner.Scan() {</span><br><span class="line">		text := scanner.Text()</span><br><span class="line">		<span class="keyword">var</span> topic Topic</span><br><span class="line">		<span class="keyword">if</span> err := json.Unmarshal([]<span class="type">byte</span>(text), &amp;topic); err != <span class="literal">nil</span> {</span><br><span class="line">			<span class="keyword">return</span> err</span><br><span class="line">		}</span><br><span class="line">		topicTmpMap[topic.Id] = &amp;topic</span><br><span class="line">	}</span><br><span class="line">	topicIndexMap = topicTmpMap</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><blockquote>
+<p>索引：话题ID</p>
+<p>数据：话题</p>
+<p>使用symc.Once来实现高并发状态下只查询一次</p>
+</blockquote>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	topicOnce sync.Once <span class="comment">//高并发下只执行一次</span></span><br><span class="line">	topicDao  *TopicDao</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewTopicDaoInstance</span><span class="params">()</span></span> *TopicDao {</span><br><span class="line">	topicOnce.Do(<span class="function"><span class="keyword">func</span><span class="params">()</span></span> {</span><br><span class="line">		topicDao = &amp;TopicDao{}</span><br><span class="line">	})</span><br><span class="line">	<span class="keyword">return</span> topicDao</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(*TopicDao)</span></span> QueryTopicDyId(id <span class="type">int64</span>) *Topic {</span><br><span class="line">	<span class="keyword">return</span> topicIndexMap[id]</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	topicIndexMap <span class="keyword">map</span>[<span class="type">int64</span>]*Topic</span><br><span class="line">	postIndexMap  <span class="keyword">map</span>[<span class="type">int64</span>]*Post</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><h3 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h3><figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> TopicDao <span class="keyword">struct</span> {</span><br><span class="line">	Topic    *repository.Topic</span><br><span class="line">	PostList []*repository.Post</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><blockquote>
+<p>参数校验</p>
+<p>准备数据</p>
+<p>组装实体</p>
+</blockquote>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(f *QueryPageInfoFlow)</span></span> Do() (*PageInfo, <span class="type">error</span>) {</span><br><span class="line">	<span class="keyword">if</span> err := f.checkParam(); err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span> err := f.prepareInfo(); err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span> err := f.packPageInfo(); err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> f.pageInfo, <span class="literal">nil</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">QueryPageInfo</span><span class="params">(topicIdStr <span class="type">string</span>)</span></span> *PageData {</span><br><span class="line">	topicId, err := strconv.ParseInt(topicIdStr, <span class="number">10</span>, <span class="number">64</span>)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> &amp;PageData{}</span><br><span class="line">	}</span><br><span class="line">	pageInfo, err := service.QueryPageInfo(topicId)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> &amp;PageData{}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> &amp;PageData{}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h2><blockquote>
+<ul>
+<li>初始化数据索引</li>
+<li>初始化引擎配置</li>
+<li>构建路由</li>
+<li>启动服务</li>
+</ul>
+</blockquote>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {</span><br><span class="line">	<span class="keyword">if</span> err := Init(<span class="string">"./data/"</span>); err != <span class="literal">nil</span> {</span><br><span class="line">		os.Exit(<span class="number">-1</span>)</span><br><span class="line">	}</span><br><span class="line">	r := gin.Default()</span><br><span class="line">	r.GET(<span class="string">"/community/page/get/:id"</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> {</span><br><span class="line">		topicId := c.Param(<span class="string">"id"</span>)</span><br><span class="line">		data := cotroller.QueryPageInfo(topicId)</span><br><span class="line">		c.JSON(<span class="number">200</span>, data)</span><br><span class="line">	})</span><br><span class="line">	err := r.Run()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
             </div>
@@ -512,7 +607,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/p/d692047e.html">http://example.com/p/d692047e.html</a>
+                    <a href="http://example.com/p/34c22d84.html">http://example.com/p/34c22d84.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -549,11 +644,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/django/">
-                                    <span class="chip bg-color">django</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -630,17 +721,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/p/4671114.html">
+                <a href="/p/34c22d84.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.webp" class="responsive-img" alt="ORM">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="GO/go语言工程项目实践.md">
                         
-                        <span class="card-title">ORM</span>
+                        <span class="card-title">GO/go语言工程项目实践.md</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -650,29 +742,22 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    GO语言
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/django/">
-                        <span class="chip bg-color">django</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -683,13 +768,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/p/af4e5a5f.html">
+                <a href="/p/5904a00a.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.webp" class="responsive-img" alt="模板语法">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/07.webp" class="responsive-img" alt="案例——用户管理">
                         
-                        <span class="card-title">模板语法</span>
+                        <span class="card-title">案例——用户管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
