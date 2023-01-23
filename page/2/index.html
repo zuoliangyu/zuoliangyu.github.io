@@ -384,17 +384,17 @@
         <span id="subtitle"></span>
         <script src="/libs/typed/typed.js"></script>
         <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['如果放弃太早，你永远都不知道自己会错过什么。',
-           '没有伞的孩子必须努力奔跑！',
-          '花开不是为了花落，而是为了开的更加灿烂。',
-           '没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生。'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
+          var typed = new Typed("#subtitle", {
+            strings: ['如果放弃太早，你永远都不知道自己会错过什么。',
+              '没有伞的孩子必须努力奔跑！',
+              '花开不是为了花落，而是为了开的更加灿烂。',
+              '没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生。'],
+            startDelay: 300,
+            typeSpeed: 100,
+            loop: true,
+            backSpeed: 50,
+            showCursor: true
+                  });
         </script>
         
       </div>
@@ -407,7 +407,8 @@
   // 每小时切换 banner 图.  Switch banner image every day.
   var bannerUrl =
     "/medias/banner/" +
-    new Date().getHours() +".webp";
+    new Date().getHours() +
+    ".webp";
   $(".bg-cover").css("background-image", "url(" + bannerUrl + ")");
 </script>
 

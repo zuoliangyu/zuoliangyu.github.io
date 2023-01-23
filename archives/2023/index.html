@@ -387,17 +387,17 @@
         <span id="subtitle"></span>
         <script src="/libs/typed/typed.js"></script>
         <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['如果放弃太早，你永远都不知道自己会错过什么。',
-           '没有伞的孩子必须努力奔跑！',
-          '花开不是为了花落，而是为了开的更加灿烂。',
-           '没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生。'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
+          var typed = new Typed("#subtitle", {
+            strings: ['如果放弃太早，你永远都不知道自己会错过什么。',
+              '没有伞的孩子必须努力奔跑！',
+              '花开不是为了花落，而是为了开的更加灿烂。',
+              '没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生。'],
+            startDelay: 300,
+            typeSpeed: 100,
+            loop: true,
+            backSpeed: 50,
+            showCursor: true
+                  });
         </script>
         
       </div>
@@ -410,7 +410,8 @@
   // 每小时切换 banner 图.  Switch banner image every day.
   var bannerUrl =
     "/medias/banner/" +
-    new Date().getHours() +".webp";
+    new Date().getHours() +
+    ".webp";
   $(".bg-cover").css("background-image", "url(" + bannerUrl + ")");
 </script>
 
@@ -1082,26 +1083,40 @@ Gorotine
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/p/27f5.html">
+                        <a href="/p/e005.html">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/loading.gif" data-original="/medias/featureimages/20.webp" class="responsive-img" alt="GO语言实战__猜谜游戏">
+                                <img src="/medias/loading.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="GO语言实战__在线词典">
                                 
-                                <span class="card-title">GO语言实战__猜谜游戏</span>
+                                <span class="card-title">GO语言实战__在线词典</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    猜谜游戏
+                                    在线词典
 规则介绍
 
-在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测
-每次玩家需要输入一个数字
-程序则会告诉玩家这个猜测的数字到底是高于还是低于那个秘密的随机数
-并且让玩家再次猜测
-如果猜对了的话 就告诉玩家胜利并且
+
+
+输入单词
+
+
+输出音标、中文含义、词性.
+
+
+使用第三方的API进行查询
+
+
+
+操作步骤
+抓包
+
+
+彩云小译 - 在线翻译 (caiyunapp.com)
+在开发者视图中的网络框里进行数据流分析
+在翻译框里输入数据
                                 
                             </div>
                             <div class="publish-info">
@@ -1142,40 +1157,26 @@ Gorotine
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/p/e005.html">
+                        <a href="/p/27f5.html">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/loading.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="GO语言实战__在线词典">
+                                <img src="/medias/loading.gif" data-original="/medias/featureimages/20.webp" class="responsive-img" alt="GO语言实战__猜谜游戏">
                                 
-                                <span class="card-title">GO语言实战__在线词典</span>
+                                <span class="card-title">GO语言实战__猜谜游戏</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    在线词典
+                                    猜谜游戏
 规则介绍
 
-
-
-输入单词
-
-
-输出音标、中文含义、词性.
-
-
-使用第三方的API进行查询
-
-
-
-操作步骤
-抓包
-
-
-彩云小译 - 在线翻译 (caiyunapp.com)
-在开发者视图中的网络框里进行数据流分析
-在翻译框里输入数据
+在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测
+每次玩家需要输入一个数字
+程序则会告诉玩家这个猜测的数字到底是高于还是低于那个秘密的随机数
+并且让玩家再次猜测
+如果猜对了的话 就告诉玩家胜利并且
                                 
                             </div>
                             <div class="publish-info">
