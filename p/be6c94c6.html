@@ -5,23 +5,20 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="GO/go语言工程项目实践.md, ">
-    <meta name="description" content="需求设计需求背景
+    <meta name="keywords" content="高质量编程, ">
+    <meta name="description" content="简介
+编写的代码能够达到正确可靠、简洁清晰的目标可称之为高质量代码
 
-支持回帖、点赞
-对回帖可以进行回复
-开发一个单页面设计服务端的小功能
-
-
-需求描述
-社区话题页面
-
-展示话题（标题，文字描述）和回帖列表
-暂不考虑前端页面实现，仅仅实现一个本地web服务
-话题和回帖数据用文件存储
+各种边界条件是否考虑完备
+异常情况处理，稳定性保证
+易读易维护
 
 
-需">
+编程原则
+实际应用场景千变万化，各种语言的特性和语法各不相同
+但是高质量编程遵循的原则是相通的
+
+简单">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,7 +30,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>GO/go语言工程项目实践.md | 左岚的博客</title>
+    <title>高质量编程 | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -418,12 +415,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">GO/go语言工程项目实践.md</h1>
+                    <h1 class="description center-align post-title">高质量编程</h1>
                 </div>
             </div>
         </div>
@@ -445,9 +442,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
+                                <span class="chip bg-color">代码规范</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -468,28 +469,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-23
+                    2023-01-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-23
+                    2023-01-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    560
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -509,104 +510,157 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="需求设计"><a href="#需求设计" class="headerlink" title="需求设计"></a>需求设计</h1><h2 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h2><blockquote>
+                <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
+<p>编写的代码能够达到正确可靠、简洁清晰的目标可称之为高质量代码</p>
 <ul>
-<li>支持回帖、点赞</li>
-<li>对回帖可以进行回复</li>
-<li>开发一个单页面设计服务端的小功能</li>
+<li>各种边界条件是否考虑完备</li>
+<li>异常情况处理，稳定性保证</li>
+<li>易读易维护</li>
 </ul>
 </blockquote>
-<h2 id="需求描述"><a href="#需求描述" class="headerlink" title="需求描述"></a>需求描述</h2><blockquote>
-<p>社区话题页面</p>
+<h2 id="编程原则"><a href="#编程原则" class="headerlink" title="编程原则"></a>编程原则</h2><blockquote>
+<p>实际应用场景千变万化，各种语言的特性和语法各不相同</p>
+<p>但是高质量编程遵循的原则是相通的</p>
 <ul>
-<li>展示话题（标题，文字描述）和回帖列表</li>
-<li>暂不考虑前端页面实现，仅仅实现一个本地web服务</li>
-<li>话题和回帖数据用文件存储</li>
-</ul>
-</blockquote>
-<h2 id="需求用例"><a href="#需求用例" class="headerlink" title="需求用例"></a>需求用例</h2><blockquote>
-<p>面向浏览消费用户 </p>
-<ul>
-<li>Topic       -&gt; 话题</li>
-<li>PostList  -&gt;  回帖历史</li>
-</ul>
-</blockquote>
-<h2 id="E-R"><a href="#E-R" class="headerlink" title="E-R"></a>E-R</h2><blockquote>
-<ul>
-<li>Topic&lt;话题&gt;<ul>
-<li>id</li>
-<li>title</li>
-<li>content</li>
-<li>create_time</li>
+<li>简单性<ul>
+<li>消除“多余的复杂性”，以简单清晰的逻辑编写代码</li>
+<li>不理解的代码无法修复改进</li>
 </ul>
 </li>
-<li>Post&lt;帖子&gt;<ul>
-<li>id</li>
-<li>topic_id</li>
-<li>content</li>
-<li>create_time</li>
+<li>可读性<ul>
+<li>代码是写给人看的，而不是机器</li>
+<li>编写可维护代码的第一步是确保代码可读</li>
 </ul>
 </li>
-</ul>
-<p>Topic和Post的关系是一对多</p>
-</blockquote>
-<h2 id="分层结构"><a href="#分层结构" class="headerlink" title="分层结构"></a>分层结构</h2><blockquote>
-<ul>
-<li>数据层Repostitory<ul>
-<li>数据Model，外部数据的增删改查</li>
-</ul>
-</li>
-<li>逻辑层Service<ul>
-<li>业务Entity，处理核心业务逻辑输出</li>
-</ul>
-</li>
-<li>视图层Controller<ul>
-<li>视图view，处理和外部的交互逻辑</li>
+<li>生产力<ul>
+<li>团队整体工作效率非常重要 </li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h2 id="组件工具"><a href="#组件工具" class="headerlink" title="组件工具"></a>组件工具</h2><blockquote>
+<h1 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h1><blockquote>
+<p>如何编写高质量的Go代码</p>
+<ul>
+<li>代码格式</li>
+<li>注释</li>
+<li>命名规范</li>
+<li>控制流程</li>
+<li>错误和异常处理</li>
+</ul>
+</blockquote>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><blockquote>
+<p>公共符号始终要注释</p>
+<ul>
+<li>包中声明的每个公共的符号<br>变量、常量、函数以及结构<br>都需要添加注释</li>
+<li>任何既不明显也不简短的公<br>共功能必须予以注释</li>
+<li>无论长度或复杂程度如何，<br>对库中的任何函数都必须进<br>行注释</li>
+</ul>
 <blockquote>
-<p> Gin高性能go web框架</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/gin-gonic/gin#installation">https://github.com/gin-gonic/gin#installation</a></p>
-<p>Go Mod</p>
-<p>go mod init</p>
-<p>go get gopkg.in/gin-gonic/gin.v1@v1.3.0</p>
-</blockquote>
-</blockquote>
-<h1 id="代码开发"><a href="#代码开发" class="headerlink" title="代码开发"></a>代码开发</h1><h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><h3 id="index"><a href="#index" class="headerlink" title="index"></a>index</h3><blockquote>
-<p>元数据 -&gt; 索引</p>
-<p>数据行 -&gt; 内存map</p>
-</blockquote>
-<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	topicIndexMap <span class="keyword">map</span>[<span class="type">int64</span>]*Topic</span><br><span class="line">	postIndexMap  <span class="keyword">map</span>[<span class="type">int64</span>]*Post</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>初始化话题数据索引</p>
-</blockquote>
-<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">initTopicIndexMap</span><span class="params">(filePath <span class="type">string</span>)</span></span> <span class="type">error</span> {</span><br><span class="line">	open, err := os.Open(filePath + <span class="string">"topic"</span>)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	}</span><br><span class="line">	scanner := bufio.NewScanner(open)</span><br><span class="line">	topicTmpMap := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int64</span>]*Topic)</span><br><span class="line">	<span class="keyword">for</span> scanner.Scan() {</span><br><span class="line">		text := scanner.Text()</span><br><span class="line">		<span class="keyword">var</span> topic Topic</span><br><span class="line">		<span class="keyword">if</span> err := json.Unmarshal([]<span class="type">byte</span>(text), &amp;topic); err != <span class="literal">nil</span> {</span><br><span class="line">			<span class="keyword">return</span> err</span><br><span class="line">		}</span><br><span class="line">		topicTmpMap[topic.Id] = &amp;topic</span><br><span class="line">	}</span><br><span class="line">	topicIndexMap = topicTmpMap</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><blockquote>
-<p>索引：话题ID</p>
-<p>数据：话题</p>
-<p>使用symc.Once来实现高并发状态下只查询一次</p>
-</blockquote>
-<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	topicOnce sync.Once <span class="comment">//高并发下只执行一次</span></span><br><span class="line">	topicDao  *TopicDao</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewTopicDaoInstance</span><span class="params">()</span></span> *TopicDao {</span><br><span class="line">	topicOnce.Do(<span class="function"><span class="keyword">func</span><span class="params">()</span></span> {</span><br><span class="line">		topicDao = &amp;TopicDao{}</span><br><span class="line">	})</span><br><span class="line">	<span class="keyword">return</span> topicDao</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(*TopicDao)</span></span> QueryTopicDyId(id <span class="type">int64</span>) *Topic {</span><br><span class="line">	<span class="keyword">return</span> topicIndexMap[id]</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	topicIndexMap <span class="keyword">map</span>[<span class="type">int64</span>]*Topic</span><br><span class="line">	postIndexMap  <span class="keyword">map</span>[<span class="type">int64</span>]*Post</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><h3 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h3><figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> TopicDao <span class="keyword">struct</span> {</span><br><span class="line">	Topic    *repository.Topic</span><br><span class="line">	PostList []*repository.Post</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><blockquote>
-<p>参数校验</p>
-<p>准备数据</p>
-<p>组装实体</p>
-</blockquote>
-<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(f *QueryPageInfoFlow)</span></span> Do() (*PageInfo, <span class="type">error</span>) {</span><br><span class="line">	<span class="keyword">if</span> err := f.checkParam(); err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span> err := f.prepareInfo(); err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span> err := f.packPageInfo(); err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> f.pageInfo, <span class="literal">nil</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">QueryPageInfo</span><span class="params">(topicIdStr <span class="type">string</span>)</span></span> *PageData {</span><br><span class="line">	topicId, err := strconv.ParseInt(topicIdStr, <span class="number">10</span>, <span class="number">64</span>)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> &amp;PageData{}</span><br><span class="line">	}</span><br><span class="line">	pageInfo, err := service.QueryPageInfo(topicId)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> &amp;PageData{}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> &amp;PageData{}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h2><blockquote>
+<p>例外</p>
 <ul>
-<li>初始化数据索引</li>
-<li>初始化引擎配置</li>
-<li>构建路由</li>
-<li>启动服务</li>
+<li>不需要注释实现接口的方法，下面的方法是错误的</li>
+</ul>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Read implements the io.Reader interface</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(r *FileReader)</span></span> Read(buf []<span class="type">byte</span>) (<span class="type">int</span>,<span class="type">error</span>)</span><br></pre></td></tr></tbody></table></figure>
+</blockquote>
+<ul>
+<li>注释应该做的<ul>
+<li>注释应该解释代码作用<ul>
+<li>注释公共符号</li>
+</ul>
+</li>
+<li>注释应该解释代码如何做的<ul>
+<li>比如返回值，接收值的意义 </li>
+</ul>
+</li>
+<li>注释应该解释代码实现的原因<ul>
+<li>适合解释代码的外部因素</li>
+<li>提供额外上下文</li>
+</ul>
+</li>
+<li>注释应该解释代码什么情况会出错<ul>
+<li>适合解释代码的限制条件</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </blockquote>
-<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {</span><br><span class="line">	<span class="keyword">if</span> err := Init(<span class="string">"./data/"</span>); err != <span class="literal">nil</span> {</span><br><span class="line">		os.Exit(<span class="number">-1</span>)</span><br><span class="line">	}</span><br><span class="line">	r := gin.Default()</span><br><span class="line">	r.GET(<span class="string">"/community/page/get/:id"</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> {</span><br><span class="line">		topicId := c.Param(<span class="string">"id"</span>)</span><br><span class="line">		data := cotroller.QueryPageInfo(topicId)</span><br><span class="line">		c.JSON(<span class="number">200</span>, data)</span><br><span class="line">	})</span><br><span class="line">	err := r.Run()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><h4 id="variable"><a href="#variable" class="headerlink" title="variable"></a>variable</h4><blockquote>
+<ul>
+<li>简洁胜于冗长</li>
+<li>缩略词全大写，但当其位于变量开头且不需要导出时，使用全小写<ul>
+<li>例如使用ServeHTTP而不是ServeHttp</li>
+<li>使用XMLHTTPRequest或者xmIHTTPRequest</li>
+</ul>
+</li>
+<li><p>变量距离其被使用的地方越远，则需要携带越多的上下文信息</p>
+<ul>
+<li>全局变量在其名字中需要更多的上下文信息，使得在不同地方可以轻易辨认出其含义 </li>
+</ul>
+</li>
+<li><p>举例</p>
+<ul>
+<li>将deadline替换成t降低了变量名的信息量</li>
+<li>t常代指任意时间</li>
+<li>deadline指截止时间，有特定的含义</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Good</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c*Client)</span></span> send(req*Request,deadline time.Time){}</span><br><span class="line"><span class="comment">//Bad</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c*Client)</span></span> send(req*Request,t time.Time){}</span><br></pre></td></tr></tbody></table></figure>
+</blockquote>
+<h4 id="function"><a href="#function" class="headerlink" title="function"></a>function</h4><blockquote>
+<ul>
+<li>函数名不携带包名的上下文信息，因为包名和函数名总是成对出现的</li>
+<li>函数名尽量简短</li>
+<li>当名为foo的包某个函数返回类型Foo时，可以省略类型信息而不导致歧义</li>
+<li>当名为foo的包某个函数返回类型T时(T并不是Foo)，可以在函数名中加入类型信息</li>
+</ul>
+</blockquote>
+<h4 id="package"><a href="#package" class="headerlink" title="package"></a>package</h4><blockquote>
+<ul>
+<li>只由小写字母组成。不包含大写字母和下划线等字符</li>
+<li>简短并包含一定的上下文信息。例如schema、task等</li>
+<li>不要与标准库同名。例如不要使用sync或者strings<ul>
+<li>以下规则尽量满足，以标准库包名为例</li>
+<li>不使用常用变量名作为包名。例如使用bufio而不是buf</li>
+<li>使用单数而不是复数。例如使用encoding而不是encodings</li>
+<li>谨慎地使用缩写。例如使用fmt在不破坏上下文的情况下比format更加简短</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="控制流程"><a href="#控制流程" class="headerlink" title="控制流程"></a>控制流程</h2><blockquote>
+<ul>
+<li><p>避免嵌套，保持正常流程清晰</p>
+<ul>
+<li><p>如果两个分支中都包含return语句，则可以去除冗余的else</p>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Bad</span></span><br><span class="line"><span class="keyword">if</span> foo{</span><br><span class="line">	<span class="keyword">return</span> x</span><br><span class="line">} <span class="keyword">else</span>{</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">}</span><br><span class="line"><span class="comment">//Good </span></span><br><span class="line"><span class="keyword">if</span> foo {</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line">}</span><br><span class="line"><span class="keyword">return</span> <span class="literal">nil</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</li>
+<li><p>尽量保持正常代码路径为最小缩进</p>
+<ul>
+<li><p>优先处理错误情况/特殊情况，尽早返回或继续循环来减少嵌套</p>
+</li>
+<li><blockquote>
+<p>举例</p>
+<ul>
+<li><p>最常见的正常流程的路径被嵌套在两个if条件内</p>
+</li>
+<li><p>成功的退出条件是return nil,必须仔细匹配大括号来发现</p>
+</li>
+<li><p>函数最后一行返回一个错误，需要追溯到匹配的左括号，才能了解何时会触发错误</p>
+</li>
+<li><p>如果后续正常流程需要增加一步操作，调用新的函数，则又会增加一层嵌套</p>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Bad</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">OneFunc</span><span class="params">()</span></span> <span class="type">error</span> {</span><br><span class="line">	err := doSomething()</span><br><span class="line">	<span class="keyword">if</span> err == <span class="literal">nil</span> {</span><br><span class="line">		err := doAnotherThing()</span><br><span class="line">		<span class="keyword">if</span> err == <span class="literal">nil</span> {</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">nil</span> <span class="comment">// normal case</span></span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> err</span><br><span class="line">}</span><br><span class="line"><span class="comment">//Good</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">OneFunc</span><span class="params">()</span></span> <span class="type">error</span> {</span><br><span class="line">	<span class="keyword">if</span> err := doSomething(); err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span> err := doAnotherthing(); err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span> <span class="comment">//normal case</span></span><br><span class="line">} </span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
             </div>
@@ -633,7 +687,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/p/34c22d84.html">http://example.com/p/34c22d84.html</a>
+                    <a href="http://example.com/p/be6c94c6.html">http://example.com/p/be6c94c6.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -670,7 +724,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
+                                    <span class="chip bg-color">代码规范</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -747,9 +805,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/p/be6c94c6.html">
                     <div class="card-image">
@@ -767,9 +826,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -782,6 +841,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -800,13 +860,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/p/43b1e79d.html">
+                <a href="/p/34c22d84.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/19.webp" class="responsive-img" alt="GO语言测试">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="GO/go语言工程项目实践.md">
                         
-                        <span class="card-title">GO语言测试</span>
+                        <span class="card-title">GO/go语言工程项目实践.md</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -817,7 +877,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-23
                             </span>
                         <span class="publish-author">
                             

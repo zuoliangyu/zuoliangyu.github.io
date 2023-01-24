@@ -53,7 +53,11 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="左岚的博客" type="application/atom+xml">
 </head>
@@ -122,41 +126,51 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>首页</span>
+      <span>主页</span>
     </a>
     
   </li>
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/tags" class="waves-effect waves-light">
+    <a href="" class="waves-effect waves-light">
+
       
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      <i class="fa fa-database" style="zoom: 0.6;"></i>
       
-      <span>标签</span>
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/categories" class="waves-effect waves-light">
+    <ul class="sub-nav menus_item_child ">
       
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
       
-      <span>分类</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/archives" class="waves-effect waves-light">
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
       
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
       
-      <span>归档</span>
-    </a>
+    </ul>
     
   </li>
   
@@ -228,41 +242,53 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			首页
+			主页
 		</a>
           
         </li>
         
         <li class="m-nav-item">
 	  
-		<a href="/tags" class="waves-effect waves-light">
+		<a href="javascript:;">
 			
-			    <i class="fa-fw fas fa-tags"></i>
+				<i class="fa-fw fa fa-database"></i>
 			
-			标签
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-bookmark"></i>
-			
-			分类
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
-			
-			归档
-		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+              
+            </ul>
           
         </li>
         
@@ -553,7 +579,7 @@
                 
                 
                 
-                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" title="GO语言: 10">
+                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" title="GO语言: 11">
                     <div class="moleskine-wrapper">
                         <div class="moleskine-notebook">
                             <div class="chip notebook-cover center-align waves-effect waves-light
@@ -584,6 +610,64 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/p/be6c94c6.html">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/loading.gif" data-original="/medias/featureimages/12.webp" class="responsive-img" alt="高质量编程">
+                            
+                            <span class="card-title">高质量编程</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                简介
+编写的代码能够达到正确可靠、简洁清晰的目标可称之为高质量代码
+
+各种边界条件是否考虑完备
+异常情况处理，稳定性保证
+易读易维护
+
+
+编程原则
+实际应用场景千变万化，各种语言的特性和语法各不相同
+但是高质量编程遵循的原则是相通的
+
+简单
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    GO语言
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
+                            <span class="chip bg-color">代码规范</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/p/34c22d84.html">
                         <div class="card-image tag-image">
                             
@@ -596,9 +680,7 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                需求设计
-需求背景
-
+                                需求设计需求背景
 
 支持回帖、点赞
 对回帖可以进行回复
@@ -606,13 +688,14 @@
 
 
 需求描述
-
 社区话题页面
 
 展示话题（标题，文字描述）和回帖列表
 暂不考虑前端页面实现，仅仅实现一个本地web服务
 话题和回帖数据用文件存储
 
+
+需
                             
                         </div>
                         <div class="publish-info">
@@ -650,21 +733,17 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                单元测试
-流程
-
+                                单元测试流程
 输入-&gt;测试单元-&gt;输出-&gt;校对
 
 规则
-
 
 所有测试文件以_test.go结尾
 func TestXxx(*testing.T)
 初始化逻辑放到TestMain中
 
 
-案例
-123456package 
+案例123456package test
                             
                         </div>
                         <div class="publish-info">
@@ -702,34 +781,26 @@ func TestXxx(*testing.T)
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                语言进阶
-GO语言快的原因
-
+                                语言进阶GO语言快的原因
 GO可以发挥多核优势高效运行
 
-
-
 并发
-
 多线程程序在一个核的CPU上运行
 
 
 并行
-
 多线程程序在多个核的CPU上运行
 
 
 
 
 Gorotine
-
 适合高并发是因为GO语言创建多个协程
 
-
-
 协程
-
 用户态
+轻量级线程
+栈MB
                             
                         </div>
                         <div class="publish-info">
@@ -767,16 +838,13 @@ Gorotine
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                依赖管理
-背景
-
+                                依赖管理背景
 
 工程项目不可能基于标准库0-1编码搭建
 管理依赖库
 
 
 Go依赖管理演进
-
 
 不同环境（项目）依赖的版本不同
 控制依赖库的版本
@@ -785,8 +853,7 @@ GOPATH-&gt;Go Vendor-&gt;Go Module
 
 GOPATH
 
-
-
+环境变量
                             
                         </div>
                         <div class="publish-info">
@@ -825,33 +892,27 @@ GOPATH
                         <div class="summary block-with-text">
                             
                                 GO语言快的原因
-
 GO可以发挥多核优势高效运行
 
-
-
 并发
-
 多线程程序在一个核的CPU上运行
 
 
 并行
-
 多线程程序在多个核的CPU上运行
 
 
 
 
 Gorotine
-
 适合高并发是因为GO语言创建多个协程
 
-
-
 协程
-
 用户态
-轻量级线
+轻量级线程
+栈MB级别
+
+
                             
                         </div>
                         <div class="publish-info">
@@ -889,14 +950,12 @@ Gorotine
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                猜谜游戏
-规则介绍
-
-在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测
-每次玩家需要输入一个数字
+                                猜谜游戏规则介绍
+在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测 
+每次玩家需要输入一个数字 
 程序则会告诉玩家这个猜测的数字到底是高于还是低于那个秘密的随机数
-并且让玩家再次猜测
-如果猜对了的话 就告诉玩家胜利并且
+并且让玩家再次猜测 
+如果猜对了的话 就告诉玩家胜利并
                             
                         </div>
                         <div class="publish-info">
@@ -934,74 +993,23 @@ Gorotine
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                SOCKS5
-代理原理及介绍
-
-
+                                SOCKS5代理原理及介绍
 
 需要代理方向服务器发出请求信息
 
-
 代理方应答
-
 
 需要代理方接到应答后发送向代理方发送目的ip和端口
 
-
 代理方与目的连接
 
-
-代理方将需要代理方发出的信息传到目的方，将目的方发出的信息传到需要代理方。
+代理方将需要代理方发出的信息传到目的方，将目的方发出的信息传到需要代理方。代理完成
+由于
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2023-01-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/p/27f5.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/20.webp" class="responsive-img" alt="GO语言实战__猜谜游戏">
-                            
-                            <span class="card-title">GO语言实战__猜谜游戏</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                猜谜游戏
-规则介绍
-
-在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测
-每次玩家需要输入一个数字
-程序则会告诉玩家这个猜测的数字到底是高于还是低于那个秘密的随机数
-并且让玩家再次猜测
-如果猜对了的话 就告诉玩家胜利并且
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-17
                             </span>
                             <span class="publish-author">
                                 
@@ -1034,28 +1042,20 @@ Gorotine
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                在线词典
-规则介绍
-
-
+                                在线词典规则介绍
 
 输入单词
 
-
 输出音标、中文含义、词性.
-
 
 使用第三方的API进行查询
 
 
-
-操作步骤
-抓包
-
+操作步骤抓包
 
 彩云小译 - 在线翻译 (caiyunapp.com)
 在开发者视图中的网络框里进行数据流分析
-在翻译框里输入数据
+在翻译框里输入数据后点击翻译查看网
                             
                         </div>
                         <div class="publish-info">
@@ -1081,28 +1081,29 @@ Gorotine
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/p/cc80.html">
+                    <a href="/p/27f5.html">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/16.webp" class="responsive-img" alt="GO语言基础__1">
+                            <img src="/medias/loading.gif" data-original="/medias/featureimages/20.webp" class="responsive-img" alt="GO语言实战__猜谜游戏">
                             
-                            <span class="card-title">GO语言基础__1</span>
+                            <span class="card-title">GO语言实战__猜谜游戏</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                基础语法
-Hello world
-使用package main表示属于main包的一部分（注意，如果不使用的话会导致报错）
-import 导入包（和python类似）
-12345678910package mainimport (	"fmt
+                                猜谜游戏规则介绍
+在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测 
+每次玩家需要输入一个数字 
+程序则会告诉玩家这个猜测的数字到底是高于还是低于那个秘密的随机数
+并且让玩家再次猜测 
+如果猜对了的话 就告诉玩家胜利并
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-17
                             </span>
                             <span class="publish-author">
                                 
@@ -1124,6 +1125,30 @@ import 导入包（和python类似）
         </div>
     </article>
 </main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a class="left btn-floating btn-large disabled">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">1 / 2</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a href="/categories/GO%E8%AF%AD%E8%A8%80/page/2/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
 
 
  <footer class="page-footer bg-color">
@@ -1197,7 +1222,7 @@ import 导入包（和python类似）
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.3k</span>
+                        class="white-color">17.3k</span>
             
             
             
