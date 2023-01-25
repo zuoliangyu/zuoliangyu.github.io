@@ -5,8 +5,22 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="
+    <meta name="keywords" content="性能优化, ">
+    <meta name="description" content="性能优化建议
+简介
+
+
+性能优化的前提是满足正确可靠、简洁清晰等质量因素
+性能优化是综合评估，有时候时间效率和空间效率可能对立
+针对G0语言特性，介绍G0相关的性能优化建议
+
+
+Benchmark
+
+如何使用
+
+
+性能表现需要实际数据衡量
 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -19,7 +33,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>左岚的博客</title>
+    <title>性能优化 | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -404,12 +418,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/00.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/04.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">性能优化</h1>
                 </div>
             </div>
         </div>
@@ -431,12 +445,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%80%A7%E8%83%BD/">
+                                <span class="chip bg-color">性能</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
+                                GO语言
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -445,28 +472,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-24
+                    2023-01-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-24
+                    2023-01-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    908
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -486,7 +513,129 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="/medias/loading.gif" data-original="https://raw.githubusercontent.com/zuoliangyu/blogimg/main/img202301241817321.jpg" alt="2"></p>
+                <h1>性能优化建议</h1>
+<h2 id="简介">简介</h2>
+<blockquote>
+<ul>
+<li>性能优化的前提是满足正确可靠、简洁清晰等质量因素</li>
+<li>性能优化是综合评估，有时候时间效率和空间效率可能对立</li>
+<li>针对G0语言特性，介绍G0相关的性能优化建议</li>
+</ul>
+</blockquote>
+<h2 id="Benchmark">Benchmark</h2>
+<blockquote>
+<p>如何使用</p>
+<ul>
+<li>
+<p>性能表现需要实际数据衡量</p>
+</li>
+<li>
+<p>Go语言提供了支持基准性能测试的benchmark工具</p>
+</li>
+<li>
+<pre><code class="language-shell">go test -bench=. -benchmem
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">结果说明</span><br><span class="line"></span><br><span class="line">![Snipaste_2023-01-25_17-16-10](https://glowing-seahorse-aea3b7.netlify.app/img/202301252242166.jpeg)</span><br><span class="line"></span><br><span class="line">- BenchmarkFib是测试函数名</span><br><span class="line">- -8表示GOMAXPROCS的值为8</span><br><span class="line">  - 在1.5版本后默认为cpu的核数</span><br><span class="line"></span><br><span class="line">- 1855870表示执行次数，即b.N</span><br><span class="line">- 602.5 ns/op 每次执行花费602.5ns</span><br><span class="line">- 0 B/op 每次申请多大的内存</span><br><span class="line">- 0 allcocs/op 每次执行申请几次内存</span><br><span class="line"></span><br><span class="line">## Slice 预分配内存</span><br><span class="line"></span><br><span class="line">- 尽可能在使用make()初始化切片时提供容量信息</span><br><span class="line"></span><br><span class="line">- &gt; ```go</span><br><span class="line">  &gt; func NoPreAlloc(size int) {</span><br><span class="line">  &gt; 	data := make([]int, 0)</span><br><span class="line">  &gt; 	for k := 0; k &lt; size; k++ {</span><br><span class="line">  &gt; 		data = append(data, k)</span><br><span class="line">  &gt; 	}</span><br><span class="line">  &gt; }</span><br><span class="line">  &gt; </span><br></pre></td></tr></tbody></table></figure>
+&gt;
+&gt; - 331.1ns/op 
+&gt;
+&gt; - 2040B/op
+&gt;
+&gt; <figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">PreAlloc</span><span class="params">(size <span class="type">int</span>)</span></span> {</span><br><span class="line">	data:=<span class="built_in">make</span>([]<span class="type">int</span>,<span class="number">0</span>, size)</span><br><span class="line">	<span class="keyword">for</span> k := <span class="number">0</span>; k &lt; size; k++ {</span><br><span class="line">		data = <span class="built_in">append</span>(data, k)</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+&gt;
+&gt; - 107.1 ns/op
+&gt; - 896 B/op
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>大内存未释放</p>
+<ul>
+<li>
+<p>在已有切片基础上创建切片，不会创建新的底层数组</p>
+</li>
+<li>
+<p>场景</p>
+<ul>
+<li>原切片较大，代码在原切片基础上新建小切片</li>
+<li>原底层数组在内存中有引用，得不到释放</li>
+</ul>
+</li>
+<li>
+<p>可使用copy替代re-slice</p>
+</li>
+<li>
+<pre><code class="language-go">func GetLastByslice(origin []int) []int {
+	return origin[len(origin)-2:]
+}
+func GetLastByCopy(origin []int) []int {
+	result := make([]int, 2)
+	copy(result, origin[len(origin)-2:])
+	return result
+}
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## map</span><br><span class="line"></span><br><span class="line">map预分配内存</span><br><span class="line"></span><br><span class="line">```go</span><br><span class="line">func NoPreAlloc(size int) {</span><br><span class="line">	data := make(map[int]int)</span><br><span class="line">	for i := 0; i &lt; size; i++ {</span><br><span class="line">		data[i] = i</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line">func PreAlloc(size int) {</span><br><span class="line">	data := make(map[int]int, size)</span><br><span class="line">	for i := 0; i &lt; size; i++ {</span><br><span class="line">		data[i] = i</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+</code></pre>
+</li>
+</ul>
+<p>分析</p>
+<blockquote>
+<ul>
+<li>不断向map中添加元素的操作会触发map的扩容</li>
+<li>提前分配好空间可以减少内存拷贝和Rehash的消耗</li>
+<li>建议根据实际需求提前预估好需要的空间</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="字符串处理">字符串处理</h2>
+<h3 id="string-Builder">string.Builder</h3>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Plus</span><span class="params">(n <span class="type">int</span>,str <span class="type">string</span>)</span></span><span class="type">string</span>{</span><br><span class="line">	s:=<span class="string">""</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++{</span><br><span class="line">	    s+=str</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> s</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">StrBuilder</span><span class="params">(n <span class="type">int</span> ,str <span class="type">string</span>)</span></span><span class="type">string</span>{</span><br><span class="line">	<span class="keyword">var</span> builder strings.Builder</span><br><span class="line">	<span class="keyword">for</span> i:=<span class="number">0</span>;i &lt; n; i++{</span><br><span class="line">	    builder.WriteString(str)</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> builder.String()</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>结论</p>
+<ul>
+<li>使用+拼接性能最差，strings.Builder,.bytes.Buffer相近，strings.Buffer更快</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>分析</p>
+<ul>
+<li>字符串在Go语言中是不可变类型，占用内存大小是固定的</li>
+<li>使用+每次都会重新分配内存</li>
+<li>strings.Builder,.bytes.Buffer底层都是[]byte数组</li>
+<li>内存扩容策略，不需要每次拼接重新分配内存</li>
+</ul>
+</blockquote>
+<h2 id="空结构体">空结构体</h2>
+<blockquote>
+<ul>
+<li>空结构体struct{}实例不占据任何的内存空间</li>
+<li>可作为各种场景下的占位符使用
+<ul>
+<li>节省资源</li>
+<li>空结构体本身具备很强的语义，即这里不需要任何值，仅作为占位符</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">EmptyStructMap</span><span class="params">(n <span class="type">int</span>)</span></span> {</span><br><span class="line">	m := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int</span>]<span class="keyword">struct</span>{})</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">00</span>; i &lt; n; i++ {</span><br><span class="line">		m[i] = <span class="keyword">struct</span>{}{}</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">BoolMap</span><span class="params">(n <span class="type">int</span>)</span></span> {</span><br><span class="line">	m := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int</span>]<span class="type">bool</span>)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ {</span><br><span class="line">		m[i] = <span class="literal">false</span></span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="atomic包">atomic包</h2>
+<blockquote>
+<ul>
+<li>锁的实现是通过操作系统来实现，属于系统调用</li>
+<li>atomic操作是通过硬件实现，效率比锁高</li>
+<li>sync.Mutex应该用来保护一段逻辑，不仅仅用于保护一个变量</li>
+<li>对于非数值操作，可以使用atomic.Value,能承载一个interface{}</li>
+</ul>
+</blockquote>
+<h2 id="总结">总结</h2>
+<blockquote>
+<ul>
+<li>避免常见的性能陷阱可以保证大部分程序的性能</li>
+<li>普通应用代码，不要一味地追求程序的性能</li>
+<li>越高级的性能优化手段越容易出现问题</li>
+<li>在满足正确可靠、简洁清晰的质量要求的前提下提高程序性能</li>
+</ul>
+</blockquote>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
             </div>
@@ -513,7 +662,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/p/0.html">http://example.com/p/0.html</a>
+                    <a href="http://example.com/p/fc854d4d.html">http://example.com/p/fc854d4d.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -550,7 +699,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%80%A7%E8%83%BD/">
+                                    <span class="chip bg-color">性能</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -632,13 +785,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/p/0.html">
+                <a href="/p/fc854d4d.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/00.webp" class="responsive-img" alt="">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/04.webp" class="responsive-img" alt="性能优化">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">性能优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -649,17 +802,29 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-25
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            haze
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    GO语言
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%80%A7%E8%83%BD/">
+                        <span class="chip bg-color">性能</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -935,7 +1100,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">17.3k</span>
+                        class="white-color">18.2k</span>
             
             
             
@@ -1319,7 +1484,7 @@ $(function () {
       src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"
     ></script>
     <script type="text/javascript" src="/js/fireworks.js"></script>
-  
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1332,5 +1497,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>
