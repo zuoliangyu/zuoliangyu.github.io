@@ -72,9 +72,9 @@ Benchmark
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="左岚的博客" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="左岚的博客" type="application/atom+xml">
 </head>
 
 
@@ -508,6 +508,9 @@ Benchmark
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -534,13 +537,43 @@ Benchmark
 </li>
 <li>
 <pre><code class="language-shell">go test -bench=. -benchmem
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">结果说明</span><br><span class="line"></span><br><span class="line">![Snipaste_2023-01-25_17-16-10](https://glowing-seahorse-aea3b7.netlify.app/img/202301252242166.jpeg)</span><br><span class="line"></span><br><span class="line">- BenchmarkFib是测试函数名</span><br><span class="line">- -8表示GOMAXPROCS的值为8</span><br><span class="line">  - 在1.5版本后默认为cpu的核数</span><br><span class="line"></span><br><span class="line">- 1855870表示执行次数，即b.N</span><br><span class="line">- 602.5 ns/op 每次执行花费602.5ns</span><br><span class="line">- 0 B/op 每次申请多大的内存</span><br><span class="line">- 0 allcocs/op 每次执行申请几次内存</span><br><span class="line"></span><br><span class="line">## Slice 预分配内存</span><br><span class="line"></span><br><span class="line">- 尽可能在使用make()初始化切片时提供容量信息</span><br><span class="line"></span><br><span class="line">- &gt; ```go</span><br><span class="line">  &gt; func NoPreAlloc(size int) {</span><br><span class="line">  &gt; 	data := make([]int, 0)</span><br><span class="line">  &gt; 	for k := 0; k &lt; size; k++ {</span><br><span class="line">  &gt; 		data = append(data, k)</span><br><span class="line">  &gt; 	}</span><br><span class="line">  &gt; }</span><br><span class="line">  &gt; </span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">
+结果说明
+
+![Snipaste_2023-01-25_17-16-10](https://glowing-seahorse-aea3b7.netlify.app/img/202301252242166.jpeg)
+
+- BenchmarkFib是测试函数名
+- -8表示GOMAXPROCS的值为8
+  - 在1.5版本后默认为cpu的核数
+
+- 1855870表示执行次数，即b.N
+- 602.5 ns/op 每次执行花费602.5ns
+- 0 B/op 每次申请多大的内存
+- 0 allcocs/op 每次执行申请几次内存
+
+## Slice 预分配内存
+
+- 尽可能在使用make()初始化切片时提供容量信息
+
+- &gt; ```go
+  &gt; func NoPreAlloc(size int) {
+  &gt; 	data := make([]int, 0)
+  &gt; 	for k := 0; k &lt; size; k++ {
+  &gt; 		data = append(data, k)
+  &gt; 	}
+  &gt; }
+  &gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 &gt;
 &gt; - 331.1ns/op 
 &gt;
 &gt; - 2040B/op
 &gt;
-&gt; <figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">PreAlloc</span><span class="params">(size <span class="type">int</span>)</span></span> {</span><br><span class="line">	data:=<span class="built_in">make</span>([]<span class="type">int</span>,<span class="number">0</span>, size)</span><br><span class="line">	<span class="keyword">for</span> k := <span class="number">0</span>; k &lt; size; k++ {</span><br><span class="line">		data = <span class="built_in">append</span>(data, k)</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+&gt; <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">PreAlloc</span><span class="token punctuation">(</span>size <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	data<span class="token operator">:=</span><span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span> size<span class="token punctuation">)</span>
+	<span class="token keyword">for</span> k <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> k<span class="token operator">++</span> <span class="token punctuation">{</span>
+		data <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> k<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 &gt;
 &gt; - 107.1 ns/op
 &gt; - 896 B/op
@@ -573,7 +606,25 @@ func GetLastByCopy(origin []int) []int {
 	copy(result, origin[len(origin)-2:])
 	return result
 }
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## map</span><br><span class="line"></span><br><span class="line">map预分配内存</span><br><span class="line"></span><br><span class="line">```go</span><br><span class="line">func NoPreAlloc(size int) {</span><br><span class="line">	data := make(map[int]int)</span><br><span class="line">	for i := 0; i &lt; size; i++ {</span><br><span class="line">		data[i] = i</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line">func PreAlloc(size int) {</span><br><span class="line">	data := make(map[int]int, size)</span><br><span class="line">	for i := 0; i &lt; size; i++ {</span><br><span class="line">		data[i] = i</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">
+## map
+
+map预分配内存
+
+```go
+func NoPreAlloc(size int) {
+	data := make(map[int]int)
+	for i := 0; i &lt; size; i++ {
+		data[i] = i
+	}
+}
+func PreAlloc(size int) {
+	data := make(map[int]int, size)
+	for i := 0; i &lt; size; i++ {
+		data[i] = i
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </code></pre>
 </li>
@@ -589,7 +640,20 @@ func GetLastByCopy(origin []int) []int {
 </blockquote>
 <h2 id="字符串处理">字符串处理</h2>
 <h3 id="string-Builder">string.Builder</h3>
-<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Plus</span><span class="params">(n <span class="type">int</span>,str <span class="type">string</span>)</span></span><span class="type">string</span>{</span><br><span class="line">	s:=<span class="string">""</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++{</span><br><span class="line">	    s+=str</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> s</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">StrBuilder</span><span class="params">(n <span class="type">int</span> ,str <span class="type">string</span>)</span></span><span class="type">string</span>{</span><br><span class="line">	<span class="keyword">var</span> builder strings.Builder</span><br><span class="line">	<span class="keyword">for</span> i:=<span class="number">0</span>;i &lt; n; i++{</span><br><span class="line">	    builder.WriteString(str)</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> builder.String()</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">Plus</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span>str <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+	s<span class="token operator">:=</span><span class="token string">""</span>
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">{</span>
+	    s<span class="token operator">+=</span>str
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> s
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">StrBuilder</span><span class="token punctuation">(</span>n <span class="token builtin">int</span> <span class="token punctuation">,</span>str <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+	<span class="token keyword">var</span> builder strings<span class="token punctuation">.</span>Builder
+	<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">{</span>
+	    builder<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> builder<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>结论</p>
 <ul>
@@ -617,7 +681,18 @@ func GetLastByCopy(origin []int) []int {
 </li>
 </ul>
 </blockquote>
-<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">EmptyStructMap</span><span class="params">(n <span class="type">int</span>)</span></span> {</span><br><span class="line">	m := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int</span>]<span class="keyword">struct</span>{})</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">00</span>; i &lt; n; i++ {</span><br><span class="line">		m[i] = <span class="keyword">struct</span>{}{}</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">BoolMap</span><span class="params">(n <span class="type">int</span>)</span></span> {</span><br><span class="line">	m := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int</span>]<span class="type">bool</span>)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ {</span><br><span class="line">		m[i] = <span class="literal">false</span></span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">EmptyStructMap</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	m <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">00</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		m<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">BoolMap</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	m <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">bool</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		m<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="atomic包">atomic包</h2>
 <blockquote>
 <ul>
@@ -926,6 +1001,9 @@ func GetLastByCopy(origin []int) []int {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
 
 <!-- 代码语言 -->
 
@@ -1100,7 +1178,7 @@ func GetLastByCopy(origin []int) []int {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">18.2k</span>
+                        class="white-color">18.3k</span>
             
             
             

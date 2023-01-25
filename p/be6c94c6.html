@@ -71,9 +71,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="左岚的博客" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="左岚的博客" type="application/atom+xml">
 </head>
 
 
@@ -507,6 +507,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -576,7 +579,8 @@
 <ul>
 <li>不需要注释实现接口的方法，下面的方法是错误的</li>
 </ul>
-<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Read implements the io.Reader interface</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(r *FileReader)</span></span> Read(buf []<span class="type">byte</span>) (<span class="type">int</span>,<span class="type">error</span>)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// Read implements the io.Reader interface</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>FileReader<span class="token punctuation">)</span> <span class="token function">Read</span><span class="token punctuation">(</span>buf <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span><span class="token builtin">error</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </blockquote>
 <ul>
 <li>注释应该做的
@@ -634,7 +638,10 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Good</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c*Client)</span></span> send(req*Request,deadline time.Time){}</span><br><span class="line"><span class="comment">//Bad</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c*Client)</span></span> send(req*Request,t time.Time){}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// Good</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c<span class="token operator">*</span>Client<span class="token punctuation">)</span> <span class="token function">send</span><span class="token punctuation">(</span>req<span class="token operator">*</span>Request<span class="token punctuation">,</span>deadline time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">//Bad</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c<span class="token operator">*</span>Client<span class="token punctuation">)</span> <span class="token function">send</span><span class="token punctuation">(</span>req<span class="token operator">*</span>Request<span class="token punctuation">,</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
 <h4 id="function">function</h4>
 <blockquote>
@@ -668,7 +675,17 @@
 <ul>
 <li>
 <p>如果两个分支中都包含return语句，则可以去除冗余的else</p>
-<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Bad</span></span><br><span class="line"><span class="keyword">if</span> foo{</span><br><span class="line">	<span class="keyword">return</span> x</span><br><span class="line">} <span class="keyword">else</span>{</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">}</span><br><span class="line"><span class="comment">//Good </span></span><br><span class="line"><span class="keyword">if</span> foo {</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line">}</span><br><span class="line"><span class="keyword">return</span> <span class="literal">nil</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">//Bad</span>
+<span class="token keyword">if</span> foo<span class="token punctuation">{</span>
+	<span class="token keyword">return</span> x
+<span class="token punctuation">}</span> <span class="token keyword">else</span><span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token boolean">nil</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//Good </span>
+<span class="token keyword">if</span> foo <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> <span class="token boolean">nil</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </li>
@@ -693,7 +710,28 @@
 </li>
 <li>
 <p>如果后续正常流程需要增加一步操作，调用新的函数，则又会增加一层嵌套</p>
-<figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Bad</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">OneFunc</span><span class="params">()</span></span> <span class="type">error</span> {</span><br><span class="line">	err := doSomething()</span><br><span class="line">	<span class="keyword">if</span> err == <span class="literal">nil</span> {</span><br><span class="line">		err := doAnotherThing()</span><br><span class="line">		<span class="keyword">if</span> err == <span class="literal">nil</span> {</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">nil</span> <span class="comment">// normal case</span></span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> err</span><br><span class="line">}</span><br><span class="line"><span class="comment">//Good</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">OneFunc</span><span class="params">()</span></span> <span class="type">error</span> {</span><br><span class="line">	<span class="keyword">if</span> err := doSomething(); err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span> err := doAnotherthing(); err != <span class="literal">nil</span> {</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span> <span class="comment">//normal case</span></span><br><span class="line">} </span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">//Bad</span>
+<span class="token keyword">func</span> <span class="token function">OneFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
+	err <span class="token operator">:=</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		err <span class="token operator">:=</span> <span class="token function">doAnotherThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> <span class="token boolean">nil</span> <span class="token comment">// normal case</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">return</span> err
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> err
+<span class="token punctuation">}</span>
+<span class="token comment">//Good</span>
+<span class="token keyword">func</span> <span class="token function">OneFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> err <span class="token operator">:=</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> err
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> err <span class="token operator">:=</span> <span class="token function">doAnotherthing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> err
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token boolean">nil</span> <span class="token comment">//normal case</span>
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </blockquote>
@@ -982,6 +1020,9 @@
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
 
 <!-- 代码语言 -->
 
@@ -1156,7 +1197,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">18.2k</span>
+                        class="white-color">18.3k</span>
             
             
             
