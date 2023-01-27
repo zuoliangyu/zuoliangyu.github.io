@@ -5,15 +5,20 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="GO语言实战__猜谜游戏, ">
-    <meta name="description" content="猜谜游戏
-规则介绍
+    <meta name="keywords" content="性能优化实战, ">
+    <meta name="description" content="pprof-采样过程和原理cpu
 
-在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测
-每次玩家需要输入一个数字
-程序则会告诉玩家这个猜测的数字到底是高于还是低于那个秘密的随机数
-并且让玩家再次猜测
-如果猜对了的话 就告诉玩家胜利并且">
+采样对象：函数调用和它们占用的时间
+采样率：100次/秒，固定值
+采样时间：从手动启动到手动结束
+
+操作系统
+
+每1Oms向进程发送一次SIGPROF信号
+
+
+进程
+每次接收到SIGPROF会记录调用堆栈">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -25,7 +30,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>GO语言实战__猜谜游戏 | 左岚的博客</title>
+    <title>性能优化实战 | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -410,12 +415,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/06.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">GO语言实战__猜谜游戏</h1>
+                    <h1 class="description center-align post-title">性能优化实战</h1>
                 </div>
             </div>
         </div>
@@ -437,9 +442,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%80%A7%E8%83%BD/">
+                                <span class="chip bg-color">性能</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -460,21 +469,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-17
+                    2023-01-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-20
+                    2023-01-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    716
+                    946
                 </div>
                 
 
@@ -504,147 +513,178 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>猜谜游戏</h1>
-<h2 id="规则介绍">规则介绍</h2>
-<blockquote>
-<p>在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测</p>
-<p>每次玩家需要输入一个数字</p>
-<p>程序则会告诉玩家这个猜测的数字到底是高于还是低于那个秘密的随机数</p>
-<p>并且让玩家再次猜测</p>
-<p>如果猜对了的话 就告诉玩家胜利并且退出程序</p>
-</blockquote>
-<h2 id="操作步骤">操作步骤</h2>
-<h3 id="生成随机数">生成随机数</h3>
-<blockquote>
-<p>使用math/rand中的包rand.Intn() 生成随机数不对劲，一直是81</p>
-</blockquote>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go">maxNum <span class="token operator">:=</span> <span class="token number">100</span>
-secretNumber <span class="token operator">:=</span> rand<span class="token punctuation">.</span><span class="token function">Intn</span><span class="token punctuation">(</span>maxNum<span class="token punctuation">)</span> <span class="token comment">//生成随机数</span>
-fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"The secret is "</span><span class="token punctuation">,</span> secretNumber<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>进行修改后使用时间戳time生成随机数</p>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go">maxNum <span class="token operator">:=</span> <span class="token number">100</span>
-rand<span class="token punctuation">.</span><span class="token function">Seed</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">UnixNano</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-secretNumber <span class="token operator">:=</span> rand<span class="token punctuation">.</span><span class="token function">Intn</span><span class="token punctuation">(</span>maxNum<span class="token punctuation">)</span> <span class="token comment">//生成随机数</span>
-fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"The secret is "</span><span class="token punctuation">,</span> secretNumber<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="实现用户的输入输出">实现用户的输入输出</h3>
-<blockquote>
-<p>使用Stdin输入流来进行用户输入数据的获取</p>
-<p>并且使用简单的if判断用户输入的数据是否有误</p>
+                <h1 id="pprof-采样过程和原理"><a href="#pprof-采样过程和原理" class="headerlink" title="pprof-采样过程和原理"></a>pprof-采样过程和原理</h1><h2 id="cpu"><a href="#cpu" class="headerlink" title="cpu"></a>cpu</h2><blockquote>
 <ul>
-<li>
-<p>读取数据时先去掉流中的换行符</p>
+<li>采样对象：函数调用和它们占用的时间</li>
+<li>采样率：100次/秒，固定值</li>
+<li><p>采样时间：从手动启动到手动结束</p>
 </li>
-<li>
-<p>再使用Atoi函数将读取到的数据流字符串转换为数字</p>
+<li><p>操作系统</p>
+<ul>
+<li>每1Oms向进程发送一次SIGPROF信号</li>
+</ul>
+</li>
+<li>进程<ul>
+<li>每次接收到SIGPROF会记录调用堆栈</li>
+</ul>
+</li>
+<li>写缓冲<ul>
+<li>每100ms读取已经记录的调用栈并写入输出流</li>
+</ul>
 </li>
 </ul>
 </blockquote>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go">
-<span class="token comment">//用户输入</span>
-fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Please input your guess"</span><span class="token punctuation">)</span>
-reader <span class="token operator">:=</span> bufio<span class="token punctuation">.</span><span class="token function">NewReader</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>Stdin<span class="token punctuation">)</span>
-input<span class="token punctuation">,</span> err <span class="token operator">:=</span> reader<span class="token punctuation">.</span><span class="token function">ReadString</span><span class="token punctuation">(</span><span class="token char">'\n'</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"An error occured while reading input. Please try again"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
-	<span class="token keyword">return</span>
-<span class="token punctuation">}</span>
-input <span class="token operator">=</span> strings<span class="token punctuation">.</span><span class="token function">Trim</span><span class="token punctuation">(</span>input<span class="token punctuation">,</span> <span class="token string">"\r\n"</span><span class="token punctuation">)</span>
-
-guess<span class="token punctuation">,</span> err <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">Atoi</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span>
-<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Invalid input. Please enter an integer value"</span><span class="token punctuation">)</span>
-	<span class="token keyword">return</span>
-<span class="token punctuation">}</span>
-fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"You guess is"</span><span class="token punctuation">,</span> guess<span class="token punctuation">)</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="实现判断逻辑">实现判断逻辑</h3>
-<blockquote>
-<p>使用if-else if-else的方法来进行提醒用户输入的数据与真实值的差别</p>
+<h2 id="heap-堆内存"><a href="#heap-堆内存" class="headerlink" title="heap-堆内存"></a>heap-堆内存</h2><blockquote>
+<ul>
+<li>采样程序通过内存分配器在堆上分配和释放的内存，记录分配/释放的大小和数量</li>
+<li>采样率：每分配512KB记录一次，可在运行开头修改，1为每次分配均记录</li>
+<li>采样时间：从程序运行开始到采样时</li>
+<li>采样指标：alloc_.space,alloc._objects,inuse_space,inuse._objects</li>
+<li>计算方式：inuse=alloc-free</li>
+</ul>
 </blockquote>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">if</span> guess <span class="token operator">&gt;</span> secretNumber <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Your guess is bigger than the secret number. Please try again"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> guess <span class="token operator">&lt;</span> secretNumber <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Your guess is smaller than the secret number. Please try again"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Correct, you Legend!"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="实现游戏循环">实现游戏循环</h3>
-<blockquote>
-<p>用户在猜测一次数据后就会退出，需要使用循环来进行循环猜想数据</p>
-<p>在GO中没有while循环语句，所以在这里使用for循环语句来进行书写</p>
+<h2 id="Goroutine-协程-amp-ThreadCreate-线程创建"><a href="#Goroutine-协程-amp-ThreadCreate-线程创建" class="headerlink" title="Goroutine-协程&amp;ThreadCreate-线程创建"></a>Goroutine-协程&amp;ThreadCreate-线程创建</h2><blockquote>
+<ul>
+<li>Goroutine<ul>
+<li>记录所有用户发起且在运行中的goroutine(即入口非runtime;开头的)runtime.main的调用栈信息</li>
+</ul>
+</li>
+<li>ThreadCreate<ul>
+<li>记录程序创建的所有系统线程的信息</li>
+</ul>
+</li>
+</ul>
 </blockquote>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">for</span> <span class="token punctuation">{</span>
-		input<span class="token punctuation">,</span> err <span class="token operator">:=</span> reader<span class="token punctuation">.</span><span class="token function">ReadString</span><span class="token punctuation">(</span><span class="token char">'\n'</span><span class="token punctuation">)</span>
-		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"An error occured while reading input. Please try again"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
-			<span class="token keyword">continue</span>
-		<span class="token punctuation">}</span>
-		input <span class="token operator">=</span> strings<span class="token punctuation">.</span><span class="token function">Trim</span><span class="token punctuation">(</span>input<span class="token punctuation">,</span> <span class="token string">"\r\n"</span><span class="token punctuation">)</span>
-
-		guess<span class="token punctuation">,</span> err <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">Atoi</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span>
-		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Invalid input. Please enter an integer value"</span><span class="token punctuation">)</span>
-			<span class="token keyword">continue</span>
-		<span class="token punctuation">}</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"You guess is"</span><span class="token punctuation">,</span> guess<span class="token punctuation">)</span>
-		<span class="token keyword">if</span> guess <span class="token operator">&gt;</span> secretNumber <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Your guess is bigger than the secret number. Please try again"</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> guess <span class="token operator">&lt;</span> secretNumber <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Your guess is smaller than the secret number. Please try again"</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Correct, you Legend!"</span><span class="token punctuation">)</span>
-			<span class="token keyword">break</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="整体实现">整体实现</h2>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"bufio"</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"math/rand"</span>
-	<span class="token string">"os"</span>
-	<span class="token string">"strconv"</span>
-	<span class="token string">"strings"</span>
-	<span class="token string">"time"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	maxNum <span class="token operator">:=</span> <span class="token number">100</span>
-	rand<span class="token punctuation">.</span><span class="token function">Seed</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">UnixNano</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-	secretNumber <span class="token operator">:=</span> rand<span class="token punctuation">.</span><span class="token function">Intn</span><span class="token punctuation">(</span>maxNum<span class="token punctuation">)</span>
-	<span class="token comment">// fmt.Println("The secret number is ", secretNumber)</span>
-
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Please input your guess"</span><span class="token punctuation">)</span>
-	reader <span class="token operator">:=</span> bufio<span class="token punctuation">.</span><span class="token function">NewReader</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>Stdin<span class="token punctuation">)</span>
-	<span class="token keyword">for</span> <span class="token punctuation">{</span>
-		input<span class="token punctuation">,</span> err <span class="token operator">:=</span> reader<span class="token punctuation">.</span><span class="token function">ReadString</span><span class="token punctuation">(</span><span class="token char">'\n'</span><span class="token punctuation">)</span>
-		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"An error occured while reading input. Please try again"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
-			<span class="token keyword">continue</span>
-		<span class="token punctuation">}</span>
-		input <span class="token operator">=</span> strings<span class="token punctuation">.</span><span class="token function">Trim</span><span class="token punctuation">(</span>input<span class="token punctuation">,</span> <span class="token string">"\r\n"</span><span class="token punctuation">)</span>
-
-		guess<span class="token punctuation">,</span> err <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">Atoi</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span>
-		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Invalid input. Please enter an integer value"</span><span class="token punctuation">)</span>
-			<span class="token keyword">continue</span>
-		<span class="token punctuation">}</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"You guess is"</span><span class="token punctuation">,</span> guess<span class="token punctuation">)</span>
-		<span class="token keyword">if</span> guess <span class="token operator">&gt;</span> secretNumber <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Your guess is bigger than the secret number. Please try again"</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> guess <span class="token operator">&lt;</span> secretNumber <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Your guess is smaller than the secret number. Please try again"</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Correct, you Legend!"</span><span class="token punctuation">)</span>
-			<span class="token keyword">break</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Block-阻塞-amp-Mutex-锁"><a href="#Block-阻塞-amp-Mutex-锁" class="headerlink" title="Block-阻塞&amp;Mutex-锁"></a>Block-阻塞&amp;Mutex-锁</h2><blockquote>
+<p>阻塞操作</p>
+<ul>
+<li>采样阻塞操作的次数和耗时</li>
+<li>采样率：阻塞耗时超过阈值的才会被记录，1为每次阻塞均记录</li>
+</ul>
+<p>锁竞争</p>
+<ul>
+<li>采样争抢锁的次数和耗时</li>
+<li>采样率：只记录固定比例的锁操作，1为每次加锁均记录</li>
+</ul>
+</blockquote>
+<h1 id="性能调优案例"><a href="#性能调优案例" class="headerlink" title="性能调优案例"></a>性能调优案例</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>介绍实际业务服务性能优化的案例</p>
+<p>对逻辑相对复杂的程序如何进行性能调优</p>
+<ul>
+<li>业务服务优化</li>
+<li>基础库优化</li>
+<li>Go语言优化</li>
+</ul>
+</blockquote>
+<h2 id="业务服务优化"><a href="#业务服务优化" class="headerlink" title="业务服务优化"></a>业务服务优化</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><blockquote>
+<ul>
+<li>服务：能单独部署，承载一定功能的程序</li>
+<li>依赖：Service A的功能实现依赖Service B的响应结果，称为Service A依赖Service B</li>
+<li>调用链路：能支持一个接口请求的相关服务集合及其相互之间的依赖关系</li>
+<li>基础库：公共的工具包、中间件</li>
+</ul>
+</blockquote>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><blockquote>
+<ul>
+<li>建立服务性能评估手段</li>
+<li>分析性能数据，定位性能瓶颈</li>
+<li>重点优化项改造</li>
+<li>优化效果验证</li>
+</ul>
+</blockquote>
+<h3 id="建立服务性能评估手段"><a href="#建立服务性能评估手段" class="headerlink" title="建立服务性能评估手段"></a>建立服务性能评估手段</h3><blockquote>
+<ul>
+<li>服务性能评估方式<ul>
+<li>单独benchmark无法满足复杂逻辑分析</li>
+<li>不同负载情况下性能表现差异</li>
+</ul>
+</li>
+<li>请求流量构造<ul>
+<li>不同请求参数覆盖逻辑不同</li>
+<li>线上真实流量情况</li>
+</ul>
+</li>
+<li>压测范围<ul>
+<li>单机器压测</li>
+<li>集群压测</li>
+</ul>
+</li>
+<li>性能数据采集<ul>
+<li>单机性能数据</li>
+<li>集群性能数据</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="重点优化项改造"><a href="#重点优化项改造" class="headerlink" title="重点优化项改造"></a>重点优化项改造</h3><blockquote>
+<ul>
+<li>正确性是基础</li>
+<li>响应数据diff<ul>
+<li>线上请求数据录制回放</li>
+<li>新旧逻辑接口数据diff</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="优化效果验证"><a href="#优化效果验证" class="headerlink" title="优化效果验证"></a>优化效果验证</h3><blockquote>
+<ul>
+<li>重复压测验证</li>
+<li>上线评估优化效果<ul>
+<li>关注服务监控</li>
+<li>逐步放量</li>
+<li>收集性能数据</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="进一步优化，服务整体链路分析"><a href="#进一步优化，服务整体链路分析" class="headerlink" title="进一步优化，服务整体链路分析"></a>进一步优化，服务整体链路分析</h3><blockquote>
+<ul>
+<li>规范上游服务调用接口，明确场景需求</li>
+<li>分析链路，通过业务流程优化提升服务性能</li>
+</ul>
+</blockquote>
+<h2 id="基础库优化"><a href="#基础库优化" class="headerlink" title="基础库优化"></a>基础库优化</h2><h3 id="AB实验SDK的优化"><a href="#AB实验SDK的优化" class="headerlink" title="AB实验SDK的优化"></a>AB实验SDK的优化</h3><blockquote>
+<ul>
+<li>分析基础库核心逻辑和性能瓶颈<ul>
+<li>设计完善改造方案</li>
+<li>数据按需获取</li>
+<li>数据序列化协议优化</li>
+</ul>
+</li>
+<li>内部压测验证</li>
+<li>推广业务服务落地验证</li>
+</ul>
+</blockquote>
+<h2 id="Go语言优化"><a href="#Go语言优化" class="headerlink" title="Go语言优化"></a>Go语言优化</h2><h3 id="编译器-amp-运行时优化"><a href="#编译器-amp-运行时优化" class="headerlink" title="编译器&amp;运行时优化"></a>编译器&amp;运行时优化</h3><blockquote>
+<ul>
+<li>优化内存分配策略</li>
+<li>优化代码编译流程，生成更高效的程序</li>
+<li>内部压测验证</li>
+<li>推广业务服务落地验证</li>
+</ul>
+<p>优点</p>
+<ul>
+<li>接入简单，只需要调整编译配置</li>
+<li>通用性强</li>
+</ul>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<ul>
+<li>性能调优原则<ul>
+<li>要依靠数据不是猜测</li>
+</ul>
+</li>
+<li>性能分析工具pprof<ul>
+<li>熟练使用pprof工具排查性能问题并了解其基本原理</li>
+</ul>
+</li>
+<li>性能调优<ul>
+<li>保证正确性</li>
+<li>定位主要瓶颈</li>
+</ul>
+</li>
+</ul>
+</blockquote>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
             </div>
@@ -671,7 +711,7 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/p/27f5.html">http://example.com/p/27f5.html</a>
+                    <a href="http://example.com/p/b0de7022.html">http://example.com/p/b0de7022.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -708,7 +748,11 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%80%A7%E8%83%BD/">
+                                    <span class="chip bg-color">性能</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -785,17 +829,18 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/p/5fb4.html">
+                <a href="/p/b0de7022.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/05.webp" class="responsive-img" alt="GO语言实战__COCKS5">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/06.webp" class="responsive-img" alt="性能优化实战">
                         
-                        <span class="card-title">GO语言实战__COCKS5</span>
+                        <span class="card-title">性能优化实战</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -805,9 +850,59 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-19
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    GO语言
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%80%A7%E8%83%BD/">
+                        <span class="chip bg-color">性能</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/p/e63d073c.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.webp" class="responsive-img" alt="性能优化工具">
+                        
+                        <span class="card-title">性能优化工具</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -821,45 +916,12 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
                     </div>
                 </div>
                 
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/p/e005.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="GO语言实战__在线词典">
-                        
-                        <span class="card-title">GO语言实战__在线词典</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-17
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%80%A7%E8%83%BD/">
+                        <span class="chip bg-color">性能</span>
+                    </a>
+                    
                 </div>
                 
             </div>
