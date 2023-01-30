@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-01-29T03:13:09.441Z</updated>
+  <updated>2023-01-30T03:47:53.269Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,74 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>编译器和静态分析</title>
+    <link href="http://example.com/p/97755212.html"/>
+    <id>http://example.com/p/97755212.html</id>
+    <published>2023-01-30T02:09:35.000Z</published>
+    <updated>2023-01-30T03:47:53.269Z</updated>
+    
+    <content type="html"><![CDATA[<h1>编译器介绍</h1><h2 id="编译器的结构">编译器的结构</h2><blockquote><ul><li>重要的系统软件<ul><li>识别符合语法和非法的程序</li><li>生成正确且高效的代码</li></ul></li><li>分析部分（前端front end)<ul><li>词法分析，生成词素(lexeme)</li><li>语法分析，生成语法树</li><li>语义分析，收集类型信息，进行语义检查</li><li>中间代码生成，生成intermediate representation(R</li></ul></li><li>综合部分（后端back end)<ul><li>代码优化，机器无关优化，生成优化后的IR</li><li>代码生成，生成目标代码</li></ul></li></ul></blockquote><p><img src="https://glowing-seahorse-aea3b7.netlify.app/img/202301301014489.jpg" alt="Snipaste_2023-01-30_10-13-59"></p><h2 id="静态分析">静态分析</h2><blockquote><ul><li>静态分析：不执行程序代码，推导程序的行为，分析程序的性质。</li><li>控制流(Control flow):程序执行的流程</li><li>数据流(Data flow):数据在控制流上的传递</li><li>通过分析控制流和数据流，我们可以知道更多关于程序的性质(properties)</li><li>根据这些优化代码</li></ul></blockquote><p><img src="https://glowing-seahorse-aea3b7.netlify.app/img/202301301021040.jpg" alt="Snipaste_2023-01-30_10-21-38"></p><h2 id="过程内分析和过程间分析">过程内分析和过程间分析</h2><blockquote><ul><li>过程内分析(Intra-procedural analysis)<ul><li>仅在函数内部进行分析</li></ul></li><li>过程间分析(Inter-procedural analysis))<ul><li>考虑函数调用时参数传递和返回值的数据流和控制流</li></ul></li></ul></blockquote><blockquote><ul><li>为什么过程间分析是个问题？<ul><li>需要通过数据流分析得知i的具体类型，才能知道i.foo()调用的是哪个foo()</li><li>根据i的具体类型，产生了新的控制流，i.foo(),分析继续</li><li>过程间分析需要同时分析控制流和数据流——联合求解，比较复杂</li></ul></li></ul></blockquote><h1>Go编译器优化</h1><blockquote><ul><li>为什么做编译器优化<ul><li>用户无感知，重新编译即可获得性能收益</li><li>通用性优化</li></ul></li><li>现状<ul><li>采用的优化少</li><li>编译时间较短，没有进行较复杂的代码分析和优化</li></ul></li><li>编译优化的思路<ul><li>场景：面向后端长期执行任务</li><li>Tradeoff:用编译时间换取更高效的机器码</li></ul></li><li>Beast mode<ul><li>函数内联</li><li>逃逸分析</li><li>默认栈大小调整</li><li>边界检查消除</li><li>循环展开</li></ul></li></ul></blockquote><h2 id="函数内联（Inlining）">函数内联（Inlining）</h2><blockquote><ul><li>内联：将被调用函数的函数体(callee)的副本替换到调用位置(caller)上，同时重写代码以反映参数的绑定</li><li>优点<ul><li>消除函数调用开销，例如传递参数、保存寄存器等</li><li>将过程间分析转化为过程内分析，帮助其他优化，例如逃逸分析</li></ul></li></ul></blockquote><blockquote><ul><li>函数内联能多大程度影响性能？一使用micro-benchmark验证一下~<img src="https://glowing-seahorse-aea3b7.netlify.app/img/202301301124602.jpg" alt="Snipaste_2023-01-30_11-24-03"></li></ul></blockquote><blockquote><ul><li>缺点</li><li>函数体变大，instruction cache (icache)不友好</li><li>编译生成的G0镜像变大</li></ul></blockquote><blockquote><ul><li>函数内联在<strong>大多数情况下</strong>是正向优化</li><li>内联策略<ul><li>调用和被调函数的规模</li></ul></li></ul></blockquote><h3 id="BeastMode">BeastMode</h3><blockquote><ul><li>Go函数内联受到的限制较多<ul><li>语言特性，例如interface,defer等，限制了函数内联</li><li>内联策略非常保守</li></ul></li><li>Beast mode:调整函数内联的策略，使更多函数被内联<ul><li>降低函数调用的开销</li><li>增加了其他优化的机会：逃逸分析</li></ul></li><li>开销<ul><li>G0镜像增加~10%</li><li>编译时间增加</li></ul></li></ul></blockquote><h2 id="逃逸分析">逃逸分析</h2><blockquote><ul><li>逃逸分析：分析代码中指针的动态作用域：指针在何处可以被访问</li><li>大致思路<ul><li>从对象分配处出发，沿着控制流，观察对象的数据流</li><li>若发现指针p在当前作用域S:<ul><li>作为参数传递给其他函数</li><li>传递给全局变量</li><li>传递给其他的goroutine</li><li>传递给已逃逸的指针指向的对象</li></ul></li><li>则指针p指向的对像逃逸出S,反之则没有逃逸出S</li></ul></li><li>Beast mode:函数内联拓展了函数边界，更多对象不逃逸</li><li>优化：未逃逸的对象可以在栈上分配<ul><li>对象在栈上分配和回收很快：移动Sp</li><li>减少在heap上的分配，降低GC负担</li></ul></li></ul></blockquote><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1&gt;编译器介绍&lt;/h1&gt;
+&lt;h2 id=&quot;编译器的结构&quot;&gt;编译器的结构&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;重要的系统软件
+&lt;ul&gt;
+&lt;li&gt;识别符合语法和非法的程序&lt;/li&gt;
+&lt;li&gt;生成正确且高效的代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;分析部分</summary>
+      
+    
+    
+    
+    <category term="GO语言" scheme="http://example.com/categories/GO%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="性能优化" scheme="http://example.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GO内存管理</title>
+    <link href="http://example.com/p/5504392c.html"/>
+    <id>http://example.com/p/5504392c.html</id>
+    <published>2023-01-29T03:46:48.000Z</published>
+    <updated>2023-01-30T03:47:45.622Z</updated>
+    
+    <content type="html"><![CDATA[<h1>Go内存管理</h1><h2 id="Go内存分配">Go内存分配</h2><h3 id="分块">分块</h3><blockquote><ul><li><p>目标： 为对象在heap上分配内存</p></li><li><p>提前将内存分块</p><ul><li>调用系统调用mmap()向OS申请一大块内存，例如4MB</li><li>先将内存划分成大块，例如8KB,称作mspan</li><li>再将大块继续划分成<strong>特定大小</strong>的小块，用于对象分配</li><li>noscan mspan:分配不包含指针的对象——GC不需要扫描</li><li>scan mspan:分配包含指针的对象——GC需要扫描</li></ul></li><li><p>对象分配</p></li></ul></blockquote><h3 id="缓存">缓存</h3><blockquote><ul><li>TCMalloc:thread caching</li><li>每个p包含一个mcache用于快速分配，用于为绑定于p上的g分配对象</li><li>mcache管理一组mspan</li><li>当mcache中的mspan分配完毕，向mcentral申请带有未分配块的mspan</li><li>当mspan中没有分配的对象，mspan会被缓存在mcentral中，而不是立刻释放并归还给OS</li><li><img src="https://glowing-seahorse-aea3b7.netlify.app/img/202301301147176.jpeg" alt="Snipaste_2023-01-29_17-24-13"></li></ul></blockquote><h2 id="Go内存管理优化">Go内存管理优化</h2><blockquote><ul><li>对象分配是非常高频的操作：每秒分配GB级别的内存</li><li>小对像占比较高</li><li>Go内存分配比较耗时<ul><li>分配路径长：g-&gt;m-&gt;p-&gt;mcache-&gt;mspan-&gt;memory block-&gt;return pointer</li><li>pprof:对象分配的函数是最频繁调用的函数之一</li></ul></li></ul></blockquote><h2 id="优化方案Balanced-GC">优化方案Balanced GC</h2><blockquote><ul><li>每个g都绑定一大块内存(1KB),称作goroutine allocation buffer(GAB)</li><li>GAB用于noscan类型的小对象分配：&lt;128B</li><li>使用三个指针维护GAB:baSe,end,top</li><li>Bump pointer(指针碰撞)风格对像分配<ul><li>无须和其他分配请求互斥</li><li>分配动作简单高效</li></ul></li></ul></blockquote><blockquote><ul><li>GAB对于Go内存管理来说是一个大对象</li><li>本质：将多个小对象的分配合并成一次大对象的分配</li><li>问题：GAB的对象分配方式会导致内存被延迟释放</li><li>方案：移动GAB中存活的对象<ul><li>当GAB总大小超过一定阈值时，将GAB中存活的对象复制到另外分配的GAB中</li><li>原先的GAB可以释放，避免内存泄漏</li><li>本质：用copying GC的算法管理小对像<ul><li>根据对象的生命周期，使用不同的标记和清理策略</li></ul></li></ul></li></ul></blockquote><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1&gt;Go内存管理&lt;/h1&gt;
+&lt;h2 id=&quot;Go内存分配&quot;&gt;Go内存分配&lt;/h2&gt;
+&lt;h3 id=&quot;分块&quot;&gt;分块&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;目标： 为对象在heap上分配内存&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提前将内存分块&lt;/p&gt;
+&lt;u</summary>
+      
+    
+    
+    
+    <category term="GO语言" scheme="http://example.com/categories/GO%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="性能优化" scheme="http://example.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>使用app designer配置simulink</title>

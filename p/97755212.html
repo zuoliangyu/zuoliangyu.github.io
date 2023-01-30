@@ -5,22 +5,23 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="高质量编程, ">
-    <meta name="description" content="简介
-
-编写的代码能够达到正确可靠、简洁清晰的目标可称之为高质量代码
-
-各种边界条件是否考虑完备
-异常情况处理，稳定性保证
-易读易维护
+    <meta name="keywords" content="编译器和静态分析, ">
+    <meta name="description" content="编译器介绍
+编译器的结构
 
 
-编程原则
+重要的系统软件
 
-实际应用场景千变万化，各种语言的特性和语法各不相同
-但是高质量编程遵循的原则是相通的
+识别符合语法和非法的程序
+生成正确且高效的代码
 
-">
+
+分析部分（前端front end)
+
+词法分析，生成词素(lexeme)
+语法分析，生成语法树
+语义分析，收集类型信息，进行语义检查
+中间代">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +33,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>高质量编程 | 左岚的博客</title>
+    <title>编译器和静态分析 | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -417,12 +418,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/09.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">高质量编程</h1>
+                    <h1 class="description center-align post-title">编译器和静态分析</h1>
                 </div>
             </div>
         </div>
@@ -446,8 +447,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
-                                <span class="chip bg-color">代码规范</span>
+                            <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+                                <span class="chip bg-color">性能优化</span>
                             </a>
                         
                     </div>
@@ -471,28 +472,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-24
+                    2023-01-30
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-24
+                    2023-01-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    947
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -515,227 +516,182 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>简介</h1>
-<blockquote>
-<p>编写的代码能够达到正确可靠、简洁清晰的目标可称之为高质量代码</p>
-<ul>
-<li>各种边界条件是否考虑完备</li>
-<li>异常情况处理，稳定性保证</li>
-<li>易读易维护</li>
-</ul>
-</blockquote>
-<h2 id="编程原则">编程原则</h2>
-<blockquote>
-<p>实际应用场景千变万化，各种语言的特性和语法各不相同</p>
-<p>但是高质量编程遵循的原则是相通的</p>
-</blockquote>
+                <h1>编译器介绍</h1>
+<h2 id="编译器的结构">编译器的结构</h2>
 <blockquote>
 <ul>
-<li>简单性
+<li>重要的系统软件
 <ul>
-<li>消除“多余的复杂性”，以简单清晰的逻辑编写代码</li>
-<li>不理解的代码无法修复改进</li>
+<li>识别符合语法和非法的程序</li>
+<li>生成正确且高效的代码</li>
 </ul>
 </li>
-<li>可读性
+<li>分析部分（前端front end)
 <ul>
-<li>代码是写给人看的，而不是机器</li>
-<li>编写可维护代码的第一步是确保代码可读</li>
+<li>词法分析，生成词素(lexeme)</li>
+<li>语法分析，生成语法树</li>
+<li>语义分析，收集类型信息，进行语义检查</li>
+<li>中间代码生成，生成intermediate representation(R</li>
 </ul>
 </li>
-<li>生产力
+<li>综合部分（后端back end)
 <ul>
-<li>团队整体工作效率非常重要</li>
+<li>代码优化，机器无关优化，生成优化后的IR</li>
+<li>代码生成，生成目标代码</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h1>编码规范</h1>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202301301014489.jpg" alt="Snipaste_2023-01-30_10-13-59"></p>
+<h2 id="静态分析">静态分析</h2>
 <blockquote>
-<p>如何编写高质量的Go代码</p>
 <ul>
-<li>代码格式</li>
-<li>注释</li>
-<li>命名规范</li>
-<li>控制流程</li>
-<li>错误和异常处理</li>
+<li>静态分析：不执行程序代码，推导程序的行为，分析程序的性质。</li>
+<li>控制流(Control flow):程序执行的流程</li>
+<li>数据流(Data flow):数据在控制流上的传递</li>
+<li>通过分析控制流和数据流，我们可以知道更多关于程序的性质(properties)</li>
+<li>根据这些优化代码</li>
 </ul>
 </blockquote>
-<h3 id="注释">注释</h3>
-<blockquote>
-<p>公共符号始终要注释</p>
-<ul>
-<li>包中声明的每个公共的符号<br>
-变量、常量、函数以及结构<br>
-都需要添加注释</li>
-<li>任何既不明显也不简短的公<br>
-共功能必须予以注释</li>
-<li>无论长度或复杂程度如何，<br>
-对库中的任何函数都必须进<br>
-行注释</li>
-</ul>
-<blockquote>
-<p>例外</p>
-<ul>
-<li>不需要注释实现接口的方法，下面的方法是错误的</li>
-</ul>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// Read implements the io.Reader interface</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>FileReader<span class="token punctuation">)</span> <span class="token function">Read</span><span class="token punctuation">(</span>buf <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span><span class="token builtin">error</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</blockquote>
-<ul>
-<li>注释应该做的
-<ul>
-<li>注释应该解释代码作用
-<ul>
-<li>注释公共符号</li>
-</ul>
-</li>
-<li>注释应该解释代码如何做的
-<ul>
-<li>比如返回值，接收值的意义</li>
-</ul>
-</li>
-<li>注释应该解释代码实现的原因
-<ul>
-<li>适合解释代码的外部因素</li>
-<li>提供额外上下文</li>
-</ul>
-</li>
-<li>注释应该解释代码什么情况会出错
-<ul>
-<li>适合解释代码的限制条件</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h3 id="命名规范">命名规范</h3>
-<h4 id="variable">variable</h4>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202301301021040.jpg" alt="Snipaste_2023-01-30_10-21-38"></p>
+<h2 id="过程内分析和过程间分析">过程内分析和过程间分析</h2>
 <blockquote>
 <ul>
-<li>简洁胜于冗长</li>
-<li>缩略词全大写，但当其位于变量开头且不需要导出时，使用全小写
+<li>过程内分析(Intra-procedural analysis)
 <ul>
-<li>例如使用ServeHTTP而不是ServeHttp</li>
-<li>使用XMLHTTPRequest或者xmIHTTPRequest</li>
+<li>仅在函数内部进行分析</li>
 </ul>
 </li>
-<li>变量距离其被使用的地方越远，则需要携带越多的上下文信息
+<li>过程间分析(Inter-procedural analysis))
 <ul>
-<li>全局变量在其名字中需要更多的上下文信息，使得在不同地方可以轻易辨认出其含义</li>
+<li>考虑函数调用时参数传递和返回值的数据流和控制流</li>
 </ul>
 </li>
 </ul>
 </blockquote>
 <blockquote>
 <ul>
-<li>举例
+<li>为什么过程间分析是个问题？
 <ul>
-<li>将deadline替换成t降低了变量名的信息量</li>
-<li>t常代指任意时间</li>
-<li>deadline指截止时间，有特定的含义</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// Good</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c<span class="token operator">*</span>Client<span class="token punctuation">)</span> <span class="token function">send</span><span class="token punctuation">(</span>req<span class="token operator">*</span>Request<span class="token punctuation">,</span>deadline time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token comment">//Bad</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c<span class="token operator">*</span>Client<span class="token punctuation">)</span> <span class="token function">send</span><span class="token punctuation">(</span>req<span class="token operator">*</span>Request<span class="token punctuation">,</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</blockquote>
-<h4 id="function">function</h4>
-<blockquote>
-<ul>
-<li>函数名不携带包名的上下文信息，因为包名和函数名总是成对出现的</li>
-<li>函数名尽量简短</li>
-<li>当名为foo的包某个函数返回类型Foo时，可以省略类型信息而不导致歧义</li>
-<li>当名为foo的包某个函数返回类型T时(T并不是Foo)，可以在函数名中加入类型信息</li>
-</ul>
-</blockquote>
-<h4 id="package">package</h4>
-<blockquote>
-<ul>
-<li>只由小写字母组成。不包含大写字母和下划线等字符</li>
-<li>简短并包含一定的上下文信息。例如schema、task等</li>
-<li>不要与标准库同名。例如不要使用sync或者strings
-<ul>
-<li>以下规则尽量满足，以标准库包名为例</li>
-<li>不使用常用变量名作为包名。例如使用bufio而不是buf</li>
-<li>使用单数而不是复数。例如使用encoding而不是encodings</li>
-<li>谨慎地使用缩写。例如使用fmt在不破坏上下文的情况下比format更加简短</li>
+<li>需要通过数据流分析得知i的具体类型，才能知道i.foo()调用的是哪个foo()</li>
+<li>根据i的具体类型，产生了新的控制流，i.foo(),分析继续</li>
+<li>过程间分析需要同时分析控制流和数据流——联合求解，比较复杂</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h2 id="控制流程">控制流程</h2>
+<h1>Go编译器优化</h1>
 <blockquote>
 <ul>
-<li>
-<p>避免嵌套，保持正常流程清晰</p>
+<li>为什么做编译器优化
 <ul>
-<li>
-<p>如果两个分支中都包含return语句，则可以去除冗余的else</p>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">//Bad</span>
-<span class="token keyword">if</span> foo<span class="token punctuation">{</span>
-	<span class="token keyword">return</span> x
-<span class="token punctuation">}</span> <span class="token keyword">else</span><span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token boolean">nil</span>
-<span class="token punctuation">}</span>
-<span class="token comment">//Good </span>
-<span class="token keyword">if</span> foo <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> x
-<span class="token punctuation">}</span>
-<span class="token keyword">return</span> <span class="token boolean">nil</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
+<li>用户无感知，重新编译即可获得性能收益</li>
+<li>通用性优化</li>
 </ul>
 </li>
-<li>
-<p>尽量保持正常代码路径为最小缩进</p>
+<li>现状
 <ul>
-<li>
-<p>优先处理错误情况/特殊情况，尽早返回或继续循环来减少嵌套</p>
+<li>采用的优化少</li>
+<li>编译时间较短，没有进行较复杂的代码分析和优化</li>
+</ul>
 </li>
-<li>
-<blockquote>
-<p>举例</p>
+<li>编译优化的思路
 <ul>
-<li>
-<p>最常见的正常流程的路径被嵌套在两个if条件内</p>
+<li>场景：面向后端长期执行任务</li>
+<li>Tradeoff:用编译时间换取更高效的机器码</li>
+</ul>
 </li>
-<li>
-<p>成功的退出条件是return nil,必须仔细匹配大括号来发现</p>
-</li>
-<li>
-<p>函数最后一行返回一个错误，需要追溯到匹配的左括号，才能了解何时会触发错误</p>
-</li>
-<li>
-<p>如果后续正常流程需要增加一步操作，调用新的函数，则又会增加一层嵌套</p>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">//Bad</span>
-<span class="token keyword">func</span> <span class="token function">OneFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
-	err <span class="token operator">:=</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token keyword">if</span> err <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-		err <span class="token operator">:=</span> <span class="token function">doAnotherThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		<span class="token keyword">if</span> err <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-			<span class="token keyword">return</span> <span class="token boolean">nil</span> <span class="token comment">// normal case</span>
-		<span class="token punctuation">}</span>
-		<span class="token keyword">return</span> err
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> err
-<span class="token punctuation">}</span>
-<span class="token comment">//Good</span>
-<span class="token keyword">func</span> <span class="token function">OneFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> err <span class="token operator">:=</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> err
-	<span class="token punctuation">}</span>
-	<span class="token keyword">if</span> err <span class="token operator">:=</span> <span class="token function">doAnotherthing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> err
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> <span class="token boolean">nil</span> <span class="token comment">//normal case</span>
-<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li>Beast mode
+<ul>
+<li>函数内联</li>
+<li>逃逸分析</li>
+<li>默认栈大小调整</li>
+<li>边界检查消除</li>
+<li>循环展开</li>
+</ul>
 </li>
 </ul>
 </blockquote>
+<h2 id="函数内联（Inlining）">函数内联（Inlining）</h2>
+<blockquote>
+<ul>
+<li>内联：将被调用函数的函数体(callee)的副本替换到调用位置(caller)上，同时重写代码以反映参数的绑定</li>
+<li>优点
+<ul>
+<li>消除函数调用开销，例如传递参数、保存寄存器等</li>
+<li>将过程间分析转化为过程内分析，帮助其他优化，例如逃逸分析</li>
+</ul>
 </li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>函数内联能多大程度影响性能？一使用micro-benchmark验证一下~<img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202301301124602.jpg" alt="Snipaste_2023-01-30_11-24-03"></li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>缺点</li>
+<li>函数体变大，instruction cache (icache)不友好</li>
+<li>编译生成的G0镜像变大</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>函数内联在<strong>大多数情况下</strong>是正向优化</li>
+<li>内联策略
+<ul>
+<li>调用和被调函数的规模</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="BeastMode">BeastMode</h3>
+<blockquote>
+<ul>
+<li>Go函数内联受到的限制较多
+<ul>
+<li>语言特性，例如interface,defer等，限制了函数内联</li>
+<li>内联策略非常保守</li>
+</ul>
+</li>
+<li>Beast mode:调整函数内联的策略，使更多函数被内联
+<ul>
+<li>降低函数调用的开销</li>
+<li>增加了其他优化的机会：逃逸分析</li>
+</ul>
+</li>
+<li>开销
+<ul>
+<li>G0镜像增加~10%</li>
+<li>编译时间增加</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="逃逸分析">逃逸分析</h2>
+<blockquote>
+<ul>
+<li>逃逸分析：分析代码中指针的动态作用域：指针在何处可以被访问</li>
+<li>大致思路
+<ul>
+<li>从对象分配处出发，沿着控制流，观察对象的数据流</li>
+<li>若发现指针p在当前作用域S:
+<ul>
+<li>作为参数传递给其他函数</li>
+<li>传递给全局变量</li>
+<li>传递给其他的goroutine</li>
+<li>传递给已逃逸的指针指向的对象</li>
+</ul>
+</li>
+<li>则指针p指向的对像逃逸出S,反之则没有逃逸出S</li>
+</ul>
+</li>
+<li>Beast mode:函数内联拓展了函数边界，更多对象不逃逸</li>
+<li>优化：未逃逸的对象可以在栈上分配
+<ul>
+<li>对象在栈上分配和回收很快：移动Sp</li>
+<li>减少在heap上的分配，降低GC负担</li>
 </ul>
 </li>
 </ul>
@@ -766,7 +722,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/p/be6c94c6.html">http://example.com/p/be6c94c6.html</a>
+                    <a href="http://example.com/p/97755212.html">http://example.com/p/97755212.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -804,8 +760,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
-                                    <span class="chip bg-color">代码规范</span>
+                                <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+                                    <span class="chip bg-color">性能优化</span>
                                 </a>
                             
                         </div>
@@ -884,17 +840,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/p/fc854d4d.html">
+                <a href="/p/97755212.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/04.webp" class="responsive-img" alt="性能优化">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/09.webp" class="responsive-img" alt="编译器和静态分析">
                         
-                        <span class="card-title">性能优化</span>
+                        <span class="card-title">编译器和静态分析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -904,9 +861,59 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-25
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    GO语言
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+                        <span class="chip bg-color">性能优化</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/p/5504392c.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/00.webp" class="responsive-img" alt="GO内存管理">
+                        
+                        <span class="card-title">GO内存管理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -922,51 +929,10 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%80%A7%E8%83%BD/">
-                        <span class="chip bg-color">性能</span>
+                    <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+                        <span class="chip bg-color">性能优化</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/p/34c22d84.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="GO/go语言工程项目实践.md">
-                        
-                        <span class="card-title">GO/go语言工程项目实践.md</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
