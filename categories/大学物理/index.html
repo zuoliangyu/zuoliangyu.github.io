@@ -5,7 +5,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="分类: 大学物理, ">
     <meta name="description" content="左岚的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,53 +18,12 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>左岚的博客</title>
+    <title>分类: 大学物理 | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
 
-    <!-- index cover -->
-    <!-- <link rel="stylesheet preload" type="text/css" href="/css/indexcover.css"> -->
-    <style>
-        .carousel-control {
-            width: 45px;
-            height: 45px;
-            line-height: 55px;
-            border-radius: 45px;
-            background: transparent;
-            cursor: pointer;
-            z-index: 100;
-        }
-        
-        #prev-cover {
-            position: absolute;
-            top: 48%;
-            left: 8px;
-        }
-        
-        #next-cover {
-            position: absolute;
-            top: 48%;
-            right: 8px;;
-        }
-        
-        #prev-cover i {
-            margin-right: 3px;
-        }
-        
-        #next-cover i {
-            margin-left: 3px;
-        }
-        
-        .carousel-control:hover {
-            background-color: rgba(0, 0, 0, .4);
-        }
-        
-        .carousel-control i {
-            color: #fff;
-            font-size: 2.4rem;
-        }
-    </style>
+    <!-- bg-cover style     -->
 
 
 
@@ -85,6 +44,10 @@
 
 
 
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
 
 
 
@@ -436,15 +399,9 @@
     </nav>
 
 </header>
- 
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item  white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+ <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
   <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
     <div class="brand">
       <div class="title center-align">
@@ -485,208 +442,230 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                    <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
-                    </a>
-                
-            </div>
-            <div class="cover-social-link">
-<a
-  href="https://github.com/zuoliangyu"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="访问我的GitHub"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fab fa-github"></i>
-</a>
- 
-<a
-  href="mailto:295871597@qq.com"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="邮件联系我"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fas fa-envelope-open"></i>
-</a>
-   
-<a
-  href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=295871597"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="QQ联系我: 295871597"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fab fa-qq"></i>
-</a>
-   
-<a
-  href="/atom.xml"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="RSS 订阅"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fas fa-rss"></i>
-</a>
- 
-<a
-  href="https://blog.csdn.net/zl295871597"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="关注我的CSDN: https://blog.csdn.net/zl295871597"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fab fa-csdn">C</i>
-</a>
- 
-<a
-  href="https://juejin.cn/user/1684874204034152"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="关注我的掘金: https://juejin.cn/user/1684874204034152"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fab fa-juejin">掘</i>
-</a>
-  
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
 
 <main class="content">
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;诗魂
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            不要信墨客诗人，这类人从无分寸，心比天高，笔胜剑狠。张口就是动人的诗文，三分情亦能写成十分，一身才气，酒占五分，毕竟，被酒浸泡过的文字太醉人，世人一眼就沉沦。
+<style>
+    /* 文章分类书本样式 */
+    .chip-container .tag-chips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .chip-container .tag-chips a {
+        margin: 0 7px 10px;
+    }
+
+    .chip-container .chip {
+        max-width: calc(100% / 4);
+        min-width: 10em;
+        height: 200px;
+        position: relative;
+        transition: .5s linear;
+        padding: 19px 0;
+        line-height: 20px;
+        z-index: 990;
+        border-radius: 5px 15px 15px 5px;
+        transform-origin: left center 0;
+    }
+
+    .chip-container .notebook-cover::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: calc(100% + 2px);
+        top: -1px;
+        z-index: 100;
+        border-radius: 2px;
+        right: 25px;
+        transition: 2s ease;
+        background: linear-gradient(to right, #1e606e 0, #2e95aa 12%, #1e606e 25%, #2e95aa 37%, #1e606e 50%, #2e95aa 62%, #1e606e 75%, #2e95aa 87%, #1e606e 100%);
+    }
+
+    .chip .notebook-skin {
+        height: 50px;
+        width: 100%;
+        background: #e8e8e0;
+        margin-top: 42px;
+        padding: 10px 32px 64px 10px;
+        font-size: 19px;
+        position: relative;
+        z-index: 10;
+        color: #222;
+        text-align: left;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    }
+
+    .chip .notebook-skin:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 15px;
+        left: 0;
+        bottom: 0;
+        background: #cddc39;
+    }
+
+    .notebook-cover {
+        background: #cc4b48;
+        height: 200px;
+        width: 140px;
+        position: absolute;
+        border-radius: 5px 15px 15px 5px;
+        z-index: 10;
+        transition: .5s linear;
+        transform-style: preserve-3d;
+        transform-origin: left center 0;
+    }
+
+    .moleskine-wrapper {
+        max-width: calc(100% / 4);
+        min-width: 10em;
+    }
+
+    .moleskine-notebook:hover .notebook-cover {
+        transform: rotateY(-50deg);
+        z-index: 99;
+        box-shadow: 20px 10px 50px rgba(0, 0, 0, .2);
+    }
+
+    .moleskine-notebook {
+        height: 200px;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        transition: .5s linear;
+        border-radius: 5px 15px 15px 5px;
+        transform-origin: left center 0;
+    }
+
+    .moleskine-notebook:hover {
+        transform: rotateZ(-10deg);
+    }
+
+    .notebook-page.dotted {
+        background: linear-gradient(to bottom, #fbfae8 9px, #e4e4e4 1px);
+        background-size: 100% 10px;
+    }
+
+    .chip-container .chip:hover {
+        filter: invert(.1);
+    }
+
+    .notebook-page {
+        height: 100%;
+        width: 140px;
+        position: absolute;
+        top: 10px;
+        background-color: #fbfae8;
+        z-index: 0;
+        border-radius: 5px 16px 16px 5px;
+        overflow: hidden;
+    }
+</style>
+
+<div id="category-cloud" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
+            </div>
+            <div class="tag-chips">
+                
+                
+                
+                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" title="GO语言: 17">
+                    <div class="moleskine-wrapper">
+                        <div class="moleskine-notebook">
+                            <div class="chip notebook-cover center-align waves-effect waves-light
+                               chip-default "
+                                style="background-color: #F9EBEA;">
+                                <div
+                                    class="notebook-skin
+                                       chip-default ">
+                                    GO语言
+                                </div>
+                            </div>
+                            <div class="notebook-page dotted"></div>
+                        </div>
+                    </div>
+                </a>
+                
+                
+                <a href="/categories/matlab/" title="matlab: 1">
+                    <div class="moleskine-wrapper">
+                        <div class="moleskine-notebook">
+                            <div class="chip notebook-cover center-align waves-effect waves-light
+                               chip-default "
+                                style="background-color: #F5EEF8;">
+                                <div
+                                    class="notebook-skin
+                                       chip-default ">
+                                    matlab
+                                </div>
+                            </div>
+                            <div class="notebook-page dotted"></div>
+                        </div>
+                    </div>
+                </a>
+                
+                
+                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" title="软件使用: 5">
+                    <div class="moleskine-wrapper">
+                        <div class="moleskine-notebook">
+                            <div class="chip notebook-cover center-align waves-effect waves-light
+                               chip-default "
+                                style="background-color: #D5F5E3;">
+                                <div
+                                    class="notebook-skin
+                                       chip-default ">
+                                    软件使用
+                                </div>
+                            </div>
+                            <div class="notebook-page dotted"></div>
+                        </div>
+                    </div>
+                </a>
+                
+                
+                <a href="/categories/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" title="大学物理: 1">
+                    <div class="moleskine-wrapper">
+                        <div class="moleskine-notebook">
+                            <div class="chip notebook-cover center-align waves-effect waves-light
+                               chip-active "
+                                style="background-color: #E8F8F5;">
+                                <div
+                                    class="notebook-skin
+                                       chip-active ">
+                                    大学物理
+                                </div>
+                            </div>
+                            <div class="notebook-page dotted"></div>
+                        </div>
+                    </div>
+                </a>
+                
+                
+            </div>
         </div>
     </div>
 </div>
 
-                    
-
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
 
     
 
-    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row article-row">
+        <div class="row tags-posts">
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/p/3caae7b7.html">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/loading.gif" data-original="/medias/featureimages/00.webp" class="responsive-img" alt="大物——电磁学">
@@ -694,7 +673,6 @@
                             <span class="card-title">大物——电磁学</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
@@ -732,640 +710,10 @@
                     
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/p/2e1f43f0.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/20.webp" class="responsive-img" alt="vscode latex">
-                            
-                            <span class="card-title">vscode latex</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                latex
-
-下载Acquiring TeX Live as an ISO image - TeX Users Group (tug.org)
-
-检验
-
-在cmd中输入latex -v
-出现版本号为安装成功
-
-Sumatra安装
-
-下载Su
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
-                                    软件使用
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/vscode/">
-                            <span class="chip bg-color">vscode</span>
-                        </a>
-                        
-                        <a href="/tags/latex/">
-                            <span class="chip bg-color">latex</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/p/2956e067.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/05.webp" class="responsive-img" alt="vscode 配置verilog环境">
-                            
-                            <span class="card-title">vscode 配置verilog环境</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                verilog
-
-下载Icarus Verilog for Windows (bleyer.org)
-
-配置环境变量
-win+i
-
-
-选中环境变量
-
-选择系统变量中的path
-
-
-将安装路径/bin添加进入
-
-检验
-
-在cmd中输入iver
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
-                                    软件使用
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/vscode/">
-                            <span class="chip bg-color">vscode</span>
-                        </a>
-                        
-                        <a href="/tags/verilog/">
-                            <span class="chip bg-color">verilog</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/p/594896f3.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/19.webp" class="responsive-img" alt="vscode 配置java环境">
-                            
-                            <span class="card-title">vscode 配置java环境</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                java
-
-下载javaDownload Java for Windows
-
-配置环境变量
-win+i
-
-
-选中环境变量
-
-新建JAVA_HOME变量
-
-将jdk路径填入，我是下面这个
-E:\path\java\jdk1.8.0_351
-
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
-                                    软件使用
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/vscode/">
-                            <span class="chip bg-color">vscode</span>
-                        </a>
-                        
-                        <a href="/tags/java/">
-                            <span class="chip bg-color">java</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/p/e54f1c56.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/09.webp" class="responsive-img" alt="vscode 配置python环境">
-                            
-                            <span class="card-title">vscode 配置python环境</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                python
-
-官网Welcome to Python.org
-
-配置环境变量
-win+i
-
-
-选中环境变量
-
-选择系统变量中的path
-
-将这三个路径填入
-
-检验
-
-在cmd中输入python --version
-出现版本号为安装成功
-
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
-                                    软件使用
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/vscode/">
-                            <span class="chip bg-color">vscode</span>
-                        </a>
-                        
-                        <a href="/tags/python/">
-                            <span class="chip bg-color">python</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/p/f26e9d8c.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/20.webp" class="responsive-img" alt="vscode 配置c/c++环境">
-                            
-                            <span class="card-title">vscode 配置c/c++环境</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                mingw
-
-可以下载安装包或者压缩包
-官网地址MinGW-w64
-压缩包下载MinGW-w64 - for 32 and 64 bit Windows - Browse /mingw-w64/mingw-w64-release at So
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
-                                    软件使用
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/vscode/">
-                            <span class="chip bg-color">vscode</span>
-                        </a>
-                        
-                        <a href="/tags/c-c/">
-                            <span class="chip bg-color">c/c++</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/p/97755212.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/09.webp" class="responsive-img" alt="编译器和静态分析">
-                            
-                            <span class="card-title">编译器和静态分析</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                编译器介绍
-编译器的结构
-
-
-重要的系统软件
-
-识别符合语法和非法的程序
-生成正确且高效的代码
-
-
-分析部分（前端front end)
-
-词法分析，生成词素(lexeme)
-语法分析，生成语法树
-语义分析，收集类型信息，进行语义检查
-中间代
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
-                            <span class="chip bg-color">性能优化</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/p/5504392c.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/00.webp" class="responsive-img" alt="GO内存管理">
-                            
-                            <span class="card-title">GO内存管理</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Go内存管理
-Go内存分配
-分块
-
-
-
-目标： 为对象在heap上分配内存
-
-
-提前将内存分块
-
-调用系统调用mmap()向OS申请一大块内存，例如4MB
-先将内存划分成大块，例如8KB,称作mspan
-再将大块继续划分成特定大小的小块，用
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
-                            <span class="chip bg-color">性能优化</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/p/7ecadde2.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/12.webp" class="responsive-img" alt="使用app designer配置simulink">
-                            
-                            <span class="card-title">使用app designer配置simulink</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                脚本语言设置
-clc;
-clear;
-close all;
-
-%% 设定参数
-g = 10;
-m = 1;
-c = 0.5;
-L = 1;
-
-% 设定时间
-tStepMax = 0.05;
-tFinal = 45;
-
-% 初始化
-theta
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/matlab/" class="post-category">
-                                    matlab
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/simulink%E8%BF%90%E7%94%A8/">
-                            <span class="chip bg-color">simulink运用</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/p/d0fc8bad.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="性能优化及自动化管理">
-                            
-                            <span class="card-title">性能优化及自动化管理</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                性能优化
-性能优化的层面
-
-
-
-业务代码
-
-
-SDK
-
-
-基础库
-
-
-语言运行时
-
-
-OS
-
-
-
-
-
-业务层优化
-
-针对特定场景，具体问题，具体分析
-容易获得较大性能收益
-
-
-语言运行时优化
-
-解决更通用的性能问题
-考虑更多场景
-Trade
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
-                            <span class="chip bg-color">性能优化</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
             
         </div>
     </article>
-
 </main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a class="left btn-floating btn-large disabled">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 3</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
-    </div>
-</div>
 
 
  <footer class="page-footer bg-color">
