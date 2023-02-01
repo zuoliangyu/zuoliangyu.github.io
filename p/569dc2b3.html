@@ -5,16 +5,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="vscode 配置latex环境, ">
-    <meta name="description" content="latex
-下载Acquiring TeX Live as an ISO image - TeX Users Group (tug.org)
-
-检验
-在cmd中输入latex -v
-出现版本号为安装成功
-
-Sumatra安装
-下载Sumat">
+    <meta name="keywords" content="大物——电磁学_磁, ">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -26,7 +18,7 @@ Sumatra安装
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vscode 配置latex环境 | 左岚的博客</title>
+    <title>大物——电磁学_磁 | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -411,12 +403,12 @@ Sumatra安装
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vscode 配置latex环境</h1>
+                    <h1 class="description center-align post-title">大物——电磁学_磁</h1>
                 </div>
             </div>
         </div>
@@ -440,12 +432,12 @@ Sumatra安装
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vscode/">
-                                <span class="chip bg-color">vscode</span>
+                            <a href="/tags/%E7%94%B5%E7%A3%81%E5%AD%A6/">
+                                <span class="chip bg-color">电磁学</span>
                             </a>
                         
-                            <a href="/tags/latex/">
-                                <span class="chip bg-color">latex</span>
+                            <a href="/tags/%E7%A3%81%E5%AD%A6/">
+                                <span class="chip bg-color">磁学</span>
                             </a>
                         
                     </div>
@@ -456,8 +448,8 @@ Sumatra安装
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
-                                软件使用
+                            <a href="/categories/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" class="post-category">
+                                大学物理
                             </a>
                         
                     </div>
@@ -469,21 +461,21 @@ Sumatra安装
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-30
+                    2023-02-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-31
+                    2023-02-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    397
+                    0
                 </div>
                 
 
@@ -513,88 +505,7 @@ Sumatra安装
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="latex"><a href="#latex" class="headerlink" title="latex"></a>latex</h1><blockquote>
-<p>下载<a target="_blank" rel="noopener" href="https://tug.org/texlive/acquire-iso.html">Acquiring TeX Live as an ISO image - TeX Users Group (tug.org)</a></p>
-</blockquote>
-<h2 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h2><blockquote>
-<p>在cmd中输入latex -v</p>
-<p>出现版本号为安装成功</p>
-</blockquote>
-<h1 id="Sumatra安装"><a href="#Sumatra安装" class="headerlink" title="Sumatra安装"></a>Sumatra安装</h1><blockquote>
-<p>下载<a target="_blank" rel="noopener" href="https://www.sumatrapdfreader.org/download-free-pdf-viewer">Sumatra PDF reader download page</a></p>
-</blockquote>
-<h1 id="vscode配置"><a href="#vscode配置" class="headerlink" title="vscode配置"></a>vscode配置</h1><blockquote>
-<p>安装这个插件</p>
-</blockquote>
-<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202301301749295.jpg" alt="Snipaste_2023-01-30_17-49-41"></p>
-<h2 id="json"><a href="#json" class="headerlink" title="json"></a>json</h2><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token comment">// ===================================LaTeX的相关配置，切记选择对自己的软件路径===================================</span>
-  <span class="token comment">// bibtex 格式</span>
-  <span class="token property">"latex-workshop.bibtex-format.tab"</span><span class="token operator">:</span> <span class="token string">"tab"</span><span class="token punctuation">,</span>
-  
-  <span class="token comment">// 个人比较喜欢保存后就会自动编译，所以选择了onSave</span>
-  <span class="token property">"latex-workshop.latex.autoBuild.run"</span><span class="token operator">:</span> <span class="token string">"onSave"</span><span class="token punctuation">,</span>
-  <span class="token property">"latex-workshop.latex.autoBuild.cleanAndRetry.enabled"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-
-  <span class="token comment">// 设置 latex-workshop 的 PDF　预览程序，external　指的是外部程序</span>
-  <span class="token property">"latex-workshop.view.pdf.viewer"</span><span class="token operator">:</span> <span class="token string">"external"</span><span class="token punctuation">,</span>
-  <span class="token property">"latex-workshop.view.pdf.ref.viewer"</span><span class="token operator">:</span> <span class="token string">"external"</span><span class="token punctuation">,</span>
-  <span class="token property">"latex-workshop.view.pdf.external.viewer.command"</span><span class="token operator">:</span> <span class="token string">"C:/Users/colof/AppData/Local/SumatraPDF/SumatraPDF.exe"</span><span class="token punctuation">,</span> <span class="token comment">// 注意修改SumatraPDF路径 如果复制过来路径是\记得改成/</span>
-  <span class="token property">"latex-workshop.view.pdf.external.viewer.args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"-forward-search"</span><span class="token punctuation">,</span>
-      <span class="token string">"%TEX%"</span><span class="token punctuation">,</span>
-      <span class="token string">"%LINE%"</span><span class="token punctuation">,</span>
-      <span class="token string">"-reuse-instance"</span><span class="token punctuation">,</span>
-      <span class="token string">"-inverse-search"</span><span class="token punctuation">,</span>
-      <span class="token string">"code.cmd -r -g \"%f\":%l"</span><span class="token punctuation">,</span>
-      <span class="token string">"%PDF%"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-
-  <span class="token comment">// 配置正向、反向搜索：.tex -&gt; .pdf</span>
-  <span class="token property">"latex-workshop.view.pdf.external.synctex.command"</span><span class="token operator">:</span> <span class="token string">"C:/Users/colof/AppData/Local/SumatraPDF/SumatraPDF.exe"</span><span class="token punctuation">,</span> <span class="token comment">// 注意修改SumatraPDF路径</span>
-  <span class="token property">"latex-workshop.view.pdf.external.synctex.args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token comment">// 正向搜索</span>
-      <span class="token string">"-forward-search"</span><span class="token punctuation">,</span>
-      <span class="token string">"%TEX%"</span><span class="token punctuation">,</span>
-      <span class="token string">"%LINE%"</span><span class="token punctuation">,</span>
-      <span class="token string">"-reuse-instance"</span><span class="token punctuation">,</span>
-      <span class="token comment">// 反向搜索</span>
-      <span class="token string">"-inverse-search"</span><span class="token punctuation">,</span>
-      <span class="token string">"\"E:/Microsoft VS Code/Code.exe\" \"E:/Microsoft VS Code/resources/app/out/cli.js\" -gr %f:%l"</span><span class="token punctuation">,</span><span class="token comment">//注意修改VSCode路径</span>
-      <span class="token string">"%PDF%"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-
-
-  <span class="token comment">// 清空中间文件，最终只会保存tex和pdf</span>
-  <span class="token property">"latex-workshop.latex.clean.fileTypes"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"*.aux"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.bbl"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.blg"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.idx"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.ind"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.lof"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.lot"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.out"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.toc"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.acn"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.acr"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.alg"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.glg"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.glo"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.gls"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.ist"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.fls"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.log"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.fdb_latexmk"</span><span class="token punctuation">,</span>
-      <span class="token string">"*.gz"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"latex-workshop.latex.autoClean.run"</span><span class="token operator">:</span> <span class="token string">"onBuilt"</span><span class="token punctuation">,</span>
-  <span class="token comment">// 使用上次的recipe编译组合</span>
-  <span class="token property">"latex-workshop.latex.recipe.default"</span><span class="token operator">:</span> <span class="token string">"lastUsed"</span><span class="token punctuation">,</span>
-  <span class="token comment">// 用于反向同步的内部查看器的键绑定。ctrl/cmd +点击(默认)或双击</span>
-  <span class="token property">"latex-workshop.view.pdf.internal.synctex.keybinding"</span><span class="token operator">:</span> <span class="token string">"double-click"</span><span class="token punctuation">,</span>
-  <span class="token property">"window.zoomLevel"</span><span class="token operator">:</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="可选插件Ultra-Math-Preview"><a href="#可选插件Ultra-Math-Preview" class="headerlink" title="可选插件Ultra Math Preview"></a>可选插件Ultra Math Preview</h2><p>用于实时查看公式</p>
-<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+                <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
             </div>
             <hr/>
@@ -620,7 +531,7 @@ Sumatra安装
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/p/2e1f43f0.html">http://example.com/p/2e1f43f0.html</a>
+                    <a href="http://example.com/p/569dc2b3.html">http://example.com/p/569dc2b3.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -658,12 +569,12 @@ Sumatra安装
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vscode/">
-                                    <span class="chip bg-color">vscode</span>
+                                <a href="/tags/%E7%94%B5%E7%A3%81%E5%AD%A6/">
+                                    <span class="chip bg-color">电磁学</span>
                                 </a>
                             
-                                <a href="/tags/latex/">
-                                    <span class="chip bg-color">latex</span>
+                                <a href="/tags/%E7%A3%81%E5%AD%A6/">
+                                    <span class="chip bg-color">磁学</span>
                                 </a>
                             
                         </div>
@@ -742,9 +653,64 @@ Sumatra安装
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/p/569dc2b3.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.webp" class="responsive-img" alt="大物——电磁学_磁">
+                        
+                        <span class="card-title">大物——电磁学_磁</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" class="post-category">
+                                    大学物理
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%94%B5%E7%A3%81%E5%AD%A6/">
+                        <span class="chip bg-color">电磁学</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A3%81%E5%AD%A6/">
+                        <span class="chip bg-color">磁学</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/p/3caae7b7.html">
                     <div class="card-image">
@@ -762,9 +728,9 @@ Sumatra安装
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -786,59 +752,6 @@ Sumatra安装
                     
                     <a href="/tags/%E7%94%B5%E5%AD%A6/">
                         <span class="chip bg-color">电学</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/p/2956e067.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/05.webp" class="responsive-img" alt="vscode 配置verilog环境">
-                        
-                        <span class="card-title">vscode 配置verilog环境</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-30
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
-                                    软件使用
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/vscode/">
-                        <span class="chip bg-color">vscode</span>
-                    </a>
-                    
-                    <a href="/tags/verilog/">
-                        <span class="chip bg-color">verilog</span>
                     </a>
                     
                 </div>
@@ -999,6 +912,13 @@ Sumatra安装
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
  <footer class="page-footer bg-color">
     
