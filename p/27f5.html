@@ -6,14 +6,12 @@
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
     <meta name="keywords" content="GO语言实战__猜谜游戏, ">
-    <meta name="description" content="猜谜游戏
-规则介绍
-
-在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测
-每次玩家需要输入一个数字
+    <meta name="description" content="猜谜游戏规则介绍
+在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测 
+每次玩家需要输入一个数字 
 程序则会告诉玩家这个猜测的数字到底是高于还是低于那个秘密的随机数
-并且让玩家再次猜测
-如果猜对了的话 就告诉玩家胜利并且">
+并且让玩家再次猜测 
+如果猜对了的话 就告诉玩家胜利并">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -504,18 +502,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>猜谜游戏</h1>
-<h2 id="规则介绍">规则介绍</h2>
-<blockquote>
-<p>在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测</p>
-<p>每次玩家需要输入一个数字</p>
+                <h1 id="猜谜游戏"><a href="#猜谜游戏" class="headerlink" title="猜谜游戏"></a>猜谜游戏</h1><h2 id="规则介绍"><a href="#规则介绍" class="headerlink" title="规则介绍"></a>规则介绍</h2><blockquote>
+<p>在这个游戏里面 程序首先会生成一个0-100的随机整数提示玩家进行猜测 </p>
+<p>每次玩家需要输入一个数字 </p>
 <p>程序则会告诉玩家这个猜测的数字到底是高于还是低于那个秘密的随机数</p>
-<p>并且让玩家再次猜测</p>
+<p>并且让玩家再次猜测 </p>
 <p>如果猜对了的话 就告诉玩家胜利并且退出程序</p>
 </blockquote>
-<h2 id="操作步骤">操作步骤</h2>
-<h3 id="生成随机数">生成随机数</h3>
-<blockquote>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h3><blockquote>
 <p>使用math/rand中的包rand.Intn() 生成随机数不对劲，一直是81</p>
 </blockquote>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go">maxNum <span class="token operator">:=</span> <span class="token number">100</span>
@@ -528,16 +522,13 @@ rand<span class="token punctuation">.</span><span class="token function">Seed</s
 secretNumber <span class="token operator">:=</span> rand<span class="token punctuation">.</span><span class="token function">Intn</span><span class="token punctuation">(</span>maxNum<span class="token punctuation">)</span> <span class="token comment">//生成随机数</span>
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"The secret is "</span><span class="token punctuation">,</span> secretNumber<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="实现用户的输入输出">实现用户的输入输出</h3>
-<blockquote>
+<h3 id="实现用户的输入输出"><a href="#实现用户的输入输出" class="headerlink" title="实现用户的输入输出"></a>实现用户的输入输出</h3><blockquote>
 <p>使用Stdin输入流来进行用户输入数据的获取</p>
 <p>并且使用简单的if判断用户输入的数据是否有误</p>
 <ul>
-<li>
-<p>读取数据时先去掉流中的换行符</p>
+<li><p>读取数据时先去掉流中的换行符</p>
 </li>
-<li>
-<p>再使用Atoi函数将读取到的数据流字符串转换为数字</p>
+<li><p>再使用Atoi函数将读取到的数据流字符串转换为数字</p>
 </li>
 </ul>
 </blockquote>
@@ -560,8 +551,7 @@ guess<span class="token punctuation">,</span> err <span class="token operator">:
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"You guess is"</span><span class="token punctuation">,</span> guess<span class="token punctuation">)</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="实现判断逻辑">实现判断逻辑</h3>
-<blockquote>
+<h3 id="实现判断逻辑"><a href="#实现判断逻辑" class="headerlink" title="实现判断逻辑"></a>实现判断逻辑</h3><blockquote>
 <p>使用if-else if-else的方法来进行提醒用户输入的数据与真实值的差别</p>
 </blockquote>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">if</span> guess <span class="token operator">&gt;</span> secretNumber <span class="token punctuation">{</span>
@@ -571,8 +561,7 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
 	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Correct, you Legend!"</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="实现游戏循环">实现游戏循环</h3>
-<blockquote>
+<h3 id="实现游戏循环"><a href="#实现游戏循环" class="headerlink" title="实现游戏循环"></a>实现游戏循环</h3><blockquote>
 <p>用户在猜测一次数据后就会退出，需要使用循环来进行循环猜想数据</p>
 <p>在GO中没有while循环语句，所以在这里使用for循环语句来进行书写</p>
 </blockquote>
@@ -599,8 +588,7 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 			<span class="token keyword">break</span>
 		<span class="token punctuation">}</span>
 	<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="整体实现">整体实现</h2>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
+<h2 id="整体实现"><a href="#整体实现" class="headerlink" title="整体实现"></a>整体实现</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
 	<span class="token string">"bufio"</span>
@@ -1021,60 +1009,6 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 
  <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="512085302"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="/libs/aplayer/Meting.min.js"></script>
-
-    
 
     <div class="container row center-align"
          style="margin-bottom: 15px !important;">
@@ -1474,7 +1408,7 @@ $(function () {
       src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"
     ></script>
     <script type="text/javascript" src="/js/fireworks.js"></script>
-  
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1487,5 +1421,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>

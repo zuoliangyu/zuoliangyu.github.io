@@ -7,7 +7,6 @@
     <meta charset="utf-8">
     <meta name="keywords" content="高质量编程, ">
     <meta name="description" content="简介
-
 编写的代码能够达到正确可靠、简洁清晰的目标可称之为高质量代码
 
 各种边界条件是否考虑完备
@@ -16,11 +15,10 @@
 
 
 编程原则
-
 实际应用场景千变万化，各种语言的特性和语法各不相同
 但是高质量编程遵循的原则是相通的
 
-">
+简单">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -515,8 +513,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>简介</h1>
-<blockquote>
+                <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
 <p>编写的代码能够达到正确可靠、简洁清晰的目标可称之为高质量代码</p>
 <ul>
 <li>各种边界条件是否考虑完备</li>
@@ -524,34 +521,27 @@
 <li>易读易维护</li>
 </ul>
 </blockquote>
-<h2 id="编程原则">编程原则</h2>
-<blockquote>
+<h2 id="编程原则"><a href="#编程原则" class="headerlink" title="编程原则"></a>编程原则</h2><blockquote>
 <p>实际应用场景千变万化，各种语言的特性和语法各不相同</p>
 <p>但是高质量编程遵循的原则是相通的</p>
-</blockquote>
-<blockquote>
 <ul>
-<li>简单性
-<ul>
+<li>简单性<ul>
 <li>消除“多余的复杂性”，以简单清晰的逻辑编写代码</li>
 <li>不理解的代码无法修复改进</li>
 </ul>
 </li>
-<li>可读性
-<ul>
+<li>可读性<ul>
 <li>代码是写给人看的，而不是机器</li>
 <li>编写可维护代码的第一步是确保代码可读</li>
 </ul>
 </li>
-<li>生产力
-<ul>
-<li>团队整体工作效率非常重要</li>
+<li>生产力<ul>
+<li>团队整体工作效率非常重要 </li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h1>编码规范</h1>
-<blockquote>
+<h1 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h1><blockquote>
 <p>如何编写高质量的Go代码</p>
 <ul>
 <li>代码格式</li>
@@ -561,18 +551,12 @@
 <li>错误和异常处理</li>
 </ul>
 </blockquote>
-<h3 id="注释">注释</h3>
-<blockquote>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><blockquote>
 <p>公共符号始终要注释</p>
 <ul>
-<li>包中声明的每个公共的符号<br>
-变量、常量、函数以及结构<br>
-都需要添加注释</li>
-<li>任何既不明显也不简短的公<br>
-共功能必须予以注释</li>
-<li>无论长度或复杂程度如何，<br>
-对库中的任何函数都必须进<br>
-行注释</li>
+<li>包中声明的每个公共的符号<br>变量、常量、函数以及结构<br>都需要添加注释</li>
+<li>任何既不明显也不简短的公<br>共功能必须予以注释</li>
+<li>无论长度或复杂程度如何，<br>对库中的任何函数都必须进<br>行注释</li>
 </ul>
 <blockquote>
 <p>例外</p>
@@ -583,26 +567,21 @@
 <span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>FileReader<span class="token punctuation">)</span> <span class="token function">Read</span><span class="token punctuation">(</span>buf <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span><span class="token builtin">error</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </blockquote>
 <ul>
-<li>注释应该做的
-<ul>
-<li>注释应该解释代码作用
-<ul>
+<li>注释应该做的<ul>
+<li>注释应该解释代码作用<ul>
 <li>注释公共符号</li>
 </ul>
 </li>
-<li>注释应该解释代码如何做的
-<ul>
-<li>比如返回值，接收值的意义</li>
+<li>注释应该解释代码如何做的<ul>
+<li>比如返回值，接收值的意义 </li>
 </ul>
 </li>
-<li>注释应该解释代码实现的原因
-<ul>
+<li>注释应该解释代码实现的原因<ul>
 <li>适合解释代码的外部因素</li>
 <li>提供额外上下文</li>
 </ul>
 </li>
-<li>注释应该解释代码什么情况会出错
-<ul>
+<li>注释应该解释代码什么情况会出错<ul>
 <li>适合解释代码的限制条件</li>
 </ul>
 </li>
@@ -610,27 +589,20 @@
 </li>
 </ul>
 </blockquote>
-<h3 id="命名规范">命名规范</h3>
-<h4 id="variable">variable</h4>
-<blockquote>
+<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><h4 id="variable"><a href="#variable" class="headerlink" title="variable"></a>variable</h4><blockquote>
 <ul>
 <li>简洁胜于冗长</li>
-<li>缩略词全大写，但当其位于变量开头且不需要导出时，使用全小写
-<ul>
+<li>缩略词全大写，但当其位于变量开头且不需要导出时，使用全小写<ul>
 <li>例如使用ServeHTTP而不是ServeHttp</li>
 <li>使用XMLHTTPRequest或者xmIHTTPRequest</li>
 </ul>
 </li>
-<li>变量距离其被使用的地方越远，则需要携带越多的上下文信息
+<li><p>变量距离其被使用的地方越远，则需要携带越多的上下文信息</p>
 <ul>
-<li>全局变量在其名字中需要更多的上下文信息，使得在不同地方可以轻易辨认出其含义</li>
+<li>全局变量在其名字中需要更多的上下文信息，使得在不同地方可以轻易辨认出其含义 </li>
 </ul>
 </li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>举例
+<li><p>举例</p>
 <ul>
 <li>将deadline替换成t降低了变量名的信息量</li>
 <li>t常代指任意时间</li>
@@ -643,8 +615,7 @@
 <span class="token comment">//Bad</span>
 <span class="token keyword">func</span> <span class="token punctuation">(</span>c<span class="token operator">*</span>Client<span class="token punctuation">)</span> <span class="token function">send</span><span class="token punctuation">(</span>req<span class="token operator">*</span>Request<span class="token punctuation">,</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
-<h4 id="function">function</h4>
-<blockquote>
+<h4 id="function"><a href="#function" class="headerlink" title="function"></a>function</h4><blockquote>
 <ul>
 <li>函数名不携带包名的上下文信息，因为包名和函数名总是成对出现的</li>
 <li>函数名尽量简短</li>
@@ -652,13 +623,11 @@
 <li>当名为foo的包某个函数返回类型T时(T并不是Foo)，可以在函数名中加入类型信息</li>
 </ul>
 </blockquote>
-<h4 id="package">package</h4>
-<blockquote>
+<h4 id="package"><a href="#package" class="headerlink" title="package"></a>package</h4><blockquote>
 <ul>
 <li>只由小写字母组成。不包含大写字母和下划线等字符</li>
 <li>简短并包含一定的上下文信息。例如schema、task等</li>
-<li>不要与标准库同名。例如不要使用sync或者strings
-<ul>
+<li>不要与标准库同名。例如不要使用sync或者strings<ul>
 <li>以下规则尽量满足，以标准库包名为例</li>
 <li>不使用常用变量名作为包名。例如使用bufio而不是buf</li>
 <li>使用单数而不是复数。例如使用encoding而不是encodings</li>
@@ -667,14 +636,11 @@
 </li>
 </ul>
 </blockquote>
-<h2 id="控制流程">控制流程</h2>
-<blockquote>
+<h2 id="控制流程"><a href="#控制流程" class="headerlink" title="控制流程"></a>控制流程</h2><blockquote>
 <ul>
-<li>
-<p>避免嵌套，保持正常流程清晰</p>
+<li><p>避免嵌套，保持正常流程清晰</p>
 <ul>
-<li>
-<p>如果两个分支中都包含return语句，则可以去除冗余的else</p>
+<li><p>如果两个分支中都包含return语句，则可以去除冗余的else</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">//Bad</span>
 <span class="token keyword">if</span> foo<span class="token punctuation">{</span>
 	<span class="token keyword">return</span> x
@@ -689,27 +655,20 @@
 </li>
 </ul>
 </li>
-<li>
-<p>尽量保持正常代码路径为最小缩进</p>
+<li><p>尽量保持正常代码路径为最小缩进</p>
 <ul>
-<li>
-<p>优先处理错误情况/特殊情况，尽早返回或继续循环来减少嵌套</p>
+<li><p>优先处理错误情况/特殊情况，尽早返回或继续循环来减少嵌套</p>
 </li>
-<li>
-<blockquote>
+<li><blockquote>
 <p>举例</p>
 <ul>
-<li>
-<p>最常见的正常流程的路径被嵌套在两个if条件内</p>
+<li><p>最常见的正常流程的路径被嵌套在两个if条件内</p>
 </li>
-<li>
-<p>成功的退出条件是return nil,必须仔细匹配大括号来发现</p>
+<li><p>成功的退出条件是return nil,必须仔细匹配大括号来发现</p>
 </li>
-<li>
-<p>函数最后一行返回一个错误，需要追溯到匹配的左括号，才能了解何时会触发错误</p>
+<li><p>函数最后一行返回一个错误，需要追溯到匹配的左括号，才能了解何时会触发错误</p>
 </li>
-<li>
-<p>如果后续正常流程需要增加一步操作，调用新的函数，则又会增加一层嵌套</p>
+<li><p>如果后续正常流程需要增加一步操作，调用新的函数，则又会增加一层嵌套</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">//Bad</span>
 <span class="token keyword">func</span> <span class="token function">OneFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
 	err <span class="token operator">:=</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -1128,60 +1087,6 @@
 
  <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="512085302"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="/libs/aplayer/Meting.min.js"></script>
-
-    
 
     <div class="container row center-align"
          style="margin-bottom: 15px !important;">
@@ -1581,7 +1486,7 @@ $(function () {
       src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"
     ></script>
     <script type="text/javascript" src="/js/fireworks.js"></script>
-  
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1594,5 +1499,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>

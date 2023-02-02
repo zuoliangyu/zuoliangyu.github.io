@@ -6,28 +6,20 @@
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
     <meta name="keywords" content="GO语言实战__在线词典, ">
-    <meta name="description" content="在线词典
-规则介绍
-
-
+    <meta name="description" content="在线词典规则介绍
 
 输入单词
 
-
 输出音标、中文含义、词性.
-
 
 使用第三方的API进行查询
 
 
-
-操作步骤
-抓包
-
+操作步骤抓包
 
 彩云小译 - 在线翻译 (caiyunapp.com)
 在开发者视图中的网络框里进行数据流分析
-在翻译框里输入数据">
+在翻译框里输入数据后点击翻译查看网">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -518,44 +510,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>在线词典</h1>
-<h2 id="规则介绍">规则介绍</h2>
-<blockquote>
+                <h1 id="在线词典"><a href="#在线词典" class="headerlink" title="在线词典"></a>在线词典</h1><h2 id="规则介绍"><a href="#规则介绍" class="headerlink" title="规则介绍"></a>规则介绍</h2><blockquote>
 <ul>
-<li>
-<p>输入单词</p>
+<li><p>输入单词</p>
 </li>
-<li>
-<p>输出音标、中文含义、词性.</p>
+<li><p>输出音标、中文含义、词性.</p>
 </li>
-<li>
-<p>使用第三方的API进行查询</p>
-</li>
+<li>使用第三方的API进行查询</li>
 </ul>
 </blockquote>
-<h2 id="操作步骤">操作步骤</h2>
-<h3 id="抓包">抓包</h3>
-<blockquote>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h3><blockquote>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://fanyi.caiyunapp.com/#/">彩云小译 - 在线翻译 (caiyunapp.com)</a></li>
 <li>在开发者视图中的网络框里进行数据流分析</li>
 <li>在翻译框里输入数据后点击翻译查看网络框的变化</li>
 <li>发现为dict的名称的POST请求</li>
-<li>在POST中的JSON字段发现
-<ul>
+<li>在POST中的JSON字段发现<ul>
 <li>source表示待翻译单词</li>
 <li>trans_type表示翻译的模式en2zh就是英文到中文</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="代码生成">代码生成</h3>
-<blockquote>
+<h3 id="代码生成"><a href="#代码生成" class="headerlink" title="代码生成"></a>代码生成</h3><blockquote>
 <ul>
 <li>对dict进行复制curl</li>
 <li>在代码生成网站<a target="_blank" rel="noopener" href="https://curlconverter.com/go/">Convert curl commands to Go (curlconverter.com)</a>进行GO语言代码生成</li>
-<li>将生成后的代码进行部分调整即可访问
-<ul>
+<li>将生成后的代码进行部分调整即可访问<ul>
 <li>使用Client{}进行访问创建爱你</li>
 <li>使用NewRequest来构建流与请求（避免请求过大而导致内存爆开）</li>
 <li>Header模拟电脑端的请求头</li>
@@ -621,8 +602,7 @@
 	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span> bodyText<span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="生成request-body">生成request body</h3>
-<blockquote>
+<h3 id="生成request-body"><a href="#生成request-body" class="headerlink" title="生成request body"></a>生成request body</h3><blockquote>
 <p>构造一个结构体来进行阶层序列化</p>
 </blockquote>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> DictRequest <span class="token keyword">struct</span> <span class="token punctuation">{</span>
@@ -630,8 +610,7 @@
 	Source    <span class="token builtin">string</span> <span class="token string">`json:"source"`</span>
 	UserID    <span class="token builtin">string</span> <span class="token string">`json:"user_id"`</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="解析response-body">解析response body</h3>
-<blockquote>
+<h3 id="解析response-body"><a href="#解析response-body" class="headerlink" title="解析response body"></a>解析response body</h3><blockquote>
 <ul>
 <li>在返回的字段这种找到解释、音标、词性的解答：explanations和prons</li>
 <li>和request的处理相同，构建一个结构体来进行反序列化</li>
@@ -673,8 +652,7 @@
 	<span class="token punctuation">}</span> <span class="token string">`json:"dictionary"`</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="打印结果">打印结果</h2>
-<blockquote>
+<h2 id="打印结果"><a href="#打印结果" class="headerlink" title="打印结果"></a>打印结果</h2><blockquote>
 <ul>
 <li>解析响应得到的字符串并非全部都是我们需要的</li>
 <li>我们只需要一部分&lt;字典&gt;</li>
@@ -808,8 +786,7 @@ example: simpleDict hello
 	<span class="token function">query</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="小修改">小修改</h3>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
+<h3 id="小修改"><a href="#小修改" class="headerlink" title="小修改"></a>小修改</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
 	<span class="token string">"bytes"</span>
@@ -1294,60 +1271,6 @@ example: simpleDict hello
 
  <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="512085302"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="/libs/aplayer/Meting.min.js"></script>
-
-    
 
     <div class="container row center-align"
          style="margin-bottom: 15px !important;">
@@ -1747,7 +1670,7 @@ $(function () {
       src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"
     ></script>
     <script type="text/javascript" src="/js/fireworks.js"></script>
-  
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1760,5 +1683,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>
