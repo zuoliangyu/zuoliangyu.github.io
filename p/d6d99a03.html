@@ -5,20 +5,27 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="性能优化, ">
-    <meta name="description" content="性能优化建议简介
-
-性能优化的前提是满足正确可靠、简洁清晰等质量因素
-性能优化是综合评估，有时候时间效率和空间效率可能对立
-针对G0语言特性，介绍G0相关的性能优化建议
+    <meta name="keywords" content="大物——光学, ">
+    <meta name="description" content="双缝干涉相干光
 
 
-Benchmark
-如何使用
+获取方法
+分波阵面法
+分振幅法
 
-性能表现需要实际数据衡量
 
-Go语">
+
+
+光程差知识点
+
+光是电磁波，具有波动性
+
+光程$nr$-&amp;gt;折射率$\times$几何路程
+光在介质中行走得路程
+
+
+光程差
+\delta  = {n_2}{r_2} - {n">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +37,7 @@ Go语">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>性能优化 | 左岚的博客</title>
+    <title>大物——光学 | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -415,12 +422,12 @@ Go语">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/04.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/07.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">性能优化</h1>
+                    <h1 class="description center-align post-title">大物——光学</h1>
                 </div>
             </div>
         </div>
@@ -444,8 +451,8 @@ Go语">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%80%A7%E8%83%BD/">
-                                <span class="chip bg-color">性能</span>
+                            <a href="/tags/%E5%85%89%E5%AD%A6/">
+                                <span class="chip bg-color">光学</span>
                             </a>
                         
                     </div>
@@ -456,8 +463,8 @@ Go语">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                GO语言
+                            <a href="/categories/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" class="post-category">
+                                大学物理
                             </a>
                         
                     </div>
@@ -469,28 +476,28 @@ Go语">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-25
+                    2023-02-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-25
+                    2023-02-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    899
+                    200
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -513,182 +520,79 @@ Go语">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="性能优化建议"><a href="#性能优化建议" class="headerlink" title="性能优化建议"></a>性能优化建议</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
-<ul>
-<li>性能优化的前提是满足正确可靠、简洁清晰等质量因素</li>
-<li>性能优化是综合评估，有时候时间效率和空间效率可能对立</li>
-<li>针对G0语言特性，介绍G0相关的性能优化建议</li>
-</ul>
-</blockquote>
-<h2 id="Benchmark"><a href="#Benchmark" class="headerlink" title="Benchmark"></a>Benchmark</h2><blockquote>
-<p>如何使用</p>
-<ul>
-<li><p>性能表现需要实际数据衡量</p>
-</li>
-<li><p>Go语言提供了支持基准性能测试的benchmark工具</p>
-</li>
-<li><p>```shell<br>go test -bench=. -benchmem</p>
-<pre class="line-numbers language-none"><code class="language-none">
-结果说明
-
-![Snipaste_2023-01-25_17-16-10](https://glowing-seahorse-aea3b7.netlify.app/img/202301252242166.jpeg)
-
-- BenchmarkFib是测试函数名
-- -8表示GOMAXPROCS的值为8
-  - 在1.5版本后默认为cpu的核数
-
-- 1855870表示执行次数，即b.N
-- 602.5 ns/op 每次执行花费602.5ns
-- 0 B/op 每次申请多大的内存
-- 0 allcocs/op 每次执行申请几次内存
-
-## Slice 预分配内存
-
-- 尽可能在使用make()初始化切片时提供容量信息
-
-- &gt; ```go
-  &gt; func NoPreAlloc(size int) {
-  &gt; 	data := make([]int, 0)
-  &gt; 	for k := 0; k &lt; size; k++ {
-  &gt; 		data = append(data, k)
-  &gt; 	}
-  &gt; }
-  &gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>&gt;</p>
+                <h1 id="双缝干涉"><a href="#双缝干涉" class="headerlink" title="双缝干涉"></a>双缝干涉</h1><h2 id="相干光"><a href="#相干光" class="headerlink" title="相干光"></a>相干光</h2><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302031014232.jpg" alt="Snipaste_2023-02-03_10-13-44"></p>
 <blockquote>
 <ul>
-<li><p>331.1ns/op </p>
-</li>
-<li><p>2040B/op</p>
-</li>
-</ul>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">PreAlloc</span><span class="token punctuation">(</span>size <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	data<span class="token operator">:=</span><span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span> size<span class="token punctuation">)</span>
-	<span class="token keyword">for</span> k <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> k<span class="token operator">++</span> <span class="token punctuation">{</span>
-		data <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> k<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>107.1 ns/op</li>
-<li>896 B/op</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<p>大内存未释放</p>
-<ul>
-<li><p>在已有切片基础上创建切片，不会创建新的底层数组</p>
-</li>
-<li><p>场景</p>
-<ul>
-<li>原切片较大，代码在原切片基础上新建小切片</li>
-<li>原底层数组在内存中有引用，得不到释放</li>
-</ul>
-</li>
-<li><p>可使用copy替代re-slice</p>
-</li>
-<li><p>```go<br>func GetLastByslice(origin []int) []int {</p>
-<pre><code>return origin[len(origin)-2:]
-</code></pre><p>}<br>func GetLastByCopy(origin []int) []int {</p>
-<pre><code>result := make([]int, 2)
-copy(result, origin[len(origin)-2:])
-return result
-</code></pre><p>}</p>
-<pre class="line-numbers language-none"><code class="language-none">
-## map
-
-map预分配内存
-
-```go
-func NoPreAlloc(size int) {
-	data := make(map[int]int)
-	for i := 0; i &lt; size; i++ {
-		data[i] = i
-	}
-}
-func PreAlloc(size int) {
-	data := make(map[int]int, size)
-	for i := 0; i &lt; size; i++ {
-		data[i] = i
-	}
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-<p>分析</p>
-<blockquote>
-<ul>
-<li>不断向map中添加元素的操作会触发map的扩容</li>
-<li>提前分配好空间可以减少内存拷贝和Rehash的消耗</li>
-<li>建议根据实际需求提前预估好需要的空间</li>
-</ul>
-</blockquote>
-</blockquote>
-<h2 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h2><h3 id="string-Builder"><a href="#string-Builder" class="headerlink" title="string.Builder"></a>string.Builder</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">Plus</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span>str <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token builtin">string</span><span class="token punctuation">{</span>
-	s<span class="token operator">:=</span><span class="token string">""</span>
-	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">{</span>
-	    s<span class="token operator">+=</span>str
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> s
-<span class="token punctuation">}</span>
-<span class="token keyword">func</span> <span class="token function">StrBuilder</span><span class="token punctuation">(</span>n <span class="token builtin">int</span> <span class="token punctuation">,</span>str <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token builtin">string</span><span class="token punctuation">{</span>
-	<span class="token keyword">var</span> builder strings<span class="token punctuation">.</span>Builder
-	<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">{</span>
-	    builder<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> builder<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>结论</p>
-<ul>
-<li>使用+拼接性能最差，strings.Builder,.bytes.Buffer相近，strings.Buffer更快</li>
-</ul>
-<p>分析</p>
-<ul>
-<li>字符串在Go语言中是不可变类型，占用内存大小是固定的</li>
-<li>使用+每次都会重新分配内存</li>
-<li>strings.Builder,.bytes.Buffer底层都是[]byte数组</li>
-<li>内存扩容策略，不需要每次拼接重新分配内存</li>
-</ul>
-</blockquote>
-<h2 id="空结构体"><a href="#空结构体" class="headerlink" title="空结构体"></a>空结构体</h2><blockquote>
-<ul>
-<li>空结构体struct{}实例不占据任何的内存空间</li>
-<li>可作为各种场景下的占位符使用<ul>
-<li>节省资源</li>
-<li>空结构体本身具备很强的语义，即这里不需要任何值，仅作为占位符</li>
+<li>获取方法<ul>
+<li>分波阵面法</li>
+<li>分振幅法</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">EmptyStructMap</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	m <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">00</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-		m<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">func</span> <span class="token function">BoolMap</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	m <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">bool</span><span class="token punctuation">)</span>
-	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-		m<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="atomic包"><a href="#atomic包" class="headerlink" title="atomic包"></a>atomic包</h2><blockquote>
+<h2 id="光程差"><a href="#光程差" class="headerlink" title="光程差"></a>光程差</h2><h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><blockquote>
 <ul>
-<li>锁的实现是通过操作系统来实现，属于系统调用</li>
-<li>atomic操作是通过硬件实现，效率比锁高</li>
-<li>sync.Mutex应该用来保护一段逻辑，不仅仅用于保护一个变量</li>
-<li>对于非数值操作，可以使用atomic.Value,能承载一个interface{}</li>
+<li>光是电磁波，具有波动性</li>
+<li><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302031032678.jpg" alt="Snipaste_2023-02-03_10-31-58"></li>
+<li>光程$nr$-&gt;折射率$\times$几何路程<ul>
+<li>光在介质中行走得路程</li>
+</ul>
+</li>
+<li>光程差<ul>
+<li><script type="math/tex; mode=display">\delta  = {n_2}{r_2} - {n_1}{r_1}</script></li>
+</ul>
+</li>
+<li>相位差<ul>
+<li><script type="math/tex; mode=display">\Delta \varphi  = \frac{ {2\pi } }{\lambda }\delta</script></li>
+</ul>
+</li>
 </ul>
 </blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<h3 id="解题（光程差）"><a href="#解题（光程差）" class="headerlink" title="解题（光程差）"></a>解题（光程差）</h3><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302031041664.jpg" alt="Snipaste_2023-02-03_10-41-23"></p>
+<h2 id="杨氏双缝干涉"><a href="#杨氏双缝干涉" class="headerlink" title="杨氏双缝干涉"></a>杨氏双缝干涉</h2><h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><blockquote>
 <ul>
-<li>避免常见的性能陷阱可以保证大部分程序的性能</li>
-<li>普通应用代码，不要一味地追求程序的性能</li>
-<li>越高级的性能优化手段越容易出现问题</li>
-<li>在满足正确可靠、简洁清晰的质量要求的前提下提高程序性能</li>
+<li><p>光程差</p>
+<ul>
+<li><script type="math/tex; mode=display">\delta  = {r_2} - {r_1} = \frac{ {dx} }{D}</script></li>
+</ul>
+</li>
+<li><p>明纹</p>
+<ul>
+<li>半波长的偶数被</li>
+<li><script type="math/tex; mode=display">\delta  =  \pm k\lambda  =  \pm 2k \cdot \frac{\lambda }{2}</script></li>
+<li>$k=0,1,2$</li>
+</ul>
+</li>
+<li><p>暗纹</p>
+<ul>
+<li>半波长的奇数倍</li>
+<li><script type="math/tex; mode=display">\delta  =  \pm \left( {2k + 1} \right)\frac{\lambda }{2}</script></li>
+<li>$k=0,1,2$</li>
+</ul>
+</li>
+<li><p>明暗条纹间距</p>
+<ul>
+<li><script type="math/tex; mode=display">\Delta x = \frac{ {D\lambda } }{d}</script></li>
+</ul>
+</li>
+<li>明纹位置<ul>
+<li><script type="math/tex; mode=display">x =  \pm k\frac{ {D\lambda } }{d}</script></li>
+</ul>
+</li>
+<li>暗纹位置<ul>
+<li><script type="math/tex; mode=display">x =  \pm \fracNaN{2}\frac{ {D\lambda } }{d}</script></li>
+</ul>
+</li>
+<li>可见明纹最大级数<ul>
+<li><script type="math/tex; mode=display">{k_{\max } } = \frac{d}{\lambda }</script></li>
+</ul>
+</li>
 </ul>
 </blockquote>
+<h3 id="解题（杨氏双缝干涉）"><a href="#解题（杨氏双缝干涉）" class="headerlink" title="解题（杨氏双缝干涉）"></a>解题（杨氏双缝干涉）</h3><p>​    <img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302031117789.jpg" alt="Snipaste_2023-02-03_11-17-17"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302031137732.jpg" alt="Snipaste_2023-02-03_11-35-49"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302031137350.jpg" alt="Snipaste_2023-02-03_11-37-14"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302031138446.jpg" alt="Snipaste_2023-02-03_11-38-36"></p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
             </div>
@@ -715,7 +619,7 @@ func PreAlloc(size int) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/p/fc854d4d.html">http://example.com/p/fc854d4d.html</a>
+                    <a href="http://example.com/p/d6d99a03.html">http://example.com/p/d6d99a03.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -753,8 +657,8 @@ func PreAlloc(size int) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%80%A7%E8%83%BD/">
-                                    <span class="chip bg-color">性能</span>
+                                <a href="/tags/%E5%85%89%E5%AD%A6/">
+                                    <span class="chip bg-color">光学</span>
                                 </a>
                             
                         </div>
@@ -833,17 +737,18 @@ func PreAlloc(size int) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/p/e63d073c.html">
+                <a href="/p/d6d99a03.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.webp" class="responsive-img" alt="性能优化工具">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/07.webp" class="responsive-img" alt="大物——光学">
                         
-                        <span class="card-title">性能优化工具</span>
+                        <span class="card-title">大物——光学</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -853,26 +758,27 @@ func PreAlloc(size int) {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
+                            <a href="/categories/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" class="post-category">
+                                    大学物理
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%80%A7%E8%83%BD/">
-                        <span class="chip bg-color">性能</span>
+                    <a href="/tags/%E5%85%89%E5%AD%A6/">
+                        <span class="chip bg-color">光学</span>
                     </a>
                     
                 </div>
@@ -886,13 +792,13 @@ func PreAlloc(size int) {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/p/be6c94c6.html">
+                <a href="/p/569dc2b3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/12.webp" class="responsive-img" alt="高质量编程">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.webp" class="responsive-img" alt="大物——电磁学_磁">
                         
-                        <span class="card-title">高质量编程</span>
+                        <span class="card-title">大物——电磁学_磁</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -903,14 +809,14 @@ func PreAlloc(size int) {
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
+                            <a href="/categories/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" class="post-category">
+                                    大学物理
                                 </a>
                             
                             
@@ -920,8 +826,12 @@ func PreAlloc(size int) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
-                        <span class="chip bg-color">代码规范</span>
+                    <a href="/tags/%E7%94%B5%E7%A3%81%E5%AD%A6/">
+                        <span class="chip bg-color">电磁学</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A3%81%E5%AD%A6/">
+                        <span class="chip bg-color">磁学</span>
                     </a>
                     
                 </div>
@@ -1082,6 +992,13 @@ func PreAlloc(size int) {
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
  <footer class="page-footer bg-color">
     
