@@ -5,23 +5,19 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="使用app designer配置simulink, ">
-    <meta name="description" content="脚本语言设置clc;
-clear;
-close all;
+    <meta name="keywords" content="数字电子技术, ">
+    <meta name="description" content="数制与编码数制转换知识点
 
-%% 设定参数
-g = 10;
-m = 1;
-c = 0.5;
-L = 1;
+常用数制
+二进制(0,1)
+八进制(0,1,2,3,4,5,6,7)
+十进制(0,1,2,3,4,5,6,7,8,9)
+十六进制(0,1,2,3,4,5,6,7,8,9，A,B,C,D,E,F)
 
-% 设定时间
-tStepMax = 0.05;
-tFinal = 45;
 
-% 初始化
-theta0">
+
+
+解题（进">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,7 +29,7 @@ theta0">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>使用app designer配置simulink | 左岚的博客</title>
+    <title>数字电子技术 | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -418,12 +414,12 @@ theta0">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/09.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使用app designer配置simulink</h1>
+                    <h1 class="description center-align post-title">数字电子技术</h1>
                 </div>
             </div>
         </div>
@@ -447,8 +443,12 @@ theta0">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/simulink%E8%BF%90%E7%94%A8/">
-                                <span class="chip bg-color">simulink运用</span>
+                            <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
+                                <span class="chip bg-color">大学课程</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
+                                <span class="chip bg-color">数字电子技术</span>
                             </a>
                         
                     </div>
@@ -459,8 +459,8 @@ theta0">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/matlab/" class="post-category">
-                                matlab
+                            <a href="/categories/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" class="post-category">
+                                数字电子技术
                             </a>
                         
                     </div>
@@ -472,28 +472,28 @@ theta0">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-29
+                    2023-02-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-29
+                    2023-02-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    540
+                    968
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -516,109 +516,203 @@ theta0">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="脚本语言设置"><a href="#脚本语言设置" class="headerlink" title="脚本语言设置"></a>脚本语言设置</h1><pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">clc<span class="token punctuation">;</span>
-clear<span class="token punctuation">;</span>
-close all<span class="token punctuation">;</span>
-
-<span class="token comment">%% 设定参数</span>
-g <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-m <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-c <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span>
-L <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-
-<span class="token comment">% 设定时间</span>
-tStepMax <span class="token operator">=</span> <span class="token number">0.05</span><span class="token punctuation">;</span>
-tFinal <span class="token operator">=</span> <span class="token number">45</span><span class="token punctuation">;</span>
-
-<span class="token comment">% 初始化</span>
-theta0 <span class="token operator">=</span> <span class="token number">6</span> <span class="token operator">*</span> <span class="token keyword">pi</span> <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">;</span>
-thetdot0 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-
-<span class="token comment">% 打开simulink模型</span>
-<span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'Models.slx'</span><span class="token punctuation">)</span>
-<span class="token comment">% 运行simulink模型</span>
-<span class="token function">sim</span><span class="token punctuation">(</span>"Models<span class="token punctuation">.</span>slx"<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="app设计"><a href="#app设计" class="headerlink" title="app设计"></a>app设计</h1><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202301291046128.jpg" alt="app设计_1"></p>
-<p>使用按钮和编辑字段（数值）进行初始值设定与仿真开启</p>
-<h2 id="仿真设计"><a href="#仿真设计" class="headerlink" title="仿真设计"></a>仿真设计</h2><blockquote>
+                <h1 id="数制与编码"><a href="#数制与编码" class="headerlink" title="数制与编码"></a>数制与编码</h1><h2 id="数制转换"><a href="#数制转换" class="headerlink" title="数制转换"></a>数制转换</h2><h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><blockquote>
 <ul>
-<li><p>右键单击开始仿真，选中回调，进入函数编写界面</p>
-</li>
-<li><blockquote>
-<p>```matlab<br> function ButtonPushed(app, event)</p>
-<pre><code>    end
-</code></pre><pre class="line-numbers language-none"><code class="language-none">
-### 数据绑定
-
-- 进行数据绑定，可以通过点击输入框观察右侧的输入框的名称，使用xxx.Value函数获取值![数据绑定](https://glowing-seahorse-aea3b7.netlify.app/img/202301291054894.jpg)
-
-- &gt; ```matlab
-%% 数据设定
-            g = 9.8;% 重力加速度
-            m = app.kgEditField.Value;% 质量为输入的质量
-            L = app.mEditField.Value;% 长度为输入的长度
-            c = app.NmradsEditField.Value;% 摩擦系数为输入的系数
-            theta0 = 3*pi/180;
-            thetadot0 = 0;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</blockquote>
+<li>常用数制<ul>
+<li>二进制(0,1)</li>
+<li>八进制(0,1,2,3,4,5,6,7)</li>
+<li>十进制(0,1,2,3,4,5,6,7,8,9)</li>
+<li>十六进制(0,1,2,3,4,5,6,7,8,9，A,B,C,D,E,F)</li>
+</ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="模型输入"><a href="#模型输入" class="headerlink" title="模型输入"></a>模型输入</h3><blockquote>
-<ul>
-<li><p>使用mdl = ‘模型名称’进行模型录入</p>
-</li>
-<li><p>open_system(mdl)进行模型开启</p>
-</li>
-<li><p>in.setVariable(‘模型中需要的参数’,用户输入的参数)</p>
-</li>
-<li><blockquote>
-<p>```matlab<br>%% 模型导入</p>
-<pre><code>        mdl = 'Model';% 用于仿真的模型
-        open_system(mdl)% 打开模型
-        in = Simulink.SimulationInput(mdl)% 模拟输入
-        % 数据输入，注意此处数据应为模型中需要计算的数据
-        in = in.setVariable('m',m);
-        in = in.setVariable('g',g);
-        in = in.setVariable('L',L);
-        in = in.setVariable('c',c);
-        in = in.setVariable('theta0',theta0);
-        in = in.setVariable('thetadot0',thetadot0);
-</code></pre><pre class="line-numbers language-none"><code class="language-none">
-### 仿真输出
-
-```matlab
-%% 数据输出
-            out = sim(in);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="解题（进制转换）"><a href="#解题（进制转换）" class="headerlink" title="解题（进制转换）"></a>解题（进制转换）</h3><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041708265.jpg" alt="Snipaste_2023-02-04_17-08-05"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041709534.jpg" alt="Snipaste_2023-02-04_17-09-12"></p>
+<h2 id="BCD编码"><a href="#BCD编码" class="headerlink" title="BCD编码"></a>BCD编码</h2><h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><blockquote>
+<p>利用4位二进制码表示一位十进制数，也就是只能表示09，常用的是8421BCD码，其与自然二进制码相似。</p>
 </blockquote>
+<h3 id="解题（BCD编码）"><a href="#解题（BCD编码）" class="headerlink" title="解题（BCD编码）"></a>解题（BCD编码）</h3><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041728763.jpg" alt="Snipaste_2023-02-04_17-28-26"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041732156.jpg" alt="Snipaste_2023-02-04_17-32-33"></p>
+<h1 id="逻辑代数"><a href="#逻辑代数" class="headerlink" title="逻辑代数"></a>逻辑代数</h1><h2 id="逻辑运算及逻辑门"><a href="#逻辑运算及逻辑门" class="headerlink" title="逻辑运算及逻辑门"></a>逻辑运算及逻辑门</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041734820.jpg" alt="Snipaste_2023-02-04_17-34-18"></p>
+<blockquote>
+<ul>
+<li>偶数个1异或结果为0，奇数个1异或结果为1，无论多少个0异或结果都为0。</li>
+<li><p>偶数个0同或结果为1，奇数个0同或结果为0，无论多少个1同或结果都为1。</p>
+</li>
+<li><p>普通门电路只能输出高电平和低电平，而三态门可多输出一种状态：高阻态。</p>
 </li>
 </ul>
-<p>将模拟输入in的数据全部输出为进入out数组存储，存储结果用于绘制图像</p>
 </blockquote>
-<h2 id="函数完整代码"><a href="#函数完整代码" class="headerlink" title="函数完整代码"></a>函数完整代码</h2><pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab"><span class="token keyword">function</span> <span class="token function">ButtonPushed</span><span class="token punctuation">(</span>app<span class="token punctuation">,</span> event<span class="token punctuation">)</span>
-            <span class="token comment">%% 数据设定</span>
-            g <span class="token operator">=</span> <span class="token number">9.8</span><span class="token punctuation">;</span><span class="token comment">% 重力加速度</span>
-            m <span class="token operator">=</span> app<span class="token punctuation">.</span>kgEditField<span class="token punctuation">.</span>Value<span class="token punctuation">;</span><span class="token comment">% 质量为输入的质量</span>
-            L <span class="token operator">=</span> app<span class="token punctuation">.</span>mEditField<span class="token punctuation">.</span>Value<span class="token punctuation">;</span><span class="token comment">% 长度为输入的长度</span>
-            c <span class="token operator">=</span> app<span class="token punctuation">.</span>NmradsEditField<span class="token punctuation">.</span>Value<span class="token punctuation">;</span><span class="token comment">% 摩擦系数为输入的系数</span>
-            theta0 <span class="token operator">=</span> <span class="token number">3</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token operator">/</span><span class="token number">180</span><span class="token punctuation">;</span>
-            thetadot0 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token comment">%% 模型导入</span>
-            mdl <span class="token operator">=</span> <span class="token string">'Model'</span><span class="token punctuation">;</span><span class="token comment">% 用于仿真的模型</span>
-            <span class="token function">open_system</span><span class="token punctuation">(</span>mdl<span class="token punctuation">)</span><span class="token comment">% 打开模型</span>
-            in <span class="token operator">=</span> Simulink<span class="token punctuation">.</span><span class="token function">SimulationInput</span><span class="token punctuation">(</span>mdl<span class="token punctuation">)</span><span class="token comment">% 模拟输入</span>
-            <span class="token comment">% 数据输入，注意此处数据应为模型中需要计算的数据</span>
-            in <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span><span class="token string">'m'</span><span class="token punctuation">,</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            in <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span><span class="token string">'g'</span><span class="token punctuation">,</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            in <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span><span class="token string">'L'</span><span class="token punctuation">,</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            in <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span><span class="token string">'c'</span><span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            in <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span><span class="token string">'theta0'</span><span class="token punctuation">,</span>theta0<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            in <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span><span class="token string">'thetadot0'</span><span class="token punctuation">,</span>thetadot0<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment">%% 数据输出</span>
-            out <span class="token operator">=</span> <span class="token function">sim</span><span class="token punctuation">(</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041753333.jpg" alt="Snipaste_2023-02-04_17-53-08"></p>
+<blockquote>
+<ul>
+<li>集电极开路与非门（OC门），输出端看直接相连完成线与逻辑功能</li>
+</ul>
+</blockquote>
+<h3 id="解题（逻辑运算及逻辑门）"><a href="#解题（逻辑运算及逻辑门）" class="headerlink" title="解题（逻辑运算及逻辑门）"></a>解题（逻辑运算及逻辑门）</h3><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041735356.jpg" alt="Snipaste_2023-02-04_17-35-31"></p>
+<h2 id="规则及常用形式"><a href="#规则及常用形式" class="headerlink" title="规则及常用形式"></a>规则及常用形式</h2><blockquote>
+<ul>
+<li>反演规则<ul>
+<li>与项加括号</li>
+<li>与或项交换</li>
+<li>短非号交换</li>
+<li>长非号不动</li>
+<li><script type="math/tex; mode=display">F = \overline {A\overline C  + \overline {BC} }  \Rightarrow \overline F  = \overline {\left( {\overline A  + C} \right) \cdot \overline {\overline B  + \overline C } }</script></li>
+</ul>
+</li>
+<li>对偶规则<ul>
+<li>与项加括号</li>
+<li>与或项交换</li>
+<li>长非号不动</li>
+<li><script type="math/tex; mode=display">F = \overline {A\overline C  + \overline {BC} }  \Rightarrow F' = \overline {\left( {A + \overline C } \right) \cdot \overline {B + C} }</script></li>
+</ul>
+</li>
+<li>与非——与非表达式<ul>
+<li>化为与或</li>
+<li>加入2个长非</li>
+<li>利用反演规则</li>
+<li><script type="math/tex; mode=display">F = A\left( {B + C} \right) + BC = AB + AC + BC = \overline{\overline {AB + AC + BC} }   = \overline {\overline {AB}  \cdot \overline {BC}  \cdot \overline {AC} }</script></li>
+</ul>
+</li>
+<li>最小项$m$<ul>
+<li>包含所有输入的与项，$n$个变量的最小项有$2^n$个 </li>
+<li>两个变量可以构成四个最小项<ul>
+<li><script type="math/tex; mode=display">AB,A\bar B,\bar AB,\bar A\bar B</script></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题（最小项）"><a href="#解题（最小项）" class="headerlink" title="解题（最小项）"></a>解题（最小项）</h3><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041809413.jpg" alt="Snipaste_2023-02-04_18-09-16"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041810911.jpg" alt="Snipaste_2023-02-04_18-10-47"></p>
+<h1 id="卡诺图"><a href="#卡诺图" class="headerlink" title="卡诺图"></a>卡诺图</h1><h2 id="卡诺图化解逻辑函数"><a href="#卡诺图化解逻辑函数" class="headerlink" title="卡诺图化解逻辑函数"></a>卡诺图化解逻辑函数</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>C\AB</th>
+<th>00</th>
+<th>01</th>
+<th>11</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>7</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>编号为110，则其为$m_6$，即$AB\bar C$</p>
+<p>卡诺图绘画</p>
+<ul>
+<li>写出最小项形式</li>
+<li>画出卡诺图</li>
+<li>按照编号填1</li>
+</ul>
+<p>逻辑项相邻</p>
+<ul>
+<li>$n$变量最小项有$n$个逻辑相邻项</li>
+</ul>
+<p>卡诺图化简函数</p>
+<ul>
+<li>画卡诺图</li>
+<li>画卡诺圈（2的倍数，越大越好，圈住所有的1）</li>
+<li>写出卡诺圈对应的逻辑表达式</li>
+<li>相或</li>
+</ul>
+</blockquote>
+<h3 id="解题（卡诺图）"><a href="#解题（卡诺图）" class="headerlink" title="解题（卡诺图）"></a>解题（卡诺图）</h3><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041838359.jpg" alt="Snipaste_2023-02-04_18-33-32"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041840518.jpg" alt="Snipaste_2023-02-04_18-40-46"></p>
+<h2 id="卡诺图化简带无关项的逻辑函数"><a href="#卡诺图化简带无关项的逻辑函数" class="headerlink" title="卡诺图化简带无关项的逻辑函数"></a>卡诺图化简带无关项的逻辑函数</h2><h3 id="知识点-4"><a href="#知识点-4" class="headerlink" title="知识点"></a>知识点</h3><blockquote>
+<p>无关项x表示既可以当作1，也可以当作0 –&gt;可圈可不圈 </p>
+<p>约束条件即为有关项，反过来说，无关项即不在约束条件内的项</p>
+</blockquote>
+<h3 id="解题（无关项）"><a href="#解题（无关项）" class="headerlink" title="解题（无关项）"></a>解题（无关项）</h3><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041844128.jpg" alt="Snipaste_2023-02-04_18-44-19"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041846433.jpg" alt="Snipaste_2023-02-04_18-45-55"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041848166.jpg" alt="Snipaste_2023-02-04_18-48-11"></p>
+<h1 id="组合逻辑电路"><a href="#组合逻辑电路" class="headerlink" title="组合逻辑电路"></a>组合逻辑电路</h1><h2 id="组合逻辑电路分析"><a href="#组合逻辑电路分析" class="headerlink" title="组合逻辑电路分析"></a>组合逻辑电路分析</h2><h3 id="知识点-5"><a href="#知识点-5" class="headerlink" title="知识点"></a>知识点</h3><blockquote>
+<ul>
+<li><p>一位全加器</p>
+<ul>
+<li><p>$AB$为加数，$C_i$为低位进位，$SC_o$为计算结果</p>
+</li>
+<li><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041901760.jpg" alt="Snipaste_2023-02-04_19-01-41"></p>
+</li>
+<li><p>真值表</p>
+</li>
+<li><p>|  A   |  B   | $C_i$ | $C_o$ |  S   |<br>| :—: | :—: | :—-: | :—-: | :—: |<br>|  0   |  0   |   0   |   0   |  0   |<br>|  0   |  0   |   1   |   0   |  1   |<br>|  0   |  1   |   0   |   0   |  1   |<br>|  0   |  1   |   1   |   1   |  0   |<br>|  1   |  0   |   0   |   0   |  1   |<br>|  1   |  0   |   1   |   1   |  0   |<br>|  1   |  1   |   0   |   1   |  0   |<br>|  1   |  1   |   1   |   1   |  1   |</p>
+<p>$A=1,B=1$时，对于的$C_0=1,S=0$,计算结果为二进制10，即为2</p>
+</li>
+</ul>
+</li>
+<li><p>一位半加器</p>
+<ul>
+<li><p>$AB$为加数，$S$为计算结果,$C_o$为进位</p>
+</li>
+<li><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041906200.jpg" alt="Snipaste_2023-02-04_19-06-43"></p>
+</li>
+<li><p>真值表</p>
+</li>
+<li><p>|  A   |  B   | $C_o$ |  S   |<br>| :—: | :—: | :—-: | :—: |<br>|  0   |  0   |   0   |  0   |<br>|  0   |  1   |   0   |  1   |<br>|  0   |  1   |   0   |  1   |<br>|  1   |  0   |   0   |  1   |<br>|  1   |  0   |   0   |  1   |<br>|  1   |  1   |   1   |  0   |</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h3><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041853725.jpg" alt="Snipaste_2023-02-04_18-53-27"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041901481.jpg" alt="Snipaste_2023-02-04_19-01-20"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041909260.jpg" alt="Snipaste_2023-02-04_19-09-15"></p>
+<h2 id="组合逻辑电路设计"><a href="#组合逻辑电路设计" class="headerlink" title="组合逻辑电路设计"></a>组合逻辑电路设计</h2><h3 id="解题-1"><a href="#解题-1" class="headerlink" title="解题"></a>解题</h3><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041910753.jpg" alt="Snipaste_2023-02-04_19-10-48"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041912669.jpg" alt="Snipaste_2023-02-04_19-12-00"></p>
+<h2 id="竞争与冒险"><a href="#竞争与冒险" class="headerlink" title="竞争与冒险"></a>竞争与冒险</h2><h3 id="知识点-6"><a href="#知识点-6" class="headerlink" title="知识点"></a>知识点</h3><blockquote>
+<ul>
+<li>产生原因<ul>
+<li>电路中存在延时</li>
+</ul>
+</li>
+<li>如何判断<ul>
+<li>卡诺图相切</li>
+</ul>
+</li>
+<li>如何消除<ul>
+<li>将相切部分消除，并用相交将消除的部分圈上</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题（竞争与冒险）"><a href="#解题（竞争与冒险）" class="headerlink" title="解题（竞争与冒险）"></a>解题（竞争与冒险）</h3><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041914438.jpg" alt="Snipaste_2023-02-04_19-14-31"></p>
+<h1 id="常用组合逻辑器件"><a href="#常用组合逻辑器件" class="headerlink" title="常用组合逻辑器件"></a>常用组合逻辑器件</h1><h2 id="常用组合逻辑器件分析"><a href="#常用组合逻辑器件分析" class="headerlink" title="常用组合逻辑器件分析"></a>常用组合逻辑器件分析</h2><h3 id="知识点-7"><a href="#知识点-7" class="headerlink" title="知识点"></a>知识点</h3><blockquote>
+<ul>
+<li><p>译码器</p>
+<ul>
+<li><p>带了小圈意为低电平有效，没带小圈意为高电平有效</p>
+</li>
+<li><p>3-8译码器（2进制转换为十进制，3个输入表达8个输出）</p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041918458.jpg" alt="Snipaste_2023-02-04_19-15-45"></p>
+</li>
+<li><p>$Y_i=\bar m_i$</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题-2"><a href="#解题-2" class="headerlink" title="解题"></a>解题</h3><p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302041918736.jpg" alt="Snipaste_2023-02-04_19-18-30"></p>
+<h2 id="综合应用"><a href="#综合应用" class="headerlink" title="综合应用"></a>综合应用</h2><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
             </div>
             <hr/>
@@ -644,7 +738,7 @@ thetdot0 <span class="token operator">=</span> <span class="token number">0</spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/p/7ecadde2.html">http://example.com/p/7ecadde2.html</a>
+                    <a href="http://example.com/p/8417bd3.html">http://example.com/p/8417bd3.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -682,8 +776,12 @@ thetdot0 <span class="token operator">=</span> <span class="token number">0</spa
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/simulink%E8%BF%90%E7%94%A8/">
-                                    <span class="chip bg-color">simulink运用</span>
+                                <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
+                                    <span class="chip bg-color">大学课程</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
+                                    <span class="chip bg-color">数字电子技术</span>
                                 </a>
                             
                         </div>
@@ -762,17 +860,18 @@ thetdot0 <span class="token operator">=</span> <span class="token number">0</spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/p/5504392c.html">
+                <a href="/p/8417bd3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/00.webp" class="responsive-img" alt="GO内存管理">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/09.webp" class="responsive-img" alt="数字电子技术">
                         
-                        <span class="card-title">GO内存管理</span>
+                        <span class="card-title">数字电子技术</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -782,26 +881,31 @@ thetdot0 <span class="token operator">=</span> <span class="token number">0</spa
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
+                            <a href="/categories/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    数字电子技术
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
-                        <span class="chip bg-color">性能优化</span>
+                    <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
+                        <span class="chip bg-color">大学课程</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">数字电子技术</span>
                     </a>
                     
                 </div>
@@ -815,13 +919,13 @@ thetdot0 <span class="token operator">=</span> <span class="token number">0</spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/p/d0fc8bad.html">
+                <a href="/p/d6d99a03.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="性能优化及自动化管理">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/07.webp" class="responsive-img" alt="大物——光学">
                         
-                        <span class="card-title">性能优化及自动化管理</span>
+                        <span class="card-title">大物——光学</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -832,14 +936,14 @@ thetdot0 <span class="token operator">=</span> <span class="token number">0</spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
+                            <a href="/categories/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" class="post-category">
+                                    大学物理
                                 </a>
                             
                             
@@ -849,8 +953,12 @@ thetdot0 <span class="token operator">=</span> <span class="token number">0</spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
-                        <span class="chip bg-color">性能优化</span>
+                    <a href="/tags/%E5%85%89%E5%AD%A6/">
+                        <span class="chip bg-color">光学</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
+                        <span class="chip bg-color">大学课程</span>
                     </a>
                     
                 </div>
