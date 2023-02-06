@@ -5,20 +5,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="高质量编程, ">
-    <meta name="description" content="简介
-编写的代码能够达到正确可靠、简洁清晰的目标可称之为高质量代码
-
-各种边界条件是否考虑完备
-异常情况处理，稳定性保证
-易读易维护
-
-
-编程原则
-实际应用场景千变万化，各种语言的特性和语法各不相同
-但是高质量编程遵循的原则是相通的
-
-简单">
+    <meta name="keywords" content="分类: 模拟电子技术, ">
+    <meta name="description" content="左岚的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>高质量编程 | 左岚的博客</title>
+    <title>分类: 模拟电子技术 | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -411,677 +399,387 @@
     </nav>
 
 </header>
- 
+ <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+  <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+    <div class="brand">
+      <div class="title center-align">
+         世界很暗，但是你来了 
+      </div>
+
+      <div class="description center-align">
+        
+        <span id="subtitle"></span>
+        <script src="/libs/typed/typed.js"></script>
+        <script>
+          var typed = new Typed("#subtitle", {
+            strings: ['如果放弃太早，你永远都不知道自己会错过什么。',
+              '没有伞的孩子必须努力奔跑！',
+              '花开不是为了花落，而是为了开的更加灿烂。',
+              '没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生。'],
+            startDelay: 300,
+            typeSpeed: 100,
+            loop: true,
+            backSpeed: 50,
+            showCursor: true
+                  });
+        </script>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<script>
+  // 每小时切换 banner 图.  Switch banner image every day.
+  var bannerUrl =
+    "/medias/banner/" +
+    new Date().getHours() +
+    ".webp";
+  $(".bg-cover").css("background-image", "url(" + bannerUrl + ")");
+</script>
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.webp')">
-    <div class="container" style="right: 0px;left: 0px;">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <h1 class="description center-align post-title">高质量编程</h1>
-                </div>
+
+    </div>
+</div>
+
+<main class="content">
+
+    
+<style>
+    /* 文章分类书本样式 */
+    .chip-container .tag-chips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .chip-container .tag-chips a {
+        margin: 0 7px 10px;
+    }
+
+    .chip-container .chip {
+        max-width: calc(100% / 4);
+        min-width: 10em;
+        height: 200px;
+        position: relative;
+        transition: .5s linear;
+        padding: 19px 0;
+        line-height: 20px;
+        z-index: 990;
+        border-radius: 5px 15px 15px 5px;
+        transform-origin: left center 0;
+    }
+
+    .chip-container .notebook-cover::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: calc(100% + 2px);
+        top: -1px;
+        z-index: 100;
+        border-radius: 2px;
+        right: 25px;
+        transition: 2s ease;
+        background: linear-gradient(to right, #1e606e 0, #2e95aa 12%, #1e606e 25%, #2e95aa 37%, #1e606e 50%, #2e95aa 62%, #1e606e 75%, #2e95aa 87%, #1e606e 100%);
+    }
+
+    .chip .notebook-skin {
+        height: 50px;
+        width: 100%;
+        background: #e8e8e0;
+        margin-top: 42px;
+        padding: 10px 32px 64px 10px;
+        font-size: 19px;
+        position: relative;
+        z-index: 10;
+        color: #222;
+        text-align: left;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    }
+
+    .chip .notebook-skin:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 15px;
+        left: 0;
+        bottom: 0;
+        background: #cddc39;
+    }
+
+    .notebook-cover {
+        background: #cc4b48;
+        height: 200px;
+        width: 140px;
+        position: absolute;
+        border-radius: 5px 15px 15px 5px;
+        z-index: 10;
+        transition: .5s linear;
+        transform-style: preserve-3d;
+        transform-origin: left center 0;
+    }
+
+    .moleskine-wrapper {
+        max-width: calc(100% / 4);
+        min-width: 10em;
+    }
+
+    .moleskine-notebook:hover .notebook-cover {
+        transform: rotateY(-50deg);
+        z-index: 99;
+        box-shadow: 20px 10px 50px rgba(0, 0, 0, .2);
+    }
+
+    .moleskine-notebook {
+        height: 200px;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        transition: .5s linear;
+        border-radius: 5px 15px 15px 5px;
+        transform-origin: left center 0;
+    }
+
+    .moleskine-notebook:hover {
+        transform: rotateZ(-10deg);
+    }
+
+    .notebook-page.dotted {
+        background: linear-gradient(to bottom, #fbfae8 9px, #e4e4e4 1px);
+        background-size: 100% 10px;
+    }
+
+    .chip-container .chip:hover {
+        filter: invert(.1);
+    }
+
+    .notebook-page {
+        height: 100%;
+        width: 140px;
+        position: absolute;
+        top: 10px;
+        background-color: #fbfae8;
+        z-index: 0;
+        border-radius: 5px 16px 16px 5px;
+        overflow: hidden;
+    }
+</style>
+
+<div id="category-cloud" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
+            </div>
+            <div class="tag-chips">
+                
+                
+                
+                <a href="/categories/matlab/" title="matlab: 1">
+                    <div class="moleskine-wrapper">
+                        <div class="moleskine-notebook">
+                            <div class="chip notebook-cover center-align waves-effect waves-light
+                               chip-default "
+                                style="background-color: #F9EBEA;">
+                                <div
+                                    class="notebook-skin
+                                       chip-default ">
+                                    matlab
+                                </div>
+                            </div>
+                            <div class="notebook-page dotted"></div>
+                        </div>
+                    </div>
+                </a>
+                
+                
+                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" title="GO语言: 17">
+                    <div class="moleskine-wrapper">
+                        <div class="moleskine-notebook">
+                            <div class="chip notebook-cover center-align waves-effect waves-light
+                               chip-default "
+                                style="background-color: #F5EEF8;">
+                                <div
+                                    class="notebook-skin
+                                       chip-default ">
+                                    GO语言
+                                </div>
+                            </div>
+                            <div class="notebook-page dotted"></div>
+                        </div>
+                    </div>
+                </a>
+                
+                
+                <a href="/categories/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" title="大学物理: 3">
+                    <div class="moleskine-wrapper">
+                        <div class="moleskine-notebook">
+                            <div class="chip notebook-cover center-align waves-effect waves-light
+                               chip-default "
+                                style="background-color: #D5F5E3;">
+                                <div
+                                    class="notebook-skin
+                                       chip-default ">
+                                    大学物理
+                                </div>
+                            </div>
+                            <div class="notebook-page dotted"></div>
+                        </div>
+                    </div>
+                </a>
+                
+                
+                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" title="软件使用: 5">
+                    <div class="moleskine-wrapper">
+                        <div class="moleskine-notebook">
+                            <div class="chip notebook-cover center-align waves-effect waves-light
+                               chip-default "
+                                style="background-color: #E8F8F5;">
+                                <div
+                                    class="notebook-skin
+                                       chip-default ">
+                                    软件使用
+                                </div>
+                            </div>
+                            <div class="notebook-page dotted"></div>
+                        </div>
+                    </div>
+                </a>
+                
+                
+                <a href="/categories/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="数字电子技术: 1">
+                    <div class="moleskine-wrapper">
+                        <div class="moleskine-notebook">
+                            <div class="chip notebook-cover center-align waves-effect waves-light
+                               chip-default "
+                                style="background-color: #FEF9E7;">
+                                <div
+                                    class="notebook-skin
+                                       chip-default ">
+                                    数字电子技术
+                                </div>
+                            </div>
+                            <div class="notebook-page dotted"></div>
+                        </div>
+                    </div>
+                </a>
+                
+                
+                <a href="/categories/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="模拟电子技术: 1">
+                    <div class="moleskine-wrapper">
+                        <div class="moleskine-notebook">
+                            <div class="chip notebook-cover center-align waves-effect waves-light
+                               chip-active "
+                                style="background-color: #F8F9F9;">
+                                <div
+                                    class="notebook-skin
+                                       chip-active ">
+                                    模拟电子技术
+                                </div>
+                            </div>
+                            <div class="notebook-page dotted"></div>
+                        </div>
+                    </div>
+                </a>
+                
+                
             </div>
         </div>
     </div>
 </div>
 
 
-
-
-<main class="post-container content">
-
     
-    <div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
-<div id="artDetail">
-    <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
-                                <span class="chip bg-color">代码规范</span>
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                GO语言
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
 
-            <div class="post-info">
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-24
-                </div>
-                
-
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-24
-                </div>
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
-                </div>
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
-            </div>
-        </div>
-        <hr class="clearfix">
-
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.min.css">
-        
-
-        
-
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
-<p>编写的代码能够达到正确可靠、简洁清晰的目标可称之为高质量代码</p>
-<ul>
-<li>各种边界条件是否考虑完备</li>
-<li>异常情况处理，稳定性保证</li>
-<li>易读易维护</li>
-</ul>
-</blockquote>
-<h2 id="编程原则"><a href="#编程原则" class="headerlink" title="编程原则"></a>编程原则</h2><blockquote>
-<p>实际应用场景千变万化，各种语言的特性和语法各不相同</p>
-<p>但是高质量编程遵循的原则是相通的</p>
-<ul>
-<li>简单性<ul>
-<li>消除“多余的复杂性”，以简单清晰的逻辑编写代码</li>
-<li>不理解的代码无法修复改进</li>
-</ul>
-</li>
-<li>可读性<ul>
-<li>代码是写给人看的，而不是机器</li>
-<li>编写可维护代码的第一步是确保代码可读</li>
-</ul>
-</li>
-<li>生产力<ul>
-<li>团队整体工作效率非常重要 </li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h1 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h1><blockquote>
-<p>如何编写高质量的Go代码</p>
-<ul>
-<li>代码格式</li>
-<li>注释</li>
-<li>命名规范</li>
-<li>控制流程</li>
-<li>错误和异常处理</li>
-</ul>
-</blockquote>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><blockquote>
-<p>公共符号始终要注释</p>
-<ul>
-<li>包中声明的每个公共的符号<br>变量、常量、函数以及结构<br>都需要添加注释</li>
-<li>任何既不明显也不简短的公<br>共功能必须予以注释</li>
-<li>无论长度或复杂程度如何，<br>对库中的任何函数都必须进<br>行注释</li>
-</ul>
-<blockquote>
-<p>例外</p>
-<ul>
-<li>不需要注释实现接口的方法，下面的方法是错误的</li>
-</ul>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// Read implements the io.Reader interface</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>FileReader<span class="token punctuation">)</span> <span class="token function">Read</span><span class="token punctuation">(</span>buf <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span><span class="token builtin">error</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</blockquote>
-<ul>
-<li>注释应该做的<ul>
-<li>注释应该解释代码作用<ul>
-<li>注释公共符号</li>
-</ul>
-</li>
-<li>注释应该解释代码如何做的<ul>
-<li>比如返回值，接收值的意义 </li>
-</ul>
-</li>
-<li>注释应该解释代码实现的原因<ul>
-<li>适合解释代码的外部因素</li>
-<li>提供额外上下文</li>
-</ul>
-</li>
-<li>注释应该解释代码什么情况会出错<ul>
-<li>适合解释代码的限制条件</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><h4 id="variable"><a href="#variable" class="headerlink" title="variable"></a>variable</h4><blockquote>
-<ul>
-<li>简洁胜于冗长</li>
-<li>缩略词全大写，但当其位于变量开头且不需要导出时，使用全小写<ul>
-<li>例如使用ServeHTTP而不是ServeHttp</li>
-<li>使用XMLHTTPRequest或者xmIHTTPRequest</li>
-</ul>
-</li>
-<li><p>变量距离其被使用的地方越远，则需要携带越多的上下文信息</p>
-<ul>
-<li>全局变量在其名字中需要更多的上下文信息，使得在不同地方可以轻易辨认出其含义 </li>
-</ul>
-</li>
-<li><p>举例</p>
-<ul>
-<li>将deadline替换成t降低了变量名的信息量</li>
-<li>t常代指任意时间</li>
-<li>deadline指截止时间，有特定的含义</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// Good</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c<span class="token operator">*</span>Client<span class="token punctuation">)</span> <span class="token function">send</span><span class="token punctuation">(</span>req<span class="token operator">*</span>Request<span class="token punctuation">,</span>deadline time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token comment">//Bad</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c<span class="token operator">*</span>Client<span class="token punctuation">)</span> <span class="token function">send</span><span class="token punctuation">(</span>req<span class="token operator">*</span>Request<span class="token punctuation">,</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</blockquote>
-<h4 id="function"><a href="#function" class="headerlink" title="function"></a>function</h4><blockquote>
-<ul>
-<li>函数名不携带包名的上下文信息，因为包名和函数名总是成对出现的</li>
-<li>函数名尽量简短</li>
-<li>当名为foo的包某个函数返回类型Foo时，可以省略类型信息而不导致歧义</li>
-<li>当名为foo的包某个函数返回类型T时(T并不是Foo)，可以在函数名中加入类型信息</li>
-</ul>
-</blockquote>
-<h4 id="package"><a href="#package" class="headerlink" title="package"></a>package</h4><blockquote>
-<ul>
-<li>只由小写字母组成。不包含大写字母和下划线等字符</li>
-<li>简短并包含一定的上下文信息。例如schema、task等</li>
-<li>不要与标准库同名。例如不要使用sync或者strings<ul>
-<li>以下规则尽量满足，以标准库包名为例</li>
-<li>不使用常用变量名作为包名。例如使用bufio而不是buf</li>
-<li>使用单数而不是复数。例如使用encoding而不是encodings</li>
-<li>谨慎地使用缩写。例如使用fmt在不破坏上下文的情况下比format更加简短</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h2 id="控制流程"><a href="#控制流程" class="headerlink" title="控制流程"></a>控制流程</h2><blockquote>
-<ul>
-<li><p>避免嵌套，保持正常流程清晰</p>
-<ul>
-<li><p>如果两个分支中都包含return语句，则可以去除冗余的else</p>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">//Bad</span>
-<span class="token keyword">if</span> foo<span class="token punctuation">{</span>
-	<span class="token keyword">return</span> x
-<span class="token punctuation">}</span> <span class="token keyword">else</span><span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token boolean">nil</span>
-<span class="token punctuation">}</span>
-<span class="token comment">//Good </span>
-<span class="token keyword">if</span> foo <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> x
-<span class="token punctuation">}</span>
-<span class="token keyword">return</span> <span class="token boolean">nil</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>尽量保持正常代码路径为最小缩进</p>
-<ul>
-<li><p>优先处理错误情况/特殊情况，尽早返回或继续循环来减少嵌套</p>
-</li>
-<li><blockquote>
-<p>举例</p>
-<ul>
-<li><p>最常见的正常流程的路径被嵌套在两个if条件内</p>
-</li>
-<li><p>成功的退出条件是return nil,必须仔细匹配大括号来发现</p>
-</li>
-<li><p>函数最后一行返回一个错误，需要追溯到匹配的左括号，才能了解何时会触发错误</p>
-</li>
-<li><p>如果后续正常流程需要增加一步操作，调用新的函数，则又会增加一层嵌套</p>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">//Bad</span>
-<span class="token keyword">func</span> <span class="token function">OneFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
-	err <span class="token operator">:=</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token keyword">if</span> err <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-		err <span class="token operator">:=</span> <span class="token function">doAnotherThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		<span class="token keyword">if</span> err <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-			<span class="token keyword">return</span> <span class="token boolean">nil</span> <span class="token comment">// normal case</span>
-		<span class="token punctuation">}</span>
-		<span class="token keyword">return</span> err
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> err
-<span class="token punctuation">}</span>
-<span class="token comment">//Good</span>
-<span class="token keyword">func</span> <span class="token function">OneFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> err <span class="token operator">:=</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> err
-	<span class="token punctuation">}</span>
-	<span class="token keyword">if</span> err <span class="token operator">:=</span> <span class="token function">doAnotherthing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> err
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> <span class="token boolean">nil</span> <span class="token comment">//normal case</span>
-<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
-                
-            </div>
-            <hr/>
-
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
             
-
-    <div class="reprint" id="reprint-statement">
-        
-            <div class="reprint__author">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-user">
-                        文章作者:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">haze</a>
-                </span>
-            </div>
-            <div class="reprint__type">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-link">
-                        文章链接:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="http://example.com/p/be6c94c6.html">http://example.com/p/be6c94c6.html</a>
-                </span>
-            </div>
-            <div class="reprint__notice">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-copyright">
-                        版权声明:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="/about" target="_blank">haze</a>
-                    !
-                </span>
-            </div>
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
-
-
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/p/159a5633.html">
+                        <div class="card-image tag-image">
                             
-                                <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
-                                    <span class="chip bg-color">代码规范</span>
-                                </a>
+                            
+                            <img src="/medias/loading.gif" data-original="/medias/featureimages/00.webp" class="responsive-img" alt="模拟电子技术">
+                            
+                            <span class="card-title">模拟电子技术</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                半导体器件基础半导体基础知识点半导体
+
+本征半导体
+杂志半导体
+P型半导体
+形成
+加入三价元素$B,Al$
+
+
+特性
+空穴多，自由电子少
+
+
+
+
+N型半导体
+形成
+加入五价元素$P，As$
+
+
+特性
+自由电子多，空穴少
+
+
+
+
+
+
+
+
+PN
                             
                         </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-<div id="article-share">
-
-    
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
-</div>
-
-                </div>
-            </div>
-            
-                <div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-                    </ul>
-                    <div id="alipay">
-                        <img src="/medias/loading.gif" data-original="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechat">
-                        <img src="/medias/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(function () {
-        $('.tabs').tabs();
-    });
-</script>
-
-            
-        </div>
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/p/fc854d4d.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/04.webp" class="responsive-img" alt="性能优化">
-                        
-                        <span class="card-title">性能优化</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-25
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%80%A7%E8%83%BD/">
-                        <span class="chip bg-color">性能</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/p/34c22d84.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="GO/go语言工程项目实践.md">
-                        
-                        <span class="card-title">GO/go语言工程项目实践.md</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
+                        <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-06
                             </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    GO语言
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    模拟电子技术
                                 </a>
-                            
-                            
-                        </span>
+                                
+                                
+                            </span>
+                        </div>
                     </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
+                            <span class="chip bg-color">大学课程</span>
+                        </a>
+                        
+                        <a href="/tags/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
+                            <span class="chip bg-color">模拟电子技术</span>
+                        </a>
+                        
+                    </div>
+                    
                 </div>
-                
             </div>
+            
         </div>
-        
-    </div>
-</article>
-
-</div>
-
-
-<script>
-    $('#articleContent').on('copy', function (e) {
-        // IE8 or earlier browser is 'undefined'
-        if (typeof window.getSelection === 'undefined') return;
-
-        var selection = window.getSelection();
-        // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
-            return;
-        }
-
-        // create a div outside of the visible area and fill it with the selected text.
-        var bodyElement = document.getElementsByTagName('body')[0];
-        var newdiv = document.createElement('div');
-        newdiv.style.position = 'absolute';
-        newdiv.style.left = '-99999px';
-        bodyElement.appendChild(newdiv);
-        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
-
-        // we need a <pre> tag workaround.
-        // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
-
-        var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: 左岚的博客<br />'
-            + '文章作者: haze<br />'
-            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
-
-        selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });
-</script>
-
-
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
-
-  <!-- 是否加载使用自带的 prismjs. -->
-  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
-
-
-<!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
-
-
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h1, h2, h3, h4'
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
-
-    
-
+    </article>
 </main>
 
 
