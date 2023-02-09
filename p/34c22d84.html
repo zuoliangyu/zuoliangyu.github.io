@@ -6,7 +6,9 @@
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
     <meta name="keywords" content="GO/go语言工程项目实践.md, ">
-    <meta name="description" content="需求设计需求背景
+    <meta name="description" content="需求设计
+需求背景
+
 
 支持回帖、点赞
 对回帖可以进行回复
@@ -14,14 +16,13 @@
 
 
 需求描述
+
 社区话题页面
 
 展示话题（标题，文字描述）和回帖列表
 暂不考虑前端页面实现，仅仅实现一个本地web服务
 话题和回帖数据用文件存储
-
-
-需">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -482,7 +483,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    560
+                    563
                 </div>
                 
 
@@ -512,14 +513,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="需求设计"><a href="#需求设计" class="headerlink" title="需求设计"></a>需求设计</h1><h2 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h2><blockquote>
+                <h1>需求设计</h1>
+<h2 id="需求背景">需求背景</h2>
+<blockquote>
 <ul>
 <li>支持回帖、点赞</li>
 <li>对回帖可以进行回复</li>
 <li>开发一个单页面设计服务端的小功能</li>
 </ul>
 </blockquote>
-<h2 id="需求描述"><a href="#需求描述" class="headerlink" title="需求描述"></a>需求描述</h2><blockquote>
+<h2 id="需求描述">需求描述</h2>
+<blockquote>
 <p>社区话题页面</p>
 <ul>
 <li>展示话题（标题，文字描述）和回帖列表</li>
@@ -527,23 +531,27 @@
 <li>话题和回帖数据用文件存储</li>
 </ul>
 </blockquote>
-<h2 id="需求用例"><a href="#需求用例" class="headerlink" title="需求用例"></a>需求用例</h2><blockquote>
-<p>面向浏览消费用户 </p>
+<h2 id="需求用例">需求用例</h2>
+<blockquote>
+<p>面向浏览消费用户</p>
 <ul>
 <li>Topic       -&gt; 话题</li>
 <li>PostList  -&gt;  回帖历史</li>
 </ul>
 </blockquote>
-<h2 id="E-R"><a href="#E-R" class="headerlink" title="E-R"></a>E-R</h2><blockquote>
+<h2 id="E-R">E-R</h2>
+<blockquote>
 <ul>
-<li>Topic&lt;话题&gt;<ul>
+<li>Topic&lt;话题&gt;
+<ul>
 <li>id</li>
 <li>title</li>
 <li>content</li>
 <li>create_time</li>
 </ul>
 </li>
-<li>Post&lt;帖子&gt;<ul>
+<li>Post&lt;帖子&gt;
+<ul>
 <li>id</li>
 <li>topic_id</li>
 <li>content</li>
@@ -553,32 +561,42 @@
 </ul>
 <p>Topic和Post的关系是一对多</p>
 </blockquote>
-<h2 id="分层结构"><a href="#分层结构" class="headerlink" title="分层结构"></a>分层结构</h2><blockquote>
+<h2 id="分层结构">分层结构</h2>
+<blockquote>
 <ul>
-<li>数据层Repostitory<ul>
+<li>数据层Repostitory
+<ul>
 <li>数据Model，外部数据的增删改查</li>
 </ul>
 </li>
-<li>逻辑层Service<ul>
+<li>逻辑层Service
+<ul>
 <li>业务Entity，处理核心业务逻辑输出</li>
 </ul>
 </li>
-<li>视图层Controller<ul>
+<li>视图层Controller
+<ul>
 <li>视图view，处理和外部的交互逻辑</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h2 id="组件工具"><a href="#组件工具" class="headerlink" title="组件工具"></a>组件工具</h2><blockquote>
+<h2 id="组件工具">组件工具</h2>
 <blockquote>
-<p> Gin高性能go web框架</p>
+<blockquote>
+<p>Gin高性能go web框架</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/gin-gonic/gin#installation">https://github.com/gin-gonic/gin#installation</a></p>
+</blockquote>
+<blockquote>
 <p>Go Mod</p>
 <p>go mod init</p>
-<p>go get gopkg.in/gin-gonic/gin.v1@v1.3.0</p>
+<p>go get <a target="_blank" rel="noopener" href="http://gopkg.in/gin-gonic/gin.v1@v1.3.0">gopkg.in/gin-gonic/gin.v1@v1.3.0</a></p>
 </blockquote>
 </blockquote>
-<h1 id="代码开发"><a href="#代码开发" class="headerlink" title="代码开发"></a>代码开发</h1><h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><h3 id="index"><a href="#index" class="headerlink" title="index"></a>index</h3><blockquote>
+<h1>代码开发</h1>
+<h2 id="Repository">Repository</h2>
+<h3 id="index">index</h3>
+<blockquote>
 <p>元数据 -&gt; 索引</p>
 <p>数据行 -&gt; 内存map</p>
 </blockquote>
@@ -608,9 +626,12 @@
 	<span class="token keyword">return</span> <span class="token boolean">nil</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><blockquote>
+<h3 id="查询">查询</h3>
+<blockquote>
 <p>索引：话题ID</p>
 <p>数据：话题</p>
+</blockquote>
+<blockquote>
 <p>使用symc.Once来实现高并发状态下只查询一次</p>
 </blockquote>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">var</span> <span class="token punctuation">(</span>
@@ -632,11 +653,14 @@
 	topicIndexMap <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int64</span><span class="token punctuation">]</span><span class="token operator">*</span>Topic
 	postIndexMap  <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int64</span><span class="token punctuation">]</span><span class="token operator">*</span>Post
 <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><h3 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> TopicDao <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+<h2 id="Service">Service</h2>
+<h3 id="实体">实体</h3>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> TopicDao <span class="token keyword">struct</span> <span class="token punctuation">{</span>
 	Topic    <span class="token operator">*</span>repository<span class="token punctuation">.</span>Topic
 	PostList <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">*</span>repository<span class="token punctuation">.</span>Post
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><blockquote>
+<h3 id="流程">流程</h3>
+<blockquote>
 <p>参数校验</p>
 <p>准备数据</p>
 <p>组装实体</p>
@@ -653,7 +677,8 @@
 	<span class="token punctuation">}</span>
 	<span class="token keyword">return</span> f<span class="token punctuation">.</span>pageInfo<span class="token punctuation">,</span> <span class="token boolean">nil</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">QueryPageInfo</span><span class="token punctuation">(</span>topicIdStr <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">*</span>PageData <span class="token punctuation">{</span>
+<h2 id="Controller">Controller</h2>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">QueryPageInfo</span><span class="token punctuation">(</span>topicIdStr <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">*</span>PageData <span class="token punctuation">{</span>
 	topicId<span class="token punctuation">,</span> err <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">ParseInt</span><span class="token punctuation">(</span>topicIdStr<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span>
 	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
 		<span class="token keyword">return</span> <span class="token operator">&amp;</span>PageData<span class="token punctuation">{</span><span class="token punctuation">}</span>
@@ -664,7 +689,8 @@
 	<span class="token punctuation">}</span>
 	<span class="token keyword">return</span> <span class="token operator">&amp;</span>PageData<span class="token punctuation">{</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h2><blockquote>
+<h2 id="Router">Router</h2>
+<blockquote>
 <ul>
 <li>初始化数据索引</li>
 <li>初始化引擎配置</li>
@@ -1086,7 +1112,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">34k</span>
+                        class="white-color">35.7k</span>
             
             
             
@@ -1470,7 +1496,7 @@ $(function () {
       src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"
     ></script>
     <script type="text/javascript" src="/js/fireworks.js"></script>
-  
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1483,5 +1509,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>

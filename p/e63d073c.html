@@ -6,13 +6,18 @@
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
     <meta name="keywords" content="性能优化工具, ">
-    <meta name="description" content="课堂笔记本堂课重点内容
+    <meta name="description" content="课堂笔记
+本堂课重点内容
+
 
 性能优化的原则
 pprof工具的使用
 
 
-详细知识点介绍简介性能调优原则
+详细知识点介绍
+简介
+性能调优原则
+
 
 要依靠数据不是猜测
 要定位最大瓶颈而不是细枝末节
@@ -20,9 +25,11 @@ pprof工具的使用
 不要过度优化
 
 
-性能分析工具pprof说明
+性能分析工具pprof
+说明
 
-希望知道应用在什么地方耗费">
+
+希望知道应用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -517,13 +524,18 @@ pprof工具的使用
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="课堂笔记"><a href="#课堂笔记" class="headerlink" title="课堂笔记"></a>课堂笔记</h1><h2 id="本堂课重点内容"><a href="#本堂课重点内容" class="headerlink" title="本堂课重点内容"></a>本堂课重点内容</h2><blockquote>
+                <h1>课堂笔记</h1>
+<h2 id="本堂课重点内容">本堂课重点内容</h2>
+<blockquote>
 <ul>
 <li>性能优化的原则</li>
 <li>pprof工具的使用</li>
 </ul>
 </blockquote>
-<h2 id="详细知识点介绍"><a href="#详细知识点介绍" class="headerlink" title="详细知识点介绍"></a>详细知识点介绍</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><h4 id="性能调优原则"><a href="#性能调优原则" class="headerlink" title="性能调优原则"></a>性能调优原则</h4><blockquote>
+<h2 id="详细知识点介绍">详细知识点介绍</h2>
+<h3 id="简介">简介</h3>
+<h4 id="性能调优原则">性能调优原则</h4>
+<blockquote>
 <ul>
 <li>要依靠数据不是猜测</li>
 <li>要定位最大瓶颈而不是细枝末节</li>
@@ -531,20 +543,25 @@ pprof工具的使用
 <li>不要过度优化</li>
 </ul>
 </blockquote>
-<h3 id="性能分析工具pprof"><a href="#性能分析工具pprof" class="headerlink" title="性能分析工具pprof"></a>性能分析工具pprof</h3><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><blockquote>
+<h3 id="性能分析工具pprof">性能分析工具pprof</h3>
+<h4 id="说明">说明</h4>
+<blockquote>
 <ul>
 <li>希望知道应用在什么地方耗费了多少CPU、Memory</li>
 <li>pprof是用于可视化和分析性能分析数据的工具</li>
 </ul>
 </blockquote>
-<h4 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h4><blockquote>
+<h4 id="功能简介">功能简介</h4>
+<blockquote>
 <ul>
-<li>工具-Tool<ul>
+<li>工具-Tool
+<ul>
 <li>runtime/pprof</li>
 <li>net/http/pprof</li>
 </ul>
 </li>
-<li>采样-Sample<ul>
+<li>采样-Sample
+<ul>
 <li>CPU</li>
 <li>堆内存-Heap</li>
 <li>协程-Goroutine</li>
@@ -553,12 +570,14 @@ pprof工具的使用
 <li>线程创建-ThreadCreate</li>
 </ul>
 </li>
-<li>分析-Profile<ul>
+<li>分析-Profile
+<ul>
 <li>网页</li>
 <li>可视化终端</li>
 </ul>
 </li>
-<li>展示-View<ul>
+<li>展示-View
+<ul>
 <li>Top</li>
 <li>调用图-Graph</li>
 <li>火焰图-FlameGraph</li>
@@ -569,7 +588,9 @@ pprof工具的使用
 </li>
 </ul>
 </blockquote>
-<h4 id="排查实战"><a href="#排查实战" class="headerlink" title="排查实战"></a>排查实战</h4><h5 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h5><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
+<h4 id="排查实战">排查实战</h4>
+<h5 id="源代码">源代码</h5>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
 	<span class="token string">"log"</span>
@@ -605,27 +626,33 @@ pprof工具的使用
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="执行查看结果命令"><a href="#执行查看结果命令" class="headerlink" title="执行查看结果命令"></a>执行查看结果命令</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">go tool pprof <span class="token string">"http://localhost:6060/debug/pprof/profile?seconds=10"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h6 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h6><blockquote>
+<h5 id="执行查看结果命令">执行查看结果命令</h5>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">go tool pprof <span class="token string">"http://localhost:6060/debug/pprof/profile?seconds=10"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="CPU">CPU</h6>
+<blockquote>
 <ul>
 <li>命令：top</li>
 </ul>
 <blockquote>
-<p> 查看占用资源最多的函数</p>
+<p>查看占用资源最多的函数</p>
 <blockquote>
 <ul>
 <li>flat       当前函数本身执行耗时</li>
 <li>flat%     flat占CPU总时间的比例</li>
 <li>sum%   上面每一行的flat%总和</li>
 <li>cum      指当前函数本身加上其调用函数的总耗时</li>
-<li><p>cum%    cum占CPU总时间的比例</p>
-</li>
-<li><p>flat==cum</p>
+<li>cum%    cum占CPU总时间的比例</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>flat==cum
 <ul>
 <li>函数中没有调用其它函数</li>
 </ul>
 </li>
-<li>flat==0<ul>
+<li>flat==0
+<ul>
 <li>函数中只有其他函数的调用</li>
 </ul>
 </li>
@@ -645,7 +672,8 @@ pprof工具的使用
 <p>调用关系可视化</p>
 </blockquote>
 </blockquote>
-<h6 id="Heap-堆内存"><a href="#Heap-堆内存" class="headerlink" title="Heap-堆内存"></a>Heap-堆内存</h6><blockquote>
+<h6 id="Heap-堆内存">Heap-堆内存</h6>
+<blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">go tool pprof <span class="token parameter variable">-http</span><span class="token operator">=</span>:8080 <span class="token string">"http://localhost:6060/debug/pprof/heap"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>会出现堆内存调用图</p>
 <ul>
@@ -655,14 +683,17 @@ pprof工具的使用
 <li>inuse_space     程序当前占用内存大小</li>
 </ul>
 </blockquote>
-<h6 id="goroutine-协程"><a href="#goroutine-协程" class="headerlink" title="goroutine-协程"></a>goroutine-协程</h6><blockquote>
+<h6 id="goroutine-协程">goroutine-协程</h6>
+<blockquote>
 <p>goroutine泄露也会导致内存泄露</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">go tool pprof <span class="token parameter variable">-http</span><span class="token operator">=</span>:8080 <span class="token string">"http://localhost:6060/debug/pprof/goroutine"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </blockquote>
-<h6 id="mutex-锁"><a href="#mutex-锁" class="headerlink" title="mutex-锁"></a>mutex-锁</h6><blockquote>
+<h6 id="mutex-锁">mutex-锁</h6>
+<blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">go tool pprof <span class="token parameter variable">-http</span><span class="token operator">=</span>:8080 <span class="token string">"http://localhost:6060/debug/pprof/mutex"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </blockquote>
-<h6 id="block-阻塞"><a href="#block-阻塞" class="headerlink" title="block-阻塞"></a>block-阻塞</h6><blockquote>
+<h6 id="block-阻塞">block-阻塞</h6>
+<blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">go tool pprof <span class="token parameter variable">-http</span><span class="token operator">=</span>:8080 <span class="token string">"http://localhost:6060/debug/pprof/block"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>疑问：为什么两个block只显示了一个</p>
 <blockquote>
@@ -670,7 +701,9 @@ pprof工具的使用
 <p>丢弃了四个节点所以不显示</p>
 </blockquote>
 </blockquote>
-<h2 id="实践练习例子"><a href="#实践练习例子" class="headerlink" title="实践练习例子"></a>实践练习例子</h2><h2 id="课后个人总结"><a href="#课后个人总结" class="headerlink" title="课后个人总结"></a>课后个人总结</h2><blockquote>
+<h2 id="实践练习例子">实践练习例子</h2>
+<h2 id="课后个人总结">课后个人总结</h2>
+<blockquote>
 <ul>
 <li>pprof的使用是需要调用本地端口，需要确认端口正确性</li>
 <li>pprof有许多可视化的功能可以使用</li>
@@ -1088,7 +1121,7 @@ pprof工具的使用
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">34k</span>
+                        class="white-color">35.7k</span>
             
             
             
@@ -1472,7 +1505,7 @@ $(function () {
       src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"
     ></script>
     <script type="text/javascript" src="/js/fireworks.js"></script>
-  
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1485,5 +1518,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>

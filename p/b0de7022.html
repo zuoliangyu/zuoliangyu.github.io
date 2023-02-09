@@ -6,11 +6,16 @@
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
     <meta name="keywords" content="性能优化实战, ">
-    <meta name="description" content="pprof-采样过程和原理cpu
+    <meta name="description" content="pprof-采样过程和原理
+cpu
+
 
 采样对象：函数调用和它们占用的时间
 采样率：100次/秒，固定值
 采样时间：从手动启动到手动结束
+
+
+
 
 操作系统
 
@@ -18,7 +23,8 @@
 
 
 进程
-每次接收到SIGPROF会记录调用堆栈">
+
+每次接收到SIGPROF会">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -513,28 +519,36 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="pprof-采样过程和原理"><a href="#pprof-采样过程和原理" class="headerlink" title="pprof-采样过程和原理"></a>pprof-采样过程和原理</h1><h2 id="cpu"><a href="#cpu" class="headerlink" title="cpu"></a>cpu</h2><blockquote>
+                <h1>pprof-采样过程和原理</h1>
+<h2 id="cpu">cpu</h2>
+<blockquote>
 <ul>
 <li>采样对象：函数调用和它们占用的时间</li>
 <li>采样率：100次/秒，固定值</li>
-<li><p>采样时间：从手动启动到手动结束</p>
-</li>
-<li><p>操作系统</p>
+<li>采样时间：从手动启动到手动结束</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>操作系统
 <ul>
 <li>每1Oms向进程发送一次SIGPROF信号</li>
 </ul>
 </li>
-<li>进程<ul>
+<li>进程
+<ul>
 <li>每次接收到SIGPROF会记录调用堆栈</li>
 </ul>
 </li>
-<li>写缓冲<ul>
+<li>写缓冲
+<ul>
 <li>每100ms读取已经记录的调用栈并写入输出流</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h2 id="heap-堆内存"><a href="#heap-堆内存" class="headerlink" title="heap-堆内存"></a>heap-堆内存</h2><blockquote>
+<h2 id="heap-堆内存">heap-堆内存</h2>
+<blockquote>
 <ul>
 <li>采样程序通过内存分配器在堆上分配和释放的内存，记录分配/释放的大小和数量</li>
 <li>采样率：每分配512KB记录一次，可在运行开头修改，1为每次分配均记录</li>
@@ -543,31 +557,39 @@
 <li>计算方式：inuse=alloc-free</li>
 </ul>
 </blockquote>
-<h2 id="Goroutine-协程-amp-ThreadCreate-线程创建"><a href="#Goroutine-协程-amp-ThreadCreate-线程创建" class="headerlink" title="Goroutine-协程&amp;ThreadCreate-线程创建"></a>Goroutine-协程&amp;ThreadCreate-线程创建</h2><blockquote>
+<h2 id="Goroutine-协程-ThreadCreate-线程创建">Goroutine-协程&amp;ThreadCreate-线程创建</h2>
+<blockquote>
 <ul>
-<li>Goroutine<ul>
+<li>Goroutine
+<ul>
 <li>记录所有用户发起且在运行中的goroutine(即入口非runtime;开头的)runtime.main的调用栈信息</li>
 </ul>
 </li>
-<li>ThreadCreate<ul>
+<li>ThreadCreate
+<ul>
 <li>记录程序创建的所有系统线程的信息</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h2 id="Block-阻塞-amp-Mutex-锁"><a href="#Block-阻塞-amp-Mutex-锁" class="headerlink" title="Block-阻塞&amp;Mutex-锁"></a>Block-阻塞&amp;Mutex-锁</h2><blockquote>
+<h2 id="Block-阻塞-Mutex-锁">Block-阻塞&amp;Mutex-锁</h2>
+<blockquote>
 <p>阻塞操作</p>
 <ul>
 <li>采样阻塞操作的次数和耗时</li>
 <li>采样率：阻塞耗时超过阈值的才会被记录，1为每次阻塞均记录</li>
 </ul>
+</blockquote>
+<blockquote>
 <p>锁竞争</p>
 <ul>
 <li>采样争抢锁的次数和耗时</li>
 <li>采样率：只记录固定比例的锁操作，1为每次加锁均记录</li>
 </ul>
 </blockquote>
-<h1 id="性能调优案例"><a href="#性能调优案例" class="headerlink" title="性能调优案例"></a>性能调优案例</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<h1>性能调优案例</h1>
+<h2 id="简介">简介</h2>
+<blockquote>
 <p>介绍实际业务服务性能优化的案例</p>
 <p>对逻辑相对复杂的程序如何进行性能调优</p>
 <ul>
@@ -576,7 +598,9 @@
 <li>Go语言优化</li>
 </ul>
 </blockquote>
-<h2 id="业务服务优化"><a href="#业务服务优化" class="headerlink" title="业务服务优化"></a>业务服务优化</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><blockquote>
+<h2 id="业务服务优化">业务服务优化</h2>
+<h3 id="基本概念">基本概念</h3>
+<blockquote>
 <ul>
 <li>服务：能单独部署，承载一定功能的程序</li>
 <li>依赖：Service A的功能实现依赖Service B的响应结果，称为Service A依赖Service B</li>
@@ -584,7 +608,8 @@
 <li>基础库：公共的工具包、中间件</li>
 </ul>
 </blockquote>
-<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><blockquote>
+<h3 id="流程">流程</h3>
+<blockquote>
 <ul>
 <li>建立服务性能评估手段</li>
 <li>分析性能数据，定位性能瓶颈</li>
@@ -592,44 +617,53 @@
 <li>优化效果验证</li>
 </ul>
 </blockquote>
-<h3 id="建立服务性能评估手段"><a href="#建立服务性能评估手段" class="headerlink" title="建立服务性能评估手段"></a>建立服务性能评估手段</h3><blockquote>
+<h3 id="建立服务性能评估手段">建立服务性能评估手段</h3>
+<blockquote>
 <ul>
-<li>服务性能评估方式<ul>
+<li>服务性能评估方式
+<ul>
 <li>单独benchmark无法满足复杂逻辑分析</li>
 <li>不同负载情况下性能表现差异</li>
 </ul>
 </li>
-<li>请求流量构造<ul>
+<li>请求流量构造
+<ul>
 <li>不同请求参数覆盖逻辑不同</li>
 <li>线上真实流量情况</li>
 </ul>
 </li>
-<li>压测范围<ul>
+<li>压测范围
+<ul>
 <li>单机器压测</li>
 <li>集群压测</li>
 </ul>
 </li>
-<li>性能数据采集<ul>
+<li>性能数据采集
+<ul>
 <li>单机性能数据</li>
 <li>集群性能数据</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="重点优化项改造"><a href="#重点优化项改造" class="headerlink" title="重点优化项改造"></a>重点优化项改造</h3><blockquote>
+<h3 id="重点优化项改造">重点优化项改造</h3>
+<blockquote>
 <ul>
 <li>正确性是基础</li>
-<li>响应数据diff<ul>
+<li>响应数据diff
+<ul>
 <li>线上请求数据录制回放</li>
 <li>新旧逻辑接口数据diff</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="优化效果验证"><a href="#优化效果验证" class="headerlink" title="优化效果验证"></a>优化效果验证</h3><blockquote>
+<h3 id="优化效果验证">优化效果验证</h3>
+<blockquote>
 <ul>
 <li>重复压测验证</li>
-<li>上线评估优化效果<ul>
+<li>上线评估优化效果
+<ul>
 <li>关注服务监控</li>
 <li>逐步放量</li>
 <li>收集性能数据</li>
@@ -637,15 +671,19 @@
 </li>
 </ul>
 </blockquote>
-<h3 id="进一步优化，服务整体链路分析"><a href="#进一步优化，服务整体链路分析" class="headerlink" title="进一步优化，服务整体链路分析"></a>进一步优化，服务整体链路分析</h3><blockquote>
+<h3 id="进一步优化，服务整体链路分析">进一步优化，服务整体链路分析</h3>
+<blockquote>
 <ul>
 <li>规范上游服务调用接口，明确场景需求</li>
 <li>分析链路，通过业务流程优化提升服务性能</li>
 </ul>
 </blockquote>
-<h2 id="基础库优化"><a href="#基础库优化" class="headerlink" title="基础库优化"></a>基础库优化</h2><h3 id="AB实验SDK的优化"><a href="#AB实验SDK的优化" class="headerlink" title="AB实验SDK的优化"></a>AB实验SDK的优化</h3><blockquote>
+<h2 id="基础库优化">基础库优化</h2>
+<h3 id="AB实验SDK的优化">AB实验SDK的优化</h3>
+<blockquote>
 <ul>
-<li>分析基础库核心逻辑和性能瓶颈<ul>
+<li>分析基础库核心逻辑和性能瓶颈
+<ul>
 <li>设计完善改造方案</li>
 <li>数据按需获取</li>
 <li>数据序列化协议优化</li>
@@ -655,30 +693,38 @@
 <li>推广业务服务落地验证</li>
 </ul>
 </blockquote>
-<h2 id="Go语言优化"><a href="#Go语言优化" class="headerlink" title="Go语言优化"></a>Go语言优化</h2><h3 id="编译器-amp-运行时优化"><a href="#编译器-amp-运行时优化" class="headerlink" title="编译器&amp;运行时优化"></a>编译器&amp;运行时优化</h3><blockquote>
+<h2 id="Go语言优化">Go语言优化</h2>
+<h3 id="编译器-运行时优化">编译器&amp;运行时优化</h3>
+<blockquote>
 <ul>
 <li>优化内存分配策略</li>
 <li>优化代码编译流程，生成更高效的程序</li>
 <li>内部压测验证</li>
 <li>推广业务服务落地验证</li>
 </ul>
+</blockquote>
+<blockquote>
 <p>优点</p>
 <ul>
 <li>接入简单，只需要调整编译配置</li>
 <li>通用性强</li>
 </ul>
 </blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<h2 id="总结">总结</h2>
+<blockquote>
 <ul>
-<li>性能调优原则<ul>
+<li>性能调优原则
+<ul>
 <li>要依靠数据不是猜测</li>
 </ul>
 </li>
-<li>性能分析工具pprof<ul>
+<li>性能分析工具pprof
+<ul>
 <li>熟练使用pprof工具排查性能问题并了解其基本原理</li>
 </ul>
 </li>
-<li>性能调优<ul>
+<li>性能调优
+<ul>
 <li>保证正确性</li>
 <li>定位主要瓶颈</li>
 </ul>
@@ -1096,7 +1142,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">34k</span>
+                        class="white-color">35.7k</span>
             
             
             
@@ -1480,7 +1526,7 @@ $(function () {
       src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"
     ></script>
     <script type="text/javascript" src="/js/fireworks.js"></script>
-  
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1493,5 +1539,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>

@@ -6,18 +6,22 @@
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
     <meta name="keywords" content="编译器和静态分析, ">
-    <meta name="description" content="编译器介绍编译器的结构
+    <meta name="description" content="编译器介绍
+编译器的结构
+
 
 重要的系统软件
+
 识别符合语法和非法的程序
 生成正确且高效的代码
 
 
 分析部分（前端front end)
+
 词法分析，生成词素(lexeme)
 语法分析，生成语法树
 语义分析，收集类型信息，进行语义检查
-中间代码生成，">
+中间代">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -512,21 +516,26 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="编译器介绍"><a href="#编译器介绍" class="headerlink" title="编译器介绍"></a>编译器介绍</h1><h2 id="编译器的结构"><a href="#编译器的结构" class="headerlink" title="编译器的结构"></a>编译器的结构</h2><blockquote>
+                <h1>编译器介绍</h1>
+<h2 id="编译器的结构">编译器的结构</h2>
+<blockquote>
 <ul>
-<li>重要的系统软件<ul>
+<li>重要的系统软件
+<ul>
 <li>识别符合语法和非法的程序</li>
 <li>生成正确且高效的代码</li>
 </ul>
 </li>
-<li>分析部分（前端front end)<ul>
+<li>分析部分（前端front end)
+<ul>
 <li>词法分析，生成词素(lexeme)</li>
 <li>语法分析，生成语法树</li>
 <li>语义分析，收集类型信息，进行语义检查</li>
 <li>中间代码生成，生成intermediate representation(R</li>
 </ul>
 </li>
-<li>综合部分（后端back end)<ul>
+<li>综合部分（后端back end)
+<ul>
 <li>代码优化，机器无关优化，生成优化后的IR</li>
 <li>代码生成，生成目标代码</li>
 </ul>
@@ -534,7 +543,8 @@
 </ul>
 </blockquote>
 <p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202301301014489.jpg" alt="Snipaste_2023-01-30_10-13-59"></p>
-<h2 id="静态分析"><a href="#静态分析" class="headerlink" title="静态分析"></a>静态分析</h2><blockquote>
+<h2 id="静态分析">静态分析</h2>
+<blockquote>
 <ul>
 <li>静态分析：不执行程序代码，推导程序的行为，分析程序的性质。</li>
 <li>控制流(Control flow):程序执行的流程</li>
@@ -544,18 +554,24 @@
 </ul>
 </blockquote>
 <p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202301301021040.jpg" alt="Snipaste_2023-01-30_10-21-38"></p>
-<h2 id="过程内分析和过程间分析"><a href="#过程内分析和过程间分析" class="headerlink" title="过程内分析和过程间分析"></a>过程内分析和过程间分析</h2><blockquote>
+<h2 id="过程内分析和过程间分析">过程内分析和过程间分析</h2>
+<blockquote>
 <ul>
-<li>过程内分析(Intra-procedural analysis)<ul>
+<li>过程内分析(Intra-procedural analysis)
+<ul>
 <li>仅在函数内部进行分析</li>
 </ul>
 </li>
-<li><p>过程间分析(Inter-procedural analysis))</p>
+<li>过程间分析(Inter-procedural analysis))
 <ul>
 <li>考虑函数调用时参数传递和返回值的数据流和控制流</li>
 </ul>
 </li>
-<li><p>为什么过程间分析是个问题？</p>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>为什么过程间分析是个问题？
 <ul>
 <li>需要通过数据流分析得知i的具体类型，才能知道i.foo()调用的是哪个foo()</li>
 <li>根据i的具体类型，产生了新的控制流，i.foo(),分析继续</li>
@@ -564,24 +580,29 @@
 </li>
 </ul>
 </blockquote>
-<h1 id="Go编译器优化"><a href="#Go编译器优化" class="headerlink" title="Go编译器优化"></a>Go编译器优化</h1><blockquote>
+<h1>Go编译器优化</h1>
+<blockquote>
 <ul>
-<li>为什么做编译器优化<ul>
+<li>为什么做编译器优化
+<ul>
 <li>用户无感知，重新编译即可获得性能收益</li>
 <li>通用性优化</li>
 </ul>
 </li>
-<li>现状<ul>
+<li>现状
+<ul>
 <li>采用的优化少</li>
 <li>编译时间较短，没有进行较复杂的代码分析和优化</li>
 </ul>
 </li>
-<li>编译优化的思路<ul>
+<li>编译优化的思路
+<ul>
 <li>场景：面向后端长期执行任务</li>
 <li>Tradeoff:用编译时间换取更高效的机器码</li>
 </ul>
 </li>
-<li>Beast mode<ul>
+<li>Beast mode
+<ul>
 <li>函数内联</li>
 <li>逃逸分析</li>
 <li>默认栈大小调整</li>
@@ -591,55 +612,72 @@
 </li>
 </ul>
 </blockquote>
-<h2 id="函数内联（Inlining）"><a href="#函数内联（Inlining）" class="headerlink" title="函数内联（Inlining）"></a>函数内联（Inlining）</h2><blockquote>
+<h2 id="函数内联（Inlining）">函数内联（Inlining）</h2>
+<blockquote>
 <ul>
 <li>内联：将被调用函数的函数体(callee)的副本替换到调用位置(caller)上，同时重写代码以反映参数的绑定</li>
-<li><p>优点</p>
+<li>优点
 <ul>
 <li>消除函数调用开销，例如传递参数、保存寄存器等</li>
 <li>将过程间分析转化为过程内分析，帮助其他优化，例如逃逸分析</li>
 </ul>
 </li>
-<li><p>函数内联能多大程度影响性能？一使用micro-benchmark验证一下~<img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202301301124602.jpg" alt="Snipaste_2023-01-30_11-24-03"></p>
-</li>
-<li><p>缺点</p>
-</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>函数内联能多大程度影响性能？一使用micro-benchmark验证一下~<img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202301301124602.jpg" alt="Snipaste_2023-01-30_11-24-03"></li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>缺点</li>
 <li>函数体变大，instruction cache (icache)不友好</li>
-<li><p>编译生成的G0镜像变大</p>
-</li>
-<li><p>函数内联在<strong>大多数情况下</strong>是正向优化</p>
-</li>
-<li>内联策略<ul>
+<li>编译生成的G0镜像变大</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>函数内联在<strong>大多数情况下</strong>是正向优化</li>
+<li>内联策略
+<ul>
 <li>调用和被调函数的规模</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="BeastMode"><a href="#BeastMode" class="headerlink" title="BeastMode"></a>BeastMode</h3><blockquote>
+<h3 id="BeastMode">BeastMode</h3>
+<blockquote>
 <ul>
-<li>Go函数内联受到的限制较多<ul>
+<li>Go函数内联受到的限制较多
+<ul>
 <li>语言特性，例如interface,defer等，限制了函数内联</li>
 <li>内联策略非常保守</li>
 </ul>
 </li>
-<li>Beast mode:调整函数内联的策略，使更多函数被内联<ul>
+<li>Beast mode:调整函数内联的策略，使更多函数被内联
+<ul>
 <li>降低函数调用的开销</li>
 <li>增加了其他优化的机会：逃逸分析</li>
 </ul>
 </li>
-<li>开销<ul>
+<li>开销
+<ul>
 <li>G0镜像增加~10%</li>
 <li>编译时间增加</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h2 id="逃逸分析"><a href="#逃逸分析" class="headerlink" title="逃逸分析"></a>逃逸分析</h2><blockquote>
+<h2 id="逃逸分析">逃逸分析</h2>
+<blockquote>
 <ul>
 <li>逃逸分析：分析代码中指针的动态作用域：指针在何处可以被访问</li>
-<li>大致思路<ul>
+<li>大致思路
+<ul>
 <li>从对象分配处出发，沿着控制流，观察对象的数据流</li>
-<li>若发现指针p在当前作用域S:<ul>
+<li>若发现指针p在当前作用域S:
+<ul>
 <li>作为参数传递给其他函数</li>
 <li>传递给全局变量</li>
 <li>传递给其他的goroutine</li>
@@ -650,7 +688,8 @@
 </ul>
 </li>
 <li>Beast mode:函数内联拓展了函数边界，更多对象不逃逸</li>
-<li>优化：未逃逸的对象可以在栈上分配<ul>
+<li>优化：未逃逸的对象可以在栈上分配
+<ul>
 <li>对象在栈上分配和回收很快：移动Sp</li>
 <li>减少在heap上的分配，降低GC负担</li>
 </ul>
@@ -1072,7 +1111,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">34k</span>
+                        class="white-color">35.7k</span>
             
             
             
@@ -1456,7 +1495,7 @@ $(function () {
       src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"
     ></script>
     <script type="text/javascript" src="/js/fireworks.js"></script>
-  
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1469,5 +1508,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>

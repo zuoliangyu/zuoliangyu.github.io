@@ -597,16 +597,16 @@
                 </a>
                 
                 
-                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" title="GO语言: 17">
+                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" title="软件使用: 5">
                     <div class="moleskine-wrapper">
                         <div class="moleskine-notebook">
                             <div class="chip notebook-cover center-align waves-effect waves-light
-                               chip-active "
+                               chip-default "
                                 style="background-color: #F5EEF8;">
                                 <div
                                     class="notebook-skin
-                                       chip-active ">
-                                    GO语言
+                                       chip-default ">
+                                    软件使用
                                 </div>
                             </div>
                             <div class="notebook-page dotted"></div>
@@ -633,7 +633,7 @@
                 </a>
                 
                 
-                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" title="软件使用: 5">
+                <a href="/categories/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="数字电子技术: 1">
                     <div class="moleskine-wrapper">
                         <div class="moleskine-notebook">
                             <div class="chip notebook-cover center-align waves-effect waves-light
@@ -642,7 +642,7 @@
                                 <div
                                     class="notebook-skin
                                        chip-default ">
-                                    软件使用
+                                    数字电子技术
                                 </div>
                             </div>
                             <div class="notebook-page dotted"></div>
@@ -651,16 +651,16 @@
                 </a>
                 
                 
-                <a href="/categories/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="数字电子技术: 1">
+                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" title="GO语言: 17">
                     <div class="moleskine-wrapper">
                         <div class="moleskine-notebook">
                             <div class="chip notebook-cover center-align waves-effect waves-light
-                               chip-default "
+                               chip-active "
                                 style="background-color: #FEF9E7;">
                                 <div
                                     class="notebook-skin
-                                       chip-default ">
-                                    数字电子技术
+                                       chip-active ">
+                                    GO语言
                                 </div>
                             </div>
                             <div class="notebook-page dotted"></div>
@@ -712,18 +712,22 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                编译器介绍编译器的结构
+                                编译器介绍
+编译器的结构
+
 
 重要的系统软件
+
 识别符合语法和非法的程序
 生成正确且高效的代码
 
 
 分析部分（前端front end)
+
 词法分析，生成词素(lexeme)
 语法分析，生成语法树
 语义分析，收集类型信息，进行语义检查
-中间代码生成，
+中间代
                             
                         </div>
                         <div class="publish-info">
@@ -769,15 +773,20 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Go内存管理Go内存分配分块
+                                Go内存管理
+Go内存分配
+分块
+
+
 
 目标： 为对象在heap上分配内存
+
 
 提前将内存分块
 
 调用系统调用mmap()向OS申请一大块内存，例如4MB
 先将内存划分成大块，例如8KB,称作mspan
-再将大块继续划分成特定大小的小块，用于对象分配
+再将大块继续划分成特定大小的小块，用
                             
                         </div>
                         <div class="publish-info">
@@ -823,15 +832,28 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                性能优化性能优化的层面
+                                性能优化
+性能优化的层面
+
+
 
 业务代码
 
+
 SDK
 
+
 基础库
+
+
 语言运行时
+
+
 OS
+
+
+
+
 
 业务层优化
 
@@ -840,13 +862,10 @@ OS
 
 
 语言运行时优化
+
 解决更通用的性能问题
 考虑更多场景
-Tradeoffs
-
-
-数据驱动
-自动
+Trade
                             
                         </div>
                         <div class="publish-info">
@@ -892,11 +911,16 @@ Tradeoffs
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                pprof-采样过程和原理cpu
+                                pprof-采样过程和原理
+cpu
+
 
 采样对象：函数调用和它们占用的时间
 采样率：100次/秒，固定值
 采样时间：从手动启动到手动结束
+
+
+
 
 操作系统
 
@@ -904,7 +928,8 @@ Tradeoffs
 
 
 进程
-每次接收到SIGPROF会记录调用堆栈
+
+每次接收到SIGPROF会
                             
                         </div>
                         <div class="publish-info">
@@ -950,13 +975,18 @@ Tradeoffs
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                课堂笔记本堂课重点内容
+                                课堂笔记
+本堂课重点内容
+
 
 性能优化的原则
 pprof工具的使用
 
 
-详细知识点介绍简介性能调优原则
+详细知识点介绍
+简介
+性能调优原则
+
 
 要依靠数据不是猜测
 要定位最大瓶颈而不是细枝末节
@@ -964,9 +994,11 @@ pprof工具的使用
 不要过度优化
 
 
-性能分析工具pprof说明
+性能分析工具pprof
+说明
 
-希望知道应用在什么地方耗费
+
+希望知道应用
                             
                         </div>
                         <div class="publish-info">
@@ -1012,7 +1044,9 @@ pprof工具的使用
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                性能优化建议简介
+                                性能优化建议
+简介
+
 
 性能优化的前提是满足正确可靠、简洁清晰等质量因素
 性能优化是综合评估，有时候时间效率和空间效率可能对立
@@ -1020,11 +1054,12 @@ pprof工具的使用
 
 
 Benchmark
+
 如何使用
+
 
 性能表现需要实际数据衡量
 
-Go语
                             
                         </div>
                         <div class="publish-info">
@@ -1071,6 +1106,7 @@ Go语
                         <div class="summary block-with-text">
                             
                                 简介
+
 编写的代码能够达到正确可靠、简洁清晰的目标可称之为高质量代码
 
 各种边界条件是否考虑完备
@@ -1079,10 +1115,11 @@ Go语
 
 
 编程原则
+
 实际应用场景千变万化，各种语言的特性和语法各不相同
 但是高质量编程遵循的原则是相通的
 
-简单
+
                             
                         </div>
                         <div class="publish-info">
@@ -1128,7 +1165,9 @@ Go语
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                需求设计需求背景
+                                需求设计
+需求背景
+
 
 支持回帖、点赞
 对回帖可以进行回复
@@ -1136,14 +1175,13 @@ Go语
 
 
 需求描述
+
 社区话题页面
 
 展示话题（标题，文字描述）和回帖列表
 暂不考虑前端页面实现，仅仅实现一个本地web服务
 话题和回帖数据用文件存储
 
-
-需
                             
                         </div>
                         <div class="publish-info">
@@ -1181,19 +1219,21 @@ Go语
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                单元测试流程
+                                单元测试
+流程
+
 输入-&gt;测试单元-&gt;输出-&gt;校对
 
 规则
+
 
 所有测试文件以_test.go结尾
 func TestXxx(*testing.T)
 初始化逻辑放到TestMain中
 
 
-案例package test06
-
-fu
+案例
+package test06
                             
                         </div>
                         <div class="publish-info">
@@ -1231,26 +1271,34 @@ fu
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                语言进阶GO语言快的原因
+                                语言进阶
+GO语言快的原因
+
 GO可以发挥多核优势高效运行
 
+
+
 并发
+
 多线程程序在一个核的CPU上运行
 
 
 并行
+
 多线程程序在多个核的CPU上运行
 
 
 
 
 Gorotine
+
 适合高并发是因为GO语言创建多个协程
 
+
+
 协程
+
 用户态
-轻量级线程
-栈MB
                             
                         </div>
                         <div class="publish-info">
@@ -1320,7 +1368,7 @@ Gorotine
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">34k</span>
+                        class="white-color">35.7k</span>
             
             
             
@@ -1704,7 +1752,7 @@ $(function () {
       src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"
     ></script>
     <script type="text/javascript" src="/js/fireworks.js"></script>
-  
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1717,5 +1765,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>
