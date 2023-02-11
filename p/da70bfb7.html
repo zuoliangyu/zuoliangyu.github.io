@@ -5,25 +5,17 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="simulink web部署, ">
-    <meta name="description" content="开发与配置web服务器
-安装服务器
-
-
-配置系统变量
-
-确保 MATLAB  Runtime出现在 Windows 环境变量中任何已安装的 MATLAB 版本之前。
+    <meta name="keywords" content="vscode配置matlab环境, ">
+    <meta name="description" content="vscode环境配置
 
 
 
+安装拓展Matlab Extension Pack ，Code Runner
 
 
-在线安装
-
-
-打开MATLAB安装目录的这个文件夹
-
-F:\Pr">
+F:\MATLAB\R2022b\extern\engines\python
+执行
+python setup.py install">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,7 +27,7 @@ F:\Pr">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>simulink web部署 | 左岚的博客</title>
+    <title>vscode配置matlab环境 | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -74,9 +66,9 @@ F:\Pr">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="左岚的博客" type="application/atom+xml">
-
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="左岚的博客" type="application/atom+xml">
 </head>
 
 
@@ -420,12 +412,12 @@ F:\Pr">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">simulink web部署</h1>
+                    <h1 class="description center-align post-title">vscode配置matlab环境</h1>
                 </div>
             </div>
         </div>
@@ -449,8 +441,12 @@ F:\Pr">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/simulink%E8%BF%90%E7%94%A8/">
-                                <span class="chip bg-color">simulink运用</span>
+                            <a href="/tags/vscode/">
+                                <span class="chip bg-color">vscode</span>
+                            </a>
+                        
+                            <a href="/tags/matlab/">
+                                <span class="chip bg-color">matlab</span>
                             </a>
                         
                     </div>
@@ -461,8 +457,8 @@ F:\Pr">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/matlab/" class="post-category">
-                                matlab
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
+                                软件使用
                             </a>
                         
                     </div>
@@ -474,21 +470,21 @@ F:\Pr">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-10
+                    2023-02-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-10
+                    2023-02-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    427
+                    122
                 </div>
                 
 
@@ -518,73 +514,39 @@ F:\Pr">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>开发与配置web服务器</h1>
-<h2 id="安装服务器">安装服务器</h2>
-<blockquote>
-<ul>
-<li>配置系统变量
-<ul>
-<li>确保 MATLAB  Runtime出现在 <strong>Windows</strong> 环境变量中任何已安装的 MATLAB 版本之前。</li>
-<li><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302102255854.jpg" alt="Snipaste_2023-02-10_22-55-09"></li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h3 id="在线安装">在线安装</h3>
-<blockquote>
-<ul>
-<li>打开MATLAB安装目录的这个文件夹</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">F:<span class="token punctuation">\</span>Program Files<span class="token punctuation">\</span>MATLAB<span class="token punctuation">\</span>R2022b<span class="token punctuation">\</span>toolbox<span class="token punctuation">\</span>compiler<span class="token punctuation">\</span>deploy<span class="token punctuation">\</span>win64<span class="token punctuation">\</span>MATLABWebAppServerSetup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>管理员运行MATLABWebAppServerSetup.exe</li>
-</ul>
-</blockquote>
-<h3 id="离线安装">离线安装</h3>
-<blockquote>
-<ul>
-<li>在本网站下载特定的安装版本 <a target="_blank" rel="noopener" href="https://www.mathworks.com/products/compiler/matlab-runtime.html">Runtime</a></li>
-<li>使用安装程序安装 MATLAB  Runtime</li>
-<li>在具有 MATLAB 的计算机上 已安装编译器产品，导航到文件夹 包含该文件并将其复制到计算机上的本地文件夹中</li>
-</ul>
-</blockquote>
-<h2 id="配置服务器">配置服务器</h2>
+                <h1>vscode环境配置</h1>
 <blockquote>
 <ul>
 <li>
-<p>单击<strong>Service Registration</strong>选项卡，然后选择 以下两个选项之一</p>
-<ul>
-<li>
-<p><strong>Register the web apps service using a default account</strong></p>
-<p>Selecting this option registers two services:</p>
-<ul>
-<li>A service to run the server represented by the tab <strong>Server Service User</strong>.</li>
-<li>A service to run the apps represented by the tab <strong>Worker Service User</strong>.</li>
-</ul>
+<p>安装拓展Matlab Extension Pack ，Code Runner</p>
 </li>
 <li>
-<p><strong>使用默认应用注册 Web 应用服务 帐户</strong></p>
-<p>选择此选项将注册两个服务：</p>
-<ul>
-<li>用于运行由 选项卡<strong>服务器服务用户</strong>。</li>
-<li>用于运行由 选项卡 <strong>工作人员服务 用户</strong>。</li>
-</ul>
+<pre><code class="language-shell">F:\MATLAB\R2022b\extern\engines\python
+执行
+python setup.py install
+<pre class="line-numbers language-none"><code class="language-none">
+- 在setting.json中添加
+
+- ```json
+    "matlab.mlintpath": "你的bin\\win64\\mlint.exe安装路径",
+    "matlab.matlabpath": "你的bin\\matlab.exe安装路径",
+    "matlab.linterEncoding": "gb2312",  
+  	"code-runner.executorMap":{
+  
+          "matlab": "cd $dir &amp;&amp; matlab -nosplash -nodesktop -r $fileNameWithoutExt",
+  
+          ...其他代码不用管...,
+  }
+  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</code></pre>
 </li>
 <li>
-<p><strong>Register the web apps services using an existing local account</strong></p>
-<p>Selecting this option requires you to register two services represented by the tabs <strong>Server Service User</strong> and <strong>Worker Service User</strong> using two local account names and passwords.</p>
+<p>将matlab.exe添加进入系统变量（一般来说安装matlab时就已经配置好了bin的环境变量）</p>
 </li>
 <li>
-<p><strong>使用现有的 Web 应用服务注册 本地帐户</strong></p>
-<p>选择此选项需要您注册两个 由选项卡“服务器服务”表示的服务 <strong>用户</strong>和<strong>工作人员服务 使用</strong>两个本地帐户名的用户和 密码。</p>
+<p>点击右上角的方块即可运行</p>
 </li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>可以从<strong>Configure and Run</strong>选项卡启动或停止已安装的服务。该服务是 成功注册服务后自动启动。如果 服务不会自动启动，可以单击<strong>Start</strong>。</li>
 </ul>
 </blockquote>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
@@ -613,7 +575,7 @@ F:\Pr">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/p/668b5d8.html">http://example.com/p/668b5d8.html</a>
+                    <a href="http://example.com/p/da70bfb7.html">http://example.com/p/da70bfb7.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -651,8 +613,12 @@ F:\Pr">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/simulink%E8%BF%90%E7%94%A8/">
-                                    <span class="chip bg-color">simulink运用</span>
+                                <a href="/tags/vscode/">
+                                    <span class="chip bg-color">vscode</span>
+                                </a>
+                            
+                                <a href="/tags/matlab/">
+                                    <span class="chip bg-color">matlab</span>
                                 </a>
                             
                         </div>
@@ -736,13 +702,13 @@ F:\Pr">
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/p/668b5d8.html">
+                <a href="/p/da70bfb7.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.webp" class="responsive-img" alt="simulink web部署">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/20.webp" class="responsive-img" alt="vscode配置matlab环境">
                         
-                        <span class="card-title">simulink web部署</span>
+                        <span class="card-title">vscode配置matlab环境</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -753,14 +719,14 @@ F:\Pr">
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/matlab/" class="post-category">
-                                    matlab
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
+                                    软件使用
                                 </a>
                             
                             
@@ -771,8 +737,12 @@ F:\Pr">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/simulink%E8%BF%90%E7%94%A8/">
-                        <span class="chip bg-color">simulink运用</span>
+                    <a href="/tags/vscode/">
+                        <span class="chip bg-color">vscode</span>
+                    </a>
+                    
+                    <a href="/tags/matlab/">
+                        <span class="chip bg-color">matlab</span>
                     </a>
                     
                 </div>
@@ -1004,7 +974,7 @@ F:\Pr">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">36.1k</span>
+                        class="white-color">35.2k</span>
             
             
             

@@ -5,7 +5,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="分类: matlab, ">
+    <meta name="keywords" content="标签: matlab, ">
     <meta name="description" content="左岚的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分类: matlab | 左岚的博客</title>
+    <title>标签: matlab | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -57,9 +57,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="左岚的博客" type="application/atom+xml">
-
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="左岚的博客" type="application/atom+xml">
 </head>
 
 
@@ -448,378 +448,207 @@
 <main class="content">
 
     
-<style>
-    /* 文章分类书本样式 */
-    .chip-container .tag-chips {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
 
-    .chip-container .tag-chips a {
-        margin: 0 7px 10px;
-    }
-
-    .chip-container .chip {
-        max-width: calc(100% / 4);
-        min-width: 10em;
-        height: 200px;
-        position: relative;
-        transition: .5s linear;
-        padding: 19px 0;
-        line-height: 20px;
-        z-index: 990;
-        border-radius: 5px 15px 15px 5px;
-        transform-origin: left center 0;
-    }
-
-    .chip-container .notebook-cover::before {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: calc(100% + 2px);
-        top: -1px;
-        z-index: 100;
-        border-radius: 2px;
-        right: 25px;
-        transition: 2s ease;
-        background: linear-gradient(to right, #1e606e 0, #2e95aa 12%, #1e606e 25%, #2e95aa 37%, #1e606e 50%, #2e95aa 62%, #1e606e 75%, #2e95aa 87%, #1e606e 100%);
-    }
-
-    .chip .notebook-skin {
-        height: 50px;
-        width: 100%;
-        background: #e8e8e0;
-        margin-top: 42px;
-        padding: 10px 32px 64px 10px;
-        font-size: 19px;
-        position: relative;
-        z-index: 10;
-        color: #222;
-        text-align: left;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-    }
-
-    .chip .notebook-skin:before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 15px;
-        left: 0;
-        bottom: 0;
-        background: #cddc39;
-    }
-
-    .notebook-cover {
-        background: #cc4b48;
-        height: 200px;
-        width: 140px;
-        position: absolute;
-        border-radius: 5px 15px 15px 5px;
-        z-index: 10;
-        transition: .5s linear;
-        transform-style: preserve-3d;
-        transform-origin: left center 0;
-    }
-
-    .moleskine-wrapper {
-        max-width: calc(100% / 4);
-        min-width: 10em;
-    }
-
-    .moleskine-notebook:hover .notebook-cover {
-        transform: rotateY(-50deg);
-        z-index: 99;
-        box-shadow: 20px 10px 50px rgba(0, 0, 0, .2);
-    }
-
-    .moleskine-notebook {
-        height: 200px;
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        transition: .5s linear;
-        border-radius: 5px 15px 15px 5px;
-        transform-origin: left center 0;
-    }
-
-    .moleskine-notebook:hover {
-        transform: rotateZ(-10deg);
-    }
-
-    .notebook-page.dotted {
-        background: linear-gradient(to bottom, #fbfae8 9px, #e4e4e4 1px);
-        background-size: 100% 10px;
-    }
-
-    .chip-container .chip:hover {
-        filter: invert(.1);
-    }
-
-    .notebook-page {
-        height: 100%;
-        width: 140px;
-        position: absolute;
-        top: 10px;
-        background-color: #fbfae8;
-        z-index: 0;
-        border-radius: 5px 16px 16px 5px;
-        overflow: hidden;
-    }
-</style>
-
-<div id="category-cloud" class="container chip-container">
+<div id="tags" class="container chip-container">
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
             </div>
             <div class="tag-chips">
                 
                 
-                
-                <a href="/categories/matlab/" title="matlab: 2">
-                    <div class="moleskine-wrapper">
-                        <div class="moleskine-notebook">
-                            <div class="chip notebook-cover center-align waves-effect waves-light
-                               chip-active "
-                                style="background-color: #F9EBEA;">
-                                <div
-                                    class="notebook-skin
-                                       chip-active ">
-                                    matlab
-                                </div>
-                            </div>
-                            <div class="notebook-page dotted"></div>
-                        </div>
-                    </div>
+                <a href="/tags/vscode/" title="vscode: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="vscode" style="background-color: #F9EBEA;">vscode
+                        <span class="tag-length">6</span>
+                    </span>
                 </a>
                 
                 
-                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" title="软件使用: 5">
-                    <div class="moleskine-wrapper">
-                        <div class="moleskine-notebook">
-                            <div class="chip notebook-cover center-align waves-effect waves-light
-                               chip-default "
-                                style="background-color: #F5EEF8;">
-                                <div
-                                    class="notebook-skin
-                                       chip-default ">
-                                    软件使用
-                                </div>
-                            </div>
-                            <div class="notebook-page dotted"></div>
-                        </div>
-                    </div>
+                <a href="/tags/c-c/" title="c/c++: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="c/c++" style="background-color: #F5EEF8;">c/c++
+                        <span class="tag-length">1</span>
+                    </span>
                 </a>
                 
                 
-                <a href="/categories/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" title="大学物理: 3">
-                    <div class="moleskine-wrapper">
-                        <div class="moleskine-notebook">
-                            <div class="chip notebook-cover center-align waves-effect waves-light
-                               chip-default "
-                                style="background-color: #D5F5E3;">
-                                <div
-                                    class="notebook-skin
-                                       chip-default ">
-                                    大学物理
-                                </div>
-                            </div>
-                            <div class="notebook-page dotted"></div>
-                        </div>
-                    </div>
+                <a href="/tags/java/" title="java: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="java" style="background-color: #D5F5E3;">java
+                        <span class="tag-length">1</span>
+                    </span>
                 </a>
                 
                 
-                <a href="/categories/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="数字电子技术: 1">
-                    <div class="moleskine-wrapper">
-                        <div class="moleskine-notebook">
-                            <div class="chip notebook-cover center-align waves-effect waves-light
-                               chip-default "
-                                style="background-color: #E8F8F5;">
-                                <div
-                                    class="notebook-skin
-                                       chip-default ">
-                                    数字电子技术
-                                </div>
-                            </div>
-                            <div class="notebook-page dotted"></div>
-                        </div>
-                    </div>
+                <a href="/tags/python/" title="python: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="python" style="background-color: #E8F8F5;">python
+                        <span class="tag-length">1</span>
+                    </span>
                 </a>
                 
                 
-                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" title="GO语言: 17">
-                    <div class="moleskine-wrapper">
-                        <div class="moleskine-notebook">
-                            <div class="chip notebook-cover center-align waves-effect waves-light
-                               chip-default "
-                                style="background-color: #FEF9E7;">
-                                <div
-                                    class="notebook-skin
-                                       chip-default ">
-                                    GO语言
-                                </div>
-                            </div>
-                            <div class="notebook-page dotted"></div>
-                        </div>
-                    </div>
+                <a href="/tags/latex/" title="latex: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="latex" style="background-color: #FEF9E7;">latex
+                        <span class="tag-length">1</span>
+                    </span>
                 </a>
                 
                 
-                <a href="/categories/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="模拟电子技术: 1">
-                    <div class="moleskine-wrapper">
-                        <div class="moleskine-notebook">
-                            <div class="chip notebook-cover center-align waves-effect waves-light
-                               chip-default "
-                                style="background-color: #F8F9F9;">
-                                <div
-                                    class="notebook-skin
-                                       chip-default ">
-                                    模拟电子技术
-                                </div>
-                            </div>
-                            <div class="notebook-page dotted"></div>
-                        </div>
-                    </div>
+                <a href="/tags/verilog/" title="verilog: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="verilog" style="background-color: #F8F9F9;">verilog
+                        <span class="tag-length">1</span>
+                    </span>
                 </a>
                 
+                
+                <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" title="大学课程: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="大学课程" style="background-color: #82E0AA;">大学课程
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%94%B5%E7%A3%81%E5%AD%A6/" title="电磁学: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="电磁学" style="background-color: #D7BDE2;">电磁学
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%A3%81%E5%AD%A6/" title="磁学: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="磁学" style="background-color: #A3E4D7;">磁学
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%85%89%E5%AD%A6/" title="光学: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="光学" style="background-color: #85C1E9;">光学
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="数字电子技术: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="数字电子技术" style="background-color: #F8C471;">数字电子技术
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%94%B5%E5%AD%A6/" title="电学: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="电学" style="background-color: #F9E79F;">电学
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" title="代码规范: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="代码规范" style="background-color: #F5EEF8;">代码规范
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="性能优化: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="性能优化" style="background-color: #82E0AA;">性能优化
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="模拟电子技术: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="模拟电子技术" style="background-color: #F9EBEA;">模拟电子技术
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%80%A7%E8%83%BD/" title="性能: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="性能" style="background-color: #F8F9F9;">性能
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/matlab/" title="matlab: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="matlab" style="background-color: #F8F9F9;">matlab
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
                 
             </div>
         </div>
     </div>
 </div>
 
-
     
 
     <article id="articles" class="container articles">
         <div class="row tags-posts">
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/p/668b5d8.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/22.webp" class="responsive-img" alt="simulink web部署">
-                            
-                            <span class="card-title">simulink web部署</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                开发与配置web服务器
-安装服务器
-
-
-配置系统变量
-
-确保 MATLAB  Runtime出现在 Windows 环境变量中任何已安装的 MATLAB 版本之前。
-
-
-
-
-
-在线安装
-
-
-打开MATLAB安装目录的这个文件夹
-
-F:\Pr
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-10
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/matlab/" class="post-category">
-                                    matlab
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/simulink%E8%BF%90%E7%94%A8/">
-                            <span class="chip bg-color">simulink运用</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-tags="vscode, matlab" data-aos="fade-up">
                 <div class="card">
-                    <a href="/p/7ecadde2.html">
+                    <a href="/p/da70bfb7.html">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/12.webp" class="responsive-img" alt="使用app designer配置simulink">
+                            <img src="/medias/loading.gif" data-original="/medias/featureimages/20.webp" class="responsive-img" alt="vscode配置matlab环境">
                             
-                            <span class="card-title">使用app designer配置simulink</span>
+                            <span class="card-title">vscode配置matlab环境</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                脚本语言设置
-clc;
-clear;
-close all;
-
-%% 设定参数
-g = 10;
-m = 1;
-c = 0.5;
-L = 1;
-
-% 设定时间
-tStepMax = 0.05;
-tFinal = 45;
-
-% 初始化
-theta
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-11
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/matlab/" class="post-category">
-                                    matlab
+                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
+                                软件使用
                                 </a>
                                 
                                 
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/simulink%E8%BF%90%E7%94%A8/">
-                            <span class="chip bg-color">simulink运用</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
@@ -845,7 +674,7 @@ theta
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">36.1k</span>
+                        class="white-color">35.2k</span>
             
             
             
