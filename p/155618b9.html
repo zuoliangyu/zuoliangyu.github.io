@@ -5,8 +5,28 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: 性能优化, ">
-    <meta name="description" content="左岚的博客">
+    <meta name="keywords" content="概率论, ">
+    <meta name="description" content="事件的运算及概率
+事件及运算
+知识点
+
+
+
+包含事件
+
+$A$事件是$B$事件中的一部分
+$$A \subset B$$
+
+
+并（和）事件
+
+$A$事件与$B$事件的集合
+$$A \cup B=A+B$$
+
+
+差事件
+
+$A$事件中会发生，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +38,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签: 性能优化 | 左岚的博客</title>
+    <title>概率论 | 左岚的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -399,336 +419,758 @@
     </nav>
 
 </header>
- <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-  <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-    <div class="brand">
-      <div class="title center-align">
-         世界很暗，但是你来了 
-      </div>
+ 
 
-      <div class="description center-align">
-        
-        <span id="subtitle"></span>
-        <script src="/libs/typed/typed.js"></script>
-        <script>
-          var typed = new Typed("#subtitle", {
-            strings: ['如果放弃太早，你永远都不知道自己会错过什么。',
-              '没有伞的孩子必须努力奔跑！',
-              '花开不是为了花落，而是为了开的更加灿烂。',
-              '没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生。'],
-            startDelay: 300,
-            typeSpeed: 100,
-            loop: true,
-            backSpeed: 50,
-            showCursor: true
-                  });
-        </script>
-        
-      </div>
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.webp')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">概率论</h1>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
+                                <span class="chip bg-color">大学课程</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
+                                <span class="chip bg-color">概率论</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/" class="post-category">
+                                概率论
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-02-12
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-02-12
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    833
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    3 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1>事件的运算及概率</h1>
+<h2 id="事件及运算">事件及运算</h2>
+<h3 id="知识点">知识点</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122014838.jpg" alt="Snipaste_2023-02-12_19-55-35"></p>
+<blockquote>
+<ul>
+<li>包含事件
+<ul>
+<li>$A$事件是$B$事件中的一部分</li>
+<li>$$A \subset B$$</li>
+</ul>
+</li>
+<li>并（和）事件
+<ul>
+<li>$A$事件与$B$事件的集合</li>
+<li>$$A \cup B=A+B$$</li>
+</ul>
+</li>
+<li>差事件
+<ul>
+<li>$A$事件中会发生，而$AB$的交集事件不会发生</li>
+<li>$A-B=A \bar B=A-AB$</li>
+</ul>
+</li>
+<li>交（积）事件
+<ul>
+<li>$A$事件与$B$事件的交集部分</li>
+<li>$A \cap B=AB$</li>
+</ul>
+</li>
+<li>互斥事件
+<ul>
+<li>$A$事件与$B$事件没有交集$\to$不会同时发生</li>
+<li>$$AB = \emptyset $$</li>
+</ul>
+</li>
+<li>对立（逆）事件
+<ul>
+<li>在总事件的集合$S$中不属于$A$事件的部分</li>
+<li>$A \cup \bar A=S,A\bar A=\emptyset$</li>
+</ul>
+</li>
+<li>独立事件
+<ul>
+<li>$AB$在不同点事件框架中</li>
+<li>$P(AB)=P(A)P(B)$</li>
+<li>$AB$独立$\to A \bar B,\bar A B,\bar A \bar B$独立</li>
+<li>若$ABC$相互独立
+<ul>
+<li>两两独立</li>
+<li>$P(ABC)=P(A)P(B)P©$</li>
+</ul>
+</li>
+<li>两两独立$\nrightarrow ABC$相互独立</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>公式
+<ul>
+<li>德摩根律
+<ul>
+<li>长杠变短杠，开口换方向</li>
+<li>$$\overline {A \cup B}  = \overline A \cap \overline B=\overline A \cdot \overline B $$</li>
+<li>$\overline {A \cap B}=\overline A \cup \overline B=\overline A+\overline B$</li>
+</ul>
+</li>
+<li>加法公式
+<ul>
+<li>$P(A\cup B)=P(A)+P(B)-P(AB)$</li>
+<li>$P(A\cup B \cup C)=P(A)+P(B)+P©-P(AB)\-P(AC)-P(BC)+P(ABC)$</li>
+</ul>
+</li>
+<li>减法公式
+<ul>
+<li>$P(A -B)=P(A\overline B)=P(A)-P(AB)$</li>
+</ul>
+</li>
+<li>对立事件
+<ul>
+<li>$P(\overline A)=1-P(A)$</li>
+</ul>
+</li>
+<li>独立事件
+<ul>
+<li>$P(AB)=P(A)P(B)$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122014961.jpg" alt="Snipaste_2023-02-12_20-10-57"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122021411.jpg" alt="Snipaste_2023-02-12_20-21-43"></p>
+<h2 id="古典概型">古典概型</h2>
+<h3 id="知识点-2">知识点</h3>
+<blockquote>
+<p>$P(A)=\frac{A包含的基本事件数}{实验的基本事件总数}$</p>
+</blockquote>
+<h3 id="解题-2">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122025758.jpg" alt="Snipaste_2023-02-12_20-25-03"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122025179.jpg" alt="Snipaste_2023-02-12_20-25-35"></p>
+<h2 id="几何概型">几何概型</h2>
+<h3 id="知识点-3">知识点</h3>
+<blockquote>
+<p>每个事件发生的概率只与构成该事件区域的长度（面积或体积）成比例</p>
+</blockquote>
+<h3 id="解题-3">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122027314.jpg" alt="Snipaste_2023-02-12_20-27-48"></p>
+<h1>全概率公式、贝叶斯公式</h1>
+<h2 id="条件概率、乘法公式">条件概率、乘法公式</h2>
+<h3 id="知识点-4">知识点</h3>
+<blockquote>
+<ul>
+<li>条件概率
+<ul>
+<li>在$A$发生的情况下发生事件$B$</li>
+<li>$P(B|A)=\frac{P(AB)}{P(A)}$</li>
+</ul>
+</li>
+<li>乘法公式
+<ul>
+<li>$P(AB)=P(A)P(B|A)=P(B)P(A|B)$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="解题-4">解题</h2>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122033481.jpg" alt="Snipaste_2023-02-12_20-32-54"></p>
+<h2 id="全概率、贝叶斯公式">全概率、贝叶斯公式</h2>
+<h3 id="知识点-5">知识点</h3>
+<blockquote>
+<ul>
+<li>设$A$为发生的事件</li>
+<li>找出完备事件组$B_i$</li>
+<li>写出$P(B_i),P(A|B_i)$</li>
+<li>带入全概率公式
+<ul>
+<li>$$P\left( A \right) = \sum\limits_{i = 1}^n {P\left( { {B_i} } \right)P\left( {A|{B_i} } \right)} $$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>贝叶斯公式
+<ul>
+<li>$P(B_i|A)=\frac{P(B_i)P(A|B_i)}{P(A)}$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题-5">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122038126.jpg" alt="Snipaste_2023-02-12_20-38-08"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122041044.jpg" alt="Snipaste_2023-02-12_20-41-41"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122046719.jpg" alt="Snipaste_2023-02-12_20-46-01"></p>
+<h1>一维随机变量</h1>
+<h2 id="分布率，分布函数">分布率，分布函数</h2>
+<h3 id="知识点-6">知识点</h3>
+<blockquote>
+<ul>
+<li>$$F\left( x \right) = \left{ {X \leqslant x} \right}$$
+<ul>
+<li>$0 \leqslant F(x) \leqslant 1$</li>
+<li>$F(- \infty)=0,F(\infty)=1$</li>
+<li>$F(X)$单调不减函数</li>
+<li>右连续$$\mathop {\lim }\limits_{x \to x_0^ + } F\left( x \right) = F\left( { {x_0} } \right)$$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题-6">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122047244.jpg" alt="Snipaste_2023-02-12_20-47-48"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122053344.jpg" alt="Snipaste_2023-02-12_20-53-48"></p>
+<h2 id="函数的分布——离散型">函数的分布——离散型</h2>
+<h3 id="知识点-7">知识点</h3>
+<blockquote>
+<p>绘制表格</p>
+</blockquote>
+<h3 id="解题-7">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122054115.jpg" alt="Snipaste_2023-02-12_20-54-23"></p>
+<h2 id="概率密度，分布函数">概率密度，分布函数</h2>
+<h3 id="知识点-8">知识点</h3>
+<blockquote>
+<ul>
+<li>概率密度$f(x)$
+<ul>
+<li>$$\int_{ - \infty }^{ + \infty } {f\left( x \right)dx}  = 1$$</li>
+<li>$$F\left( x \right) = P\left{ {X \leqslant x} \right} = \int_{ - \infty }^x {f\left( x \right)dx} $$</li>
+<li>$$P\left{ {a \leqslant X \leqslant b} \right} = F\left( b \right) - F\left( a \right) = \int_a^b {f\left( x \right)dx} $$</li>
+</ul>
+</li>
+<li>分布函数$F(x)$
+<ul>
+<li>$0 \leqslant F(x) \leqslant 1$</li>
+<li>$F’(x)=f(x)$</li>
+<li>$F(- \infty)=0,F(\infty)=1$</li>
+<li>$F(X)$单调不减函数</li>
+<li>右连续$$\mathop {\lim }\limits_{x \to x_0^ + } F\left( x \right) = F\left( { {x_0} } \right)$$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题-8">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122101874.jpg" alt="Snipaste_2023-02-12_21-01-15"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122104231.jpg" alt="Snipaste_2023-02-12_21-04-25"></p>
+<h2 id="函数的分布——连续型">函数的分布——连续型</h2>
+<h3 id="知识点-9">知识点</h3>
+<blockquote>
+<ul>
+<li>$g=g(X)$单调可导
+<ul>
+<li>求出$g(X)$值域</li>
+<li>$x=h(y),x’=h’(y)$</li>
+<li>$f_Y(y)=f_X[f(y)]\cdot h’(y)$</li>
+</ul>
+</li>
+<li>$g=g(X)$非单调可导
+<ul>
+<li>求出$g(X)值域$</li>
+<li>$${F_Y}\left( y \right) = P\left{ {Y \leqslant y} \right} = P\left{ {g\left( X \right) \leqslant y} \right} = P\left{ {X \leqslant h\left( y \right)} \right} = {F_X}\left( {h\left( y \right)} \right)$$</li>
+<li>$F_y’(y)=f_Y(y)$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题-9">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122108944.jpg" alt="Snipaste_2023-02-12_21-08-03"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122114398.jpg" alt="Snipaste_2023-02-12_21-14-14"></p>
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">haze</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/p/155618b9.html">http://example.com/p/155618b9.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">haze</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
+                                    <span class="chip bg-color">大学课程</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
+                                    <span class="chip bg-color">概率论</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/loading.gif" data-original="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/p/155618b9.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/21.webp" class="responsive-img" alt="概率论">
+                        
+                        <span class="card-title">概率论</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/" class="post-category">
+                                    概率论
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
+                        <span class="chip bg-color">大学课程</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
+                        <span class="chip bg-color">概率论</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/p/da70bfb7.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/20.webp" class="responsive-img" alt="vscode配置matlab环境">
+                        
+                        <span class="card-title">vscode配置matlab环境</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
+                                    软件使用
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vscode/">
+                        <span class="chip bg-color">vscode</span>
+                    </a>
+                    
+                    <a href="/tags/matlab/">
+                        <span class="chip bg-color">matlab</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
 </div>
 
 
 <script>
-  // 每小时切换 banner 图.  Switch banner image every day.
-  var bannerUrl =
-    "/medias/banner/" +
-    new Date().getHours() +
-    ".webp";
-  $(".bg-cover").css("background-image", "url(" + bannerUrl + ")");
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 左岚的博客<br />'
+            + '文章作者: haze<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
 </script>
 
 
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
     </div>
-</div>
-
-<main class="content">
-
-    
-
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/vscode/" title="vscode: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="vscode" style="background-color: #F9EBEA;">vscode
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/c-c/" title="c/c++: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="c/c++" style="background-color: #F5EEF8;">c/c++
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/java/" title="java: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="java" style="background-color: #D5F5E3;">java
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/python/" title="python: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="python" style="background-color: #E8F8F5;">python
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/latex/" title="latex: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="latex" style="background-color: #FEF9E7;">latex
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/verilog/" title="verilog: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="verilog" style="background-color: #F8F9F9;">verilog
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" title="大学课程: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="大学课程" style="background-color: #82E0AA;">大学课程
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%94%B5%E7%A3%81%E5%AD%A6/" title="电磁学: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="电磁学" style="background-color: #D7BDE2;">电磁学
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%A3%81%E5%AD%A6/" title="磁学: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="磁学" style="background-color: #A3E4D7;">磁学
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%85%89%E5%AD%A6/" title="光学: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="光学" style="background-color: #85C1E9;">光学
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="数字电子技术: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="数字电子技术" style="background-color: #F8C471;">数字电子技术
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%94%B5%E5%AD%A6/" title="电学: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="电学" style="background-color: #F9E79F;">电学
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" title="代码规范: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="代码规范" style="background-color: #F5EEF8;">代码规范
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="性能优化: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="性能优化" style="background-color: #82E0AA;">性能优化
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="模拟电子技术: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="模拟电子技术" style="background-color: #F9EBEA;">模拟电子技术
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%80%A7%E8%83%BD/" title="性能: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="性能" style="background-color: #F8F9F9;">性能
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/matlab/" title="matlab: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="matlab" style="background-color: #F8F9F9;">matlab
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" title="概率论: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="概率论" style="background-color: #F9E79F;">概率论
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-            </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
         </div>
     </div>
 </div>
 
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
     
 
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="性能优化" data-aos="fade-up">
-                <div class="card">
-                    <a href="/p/97755212.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/09.webp" class="responsive-img" alt="编译器和静态分析">
-                            
-                            <span class="card-title">编译器和静态分析</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                GO语言
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="性能优化" data-aos="fade-up">
-                <div class="card">
-                    <a href="/p/5504392c.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/00.webp" class="responsive-img" alt="GO内存管理">
-                            
-                            <span class="card-title">GO内存管理</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                GO语言
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="性能优化" data-aos="fade-up">
-                <div class="card">
-                    <a href="/p/d0fc8bad.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="性能优化及自动化管理">
-                            
-                            <span class="card-title">性能优化及自动化管理</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/GO%E8%AF%AD%E8%A8%80/" class="post-category">
-                                GO语言
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </article>
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
  <footer class="page-footer bg-color">
     
