@@ -488,21 +488,21 @@ $A$事件中会发生，">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-12
+                    2023-02-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    833
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
 
@@ -757,6 +757,211 @@ $A$事件中会发生，">
 <h3 id="解题-9">解题</h3>
 <p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122108944.jpg" alt="Snipaste_2023-02-12_21-08-03"></p>
 <p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302122114398.jpg" alt="Snipaste_2023-02-12_21-14-14"></p>
+<h1>五种重要分布</h1>
+<table>
+<thead>
+<tr>
+<th>分布名称</th>
+<th>分布符号</th>
+<th>分布律/概率密度</th>
+<th>可加性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>二项分布</td>
+<td>$X \sim b(n,p)$或$X \sim B(n,p)$</td>
+<td>$$P\left{ {X = k} \right} = C_n^k{p^k}{\left( {1 - p} \right)^{n - k}}$$</td>
+<td>$Z\sim b(n_1+n_2,p)$</td>
+</tr>
+<tr>
+<td>泊松分布</td>
+<td>$$X \sim \pi \left( \lambda  \right)$$或$X\sim P(\lambda  )$</td>
+<td>$$P\left{ {X = k} \right} = \frac{ { {\lambda ^k} } }{ {k!} }{e^{ - \lambda } }$$</td>
+<td>$Z\sim \pi(\lambda _1+\lambda  _2 )$</td>
+</tr>
+<tr>
+<td>均匀分布</td>
+<td>$X\sim U(a,b)$</td>
+<td>$a&lt;x&lt;b$ $x&gt;0$ $f(x)=\frac{1}{b-a}$ <br>$others$  $f(x)=0$</td>
+<td>无</td>
+</tr>
+<tr>
+<td>指数分布</td>
+<td>$$X \sim E \left( \lambda  \right)$$</td>
+<td>$x&gt;0$  $f(x)=\lambda  e^{\lambda   x}$<br> $others$   $f(x)=0$</td>
+<td>无</td>
+</tr>
+<tr>
+<td>正态分布</td>
+<td>$$X \sim N\left( {\mu ,{\sigma ^2} } \right)$$</td>
+<td>$$f\left( x \right) = \frac{1}{ {\sqrt {2\pi } \sigma } }{e^{ - \frac{ { { {\left( {x - \mu } \right)}^2} } }{ {2{\sigma ^2} } } } }$$</td>
+<td>$$Z \sim N\left( { {\mu _1} \pm {\mu _2},\sigma _1^2 + \sigma _2^2} \right)$$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="二项分布">二项分布</h2>
+<h3 id="知识点-10">知识点</h3>
+<blockquote>
+<ul>
+<li>
+<p>符号表达</p>
+<ul>
+<li>$X \sim b(n,p)$或$X \sim B(n,p)$</li>
+</ul>
+<p>分布律</p>
+<p>​	$$P\left{ {X = k} \right} = C_n^k{p^k}{\left( {1 - p} \right)^{n - k}}$$</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题-10">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302130902501.jpg" alt="Snipaste_2023-02-13_09-02-19"></p>
+<h2 id="泊松分布">泊松分布</h2>
+<h3 id="知识点-11">知识点</h3>
+<blockquote>
+<ul>
+<li>符号表达
+<ul>
+<li>$$X \sim \pi \left( \lambda  \right)$$或$X\sim P(\lambda  )$</li>
+</ul>
+</li>
+<li>分布律
+<ul>
+<li>$$P\left{ {X = k} \right} = \frac{ { {\lambda ^k} } }{ {k!} }{e^{ - \lambda } }$$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>可加性推导
+<ul>
+<li>$$\eqalign{<br>
+&amp; X \sim \pi \left( \lambda  \right) \to P\left{ {X = k} \right} = \frac{ { {\lambda ^k} } }{ {k!} }{e^{ - \lambda } }  \cr<br>
+&amp; Y \sim \pi \left( \mu  \right) \to P\left{ {Y = k} \right} = \frac{ { {\mu ^k} } }{ {k!} }{e^{ - \mu } }  \cr<br>
+&amp; Z = X + Y  \cr<br>
+&amp; P\left{ {Z = k} \right} = \sum\limits_{i = 0}^k {P\left( {X = i} \right)P\left( {Y = k - i} \right)}  = \sum\limits_{i = 0}^k {\frac{ { {\lambda ^k} } }{ {k!} }{e^{ - \lambda } }\frac{ { {\mu ^{\left( {k - i} \right)} } } }{ {\left( {k - i} \right)!} }{e^{ - \mu } } }   \cr<br>
+&amp;  = \frac{ { {e^{ - \left( {\lambda  + \mu } \right)} } } }{ {k!} }\sum\limits_{i = 0}^k {\frac{ {k!} }{ {i!\left( {k - i} \right)!} }{\lambda ^k}{\mu ^{k - i} } }  = \frac{ { {e^{ - \left( {\lambda  + \mu } \right)} } } }{ {k!} }C_k^i\left( { {\lambda ^k}{\mu ^{k - i}} } \right) = \frac{ { {e^{ - \left( {\lambda  + \mu } \right)} } } }{ {k!} }{\left( {\lambda  + \mu } \right)^k}  \cr<br>
+&amp;  \Rightarrow Z \sim \pi \left( {\lambda  + \mu } \right) \cr} $$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题-11">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302130911688.jpg" alt="Snipaste_2023-02-13_09-11-40"></p>
+<h2 id="均匀分布">均匀分布</h2>
+<h3 id="知识点-12">知识点</h3>
+<blockquote>
+<ul>
+<li>符号表示
+<ul>
+<li>$X\sim U(a,b)$</li>
+</ul>
+</li>
+<li>概率密度
+<ul>
+<li>$a&lt;x&lt;b$
+<ul>
+<li>$f(x)=\frac{1}{b-a}$</li>
+</ul>
+</li>
+<li>$others$
+<ul>
+<li>$f(x)=0$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题-12">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302130939715.jpg" alt="Snipaste_2023-02-13_09-39-19"></p>
+<h2 id="指数分布">指数分布</h2>
+<h3 id="知识点-13">知识点</h3>
+<blockquote>
+<ul>
+<li>符号表示
+<ul>
+<li>$X\sim E(\lambda  )$</li>
+</ul>
+</li>
+<li>概率密度
+<ul>
+<li>$x&gt;0$
+<ul>
+<li>$f(x)=\lambda  e^{\lambda   x}$</li>
+</ul>
+</li>
+<li>$others$
+<ul>
+<li>$f(x)=0$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>无记忆性
+<ul>
+<li>$$P\left{ {X &gt; s + t|X &gt; s} \right} = P\left{ {X &gt; t} \right}$$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题-13">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302130953821.jpg" alt="Snipaste_2023-02-13_09-52-57"></p>
+<h2 id="正态分布">正态分布</h2>
+<h3 id="知识点-14">知识点</h3>
+<blockquote>
+<ul>
+<li>符号表达
+<ul>
+<li>$$X \sim N\left( {\mu ,{\sigma ^2} } \right)$$</li>
+</ul>
+</li>
+<li>概率密度
+<ul>
+<li>$$f\left( x \right) = \frac{1}{ {\sqrt {2\pi } \sigma } }{e^{ - \frac{ { { {\left( {x - \mu } \right)}^2} } }{ {2{\sigma ^2} } } } }$$</li>
+</ul>
+</li>
+<li>图像
+<ul>
+<li>关于$\mu$对称</li>
+<li>$\sigma $越小，图像越陡（集中）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>标准正态分布
+<ul>
+<li>$X\sim N(0,1)$</li>
+<li>$$\Phi \left( x \right) = P\left{ {X \leqslant x} \right} = \int_{ - \infty }^x {f\left( x \right)dx} $$</li>
+<li>概率密度
+<ul>
+<li>$f(x)=\frac {1}{\sqrt{2 \pi}}e^{-\frac{x^2}{2}}$</li>
+</ul>
+</li>
+<li>性质
+<ul>
+<li>$$\mu  = 0,\Phi \left( 0 \right) = \frac{1}{2}$$</li>
+<li>$$\Phi \left( { - x} \right) = 1 - \Phi \left( x \right)$$</li>
+<li>若$$X \sim N\left( {\mu ,{\sigma ^2} } \right)$$
+<ul>
+<li>$$\frac{ {X - \mu }}{\sigma } \sim N\left( {0,1} \right)$$</li>
+<li>$$P\left{ {X &lt; a} \right} = \Phi \left( {\fracNaN{\sigma }} \right)$$</li>
+<li>$$P\left{ {b &lt; X &lt; a} \right} = \Phi \left( {\frac</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
             </div>
@@ -1189,7 +1394,7 @@ $A$事件中会发生，">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">36.1k</span>
+                        class="white-color">36.8k</span>
             
             
             
@@ -1573,7 +1778,7 @@ $(function () {
       src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"
     ></script>
     <script type="text/javascript" src="/js/fireworks.js"></script>
-  
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1586,5 +1791,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n+240||document.documentElement.clientHeight*n+240)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>
