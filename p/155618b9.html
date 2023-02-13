@@ -495,14 +495,14 @@ $A$事件中会发生，">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    12 分
                 </div>
                 
 
@@ -772,13 +772,13 @@ $A$事件中会发生，">
 <td>二项分布</td>
 <td>$X \sim b(n,p)$或$X \sim B(n,p)$</td>
 <td>$$P\left{ {X = k} \right} = C_n^k{p^k}{\left( {1 - p} \right)^{n - k}}$$</td>
-<td>$Z\sim b(n_1+n_2,p)$</td>
+<td>$X+Y\sim b(n_1+n_2,p)$</td>
 </tr>
 <tr>
 <td>泊松分布</td>
 <td>$$X \sim \pi \left( \lambda  \right)$$或$X\sim P(\lambda  )$</td>
 <td>$$P\left{ {X = k} \right} = \frac{ { {\lambda ^k} } }{ {k!} }{e^{ - \lambda } }$$</td>
-<td>$Z\sim \pi(\lambda _1+\lambda  _2 )$</td>
+<td>$X+Y\sim \pi(\lambda _1+\lambda  _2 )$</td>
 </tr>
 <tr>
 <td>均匀分布</td>
@@ -796,7 +796,7 @@ $A$事件中会发生，">
 <td>正态分布</td>
 <td>$$X \sim N\left( {\mu ,{\sigma ^2} } \right)$$</td>
 <td>$$f\left( x \right) = \frac{1}{ {\sqrt {2\pi } \sigma } }{e^{ - \frac{ { { {\left( {x - \mu } \right)}^2} } }{ {2{\sigma ^2} } } } }$$</td>
-<td>$$Z \sim N\left( { {\mu _1} \pm {\mu _2},\sigma _1^2 + \sigma _2^2} \right)$$</td>
+<td>$$$X \pm Y \sim N\left( { {\mu _1} \pm {\mu _2},\sigma _1^2 + \sigma _2^2} \right)$$</td>
 </tr>
 </tbody>
 </table>
@@ -952,12 +952,151 @@ $A$事件中会发生，">
 <li>若$$X \sim N\left( {\mu ,{\sigma ^2} } \right)$$
 <ul>
 <li>$$\frac{ {X - \mu }}{\sigma } \sim N\left( {0,1} \right)$$</li>
-<li>$$P\left{ {X &lt; a} \right} = \Phi \left( {\fracNaN{\sigma }} \right)$$</li>
-<li>$$P\left{ {b &lt; X &lt; a} \right} = \Phi \left( {\frac</li>
+<li>$$P\left{ {X &lt; a} \right} = \Phi \left( {\frac{ {a - \mu } }{\sigma } } \right)$$</li>
+<li>$$P\left{ {b &lt; X &lt; a} \right} = \Phi \left( {\frac{ {a - \mu } }{\sigma } } \right) - \Phi \left( {\frac{ {b - \mu } }{\sigma } } \right)$$</li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>可加性推导
+<ul>
+<li>$$\eqalign{<br>
+&amp; X \sim N\left( { {\mu _1},\sigma _1^2} \right)  \cr<br>
+&amp; Y \sim N\left( { {\mu <em>2},\sigma <em>2^2} \right)  \cr<br>
+&amp; Z = X + Y  \cr<br>
+&amp; {f_Z}\left( z \right) = \int</em>{ - \infty }^{ + \infty } { {f_X}\left( x \right){f_Y}\left( {z - x} \right)dx}   \cr<br>
+&amp;  = \int</em>{ - \infty }^{ + \infty } {\frac{1}{ {\sqrt {2\pi } {\sigma _1} } }{e^{ - \frac{ { { {\left( {x - {\mu _1} } \right)}^2} } }{ {2\sigma _1^2} } } }\frac{1}{ {\sqrt {2\pi } {\sigma _2} } }{e^{ - \frac{ { { {\left( {z - x - {\mu _2} } \right)}^2} } }{ {2\sigma _2^2} } } }dx}   \cr<br>
+&amp;  = \frac{1}{ {2\pi {\sigma _1}{\sigma <em>2} } }\int</em>{ - \infty }^{ + \infty } { {e^{ - \left[ {\frac{ { { {\left( {x - {\mu _1} } \right)}^2} } }{ {2\sigma _1^2} }  + \frac{ { { {\left( {z - x - {\mu _2} } \right)}^2} } }{ {2\sigma _2^2} } } \right] } }dx}   \cr<br>
+&amp;  = \frac{1}{ {2\pi {\sigma _1}{\sigma <em>2} } }\int</em>{ - \infty }^{ + \infty } { {e^{ - \left( {a{x^2} - 2bx + c} \right)} }dx}   \cr<br>
+&amp; a = \frac{1}{2}\left( {\frac{1}{ {\sigma _1^2} } + \frac{1}{ {\sigma _2^2} } } \right),b = \frac{1}{2}\left( {\frac{ { {\mu _1} } }{ {\sigma _1^2} } + \frac{ {z - {\mu _2} } }{ {\sigma _2^2} } } \right),c = \frac{1}{2}\left[ {\frac{ {\mu _1^2} }{ {\sigma _1^2} } + \frac{ { { {\left( {z - {\mu _2} } \right)}^2} } }{ {\sigma <em>2^2} } } \right]  \cr<br>
+&amp; \int</em>{ - \infty }^{ + \infty } { {e^{ - \left( {a{x^2} - 2bx + c} \right)} }dx}  = \sqrt {\frac{\pi }{a} } {e^{\frac{ {ac - {b^2} } }{a} } }  \cr<br>
+&amp;  \Rightarrow {f_Z}\left( z \right) = \frac{1}{ {2\pi {\sigma _1}{\sigma <em>2} } }\int</em>{ - \infty }^{ + \infty }  { {e^{ - \left( {a{x^2} - 2bx + c} \right)} }dx}  = \frac{1}{ {\sqrt {2\pi } {\sigma _1}{\sigma _2} } }{e^{\frac{ { { {\left[ {z - \left( { {\mu _1} + {\mu _2} } \right)} \right]}^2} } }{ {2\left( {\sigma _1^2 + \sigma _2^2} \right)} } } }  \cr<br>
+&amp;  \Rightarrow Z \sim N\left( { {\mu _1} + {\mu _2},\sigma _1^2 + \sigma _2^2} \right) \cr} $$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题-14">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302130956503.jpg" alt="Snipaste_2023-02-13_09-56-54"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131004437.jpg" alt="Snipaste_2023-02-13_10-04-36"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131015484.jpg" alt="Snipaste_2023-02-13_10-15-44"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131018464.jpg" alt="Snipaste_2023-02-13_10-18-06"></p>
+<h1>离散型二维随机变量</h1>
+<h2 id="知识点-15">知识点</h2>
+<blockquote>
+<ul>
+<li>分布律
+<ul>
+<li>带入二联表数据即可得到结果</li>
+</ul>
+</li>
+<li>边缘分布律
+<ul>
+<li>将$X$对应的概率全部相加即为$X$的边缘分布律</li>
+</ul>
+</li>
+<li>独立性
+<ul>
+<li>独立条件
+<ul>
+<li>$$P\left{ {X = {x_i},Y = {y_i}} \right} = P\left{ {X = {x_i} } \right}P\left{ {Y = {y_i} } \right}$$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>函数的分布律
+<ul>
+<li>写出$(X,Y)$的所有组合</li>
+<li>写出需要求的函数对应的组合的结果</li>
+<li>将结果整理后即可得到答案</li>
+</ul>
+</li>
+<li>条件分布
+<ul>
+<li>$$P\left{ {X = {x_i}|Y = {y_i} } \right} = \frac{ {P\left{ {X = {x_i},Y = {y_i} } \right} } }{ {P\left{ {Y = {y_i} } \right} } }$$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="解题-15">解题</h2>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131057535.jpg" alt="Snipaste_2023-02-13_10-57-27"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131058063.jpg" alt="Snipaste_2023-02-13_10-58-16"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131103371.jpg" alt="Snipaste_2023-02-13_11-03-25"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131105796.jpg" alt="Snipaste_2023-02-13_11-05-39"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131107694.jpg" alt="Snipaste_2023-02-13_11-07-39"></p>
+<h1>连续型二维随机变量</h1>
+<h2 id="知识点-16">知识点</h2>
+<blockquote>
+<ul>
+<li>概率密度
+<ul>
+<li>$$\int_{ - \infty }^{ + \infty } {\int_{ - \infty }^{ + \infty } {f\left( {x,y} \right)dx} dy}  = 1$$</li>
+<li>$$P\left{ {\left( {X,Y} \right) \in D} \right} = \iint\limits_D {f\left( {x,y} \right)dy}$$</li>
+</ul>
+</li>
+<li>边缘概率密度
+<ul>
+<li>$${f_X}\left( x \right) = \int_{ - \infty }^{ + \infty } {f\left( {x,y} \right)dy} $$</li>
+<li>$${f_Y}\left( y \right) = \int_{ - \infty }^{ + \infty } {f\left( {x,y} \right)dx} $$</li>
+</ul>
+</li>
+<li>条件概率密度
+<ul>
+<li>$${f_{X|Y} }\left( {x|y} \right) = \frac{ {f\left( {x,y} \right)} }{ { {f_Y}\left( y \right)} }$$</li>
+<li>$${f_{Y|X} }\left( {y|x} \right) = \frac{ {f\left( {x,y} \right)} }{ { {f_X}\left( x \right)} }$$</li>
+</ul>
+</li>
+<li>独立性
+<ul>
+<li>$$f\left( {x,y} \right) = {f_X}\left( x \right){f_Y}\left( y \right)$$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="解题-16">解题</h2>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131450320.jpg" alt="Snipaste_2023-02-13_14-50-39"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131454820.jpg" alt="Snipaste_2023-02-13_14-54-07"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131508816.jpg" alt="Snipaste_2023-02-13_15-08-16"></p>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131511150.jpg" alt="Snipaste_2023-02-13_15-11-01"></p>
+<h1>连续型二维随机变量函数的分布</h1>
+<h2 id="Z-X-Y">$Z=X+Y$</h2>
+<h3 id="知识点-17">知识点</h3>
+<blockquote>
+<ul>
+<li>替换$Y=Z-X$
+<ul>
+<li>$${f_Z}\left( z \right) = \int_{ - \infty }^{ + \infty } {f\left( {x,z - x} \right)dx} $$</li>
+<li>确定被积函数$f(x,z-x)$</li>
+<li>确定$X$的积分范围</li>
+<li>分情况代入公式</li>
+</ul>
+</li>
+<li>替换$X=Z-Y$
+<ul>
+<li>$${f_Z}\left( z \right) = \int_{ - \infty }^{ + \infty } {f\left( {y,z - y} \right)dy} $$</li>
+<li>确定被积函数$f(y,z-y)$</li>
+<li>确定$Y$的积分范围</li>
+<li>分情况代入公式</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="解题-17">解题</h3>
+<p><img src="/medias/loading.gif" data-original="https://glowing-seahorse-aea3b7.netlify.app/img/202302131521730.jpg" alt="Snipaste_2023-02-13_15-21-12"></p>
+<h2 id="Z-XY">$Z=XY$</h2>
+<h3 id="知识点-18">知识点</h3>
+<blockquote>
+<ul>
+<li>替换$Y=\frac{Z}{X}$
+<ul>
+<li>$${f_{XY}}\left( z \right) = \int_{ - \infty }^{ + \infty } {\frac{1}{ {\left| x \right|} }f\left( {x,\frac{z}{x} } \right)dx} $$</li>
+<li>确定被积函数$ {\frac{1}{ {\left| x \right|} }f\left( {x,\frac{z}{x} } \right)dx} $</li>
 </ul>
 </li>
 </ul>
@@ -1394,7 +1533,7 @@ $A$事件中会发生，">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">36.8k</span>
+                        class="white-color">37.5k</span>
             
             
             
