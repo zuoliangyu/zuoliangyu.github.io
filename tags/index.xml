@@ -2,65 +2,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on Example Site</title>
-        <link>http://localhost:1313/tags/</link>
+        <link>https://zuoliangyu.github.io/tags/</link>
         <description>Recent content in Tags on Example Site</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoliangyu.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Css</title>
-        <link>http://localhost:1313/tags/css/</link>
+        <link>https://zuoliangyu.github.io/tags/css/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/css/</guid>
+        <guid>https://zuoliangyu.github.io/tags/css/</guid>
         <description></description>
         </item>
         <item>
         <title>Html</title>
-        <link>http://localhost:1313/tags/html/</link>
+        <link>https://zuoliangyu.github.io/tags/html/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/html/</guid>
+        <guid>https://zuoliangyu.github.io/tags/html/</guid>
         <description></description>
         </item>
         <item>
         <title>Markdown</title>
-        <link>http://localhost:1313/tags/markdown/</link>
+        <link>https://zuoliangyu.github.io/tags/markdown/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/markdown/</guid>
+        <guid>https://zuoliangyu.github.io/tags/markdown/</guid>
         <description></description>
         </item>
         <item>
         <title>Themes</title>
-        <link>http://localhost:1313/tags/themes/</link>
+        <link>https://zuoliangyu.github.io/tags/themes/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/themes/</guid>
+        <guid>https://zuoliangyu.github.io/tags/themes/</guid>
         <description></description>
         </item>
         <item>
         <title>Tag With Whitespaces</title>
-        <link>http://localhost:1313/tags/tag-with-whitespaces/</link>
+        <link>https://zuoliangyu.github.io/tags/tag-with-whitespaces/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/tag-with-whitespaces/</guid>
+        <guid>https://zuoliangyu.github.io/tags/tag-with-whitespaces/</guid>
         <description></description>
         </item>
         <item>
         <title>Text</title>
-        <link>http://localhost:1313/tags/text/</link>
+        <link>https://zuoliangyu.github.io/tags/text/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/text/</guid>
+        <guid>https://zuoliangyu.github.io/tags/text/</guid>
         <description></description>
         </item>
         <item>
         <title>Emoji</title>
-        <link>http://localhost:1313/tags/emoji/</link>
+        <link>https://zuoliangyu.github.io/tags/emoji/</link>
         <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/emoji/</guid>
+        <guid>https://zuoliangyu.github.io/tags/emoji/</guid>
         <description></description>
         </item>
         

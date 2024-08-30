@@ -2,118 +2,118 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/zh-cn/</loc>
+    <loc>https://zuoliangyu.github.io/zh-cn/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/"
+                href="https://zuoliangyu.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="http://localhost:1313/ar/"
+                href="https://zuoliangyu.github.io/ar/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh-cn/"
+                href="https://zuoliangyu.github.io/zh-cn/"
                 />
   </url><url>
-    <loc>http://localhost:1313/zh-cn/categories/</loc>
+    <loc>https://zuoliangyu.github.io/zh-cn/categories/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/categories/"
+                href="https://zuoliangyu.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="http://localhost:1313/ar/categories/"
+                href="https://zuoliangyu.github.io/ar/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh-cn/categories/"
+                href="https://zuoliangyu.github.io/zh-cn/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/zh-cn/p/test-chinese/</loc>
+    <loc>https://zuoliangyu.github.io/zh-cn/p/test-chinese/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/zh-cn/post/</loc>
+    <loc>https://zuoliangyu.github.io/zh-cn/post/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/post/"
+                href="https://zuoliangyu.github.io/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="http://localhost:1313/ar/post/"
+                href="https://zuoliangyu.github.io/ar/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh-cn/post/"
+                href="https://zuoliangyu.github.io/zh-cn/post/"
                 />
   </url><url>
-    <loc>http://localhost:1313/zh-cn/categories/test/</loc>
+    <loc>https://zuoliangyu.github.io/zh-cn/categories/test/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/categories/test/"
+                href="https://zuoliangyu.github.io/categories/test/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh-cn/categories/test/"
+                href="https://zuoliangyu.github.io/zh-cn/categories/test/"
                 />
   </url><url>
-    <loc>http://localhost:1313/zh-cn/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <loc>https://zuoliangyu.github.io/zh-cn/categories/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/zh-cn/page/</loc>
+    <loc>https://zuoliangyu.github.io/zh-cn/page/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/page/"
+                href="https://zuoliangyu.github.io/page/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh-cn/page/"
+                href="https://zuoliangyu.github.io/zh-cn/page/"
                 />
   </url><url>
-    <loc>http://localhost:1313/zh-cn/tags/</loc>
+    <loc>https://zuoliangyu.github.io/zh-cn/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/tags/"
+                href="https://zuoliangyu.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="http://localhost:1313/ar/tags/"
+                href="https://zuoliangyu.github.io/ar/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh-cn/tags/"
+                href="https://zuoliangyu.github.io/zh-cn/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/zh-cn/%E5%85%B3%E4%BA%8E/</loc>
+    <loc>https://zuoliangyu.github.io/zh-cn/%E5%85%B3%E4%BA%8E/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/about/"
+                href="https://zuoliangyu.github.io/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh-cn/%E5%85%B3%E4%BA%8E/"
+                href="https://zuoliangyu.github.io/zh-cn/%E5%85%B3%E4%BA%8E/"
                 />
   </url>
 </urlset>
