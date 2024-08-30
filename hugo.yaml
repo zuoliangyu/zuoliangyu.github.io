@@ -222,11 +222,20 @@ menu:
           weight: 2
           params:
               icon: bilibili-line
-        #- identifier: twitter
-        #  name: Twitter
-        #  url: https://twitter.com
-        #  params:
-        #      icon: brand-twitter
+
+        - identifier: csdn
+          name: csdn
+          url: https://blog.csdn.net/zl295871597
+          weight: 3
+          params:
+              icon: csdn
+
+        - identifier: zhihu
+          name: zhihu
+          url: https://www.zhihu.com/people/zuo-liang-yu-64
+          weight: 4
+          params:
+              icon: zhihu
 
 related:
     includeNewer: true
