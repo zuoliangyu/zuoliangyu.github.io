@@ -7,12 +7,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://zuoliangyu.github.io/categories/"
+                href="https://zuoliangyu.github.io/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://zuoliangyu.github.io/zh-cn/categories/"
+                href="https://zuoliangyu.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -24,13 +24,8 @@
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://zuoliangyu.github.io/post/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="zh-cn"
-                href="https://zuoliangyu.github.io/zh-cn/post/"
+                href="https://zuoliangyu.github.io/post/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -43,12 +38,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://zuoliangyu.github.io/tags/"
+                href="https://zuoliangyu.github.io/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://zuoliangyu.github.io/zh-cn/tags/"
+                href="https://zuoliangyu.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -69,7 +64,7 @@
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="zh-cn"
                 href="https://zuoliangyu.github.io/p/placeholder-text/"
                 />
     <xhtml:link
@@ -83,12 +78,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://zuoliangyu.github.io/"
+                href="https://zuoliangyu.github.io/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://zuoliangyu.github.io/zh-cn/"
+                href="https://zuoliangyu.github.io/"
                 />
     <xhtml:link
                 rel="alternate"

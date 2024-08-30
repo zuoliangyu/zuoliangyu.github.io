@@ -147,3 +147,5 @@ params:
             enabled: true
         content:
             enabled: true
+    frontmatter:
+        lastmod: [":fileModTime", "lastmod"]
