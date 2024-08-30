@@ -2,9 +2,10 @@
 title: 蓝桥杯模板建立
 description: 保姆喂饭级教程
 author: 左岚
-date: 2024-6-2
+date: 2024-06-02
 slug: 蓝桥杯
-#image: helena-hertz-wWZzXlDpMog-unsplash.jpg
+image: test.jpg
+math: true
 categories:
     - 蓝桥杯
     - 单片机

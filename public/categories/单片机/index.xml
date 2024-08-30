@@ -6,13 +6,14 @@
         <description>Recent content in 单片机 on 左岚</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Example Person</copyright><atom:link href="https://zuoliangyu.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Sun, 02 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoliangyu.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>蓝桥杯模板建立</title>
         <link>https://zuoliangyu.github.io/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
         
         <guid>https://zuoliangyu.github.io/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/</guid>
-        <description>&lt;p&gt;[toc]&lt;/p&gt;
+        <description>&lt;img src="https://zuoliangyu.github.io/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/test.jpg" alt="Featured image of post 蓝桥杯模板建立" /&gt;&lt;p&gt;[toc]&lt;/p&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;h3 id=&#34;小小的bb几句&#34;&gt;小小的bb几句
 &lt;/h3&gt;&lt;p&gt;这里我说明一下我个人在学习单片机的时候的一些心得体会，以及大模板的最新建立，会持续更新。&lt;/p&gt;
