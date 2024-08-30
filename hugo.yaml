@@ -212,9 +212,16 @@ menu:
         - identifier: github
           name: GitHub
           url: https://github.com/zuoliangyu
+          weight: 1
           params:
               icon: brand-github
 
+        - identifier: bilibili
+          name: bilibili
+          url: https://space.bilibili.com/27619688
+          weight: 2
+          params:
+              icon: bilibili-line
         #- identifier: twitter
         #  name: Twitter
         #  url: https://twitter.com

@@ -149,3 +149,6 @@ params:
             enabled: true
     frontmatter:
         lastmod: [":fileModTime", "lastmod"]
+    
+    highlight: 
+        style: onedark
