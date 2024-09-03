@@ -497,12 +497,11 @@
     transform: translateY(0);
   }
 }
-// macOS 风格代码块
 .article-content {
   .highlight:before {
-    content: '';
+    content: "";
     display: block;
-    background: url(/static/code-header.svg);
+    background: url(/img/code-header.svg);
     height: 32px;
     width: 100%;
     background-size: 57px;
@@ -624,6 +623,61 @@ div.loaded div.spinner-box {
     100% {
         transform: rotate(-315deg);
     }
+}
+
+//引入左上角返回按钮
+.back-home {
+  background: var(--card-background);
+  border-radius: var(--tag-border-radius);
+  color: var(--card-text-color-tertiary);
+  margin-right: 0.1rem;
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 10px 20px 10px 15px;
+  transition: box-shadow 0.3s ease;
+  box-shadow: var(--shadow-l3);
+
+  &:hover {
+    box-shadow: var(--shadow-l2);
+  }
+
+  svg {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+  }
+
+  span {
+    font-weight: 500;
+    white-space: nowrap;
+  }
+}
+
+.main-container .right-sidebar {
+  order: 2;
+  max-width: var(--right-sidebar-max-width);
+
+  /// Display right sidebar when min-width: lg
+  @include respond(lg) {
+    display: flex;
+  }
+}
+
+main.main {
+  order: 1;
+  min-width: 0;
+  max-width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-separation);
+
+  @include respond(md) {
+    padding-top: var(--main-top-padding);
+  }
 }
 //鼠标指针自定义，放在`static/img`内或者引用外部网站链接。
 body{cursor:url(/img/white-cat-paw-normal.cur), default;} //默认时的鼠标样式

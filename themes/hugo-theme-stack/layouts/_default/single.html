@@ -41,6 +41,20 @@
     {{ partialCached "article/components/photoswipe" . }}
 {{ end }}
 
+{{ define "left-sidebar" }}
+
+{{ if (.Scratch.Get "TOCEnabled") }}
+        <div id="article-toolbar" style="position: sticky;top: 5px;z-index: 1000;">
+            <a href="{{ .Site.BaseURL | relLangURL }}" class="back-home">
+                {{ (resources.Get "icons/back.svg").Content | safeHTML }}
+                <span>{{ T "article.back" }}</span>
+            </a>
+        </div>
+    {{ else }}
+        {{ partial "sidebar/left.html" . }}
+    {{ end }}
+{{ end }}
+
 {{ define "right-sidebar" }}
     {{ if .Scratch.Get "hasWidget" }}{{ partial "sidebar/right.html" (dict "Context" . "Scope" "page") }}{{ end}}
 {{ end }}
