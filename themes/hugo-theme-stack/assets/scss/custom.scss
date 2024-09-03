@@ -343,4 +343,34 @@
       }
     }
   }
+  /*-----------归档页面----------*/
+//归档页面卡片缩放
+.article-list--tile article {
+    transition: .6s ease;
+  }
   
+  .article-list--tile article:hover {
+    transform: scale(1.03, 1.03);
+  }
+  // 友情链接三栏
+@media (min-width: 1024px) {
+  .article-list--compact.links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: none;
+    box-shadow: none;
+    gap: 1rem;
+
+    article {
+      background: var(--card-background);
+      border: none;
+      box-shadow: var(--shadow-l2);
+      margin-bottom: 8px;
+      border-radius: var(--card-border-radius);
+
+      &:nth-child(odd) {
+        margin-right: 8px;
+      }
+    }
+  }
+}
