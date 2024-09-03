@@ -3,7 +3,18 @@
     {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
     {{ $filtered := ($pages | intersect $notHidden) }}
     {{ $pag := .Paginate ($filtered) }}
-
+    <!-- 首页欢迎字幅 -->
+<div class="welcome">
+    <p style="font-size: 2rem; text-align: center; font-weight: bold">
+      <span class="shake">👋</span>
+      <span class="jump-text1" > Welcome</span>
+      <span class="jump-text2"> To </span>
+      <span class="jump-text3" style="color:#ac16da">Zuolan's</span>
+      <span class="jump-text4" style="color:#e99312">Blog</span>
+    </p>
+  </div>
+  <!-- 首页欢迎字幅 -->
+  
     <section class="article-list">
         {{ range $index, $element := $pag.Pages }}
             {{ partial "article-list/default" . }}
