@@ -20,11 +20,16 @@
             {{ partial "article-list/default" . }}
         {{ end }}
     </section>
+    <span id="voyager">载入旅行者一号离地球距离信息...</span>
 
+
+    
     {{- partial "pagination.html" . -}}
     {{- partial "footer/footer" . -}}
+
 {{ end }}
 
 {{ define "right-sidebar" }}
+
     {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
 {{ end }}
