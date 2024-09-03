@@ -89,14 +89,15 @@
                         </li>
                     {{ end }}
                 {{ end }}
-
+                <!---.\layouts\partials\sidebar\left.html Line 91--->
                 {{ if (default false .Site.Params.colorScheme.toggle) }}
                     <li id="dark-mode-toggle">
-                        {{ partial "helper/icon" "toggle-left" }}
-                        {{ partial "helper/icon" "toggle-right" }}
+                        {{ partial "helper/icon" "sun-high" }}
+                        {{ partial "helper/icon" "moon-stars" }}
                         <span>{{ T "darkMode" }}</span>
                     </li>
                 {{ end }}
+
             </ol>
         </li>
     </ol>

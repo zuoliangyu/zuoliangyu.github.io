@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zuoliangyu.github.io/tags/markdown/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Tag: Markdown - 左岚">
+<link rel="stylesheet" href="/scss/style.min.2abb811a6ff9128469b859f7cdd2f3eb7f1dcba05e4a0cfd8a17cd32ea45e76d.css"><meta property='og:title' content="Tag: Markdown - 左岚">
 <meta property='og:description' content="演示说明">
 <meta property='og:url' content='https://zuoliangyu.github.io/tags/markdown/'>
 <meta property='og:site_name' content='左岚'>
@@ -264,28 +264,31 @@
                         </li>
                     
                 
-
+                
                 
                     <li id="dark-mode-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun-high" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffec00" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" />
+  <path d="M6.343 17.657l-1.414 1.414" />
+  <path d="M6.343 6.343l-1.414 -1.414" />
+  <path d="M17.657 6.343l1.414 -1.414" />
+  <path d="M17.657 17.657l1.414 1.414" />
+  <path d="M4 12h-2" />
+  <path d="M12 4v-2" />
+  <path d="M20 12h2" />
+  <path d="M12 20v2" />
 </svg>
-
-
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+  <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+  <path d="M19 11h2m-1 -1v2" />
 </svg>
-
-
-
                         <span>暗色模式</span>
                     </li>
                 
+
             </ol>
         </li>
     </ol>
@@ -556,6 +559,22 @@
 
         document.head.appendChild(customFont);
     }());
+</script>
+<script
+  src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js"
+  crossorigin="anonymous"
+></script>
+<link
+  rel="stylesheet"
+  href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css"
+  crossorigin="anonymous"
+/>
+<script>
+  NProgress.start();
+  document.addEventListener("readystatechange", () => {
+    if (document.readyState === "interactive") NProgress.inc(0.8);
+    if (document.readyState === "complete") NProgress.done();
+  });
 </script>
 
     </body>
