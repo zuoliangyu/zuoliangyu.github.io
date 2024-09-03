@@ -29,7 +29,7 @@ languages:
     ar:
         languageName: عربي
         languagedirection: rtl
-        title: موقع تجريبي
+        title: 左岚の博客
         weight: 3
         params:
             description: وصف تجريبي
