@@ -16,13 +16,13 @@ hasCJKLanguage: false
 languages:
     en:
         languageName: English
-        title: zuoliangyu
+        title:  左岚の博客
         weight: 1
         params:
             description: Example description
     zh-cn:
         languageName: 中文
-        title: 左岚
+        title:  左岚の博客
         weight: 2
         params:
             description: 演示说明
