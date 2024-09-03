@@ -1,0 +1,23 @@
+{{ if .Site.Params.enablePreloadingAnim }}
+        <div id="loading-box">
+                <!-- 页面加载完成之后帷幕拉开的效果 -->
+                <div class="loading-left-bg"></div>
+                <div class="loading-right-bg"></div>
+                <!-- 旋转盒子动效 -->
+                <div class="spinner-box">
+                        <div class="configure-border-1">
+                                <div class="configure-core"></div>
+                        </div>
+                        <div class="configure-border-2">
+                                <div class="configure-core"></div>
+                        </div>
+                        <div class="loading-word">页面爬取中...</div>
+                </div>
+      </div>
+      <!-- 页面加载动画 -->
+      <script>
+        $(document).ready(function () {
+                document.getElementById('loading-box').classList.add("loaded")
+        })
+      </script>
+{{ end }}

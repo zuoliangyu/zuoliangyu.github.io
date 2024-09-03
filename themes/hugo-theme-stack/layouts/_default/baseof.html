@@ -5,8 +5,8 @@
         {{- block "head" . -}}{{ end }}
     </head>
     <body class="{{ block `body-class` . }}{{ end }}">
-        {{- partial "head/colorScheme" . -}}
-
+      <!--  {{- partial "head/colorScheme" . -}} -->
+        {{- partial "widget/preload" . -}}
         {{/* The container is wider when there's any activated widget */}}
         {{- $hasWidget := false -}}
         {{- range .Site.Params.widgets -}}
@@ -25,4 +25,5 @@
         </div>
         {{ partial "footer/include.html" . }}
     </body>
+    
 </html>
