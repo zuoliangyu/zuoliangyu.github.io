@@ -16,9 +16,6 @@
     <meta name="twitter:image" content='https://zuoliangyu.github.io/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/test.jpg' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
-  
-
-
     </head>
     <body class="
     article-page
@@ -2285,45 +2282,45 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 ></p>
 <p>我们查看一下PCF8591的手册可以看到，我们读取的地址的书写方式，这里我统一给一个说明</p>
 <div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align:center">位次</th>
-<th style="text-align:center">情况说明</th>
-<th style="text-align:center">情况</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">第一位</td>
-<td style="text-align:center">固定位</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">第二位</td>
-<td style="text-align:center">是否需要开启DA输出</td>
-<td style="text-align:center">开启DA输出（1）<br />不开启DA输出（0）</td>
-</tr>
-<tr>
-<td style="text-align:center">第三四位</td>
-<td style="text-align:center">选择输入通道的模式<br />差分输入具体要看下面的图</td>
-<td style="text-align:center">通道与编号对应输入（常用）（00）<br />通道差分输入（01,10,11）</td>
-</tr>
-<tr>
-<td style="text-align:center">第五位</td>
-<td style="text-align:center">固定位</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">第六位</td>
-<td style="text-align:center">自动递增标志<br />（用于一个一个读取AD输入口）</td>
-<td style="text-align:center">自我递增（没考过，因为我们一般都是单一读取）（1）<br />不自我递增（0）</td>
-</tr>
-<tr>
-<td style="text-align:center">第七八位</td>
-<td style="text-align:center">用于指定我们读取的通道</td>
-<td style="text-align:center">通道0（00），在我们正常的对应输入下为外部信号输入<br />通道1（01），在我们正常的对应输入下为光明电阻分压输入<br />通道2（10），在我们正常的对应输入下为差分信号输入<br />通道3，在我们正常的对应输入下为滑动变阻器分压输入（11）</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">位次</th>
+          <th style="text-align: center">情况说明</th>
+          <th style="text-align: center">情况</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">第一位</td>
+          <td style="text-align: center">固定位</td>
+          <td style="text-align: center">0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第二位</td>
+          <td style="text-align: center">是否需要开启DA输出</td>
+          <td style="text-align: center">开启DA输出（1）<br />不开启DA输出（0）</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第三四位</td>
+          <td style="text-align: center">选择输入通道的模式<br />差分输入具体要看下面的图</td>
+          <td style="text-align: center">通道与编号对应输入（常用）（00）<br />通道差分输入（01,10,11）</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第五位</td>
+          <td style="text-align: center">固定位</td>
+          <td style="text-align: center">0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第六位</td>
+          <td style="text-align: center">自动递增标志<br />（用于一个一个读取AD输入口）</td>
+          <td style="text-align: center">自我递增（没考过，因为我们一般都是单一读取）（1）<br />不自我递增（0）</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第七八位</td>
+          <td style="text-align: center">用于指定我们读取的通道</td>
+          <td style="text-align: center">通道0（00），在我们正常的对应输入下为外部信号输入<br />通道1（01），在我们正常的对应输入下为光明电阻分压输入<br />通道2（10），在我们正常的对应输入下为差分信号输入<br />通道3，在我们正常的对应输入下为滑动变阻器分压输入（11）</td>
+      </tr>
+  </tbody>
 </table></div>
 <p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604092329778.png"
 	width="410"
@@ -2341,46 +2338,46 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 ></p>
 <p>我们那么这个时候常考的就是下面的形式，注意一下题目中是否需求DA输出，如果需要DA输出的话，这里使用地址的时候必须使用允许DA输出，</p>
 <div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align:center">需要的数据</th>
-<th style="text-align:center">输入的地址</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">外部电压输入（开启DA）</td>
-<td style="text-align:center">0100_0000-&gt;0x40</td>
-</tr>
-<tr>
-<td style="text-align:center">外部电压输入（不开启DA）</td>
-<td style="text-align:center">0000_0000-&gt;0x00</td>
-</tr>
-<tr>
-<td style="text-align:center">光敏电阻分压输入（开启DA）</td>
-<td style="text-align:center">0100_0001-&gt;0x41</td>
-</tr>
-<tr>
-<td style="text-align:center">光敏电阻分压输入（不开启DA）</td>
-<td style="text-align:center">0000_0001-&gt;0x01</td>
-</tr>
-<tr>
-<td style="text-align:center">差分信号输入（开启DA）</td>
-<td style="text-align:center">0100_0010-&gt;0x42</td>
-</tr>
-<tr>
-<td style="text-align:center">差分信号输入（不开启DA）</td>
-<td style="text-align:center">0000_0010-&gt;0x02</td>
-</tr>
-<tr>
-<td style="text-align:center">滑动变阻器分压输入（开启DA）</td>
-<td style="text-align:center">0100_0011-&gt;0x43</td>
-</tr>
-<tr>
-<td style="text-align:center">滑动变阻器分压输入（不开启DA）</td>
-<td style="text-align:center">0000_0011-&gt;0x03</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">需要的数据</th>
+          <th style="text-align: center">输入的地址</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">外部电压输入（开启DA）</td>
+          <td style="text-align: center">0100_0000-&gt;0x40</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">外部电压输入（不开启DA）</td>
+          <td style="text-align: center">0000_0000-&gt;0x00</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">光敏电阻分压输入（开启DA）</td>
+          <td style="text-align: center">0100_0001-&gt;0x41</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">光敏电阻分压输入（不开启DA）</td>
+          <td style="text-align: center">0000_0001-&gt;0x01</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">差分信号输入（开启DA）</td>
+          <td style="text-align: center">0100_0010-&gt;0x42</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">差分信号输入（不开启DA）</td>
+          <td style="text-align: center">0000_0010-&gt;0x02</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">滑动变阻器分压输入（开启DA）</td>
+          <td style="text-align: center">0100_0011-&gt;0x43</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">滑动变阻器分压输入（不开启DA）</td>
+          <td style="text-align: center">0000_0011-&gt;0x03</td>
+      </tr>
+  </tbody>
 </table></div>
 <p>有了这样一个基础，我们就可以开始着手编写我们的AD代码了</p>
 <p>我们只需要指定一下我们需要读取的通道的地址就行</p>
@@ -3885,50 +3882,50 @@ $$</p>
 </div>
 </div><p>如果理解不了上面的图和代码，我就拿一个🌰来进行验证，比如我们按下/抬起S4来做一下验证</p>
 <div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align:center">键盘状态</th>
-<th style="text-align:center">Key_Old</th>
-<th style="text-align:center">Key_Val</th>
-<th style="text-align:center">Key_Old^Key_Val</th>
-<th style="text-align:center">Key_Down</th>
-<th style="text-align:center">Key_Up</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">未按下</td>
-<td style="text-align:center">0000</td>
-<td style="text-align:center">0000</td>
-<td style="text-align:center">0000^0000=0000</td>
-<td style="text-align:center">0000</td>
-<td style="text-align:center">0000</td>
-</tr>
-<tr>
-<td style="text-align:center">按下过程中（10ms）</td>
-<td style="text-align:center">0000</td>
-<td style="text-align:center">0100</td>
-<td style="text-align:center">0000^0100=0100</td>
-<td style="text-align:center">0100&amp;0100=0100</td>
-<td style="text-align:center">1011&amp;0100=0000</td>
-</tr>
-<tr>
-<td style="text-align:center">按下稳定（10ms后）</td>
-<td style="text-align:center">0100</td>
-<td style="text-align:center">0100</td>
-<td style="text-align:center">0100^0100=0000</td>
-<td style="text-align:center">0100&amp;0000=0000</td>
-<td style="text-align:center">1011&amp;0000=0000</td>
-</tr>
-<tr>
-<td style="text-align:center">抬起过程（10ms）</td>
-<td style="text-align:center">0100</td>
-<td style="text-align:center">0000</td>
-<td style="text-align:center">0100^0000=0100</td>
-<td style="text-align:center">0000&amp;0100=0000</td>
-<td style="text-align:center">1111&amp;0100=0100</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">键盘状态</th>
+          <th style="text-align: center">Key_Old</th>
+          <th style="text-align: center">Key_Val</th>
+          <th style="text-align: center">Key_Old^Key_Val</th>
+          <th style="text-align: center">Key_Down</th>
+          <th style="text-align: center">Key_Up</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">未按下</td>
+          <td style="text-align: center">0000</td>
+          <td style="text-align: center">0000</td>
+          <td style="text-align: center">0000^0000=0000</td>
+          <td style="text-align: center">0000</td>
+          <td style="text-align: center">0000</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">按下过程中（10ms）</td>
+          <td style="text-align: center">0000</td>
+          <td style="text-align: center">0100</td>
+          <td style="text-align: center">0000^0100=0100</td>
+          <td style="text-align: center">0100&amp;0100=0100</td>
+          <td style="text-align: center">1011&amp;0100=0000</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">按下稳定（10ms后）</td>
+          <td style="text-align: center">0100</td>
+          <td style="text-align: center">0100</td>
+          <td style="text-align: center">0100^0100=0000</td>
+          <td style="text-align: center">0100&amp;0000=0000</td>
+          <td style="text-align: center">1011&amp;0000=0000</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">抬起过程（10ms）</td>
+          <td style="text-align: center">0100</td>
+          <td style="text-align: center">0000</td>
+          <td style="text-align: center">0100^0000=0100</td>
+          <td style="text-align: center">0000&amp;0100=0000</td>
+          <td style="text-align: center">1111&amp;0100=0100</td>
+      </tr>
+  </tbody>
 </table></div>
 <p>我们可以从这里看出，当我们按下的时候，那一瞬间Down会是4（注意是一瞬间），其余时候都是0；同理Up也是一样，当我们抬起的瞬间Up会是4（注意是一瞬间），其余时候是0</p>
 <p>那么我们如何在这个代码里面进行书写呢，其实很简单，我们一般判断按键都是判断的按键按下，即Down的数据，那么我们按照下面这样写就行，下面就是按下S4的一个示例</p>
