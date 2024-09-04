@@ -26,13 +26,6 @@ languages:
         weight: 2
         params:
             description: 演示说明
-    ar:
-        languageName: عربي
-        languagedirection: rtl
-        title: 左岚の博客
-        weight: 3
-        params:
-            description: وصف تجريبي
 
 services:
     # Change it to your Disqus shortname before using
