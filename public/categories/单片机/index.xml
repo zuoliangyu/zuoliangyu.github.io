@@ -3131,17 +3131,8 @@ Gitee的仓库为 &lt;a class=&#34;link&#34; href=&#34;https://gitee.com/zuo-lan
 &gt;&lt;/p&gt;
 &lt;p&gt;现在我们来进行逻辑的书写，我们首先要知道超声波测距的原理，我发送数据后，等待接收数据，那么我通过计算发送和接收中的间隔时间，就可以得到我们的距离，这里用数学公式可以进行计算，一般来说声速都是340m/s（也不排除题目里面和你说要对其进行变换啥的【比如第十四届国赛】，这里就按照声速为340m/s来进行说明）&lt;/p&gt;
 &lt;p&gt;$$
-d = {{vt} \over 2} = {{340m/s&lt;em&gt;t} \over 2} = 170m/s&lt;/em&gt;t = 1.7*{10^4}cm/s*t
+d = \frac{vt}{2} = \frac{340 \text{ m/s} \times t}{2} = 170 \text{ m/s} \times t = 1.7 \times 10^4 \text{ cm/s} \times t
 $$&lt;/p&gt;
-&lt;p&gt;我们这里有一个单位换算需要进行注意，t的单位为us，也就是&lt;/p&gt;
-&lt;p&gt;title: Chinese Test
-description: 这是一个副标题
-date: 2020-09-09
-slug: test-chinese
-image: helena-hertz-wWZzXlDpMog-unsplash.jpg
-categories:
-- Test
-- 测试&lt;/p&gt;
 &lt;p&gt;$$
 {10^{ - 6}}s
 $$&lt;/p&gt;
