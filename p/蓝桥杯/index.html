@@ -279,15 +279,9 @@
     >Alice_西风的个人空间-Alice_西风个人主页-哔哩哔哩视频 (bilibili.com)</a></p>
 <p>我的B站为<a class="link" href="https://space.bilibili.com/27619688"  target="_blank" rel="noopener"
     >左-岚的个人空间-左-岚个人主页-哔哩哔哩视频 (bilibili.com)</a></p>
-<p>这篇文章对应着我B站的视频为 <a class="link" href="https://www.bilibili.com/video/BV1F4421Q7Jg/"  target="_blank" rel="noopener"
+<p>这篇文章对应着我B站的视频为 <a class="link" href="https://www.bilibili.com/video/BV1F4421Q7Jg/?share_source=copy_web&amp;vd_source=b7273face728021382ab2ce92ffd6efe"  target="_blank" rel="noopener"
     >【蓝桥杯】【单片机】大模板构建喂饭教程</a></p>
 <p>建议搭配着视频使用，不然可能有些地方比较迷糊。</p>
-<p>用到的压缩包和这个pdf的百度网盘链接</p>
-<blockquote>
-<p>链接：https://pan.baidu.com/s/1LhlBR7eKAB4A4sbvkHtiJw?pwd=mvin
-提取码：mvin
-&ndash;来自百度网盘超级会员V4的分享</p>
-</blockquote>
 <p>对应的CSDN链接为<a class="link" href="https://blog.csdn.net/zl295871597/article/details/139519652?"  target="_blank" rel="noopener"
     >【喂饭】【速成】蓝桥杯模版手把手建立-CSDN博客</a></p>
 <p>对应的知乎链接为<a class="link" href="https://zhuanlan.zhihu.com/p/702140525"  target="_blank" rel="noopener"
@@ -310,32 +304,24 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中的P2&amp;=0x1f，表示我们将高三位置为0，| 0x?0的操作表明我们对高三位进行书写，比如Y4C，那么就代表我们的高三位要表示为4，即0100，我们将其放在高位，即<strong>100</strong>0_0000，翻译过来就是0x80</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603102849364.png"
-	width="1433"
-	height="590"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603102849364_hu14383052888467227716.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603102849364_hu9660836311553001166.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/LcgNid1RyuAqmCO.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603102849364"
 	
 	
-		class="gallery-image" 
-		data-flex-grow="242"
-		data-flex-basis="582px"
-	
 ></p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603102505211.png"
-	width="1252"
-	height="664"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603102505211_hu13833016508639761421.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603102505211_hu5475462814160983489.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/SOLaZjADRBdCKPz.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603102505211"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="188"
-		data-flex-basis="452px"
 	
 ></p>
 <h3 id="nop延时函数">NOP延时函数
@@ -378,18 +364,14 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </span></span><span class="line"><span class="cl">    <span class="n">temp</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="mh">0x01</span> <span class="o">&lt;&lt;</span> <span class="n">addr</span><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603102116772.png"
-	width="912"
-	height="515"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603102116772_hu3415044998637222960.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603102116772_hu16624705189952345542.png 1024w"
+</div><p><img src="https://s2.loli.net/2024/06/07/WA8vzFcHU1reiSg.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603102116772"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="177"
-		data-flex-basis="425px"
 	
 ></p>
 <p>我们通过查看原理图可以看到，用于控制的Load为Y4C，我们通过计算二进制可以发现结果为1000_0000，即0x80，所以我们在这里代码中的P2设置为P2 = P2 &amp; 0x1f | 0x80;在运行后别忘记使用P2 &amp;= 0x1f来进行高位清零，但是在我们操作P2锁存器之前，我们需要先对P0进行赋值（要记得先取反）</p>
@@ -487,18 +469,14 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603110637349.png"
-	width="1078"
-	height="507"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603110637349_hu7432846676362568503.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603110637349_hu12611569139483090476.png 1024w"
+</div><p><img src="https://s2.loli.net/2024/06/07/jnKlC8sbGtIVH3q.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603110637349"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="212"
-		data-flex-basis="510px"
 	
 ></p>
 <p>总体代码如下</p>
@@ -670,32 +648,24 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">P30</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">19</span><span class="p">;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603112443055.png"
-	width="951"
-	height="304"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603112443055_hu18361283495730243760.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603112443055_hu1996956923984371888.png 1024w"
+</div><p><img src="https://s2.loli.net/2024/06/07/6sCohX7PLWTDuYQ.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603112443055"
 	
 	
-		class="gallery-image" 
-		data-flex-grow="312"
-		data-flex-basis="750px"
-	
 ></p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603112417611.png"
-	width="1173"
-	height="503"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603112417611_hu8278596072554563945.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603112417611_hu5035428298303839418.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/iKbUM1lzuIsaZYk.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603112417611"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="233"
-		data-flex-basis="559px"
 	
 ></p>
 <p>在我们把行列扫描写完后就可以完成工作了，但是，我们要注意一个问题，局部变量一定要注意初始化为0</p>
@@ -852,33 +822,25 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </h2><h3 id="segc">Seg.c
 </h3><h4 id="数码管编码推导">数码管编码推导
 </h4><p>这里我单独开一个标题来做数码管的编码推导，因为这个很重要，我们看到下方的截图</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603114712357.png"
-	width="161"
-	height="233"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603114712357_hu12584209621601091620.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603114712357_hu13639775162123981723.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/PGxHoOaBwAg187v.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603114712357"
 	
 	
-		class="gallery-image" 
-		data-flex-grow="69"
-		data-flex-basis="165px"
-	
 ></p>
 <p>可以观察到每一段的数码管都被编号，这里由于我们用的是共阳极数码管，即0亮1灭，下面我给一个🌰来进行说明</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603115210566.png"
-	width="369"
-	height="397"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603115210566_hu1075107953114589668.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603115210566_hu2741314869135731472.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/S2l5KnEXQ8ydmMa.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603115210566"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="92"
-		data-flex-basis="223px"
 	
 ></p>
 <p>我们标好后按照dp-&gt;g-&gt;…-&gt;a的顺序写出，即1010_0100-&gt;0xa4，这个值在数码管的显示中就代表着“2”</p>
@@ -897,18 +859,14 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </h4><p>这是我们最最重要的玩意，因为这个涉及到我们的显示，我们看原理图可以看到，我们需要对数码管进行位选（选择哪一个数码管进行显示），段选（选择数码管显示的数据）。</p>
 <p>其中ABCDEFG和DP为我们的段选，COM1-8为我们的位选</p>
 <p>我们需要先对P0进行段选显示后，使用P2将锁存器打开（Y7C-&gt;1110_0000-&gt;0xe0）;在对P0进行位选配置后，使用P2将锁存器打开（Y6C-&gt;1100_0000-&gt;0xc0）</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603113818447.png"
-	width="1118"
-	height="652"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603113818447_hu803280859110359360.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603113818447_hu14165066156013377168.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/4RgTfMqvehCXWNi.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603113818447"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="171"
-		data-flex-basis="411px"
 	
 ></p>
 <p>经过我们的分析后我们就可以知道我们需要传入的数据为wela位选，dula段选，point是否显示小数点</p>
@@ -1151,18 +1109,14 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </div>
 </div><h4 id="我们需要补充的代码">我们需要补充的代码
 </h4><p>首先是我们需要绑定SDA，RST，SCK的引脚，在原理图中可以看到，并且要注意一个问题，我们用到了NOP函数，所以需要引入头文件intrins.h</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603120352094.png"
-	width="811"
-	height="169"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603120352094_hu2439202099987694672.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603120352094_hu7776420797589992101.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/ZViOBuWyY8oSKMD.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603120352094"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="479"
-		data-flex-basis="1151px"
 	
 ></p>
 <div class="highlight"><div class="chroma">
@@ -1180,18 +1134,14 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后就是我们的读写时钟，观察芯片手册可以看到</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603120847616.png"
-	width="1005"
-	height="460"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603120847616_hu14979945308175453964.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603120847616_hu12440655097310099549.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/uy8o21I73fOEvXg.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603120847616"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="218"
-		data-flex-basis="524px"
 	
 ></p>
 <p>我们如果需要读取时钟的话，只需要读取地址0x85-&gt;小时 0x83-&gt;分钟 0x81-&gt;秒钟</p>
@@ -1647,18 +1597,14 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </div>
 </div><h4 id="我们需要补充的代码-1">我们需要补充的代码
 </h4><p>首先是我们需要绑定DQ的引脚，在原理图中可以看到</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603151248313.png"
-	width="650"
-	height="72"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603151248313_hu9446080134829910621.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603151248313_hu10853149963321804921.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/ZRTvchqmNoHJkyz.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603151248313"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="902"
-		data-flex-basis="2166px"
 	
 ></p>
 <div class="highlight"><div class="chroma">
@@ -1671,63 +1617,47 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </div>
 </div><p>我们不需要管上方的时序的书写，只需要进行温度读取的代码书写就行，</p>
 <p>下方是温度芯片的使用顺序（官方手册），首先我们需要运行init，然后再检查rom（可跳过），最后执行我们的功能函数，注意，一次只能使用一个功能。</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603151648898.png"
-	width="939"
-	height="288"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603151648898_hu18225334529181485370.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603151648898_hu13828731489360069612.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/2jNgpahnkTGfmRv.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603151648898"
 	
 	
-		class="gallery-image" 
-		data-flex-grow="326"
-		data-flex-basis="782px"
-	
 ></p>
 <p>我们可以在官方手册上找到需要运行的指令</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603151943165.png"
-	width="1058"
-	height="322"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603151943165_hu14013671745411534892.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603151943165_hu15009256727652979763.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/SCYHXMG5cKOn2oq.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603151943165"
 	
 	
-		class="gallery-image" 
-		data-flex-grow="328"
-		data-flex-basis="788px"
-	
 ></p>
 <p>当我们发送0xcc的时候，就会跳过ROM检查，并且这里也说明了，我们发送0x44就可以开启温度转换，发送0xbe就可以开始读取温度，但是要注意一个事情，我们同样可以在我们的官方的手册上面找到一段读取的语句，这里表明我们先读取低位，再读取高位，最后将其拼接后再*精度就是我们的数据了</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603152342393.png"
-	width="959"
-	height="658"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603152342393_hu7194118573535760631.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603152342393_hu5042503082427233033.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/pWyValBnu7i3vjR.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603152342393"
 	
 	
-		class="gallery-image" 
-		data-flex-grow="145"
-		data-flex-basis="349px"
-	
 ></p>
 <p>温度的精度在文档中对应如下</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603152557565.png"
-	width="912"
-	height="340"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603152557565_hu17149874912480160735.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603152557565_hu15813524116178136631.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/IeSagVktWAXzcy5.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603152557565"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="268"
-		data-flex-basis="643px"
 	
 ></p>
 <p>精度为9-&gt;0.5;10-&gt;0.25;11-&gt;0.125;12（默认）-&gt;0.0625</p>
@@ -2173,18 +2103,14 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </div>
 </div><h4 id="我们需要补充的代码-2">我们需要补充的代码
 </h4><p>首先是我们需要绑定sda和scl的引脚，在原理图中可以看到，并且要注意一个问题，我们用到了NOP函数，所以需要引入头文件intrins.h</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603153405955.png"
-	width="758"
-	height="701"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603153405955_hu10437034729705518258.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603153405955_hu13958489575452418832.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/LHlKeUbFZJ6hWXs.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603153405955"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="108"
-		data-flex-basis="259px"
 	
 ></p>
 <div class="highlight"><div class="chroma">
@@ -2200,18 +2126,14 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>我在这里需要说明一下IIC通信的方式，他是一个一个八位的数据，其中第一位是我们的发送地址，永远都是1，然后后面挂载了不同的外设，我们的蓝桥杯的板子挂了两个外设，一个是PCF8591，对应着AD/DA的功能；另一个是AT24C02，对应着EEPROM的存储功能。在我们板子上就长我们下面这个样子~~（我画的有点抽象）~~，所以我们就可以知道，如果我们要对AT24C02芯片写入数据的话，我们就需要使用地址为（1010_0000-&gt;0xa0），要读取数据的化，我们就要使用地址为（1010_0001-&gt;0xa1）;要写入DA输出的数据的话，我们就需要使用地址为（1001_0000-&gt;0x90），要读取AD采样的数据的话，我们就需要使用地址为（1001_0001-&gt;0x91）</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603154239060.png"
-	width="980"
-	height="444"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603154239060_hu10083819465848639386.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240603154239060_hu6624154346038693339.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/ToIADWrKHpauZCS.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240603154239060"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="220"
-		data-flex-basis="529px"
 	
 ></p>
 <p>在我们使用IIC进行通信的时候，我们要遵循下面的运行逻辑</p>
@@ -2226,58 +2148,46 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">I2CStart</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="nf">I2CSendByte</span><span class="p">(</span><span class="err">地址</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nf">I2CWaitAck</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="nf">I2CWaitAck</span><span class="p">();</span>	
 </span></span><span class="line"><span class="cl"><span class="nf">I2CSendByte</span><span class="p">(</span><span class="err">功能</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nf">I2CWaitAck</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="nf">I2CWaitAck</span><span class="p">();</span>	
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="ad与da">AD与DA
 </h5><p>从上面说明的内容的我们可以知道，如果我们要对PCF8591进行操作，那么就需要对地址0x90和0x91进行操作</p>
 <p>我们现在先说一下AD的代码，通过观察原理图我们可以发现，AD有4个通道可以进行读取</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604090624435.png"
-	width="975"
-	height="487"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604090624435_hu7260092772742088271.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604090624435_hu7321006441037096376.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/hswAvxcGJIzaTCr.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240604090624435"
 	
 	
-		class="gallery-image" 
-		data-flex-grow="200"
-		data-flex-basis="480px"
-	
 ></p>
 <p>其中AIN0通道是我们的外部测量通道（由于蓝桥杯现在还没有涉及到信号发生器，所以我们可以先暂时不用管这个通道）</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604091125348.png"
-	width="306"
-	height="524"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604091125348_hu16228381092733661131.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604091125348_hu2781071736815709172.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/MaXAhJ7doT1RjN3.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240604091125348"
 	
 	
-		class="gallery-image" 
-		data-flex-grow="58"
-		data-flex-basis="140px"
-	
 ></p>
-<p>AIN1通道很明显就是光敏电阻的分压读取（光照越强，分压越高，采集到的结果越大），</p>
+<p>AIN1通道很明显就是光明电阻的分压读取（光照越强，分压越高，采集到的结果越大），</p>
 <p>AIN2通道为差分输入（我们也是不常用到的输入，因为没有信号发生器）</p>
 <p>AIN3通道为滑动变阻器输入（我们测量滑动变阻器的分压，这个你左右旋钮看一下就知道哪边变大了）</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604091205128.png"
-	width="1148"
-	height="529"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604091205128_hu7222732820390148188.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604091205128_hu6079059353803691260.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/O9723EqKubWDUzl.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240604091205128"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="217"
-		data-flex-basis="520px"
 	
 ></p>
 <p>我们查看一下PCF8591的手册可以看到，我们读取的地址的书写方式，这里我统一给一个说明</p>
@@ -2322,18 +2232,14 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
       </tr>
   </tbody>
 </table></div>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604092329778.png"
-	width="410"
-	height="648"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604092329778_hu3748676254139716676.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604092329778_hu12860810829715906468.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/Z3nqoYTKGVXPwAj.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240604092329778"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="63"
-		data-flex-basis="151px"
 	
 ></p>
 <p>我们那么这个时候常考的就是下面的形式，注意一下题目中是否需求DA输出，如果需要DA输出的话，这里使用地址的时候必须使用允许DA输出，</p>
@@ -3191,18 +3097,14 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </h2><h3 id="uartc">uart.c
 </h3><p>在这里我们需要注意，串口官方是没有给底层的，我们需要自己手搓，在这里我给的代码为重定向代码。</p>
 <p>首先是使用isp生成一个用定时器2计时的串口1的代码，波特率为9600（比赛的时候可能不是9600，要根据题目来看），定时器时钟选用12T，数据位为8位</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604144711333.png"
-	width="1482"
-	height="412"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604144711333_hu11756403422888296817.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604144711333_hu11376280965345764551.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/oWcze7YF6ASNX1G.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240604144711333"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="359"
-		data-flex-basis="863px"
 	
 ></p>
 <p>我们直接把他复制到我们代码里面就行，最后别忘记加一个EA=1来开启总中断，还有些isp版本可能比较老，没有使能中断的选项，所以需要自己加上ES=1</p>
@@ -3362,7 +3264,7 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </div>
 </div><h2 id="ul超声波模版建立">Ul超声波模版建立
 </h2><h3 id="ulc">ul.c
-</h3><p>在这里我们需要注意，超声波官方是没有给底层的，我们需要自己手搓。我们通过查询原理图可以看到，超声波的T为P10，R为P11，所以我们需要定义一下</p>
+</h3><p>在这里我们需要注意，串口官方是没有给底层的，我们需要自己手搓。我们通过查询原理图可以看到，超声波的T为P10，R为P11，所以我们需要定义一下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -3373,63 +3275,57 @@ Gitee的仓库为 <a class="link" href="https://gitee.com/zuo-lan/blue-bridge-cu
 </span></span><span class="line"><span class="cl"><span class="n">sbit</span> <span class="n">Rx</span> <span class="o">=</span> <span class="n">P1</span> <span class="o">^</span> <span class="mi">1</span><span class="p">;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604151041554.png"
-	width="816"
-	height="198"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604151041554_hu14452358261305729515.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604151041554_hu17344670669342138933.png 1024w"
+</div><p><img src="https://s2.loli.net/2024/06/07/5sNVCegmFoRDHpx.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240604151041554"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="412"
-		data-flex-basis="989px"
 	
 ></p>
 <p>现在我们来进行逻辑的书写，我们首先要知道超声波测距的原理，我发送数据后，等待接收数据，那么我通过计算发送和接收中的间隔时间，就可以得到我们的距离，这里用数学公式可以进行计算，一般来说声速都是340m/s（也不排除题目里面和你说要对其进行变换啥的【比如第十四届国赛】，这里就按照声速为340m/s来进行说明）</p>
 <p>$$
 d = \frac{vt}{2} = \frac{340 \text{ m/s} \times t}{2} = 170 \text{ m/s} \times t = 1.7 \times 10^4 \text{ cm/s} \times t
 $$</p>
-<p>$$
+<p>我们这里有一个单位换算需要进行注意，t的单位为us，也就是
+$$
 {10^{ - 6}}s
-$$</p>
-<p>$$
+$$
+我们进行完整的单位换算就可以知道d的距离了（单位为cm）
+$$
 d = 1.7*{10^4}*{10^{ - 6}}t = 0.017t
 $$</p>
 <p>图来自微信群友chmod-wrx绘制（我绘图太🌶︎🐔了）</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604153314869.png"
-	width="1004"
-	height="500"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604153314869_hu9314416907941130624.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604153314869_hu16196272913627774531.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/dSbl3gPewWzUcrj.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240604153314869"
 	
 	
-		class="gallery-image" 
-		data-flex-grow="200"
-		data-flex-basis="481px"
-	
 ></p>
-<p>根据我们上方的分析，我们可以知道我们首先需要进行发送，我们在这里发送8个40kHz的方波进行测量，那么周期就是</p>
-<p>$$
+<p>根据我们上方的分析，我们可以知道我们首先需要进行发送，我们在这里发送8个40kHz的方波进行测量，那么周期就是
+$$
 {1 \over {40k}} = 25 \cdot {10^{ - 6}}s = 25us
-$$</p>
-<p>，也就是我们需要$12us$将发送的电平进行反转</p>
+$$
+也就是我们需要
+$
+12us
+$
+将发送的电平进行反转</p>
 <p>代码如下，我们首先使用isp生成一个12us的延时函数,这里需要注意的是要正确使用系统频率为12MHz；如果这里测量结果有问题，可以尝试将33修改为38或者其他的数据，因为软件延时不准。</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604153718702.png"
-	width="714"
-	height="459"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604153718702_hu14742700002834635838.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604153718702_hu18384957598708163223.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/ZhKAk2iCFxE3TQs.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240604153718702"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="155"
-		data-flex-basis="373px"
 	
 ></p>
 <div class="highlight"><div class="chroma">
@@ -3447,12 +3343,12 @@ $$</p>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">Delay12us</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>	<span class="c1">//@12.000MHz
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">data</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">data</span> <span class="n">i</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nf">_nop_</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">_nop_</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span><span class="c1">//可以修改为其他数据，比如38
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span> <span class="p">(</span><span class="o">--</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">_nop_</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">_nop_</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="n">i</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span><span class="c1">//可以修改为其他数据，比如38
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">while</span> <span class="p">(</span><span class="o">--</span><span class="n">i</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -3834,18 +3730,14 @@ $$</p>
 <p>瞬时值获取-&gt; 获取按下的值，获取抬起的值-&gt;更新⼀下值</p>
 <p>Down和Up都是瞬时值，Old比Val延后10ms，基于这个特性我们可以进行书写代码</p>
 </blockquote>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604200625869.png"
-	width="843"
-	height="454"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604200625869_hu6146236961758104066.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604200625869_hu17019617813155669326.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/asTIfD8JhKuctzl.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240604200625869"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="185"
-		data-flex-basis="445px"
 	
 ></p>
 <p>对应的代码如下，我们将这四个变量设置为静态局部变量，可以有效节省内存空间，使用if语句那一段表明我们选择10ms跑一次代码（因为我们定时是1ms的）</p>
@@ -4077,7 +3969,7 @@ $$</p>
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">Uart_Rx_Index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">Sys_Tick</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Sys_Tick</span> <span class="o">=</span> <span class="n">Uart_flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">Uart_Buf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;o&#39;</span><span class="o">&amp;&amp;</span><span class="n">Uart_Buf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;k&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">Uart_Buf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;o&#39;</span><span class="o">&amp;&amp;</span><span class="n">Uart_Buf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;k&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">memset</span><span class="p">(</span><span class="n">Uart_Buf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Uart_Rx_Index</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Uart_Rx_Index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -4087,18 +3979,14 @@ $$</p>
 </div>
 </div><h4 id="定时器0初始化ne555模块">定时器0初始化（NE555模块）
 </h4><p>这个模块是最有意思的，首先我们需要注意一下，P34和singal的跳线帽要插在一起，并且按键方面需要删除P34，然后才能开始测，这里依然用isp生成一下初始化的定时器0，但是这里要注意，新版的不能生成0ms，我们就随便生成个时间，然后按照我这样勾选后复制粘贴就行</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604202942361.png"
-	width="731"
-	height="383"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604202942361_hu17240632272316830668.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604202942361_hu13846217410951800472.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/HlZIGUcQTDK2OBo.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240604202942361"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="190"
-		data-flex-basis="458px"
 	
 ></p>
 <p>我们需要将TL0和TH0的值改为0，并且在TMOD &amp;= 0xF0;下面对其进行配置  TMOD |= 0x05;将其变为十六位不自动重载（这里具体可以参考手册里面对于定时器的配置，我之前的视频有提到<a class="link" href="https://www.bilibili.com/video/BV1Fk4y1f7LS/"  target="_blank" rel="noopener"
@@ -4133,18 +4021,14 @@ $$</p>
 </div>
 </div><h4 id="定时器1初始化">定时器1初始化
 </h4><p>这是我们轮询的定时器的初始化代码，我们使用isp生成1ms定时器1的代码（记得勾选上使能），老版本没有使能，所以记得加上ET1 = 1开启</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604203409782.png"
-	width="731"
-	height="383"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604203409782_hu4946994458120863633.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604203409782_hu13448468403095860179.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/BaihIcRuyDYwAXr.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240604203409782"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="190"
-		data-flex-basis="458px"
 	
 ></p>
 <p>当然，不要忘记EA = 1，</p>
@@ -4245,18 +4129,14 @@ $$</p>
 </div><h4 id="main主函数书写-1">main主函数书写
 </h4><p>这是我们的一个最初的函数，没什么好说明的，就是需要进行一些初始化而已，但是顺序不要写错了，首先是系统初始化，然后是定时器0（ne555），最后是定时器1（轮询）的初始化。</p>
 <p>你可以发现，我在这里进行了一次温度的空读取，因为温度上电后会显示85（温度转换的时间），如果在后面才给他开始温度转换的话，那么很有可能跳85，导致测量结果错误，这里的延时函数也是用isp直接生成的，注意系统时间别选错了就行</p>
-<p><img src="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604205532498.png"
-	width="756"
-	height="432"
-	srcset="/p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604205532498_hu1746395583063691776.png 480w, /p/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20240604205532498_hu15138503547430193312.png 1024w"
+<p><img src="https://s2.loli.net/2024/06/07/S2nUrMHoN7eavQ1.png"
+	
+	
+	
 	loading="lazy"
 	
 		alt="image-20240604205532498"
 	
-	
-		class="gallery-image" 
-		data-flex-grow="175"
-		data-flex-basis="420px"
 	
 ></p>
 <p>我们写完初始化之后就需要写一下循环了，51单片机里面必须将循环写死，所以我们用了while(1)，这里的顺序倒没什么特殊的要求，但是尽量按照我这个顺序就行，不会出问题的。</p>
