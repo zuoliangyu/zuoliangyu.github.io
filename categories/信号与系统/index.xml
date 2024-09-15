@@ -6,17 +6,30 @@
         <description>Recent content in 信号与系统 on 左岚の博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Example Person</copyright><atom:link href="https://zuoliangyu.github.io/categories/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Sun, 15 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoliangyu.github.io/categories/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>性质的判断</title>
         <link>https://zuoliangyu.github.io/p/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
         
         <guid>https://zuoliangyu.github.io/p/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/</guid>
         <description>&lt;p&gt;在系统理论中，判断一个系统是否具备线性、时不变性、因果性、稳定性和记忆性等性质是分析和设计系统的基础。下面将详细说明每种性质的定义以及相应的判断方法。&lt;/p&gt;
 &lt;h1 id=&#34;1-线性linearity&#34;&gt;1. 线性（Linearity）
 &lt;/h1&gt;&lt;h2 id=&#34;定义&#34;&gt;定义
-&lt;/h2&gt;&lt;p&gt;线性系统满足叠加原理，即对于任意输入信号 $$x_1(t)$$ 和 $$x_2(t)$$，以及任意常数 $$a$$ 和 $$b$$，系统的响应满足：
-$$
+&lt;/h2&gt;&lt;p&gt;线性系统满足叠加原理，即对于任意输入信号&lt;/p&gt;
+&lt;p&gt;$$
+x_1(t)
+$$&lt;/p&gt;
+&lt;p&gt;和&lt;/p&gt;
+&lt;p&gt;$$
+x_2(t)
+$$&lt;/p&gt;
+&lt;p&gt;，以及任意常数 date: 2024-06-02&lt;/p&gt;
+&lt;p&gt;$$
+a$$ 和
+$$&lt;/p&gt;
+&lt;p&gt;b$$，系统的响应满足：&lt;/p&gt;
+&lt;p&gt;$$
 S[a x_1(t) + b x_2(t)] = a S[x_1(t)] + b S[x_2(t)]
 $$&lt;/p&gt;
 &lt;h2 id=&#34;判断方法&#34;&gt;判断方法
@@ -25,46 +38,76 @@ $$&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;齐次性（比例性）&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;对于任意输入信号 $$x(t)$$ 和任意常数 $$a$$，验证：
+&lt;li&gt;
+&lt;p&gt;对于任意输入信号&lt;/p&gt;
+&lt;p&gt;$$
+x(t)
+$$&lt;/p&gt;
+&lt;p&gt;和任意常数 $$a$$，验证：
 $$
 S[a x(t)] = a S[x(t)]
-$$&lt;/li&gt;
-&lt;li&gt;如果等式成立，系统满足齐次性。&lt;/li&gt;
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果等式成立，系统满足齐次性。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;叠加性&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;对于任意两个输入信号 $$x_1(t)$$ 和 $$x_2(t)$$，验证：
+&lt;li&gt;
+&lt;p&gt;对于任意两个输入信号&lt;/p&gt;
+&lt;p&gt;$$
+x_1(t)
+$$&lt;/p&gt;
+&lt;p&gt;和
+$$
+x_2(t)
+$$&lt;/p&gt;
+&lt;p&gt;，验证：
 $$
 S[x_1(t) + x_2(t)] = S[x_1(t)] + S[x_2(t)]
-$$&lt;/li&gt;
-&lt;li&gt;如果等式成立，系统满足叠加性。&lt;/li&gt;
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果等式成立，系统满足叠加性。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;如果系统同时满足齐次性和叠加性，则系统是线性的。&lt;/p&gt;
 &lt;h2 id=&#34;示例&#34;&gt;示例
-&lt;/h2&gt;&lt;p&gt;假设系统的输入输出关系为 $$y(t) = 2x(t)$$。验证线性：&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;假设系统的输入输出关系为&lt;/p&gt;
+&lt;p&gt;$$
+y(t) = 2x(t)
+$$&lt;/p&gt;
+&lt;p&gt;。验证线性：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;齐次性：
-$$
+&lt;li&gt;齐次性：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
 S[a x(t)] = 2(a x(t)) = a (2x(t)) = a S[x(t)]
 $$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;叠加性：
-$$
+&lt;ul&gt;
+&lt;li&gt;叠加性：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
 S[x_1(t) + x_2(t)] = 2(x_1(t) + x_2(t)) = 2x_1(t) + 2x_2(t) = S[x_1(t)] + S[x_2(t)]
 $$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;因此，该系统是线性的。&lt;/p&gt;
 &lt;h1 id=&#34;2-时不变性time-invariance&#34;&gt;2. 时不变性（Time-Invariance）
 &lt;/h1&gt;&lt;h2 id=&#34;定义-1&#34;&gt;定义
-&lt;/h2&gt;&lt;p&gt;时不变系统的特性不随时间的推移而改变。即，如果输入信号延迟 $$t_0$$ 后，系统的输出也延迟 $$t_0$$ ，则系统是时不变的。数学表达为：
-$$
+&lt;/h2&gt;&lt;p&gt;时不变系统的特性不随时间的推移而改变。即，如果输入信号延迟&lt;/p&gt;
+&lt;p&gt;$$
+t_0
+$$&lt;/p&gt;
+&lt;p&gt;后，系统的输出也延迟 -&lt;/p&gt;
+&lt;p&gt;$$
+t_0
+$$&lt;/p&gt;
+&lt;p&gt;，则系统是时不变的。数学15表达为：&lt;/p&gt;
+&lt;p&gt;$$
 S[x(t - t_0)] = y(t - t_0)
 $$&lt;/p&gt;
 &lt;h2 id=&#34;判断方法-1&#34;&gt;判断方法
@@ -73,62 +116,156 @@ $$&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;输入延迟&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;对输入信号 $$x(t)$$ 延迟 $$t_0$$，得到 $$x(t - t_0)$$。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对输入信号&lt;/p&gt;
+&lt;p&gt;$$
+x(t)
+$$&lt;/p&gt;
+&lt;p&gt;延迟
+$$
+t_0
+$$&lt;/p&gt;
+&lt;p&gt;，得到
+$$
+x(t - t_0)
+$$&lt;/p&gt;
+&lt;p&gt;。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;系统响应&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;计算系统对延迟后的输入信号的响应 $$S[x(t - t_0)]$$。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;计算系统对延迟后的输入信号的响应
+$$
+S[x(t - t_0)]
+$$&lt;/p&gt;
+&lt;p&gt;。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;输出延迟&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;将原始输出 $$y(t) = S[x(t)]$$ 延迟 $$t_0$$，得到 $$y(t - t_0)$$。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将原始输出&lt;/p&gt;
+&lt;p&gt;$$
+y(t) = S[x(t)]
+$$&lt;/p&gt;
+&lt;p&gt;延迟
+$$
+t_0
+$$&lt;/p&gt;
+&lt;p&gt;，得到
+$$
+y(t - t_0)
+$$&lt;/p&gt;
+&lt;p&gt;。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;比较&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;判断 $$S[x(t - t_0)]$$ 是否等于 $$y(t - t_0)$$。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;判断&lt;/p&gt;
+&lt;p&gt;$$
+S[x(t - t_0)]
+$$&lt;/p&gt;
+&lt;p&gt;是否等于
+$$
+y(t - t_0)
+$$&lt;/p&gt;
+&lt;p&gt;。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;如果对所有 $$t_0$$ 均成立，则系统是时不变的；否则，系统是时变的。&lt;/p&gt;
+&lt;p&gt;如果对所有&lt;/p&gt;
+&lt;p&gt;$$
+t_0
+$$&lt;/p&gt;
+&lt;p&gt;均成立，则系统是时不变的；否则，系统是时变的。&lt;/p&gt;
 &lt;h2 id=&#34;示例-1&#34;&gt;示例
-&lt;/h2&gt;&lt;p&gt;考虑系统 $$y(t) = x(t) + t$$：&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;考虑系统&lt;/p&gt;
+&lt;p&gt;$$
+y(t) = x(t) + t
+$$&lt;/p&gt;
+&lt;p&gt;：5&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;输入延迟后：
-$$
+&lt;li&gt;输入延迟后：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
 S[x(t - t_0)] = x(t - t_0) + t
 $$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;输出延迟：
-$$
+&lt;ul&gt;
+&lt;li&gt;输出延迟：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
 y(t - t_0) = x(t - t_0) + (t - t_0)
 $$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;显然 $$S[x(t - t_0)] \neq y(t - t_0)$$，因此该系统是时变的。&lt;/p&gt;
+&lt;p&gt;显然&lt;/p&gt;
+&lt;p&gt;$$
+S[x(t - t_0)] \neq y(t - t_0)
+$$&lt;/p&gt;
+&lt;p&gt;，因此该系统是时变的。&lt;/p&gt;
 &lt;h1 id=&#34;3-因果性causality&#34;&gt;3. 因果性（Causality）
 &lt;/h1&gt;&lt;h2 id=&#34;定义-2&#34;&gt;定义
-&lt;/h2&gt;&lt;p&gt;因果系统的输出在任意时刻 $$t$$ 仅依赖于当前及过去的输入值，即 $$y(t)$$ 不依赖于未来的 $$x(t&amp;rsquo;)$$（$$t&amp;rsquo; &amp;gt; t$$）。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;因果系统的输出在任意时刻&lt;/p&gt;
+&lt;p&gt;$$
+t$$ 仅依赖于当前及过去的输入值，即
+$$&lt;/p&gt;
+&lt;p&gt;y(t)
+$$
+不依赖于未来的
+$$&lt;/p&gt;
+&lt;p&gt;x(t&amp;rsquo;)
+$$
+（
+$$&lt;/p&gt;
+&lt;p&gt;t&amp;rsquo; &amp;gt; t$$）。&lt;/p&gt;
 &lt;h2 id=&#34;判断方法-2&#34;&gt;判断方法
 &lt;/h2&gt;&lt;p&gt;要判断系统是否因果，可以分析系统的输入输出关系，具体方法包括：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;系统方程分析&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;如果系统的输出 $$y(t)$$ 仅由 $$x(\tau)$$（$$\tau \leq t$$）决定，则系统是因果的。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果系统的输出&lt;/p&gt;
+&lt;p&gt;$$
+y(t)
+$$&lt;/p&gt;
+&lt;p&gt;仅由
+$$
+x(\tau)
+$$&lt;/p&gt;
+&lt;p&gt;（
+$$
+\tau \leq t
+$$&lt;/p&gt;
+&lt;p&gt;）决定，则系统是因果的。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;脉冲响应&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;对于线性时不变系统，检查脉冲响应 $$h(t)$$。如果 $$h(t) = 0$$ 对于所有 $$t &amp;lt; 0$$，则系统是因果的。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于线性时不变系统，检查脉冲响应&lt;/p&gt;
+&lt;p&gt;$$
+h(t)
+$$&lt;/p&gt;
+&lt;p&gt;。如果
+$$
+h(t) = 0
+$$&lt;/p&gt;
+&lt;p&gt;对于所有
+$$
+t &amp;lt; 0
+$$&lt;/p&gt;
+&lt;p&gt;，则系统是因果的。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -139,22 +276,64 @@ $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;示例-2&#34;&gt;示例
-&lt;/h2&gt;&lt;p&gt;考虑系统 $$y(t) = x(t) + x(t - 1)$$：&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;考虑系统&lt;/p&gt;
+&lt;p&gt;$$
+y(t) = x(t) + x(t - 1)
+$$&lt;/p&gt;
+&lt;p&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;输出 $$y(t)$$ 仅依赖于当前 $$x(t)$$ 和过去 $$x(t - 1)$$ 的值。&lt;/li&gt;
-&lt;li&gt;因此，该系统是因果的。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输出&lt;/p&gt;
+&lt;p&gt;$$
+y(t)
+$$&lt;/p&gt;
+&lt;p&gt;仅依赖于当前
+$$
+x(t)
+$$&lt;/p&gt;
+&lt;p&gt;和过去
+$$
+x(t - 1)
+$$&lt;/p&gt;
+&lt;p&gt;的值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;因此，该系统是因果的。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;相反，系统 $$y(t) = x(t + 1)$$ 依赖于未来的输入，故为非因果系统。&lt;/p&gt;
+&lt;p&gt;相反，系统&lt;/p&gt;
+&lt;p&gt;$$
+y(t) = x(t + 1)
+$$&lt;/p&gt;
+&lt;p&gt;依赖于未来的输入，故为非因果系统。&lt;/p&gt;
 &lt;h1 id=&#34;4-稳定性stability&#34;&gt;4. 稳定性（Stability）
 &lt;/h1&gt;&lt;h2 id=&#34;定义-3&#34;&gt;定义
-&lt;/h2&gt;&lt;p&gt;在系统理论中，通常讨论 BIBO 稳定性（Bounded Input, Bounded Output）。即对于所有有界输入 $$|x(t)| \leq M_x$$，系统的输出也有界 $$|y(t)| \leq M_y$$。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;在系统理论中，通常讨论 BIBO 稳定性（Bounded Input, Bounded Output）。即对于所有有界输入&lt;/p&gt;
+&lt;p&gt;$$
+|x(t)| \leq M_x
+$$&lt;/p&gt;
+&lt;p&gt;，系统的输出也有界
+$$
+|y(t)| \leq M_y
+$$&lt;/p&gt;
+&lt;p&gt;。&lt;/p&gt;
 &lt;h2 id=&#34;判断方法-3&#34;&gt;判断方法
 &lt;/h2&gt;&lt;p&gt;判断系统是否 BIBO 稳定的方法包括：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;脉冲响应&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;对于线性时不变系统，若脉冲响应 $$h(t)$$ 满足 $$\int_{-\infty}^{\infty} |h(t)| dt &amp;lt; \infty$$，则系统是 BIBO 稳定的。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于线性时不变系统，若脉冲响应&lt;/p&gt;
+&lt;p&gt;$$
+h(t)
+$$&lt;/p&gt;
+&lt;p&gt;满足
+$$
+\int_{-\infty}^{\infty} |h(t)| dt &amp;lt; \infty
+$$&lt;/p&gt;
+&lt;p&gt;，则系统是 BIBO 稳定的。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -171,12 +350,31 @@ $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;示例-3&#34;&gt;示例
-&lt;/h2&gt;&lt;p&gt;对于系统 $$y(t) = \int_{-\infty}^{t} e^{-(t - \tau)} x(\tau) d\tau$$：&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;对于系统&lt;/p&gt;
+&lt;p&gt;$$
+y(t) = \int_{-\infty}^{t} e^{-(t - \tau)} x(\tau) d\tau
+$$&lt;/p&gt;
+&lt;p&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;脉冲响应 $$h(t) = e^{-t}u(t)$$（其中 $$u(t)$$ 为单位阶跃函数）。&lt;/li&gt;
-&lt;li&gt;$$
-\int_{-\infty}^{\infty} |h(t)| dt = \int_{0}^{\infty} e^{-t} dt = 1 &amp;lt; \infty
-$$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;脉冲响应&lt;/p&gt;
+&lt;p&gt;$$
+h(t) = e^{-t}u(t)
+$$&lt;/p&gt;
+&lt;p&gt;（其中
+$$
+u(t)
+$$&lt;/p&gt;
+&lt;p&gt;为单位阶跃函数）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$$&lt;/p&gt;
+&lt;p&gt;$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\int_{-\infty}^{\infty} |h(t)| dt = \int_{0}^{\infty} e^{-t} dt = 1 &amp;lt; \infty&lt;/p&gt;
+&lt;p&gt;$$&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;因此，该系统是 BIBO 稳定的。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;5-记忆性memory&#34;&gt;5. 记忆性（Memory）
@@ -211,7 +409,8 @@ $$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;系统 $$y(t) = x(t) + x(t - 1)$$：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;输出依赖于当前和过去的输入，系统有记忆。&lt;/li&gt;
+&lt;li&gt;输出依赖于当前和过去的输入，系统有记忆。
+$$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
