@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在系统理论中，判断一个系统是否具备线性、时不变性、因果性、稳定性和记忆性等性质是分析和设计系统的基础。下面将详细说明每种性质的定义以及相应的判断方法。\n1. 线性（Linearity） 定义 线性系统满足叠加原理，即对于任意输入信号 $$x_1(t)$$ 和 $$x_2(t)$$，以及任意常数 $$a$$ 和 $$b$$，系统的响应满足： $$ S[a x_1(t) + b x_2(t)] = a S[x_1(t)] + b S[x_2(t)] $$\n判断方法 要判断系统是否线性，可以通过验证叠加原理是否成立。具体步骤包括：\n齐次性（比例性）：\n对于任意输入信号 $$x(t)$$ 和任意常数 $$a$$，验证： $$ S[a x(t)] = a S[x(t)] $$ 如果等式成立，系统满足齐次性。 叠加性：\n对于任意两个输入信号 $$x_1(t)$$ 和 $$x_2(t)$$，验证： $$ S[x_1(t) + x_2(t)] = S[x_1(t)] + S[x_2(t)] $$ 如果等式成立，系统满足叠加性。 如果系统同时满足齐次性和叠加性，则系统是线性的。\n示例 假设系统的输入输出关系为 $$y(t) = 2x(t)$$。验证线性：\n齐次性： $$ S[a x(t)] = 2(a x(t)) = a (2x(t)) = a S[x(t)] $$\n">
+<title>性质的判断</title>
+
+<link rel='canonical' href='https://zuoliangyu.github.io/p/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/'>
+
+<link rel="stylesheet" href="/scss/style.min.cf9c1578b5baaf725b9e6494f8e2bc31e8165ff98e384370980da68d90f12b0b.css"><meta property='og:title' content="性质的判断">
+<meta property='og:description' content="在系统理论中，判断一个系统是否具备线性、时不变性、因果性、稳定性和记忆性等性质是分析和设计系统的基础。下面将详细说明每种性质的定义以及相应的判断方法。\n1. 线性（Linearity） 定义 线性系统满足叠加原理，即对于任意输入信号 $$x_1(t)$$ 和 $$x_2(t)$$，以及任意常数 $$a$$ 和 $$b$$，系统的响应满足： $$ S[a x_1(t) + b x_2(t)] = a S[x_1(t)] + b S[x_2(t)] $$\n判断方法 要判断系统是否线性，可以通过验证叠加原理是否成立。具体步骤包括：\n齐次性（比例性）：\n对于任意输入信号 $$x(t)$$ 和任意常数 $$a$$，验证： $$ S[a x(t)] = a S[x(t)] $$ 如果等式成立，系统满足齐次性。 叠加性：\n对于任意两个输入信号 $$x_1(t)$$ 和 $$x_2(t)$$，验证： $$ S[x_1(t) + x_2(t)] = S[x_1(t)] + S[x_2(t)] $$ 如果等式成立，系统满足叠加性。 如果系统同时满足齐次性和叠加性，则系统是线性的。\n示例 假设系统的输入输出关系为 $$y(t) = 2x(t)$$。验证线性：\n齐次性： $$ S[a x(t)] = 2(a x(t)) = a (2x(t)) = a S[x(t)] $$\n">
+<meta property='og:url' content='https://zuoliangyu.github.io/p/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/'>
+<meta property='og:site_name' content='左岚の博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' />
+<meta name="twitter:title" content="性质的判断">
+<meta name="twitter:description" content="在系统理论中，判断一个系统是否具备线性、时不变性、因果性、稳定性和记忆性等性质是分析和设计系统的基础。下面将详细说明每种性质的定义以及相应的判断方法。\n1. 线性（Linearity） 定义 线性系统满足叠加原理，即对于任意输入信号 $$x_1(t)$$ 和 $$x_2(t)$$，以及任意常数 $$a$$ 和 $$b$$，系统的响应满足： $$ S[a x_1(t) + b x_2(t)] = a S[x_1(t)] + b S[x_2(t)] $$\n判断方法 要判断系统是否线性，可以通过验证叠加原理是否成立。具体步骤包括：\n齐次性（比例性）：\n对于任意输入信号 $$x(t)$$ 和任意常数 $$a$$，验证： $$ S[a x(t)] = a S[x(t)] $$ 如果等式成立，系统满足齐次性。 叠加性：\n对于任意两个输入信号 $$x_1(t)$$ 和 $$x_2(t)$$，验证： $$ S[x_1(t) + x_2(t)] = S[x_1(t)] + S[x_2(t)] $$ 如果等式成立，系统满足叠加性。 如果系统同时满足齐次性和叠加性，则系统是线性的。\n示例 假设系统的输入输出关系为 $$y(t) = 2x(t)$$。验证线性：\n齐次性： $$ S[a x(t)] = 2(a x(t)) = a (2x(t)) = a S[x(t)] $$\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+      
+<div class="container main-container flex on-phone--column extended">
+
+
+        <div id="article-toolbar" style="position: sticky;top: 5px;z-index: 1000;">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#定义">定义</a></li>
+    <li><a href="#判断方法">判断方法</a></li>
+    <li><a href="#示例">示例</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#定义-1">定义</a></li>
+    <li><a href="#判断方法-1">判断方法</a></li>
+    <li><a href="#示例-1">示例</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#定义-2">定义</a></li>
+    <li><a href="#判断方法-2">判断方法</a></li>
+    <li><a href="#示例-2">示例</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#定义-3">定义</a></li>
+    <li><a href="#判断方法-3">判断方法</a></li>
+    <li><a href="#示例-3">示例</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#定义-4">定义</a></li>
+    <li><a href="#判断方法-4">判断方法</a></li>
+    <li><a href="#示例-4">示例</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/" >
+                信号与系统
+            </a>
+        
+            <a href="/categories/%E8%80%83%E7%A0%94%E8%AF%BE%E7%A8%8B/" >
+                考研课程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/">性质的判断</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>在系统理论中，判断一个系统是否具备线性、时不变性、因果性、稳定性和记忆性等性质是分析和设计系统的基础。下面将详细说明每种性质的定义以及相应的判断方法。</p>
+<h1 id="1-线性linearity">1. 线性（Linearity）
+</h1><h2 id="定义">定义
+</h2><p>线性系统满足叠加原理，即对于任意输入信号 $$x_1(t)$$ 和 $$x_2(t)$$，以及任意常数 $$a$$ 和 $$b$$，系统的响应满足：
+$$
+S[a x_1(t) + b x_2(t)] = a S[x_1(t)] + b S[x_2(t)]
+$$</p>
+<h2 id="判断方法">判断方法
+</h2><p>要判断系统是否线性，可以通过验证叠加原理是否成立。具体步骤包括：</p>
+<ol>
+<li>
+<p><strong>齐次性（比例性）</strong>：</p>
+<ul>
+<li>对于任意输入信号 $$x(t)$$ 和任意常数 $$a$$，验证：
+$$
+S[a x(t)] = a S[x(t)]
+$$</li>
+<li>如果等式成立，系统满足齐次性。</li>
+</ul>
+</li>
+<li>
+<p><strong>叠加性</strong>：</p>
+<ul>
+<li>对于任意两个输入信号 $$x_1(t)$$ 和 $$x_2(t)$$，验证：
+$$
+S[x_1(t) + x_2(t)] = S[x_1(t)] + S[x_2(t)]
+$$</li>
+<li>如果等式成立，系统满足叠加性。</li>
+</ul>
+</li>
+</ol>
+<p>如果系统同时满足齐次性和叠加性，则系统是线性的。</p>
+<h2 id="示例">示例
+</h2><p>假设系统的输入输出关系为 $$y(t) = 2x(t)$$。验证线性：</p>
+<ul>
+<li>
+<p>齐次性：
+$$
+S[a x(t)] = 2(a x(t)) = a (2x(t)) = a S[x(t)]
+$$</p>
+</li>
+<li>
+<p>叠加性：
+$$
+S[x_1(t) + x_2(t)] = 2(x_1(t) + x_2(t)) = 2x_1(t) + 2x_2(t) = S[x_1(t)] + S[x_2(t)]
+$$</p>
+</li>
+</ul>
+<p>因此，该系统是线性的。</p>
+<h1 id="2-时不变性time-invariance">2. 时不变性（Time-Invariance）
+</h1><h2 id="定义-1">定义
+</h2><p>时不变系统的特性不随时间的推移而改变。即，如果输入信号延迟 $$t_0$$ 后，系统的输出也延迟 $$t_0$$ ，则系统是时不变的。数学表达为：
+$$
+S[x(t - t_0)] = y(t - t_0)
+$$</p>
+<h2 id="判断方法-1">判断方法
+</h2><p>要判断系统是否时不变，可以进行以下步骤：</p>
+<ol>
+<li>
+<p><strong>输入延迟</strong>：</p>
+<ul>
+<li>对输入信号 $$x(t)$$ 延迟 $$t_0$$，得到 $$x(t - t_0)$$。</li>
+</ul>
+</li>
+<li>
+<p><strong>系统响应</strong>：</p>
+<ul>
+<li>计算系统对延迟后的输入信号的响应 $$S[x(t - t_0)]$$。</li>
+</ul>
+</li>
+<li>
+<p><strong>输出延迟</strong>：</p>
+<ul>
+<li>将原始输出 $$y(t) = S[x(t)]$$ 延迟 $$t_0$$，得到 $$y(t - t_0)$$。</li>
+</ul>
+</li>
+<li>
+<p><strong>比较</strong>：</p>
+<ul>
+<li>判断 $$S[x(t - t_0)]$$ 是否等于 $$y(t - t_0)$$。</li>
+</ul>
+</li>
+</ol>
+<p>如果对所有 $$t_0$$ 均成立，则系统是时不变的；否则，系统是时变的。</p>
+<h2 id="示例-1">示例
+</h2><p>考虑系统 $$y(t) = x(t) + t$$：</p>
+<ul>
+<li>
+<p>输入延迟后：
+$$
+S[x(t - t_0)] = x(t - t_0) + t
+$$</p>
+</li>
+<li>
+<p>输出延迟：
+$$
+y(t - t_0) = x(t - t_0) + (t - t_0)
+$$</p>
+</li>
+</ul>
+<p>显然 $$S[x(t - t_0)] \neq y(t - t_0)$$，因此该系统是时变的。</p>
+<h1 id="3-因果性causality">3. 因果性（Causality）
+</h1><h2 id="定义-2">定义
+</h2><p>因果系统的输出在任意时刻 $$t$$ 仅依赖于当前及过去的输入值，即 $$y(t)$$ 不依赖于未来的 $$x(t&rsquo;)$$（$$t&rsquo; &gt; t$$）。</p>
+<h2 id="判断方法-2">判断方法
+</h2><p>要判断系统是否因果，可以分析系统的输入输出关系，具体方法包括：</p>
+<ol>
+<li>
+<p><strong>系统方程分析</strong>：</p>
+<ul>
+<li>如果系统的输出 $$y(t)$$ 仅由 $$x(\tau)$$（$$\tau \leq t$$）决定，则系统是因果的。</li>
+</ul>
+</li>
+<li>
+<p><strong>脉冲响应</strong>：</p>
+<ul>
+<li>对于线性时不变系统，检查脉冲响应 $$h(t)$$。如果 $$h(t) = 0$$ 对于所有 $$t &lt; 0$$，则系统是因果的。</li>
+</ul>
+</li>
+<li>
+<p><strong>系统分类</strong>：</p>
+<ul>
+<li>实时系统通常是因果的，而预测系统通常是非因果的。</li>
+</ul>
+</li>
+</ol>
+<h2 id="示例-2">示例
+</h2><p>考虑系统 $$y(t) = x(t) + x(t - 1)$$：</p>
+<ul>
+<li>输出 $$y(t)$$ 仅依赖于当前 $$x(t)$$ 和过去 $$x(t - 1)$$ 的值。</li>
+<li>因此，该系统是因果的。</li>
+</ul>
+<p>相反，系统 $$y(t) = x(t + 1)$$ 依赖于未来的输入，故为非因果系统。</p>
+<h1 id="4-稳定性stability">4. 稳定性（Stability）
+</h1><h2 id="定义-3">定义
+</h2><p>在系统理论中，通常讨论 BIBO 稳定性（Bounded Input, Bounded Output）。即对于所有有界输入 $$|x(t)| \leq M_x$$，系统的输出也有界 $$|y(t)| \leq M_y$$。</p>
+<h2 id="判断方法-3">判断方法
+</h2><p>判断系统是否 BIBO 稳定的方法包括：</p>
+<ol>
+<li>
+<p><strong>脉冲响应</strong>：</p>
+<ul>
+<li>对于线性时不变系统，若脉冲响应 $$h(t)$$ 满足 $$\int_{-\infty}^{\infty} |h(t)| dt &lt; \infty$$，则系统是 BIBO 稳定的。</li>
+</ul>
+</li>
+<li>
+<p><strong>系统方程</strong>：</p>
+<ul>
+<li>分析系统的输入输出关系，确保输出不会因为输入的有界性而发散。</li>
+</ul>
+</li>
+<li>
+<p><strong>极点分析</strong>（针对差分方程或传递函数）：</p>
+<ul>
+<li>检查系统的极点位置，确保所有极点位于单位圆内（离散系统）或左半平面（连续系统）。</li>
+</ul>
+</li>
+</ol>
+<h2 id="示例-3">示例
+</h2><p>对于系统 $$y(t) = \int_{-\infty}^{t} e^{-(t - \tau)} x(\tau) d\tau$$：</p>
+<ul>
+<li>脉冲响应 $$h(t) = e^{-t}u(t)$$（其中 $$u(t)$$ 为单位阶跃函数）。</li>
+<li>$$
+\int_{-\infty}^{\infty} |h(t)| dt = \int_{0}^{\infty} e^{-t} dt = 1 &lt; \infty
+$$</li>
+<li>因此，该系统是 BIBO 稳定的。</li>
+</ul>
+<h1 id="5-记忆性memory">5. 记忆性（Memory）
+</h1><h2 id="定义-4">定义
+</h2><p>记忆性指系统的输出是否仅依赖于当前输入值。若系统的输出 $$y(t)$$ 仅由 $$x(t)$$ 决定，则称系统无记忆（memoryless）；否则，系统有记忆（memory）。</p>
+<h2 id="判断方法-4">判断方法
+</h2><p>要判断系统是否有记忆，可以分析系统的输入输出关系：</p>
+<ol>
+<li>
+<p><strong>系统方程</strong>：</p>
+<ul>
+<li>若 $$y(t)$$ 仅与 $$x(t)$$ 有关，则系统无记忆。</li>
+<li>若 $$y(t)$$ 依赖于 $$x(t&rsquo;)$$ （$$t&rsquo; \neq t$$），则系统有记忆。</li>
+</ul>
+</li>
+<li>
+<p><strong>脉冲响应</strong>：</p>
+<ul>
+<li>对于线性时不变系统，若脉冲响应 $$h(t)$$ 是一个冲激函数 $$h(t) = k\delta(t)$$，则系统无记忆。</li>
+<li>否则，系统有记忆。</li>
+</ul>
+</li>
+</ol>
+<h2 id="示例-4">示例
+</h2><ul>
+<li>
+<p>系统 $$y(t) = 3x(t)$$：</p>
+<ul>
+<li>输出仅依赖于当前输入，系统无记忆。</li>
+</ul>
+</li>
+<li>
+<p>系统 $$y(t) = x(t) + x(t - 1)$$：</p>
+<ul>
+<li>输出依赖于当前和过去的输入，系统有记忆。</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="zuoliangyu/zuoliangyu_blog_discussed"
+    data-repo-id="R_kgDOMuHuNg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOMuHuNs4CiRiV"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 Example Person
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script
+  src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js"
+  crossorigin="anonymous"
+></script>
+<link
+  rel="stylesheet"
+  href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css"
+  crossorigin="anonymous"
+/>
+<script>
+  NProgress.start();
+  document.addEventListener("readystatechange", () => {
+    if (document.readyState === "interactive") NProgress.inc(0.8);
+    if (document.readyState === "complete") NProgress.done();
+  });
+</script>
+<script
+    src="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/ribbon.min.js"
+    integrity="sha384-UEK8ZiP3VgFNP8KnKMKDmd4pAUAOJ59Y2Jo3ED2Z5qKQf6HLHovMxq7Beb9CLPUe"
+    crossorigin="anonymous"
+    size="300"
+    alpha="0.6"
+    zindex="-1"
+    defer
+></script>
+
+    </body>
+    
+</html>
