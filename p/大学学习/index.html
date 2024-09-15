@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在系统理论中，判断一个系统是否具备线性、时不变性、因果性、稳定性和记忆性等性质是分析和设计系统的基础。下面将详细说明每种性质的定义以及相应的判断方法。\n1. 线性（Linearity） 定义 线性系统满足叠加原理，即对于任意输入信号\n$$ x_1(t) $$\n和\n$$ x_2(t) $$\n，以及任意常数 date: 2024-06-02\n$$ a$$ 和 $$\nb$$，系统的响应满足：\n$$ S[a x_1(t) + b x_2(t)] = a S[x_1(t)] + b S[x_2(t)] $$\n判断方法 要判断系统是否线性，可以通过验证叠加原理是否成立。具体步骤包括：\n齐次性（比例性）：\n对于任意输入信号\n$$ x(t) $$\n和任意常数 $$a$$，验证： $$ S[a x(t)] = a S[x(t)] $$\n如果等式成立，系统满足齐次性。\n叠加性：\n对于任意两个输入信号\n$$ x_1(t) $$\n和 $$ x_2(t) $$\n，验证： $$ S[x_1(t) + x_2(t)] = S[x_1(t)] + S[x_2(t)] $$\n如果等式成立，系统满足叠加性。\n如果系统同时满足齐次性和叠加性，则系统是线性的。\n">
-<title>性质的判断</title>
+<title>信号与系统:性质的判断</title>
 
 <link rel='canonical' href='https://zuoliangyu.github.io/p/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/'>
 
-<link rel="stylesheet" href="/scss/style.min.cf9c1578b5baaf725b9e6494f8e2bc31e8165ff98e384370980da68d90f12b0b.css"><meta property='og:title' content="性质的判断">
+<link rel="stylesheet" href="/scss/style.min.cf9c1578b5baaf725b9e6494f8e2bc31e8165ff98e384370980da68d90f12b0b.css"><meta property='og:title' content="信号与系统:性质的判断">
 <meta property='og:description' content="在系统理论中，判断一个系统是否具备线性、时不变性、因果性、稳定性和记忆性等性质是分析和设计系统的基础。下面将详细说明每种性质的定义以及相应的判断方法。\n1. 线性（Linearity） 定义 线性系统满足叠加原理，即对于任意输入信号\n$$ x_1(t) $$\n和\n$$ x_2(t) $$\n，以及任意常数 date: 2024-06-02\n$$ a$$ 和 $$\nb$$，系统的响应满足：\n$$ S[a x_1(t) + b x_2(t)] = a S[x_1(t)] + b S[x_2(t)] $$\n判断方法 要判断系统是否线性，可以通过验证叠加原理是否成立。具体步骤包括：\n齐次性（比例性）：\n对于任意输入信号\n$$ x(t) $$\n和任意常数 $$a$$，验证： $$ S[a x(t)] = a S[x(t)] $$\n如果等式成立，系统满足齐次性。\n叠加性：\n对于任意两个输入信号\n$$ x_1(t) $$\n和 $$ x_2(t) $$\n，验证： $$ S[x_1(t) + x_2(t)] = S[x_1(t)] + S[x_2(t)] $$\n如果等式成立，系统满足叠加性。\n如果系统同时满足齐次性和叠加性，则系统是线性的。\n">
 <meta property='og:url' content='https://zuoliangyu.github.io/p/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/'>
 <meta property='og:site_name' content='左岚の博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-09-15T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="性质的判断">
+<meta name="twitter:title" content="信号与系统:性质的判断">
 <meta name="twitter:description" content="在系统理论中，判断一个系统是否具备线性、时不变性、因果性、稳定性和记忆性等性质是分析和设计系统的基础。下面将详细说明每种性质的定义以及相应的判断方法。\n1. 线性（Linearity） 定义 线性系统满足叠加原理，即对于任意输入信号\n$$ x_1(t) $$\n和\n$$ x_2(t) $$\n，以及任意常数 date: 2024-06-02\n$$ a$$ 和 $$\nb$$，系统的响应满足：\n$$ S[a x_1(t) + b x_2(t)] = a S[x_1(t)] + b S[x_2(t)] $$\n判断方法 要判断系统是否线性，可以通过验证叠加原理是否成立。具体步骤包括：\n齐次性（比例性）：\n对于任意输入信号\n$$ x(t) $$\n和任意常数 $$a$$，验证： $$ S[a x(t)] = a S[x(t)] $$\n如果等式成立，系统满足齐次性。\n叠加性：\n对于任意两个输入信号\n$$ x_1(t) $$\n和 $$ x_2(t) $$\n，验证： $$ S[x_1(t) + x_2(t)] = S[x_1(t)] + S[x_2(t)] $$\n如果等式成立，系统满足叠加性。\n如果系统同时满足齐次性和叠加性，则系统是线性的。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -117,7 +117,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/">性质的判断</a>
+            <a href="/p/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/">信号与系统:性质的判断</a>
         </h2>
     
         
