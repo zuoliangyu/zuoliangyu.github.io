@@ -4,6 +4,7 @@
     {{ $filtered := ($pages | intersect $notHidden) }}
     {{ $pag := .Paginate ($filtered) }}
     <!-- 首页欢迎字幅 -->
+    <script src="/live2d-widget/autoload.js"></script>
 <div class="welcome">
     <p style="font-size: 2rem; text-align: center; font-weight: bold">
       <span class="shake">👋</span>

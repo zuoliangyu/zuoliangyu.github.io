@@ -153,3 +153,4 @@ params:
     highlight: 
         style: onedark
         
+live2d: true
