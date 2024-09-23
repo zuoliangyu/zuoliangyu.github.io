@@ -1,35 +1,39 @@
 {{ define "main" }}
-    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-    {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
-    {{ $filtered := ($pages | intersect $notHidden) }}
-    {{ $pag := .Paginate ($filtered) }}
-    <!-- 首页欢迎字幅 -->
-    <script src="/live2d-widget/autoload.js"></script>
+{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
+{{ $filtered := ($pages | intersect $notHidden) }}
+{{ $pag := .Paginate ($filtered) }}
+<!-- 首页欢迎字幅 -->
+<script src="/live2d-widget/autoload.js"></script>
 <div class="welcome">
     <p style="font-size: 2rem; text-align: center; font-weight: bold">
-      <span class="shake">👋</span>
-      <span class="jump-text1" > Welcome</span>
-      <span class="jump-text2"> To </span>
-      <span class="jump-text3" style="color:#ac16da">Zuolan's</span>
-      <span class="jump-text4" style="color:#e99312">Blog</span>
+        <span class="shake">👋</span>
+        <span class="jump-text1"> Welcome</span>
+        <span class="jump-text2"> To </span>
+        <span class="jump-text3" style="color:#ac16da">Zuolan's</span>
+        <span class="jump-text4" style="color:#e99312">Blog</span>
     </p>
-  </div>
-  <!-- 首页欢迎字幅 -->
-  
-    <section class="article-list">
-        {{ range $index, $element := $pag.Pages }}
-            {{ partial "article-list/default" . }}
-        {{ end }}
-    </section>
-   
-
+    <div style="text-align: center;">
+        <p id="hitokoto_all"><a href="#" id="hitokoto_text">获取诗词中 ... </a></p>
+    </div>
     
-    {{- partial "pagination.html" . -}}
-    {{- partial "footer/footer" . -}}
+</div>
+<!-- 首页欢迎字幅 -->
+
+<section class="article-list">
+    {{ range $index, $element := $pag.Pages }}
+    {{ partial "article-list/default" . }}
+    {{ end }}
+</section>
+
+
+
+{{- partial "pagination.html" . -}}
+{{- partial "footer/footer" . -}}
 
 {{ end }}
 
 {{ define "right-sidebar" }}
 
-    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+{{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
 {{ end }}

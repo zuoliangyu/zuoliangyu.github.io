@@ -110,3 +110,16 @@ declare global {
 
 window.Stack = Stack;
 window.createElement = createElement;
+
+
+fetch('https://v1.hitokoto.cn/?c=i&c=b&c=e&c=d&c=j')
+.then(function (res){
+return res.json();
+})
+.then(function (data) {
+var hitokoto_all = document.getElementById('hitokoto_all');
+hitokoto_all.innerText = data.hitokoto + "  —— " + data.from_who +"《" + data.from + '》' ; 
+})
+.catch(function (err) {
+console.error(err);
+})
