@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="C语言是一种高效的编程语言，广泛用于系统开发。其核心内容包括： 1. 基础语法：变量、控制结构和输入输出。 2. 数组与字符串：存储相同类型的数据和文本。 3. 指针：存储变量地址，常用于数组和函数操作。 4. 文件操作：读写外部文件。 5. 预处理器指令：控制编译行为。 ">
+<title>C语言入门基础</title>
+
+<link rel='canonical' href='https://zuoliangyu.github.io/p/c%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/'>
+
+<link rel="stylesheet" href="/scss/style.min.cf9c1578b5baaf725b9e6494f8e2bc31e8165ff98e384370980da68d90f12b0b.css"><meta property='og:title' content="C语言入门基础">
+<meta property='og:description' content="C语言是一种高效的编程语言，广泛用于系统开发。其核心内容包括： 1. 基础语法：变量、控制结构和输入输出。 2. 数组与字符串：存储相同类型的数据和文本。 3. 指针：存储变量地址，常用于数组和函数操作。 4. 文件操作：读写外部文件。 5. 预处理器指令：控制编译行为。 ">
+<meta property='og:url' content='https://zuoliangyu.github.io/p/c%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/'>
+<meta property='og:site_name' content='左岚の博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-12T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="C语言入门基础">
+<meta name="twitter:description" content="C语言是一种高效的编程语言，广泛用于系统开发。其核心内容包括： 1. 基础语法：变量、控制结构和输入输出。 2. 数组与字符串：存储相同类型的数据和文本。 3. 指针：存储变量地址，常用于数组和函数操作。 4. 文件操作：读写外部文件。 5. 预处理器指令：控制编译行为。 ">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+      
+<div class="container main-container flex on-phone--column extended">
+
+
+        <div id="article-toolbar" style="position: sticky;top: 5px;z-index: 1000;">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-c语言的起源与特点">1. <strong>C语言的起源与特点</strong></a></li>
+    <li><a href="#2-程序的基本结构">2. <strong>程序的基本结构</strong></a></li>
+    <li><a href="#3-变量和数据类型">3. <strong>变量和数据类型</strong></a></li>
+    <li><a href="#4-常量">4. <strong>常量</strong></a></li>
+    <li><a href="#5-基本输入输出">5. <strong>基本输入输出</strong></a></li>
+    <li><a href="#6-运算符">6. <strong>运算符</strong></a></li>
+    <li><a href="#7-条件控制结构">7. <strong>条件控制结构</strong></a></li>
+    <li><a href="#8-循环控制结构">8. <strong>循环控制结构</strong></a></li>
+    <li><a href="#9-函数与作用域">9. <strong>函数与作用域</strong></a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#1-数组概念">1. <strong>数组概念</strong></a>
+      <ol>
+        <li><a href="#一维数组"><strong>一维数组</strong></a></li>
+        <li><a href="#数组初始化"><strong>数组初始化</strong></a></li>
+        <li><a href="#多维数组"><strong>多维数组</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#2-字符串">2. <strong>字符串</strong></a>
+      <ol>
+        <li><a href="#字符串的声明与初始化"><strong>字符串的声明与初始化</strong></a></li>
+        <li><a href="#字符串输入输出"><strong>字符串输入输出</strong></a></li>
+        <li><a href="#常用字符串处理函数"><strong>常用字符串处理函数</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#3-数组与字符串的常见操作">3. <strong>数组与字符串的常见操作</strong></a>
+      <ol>
+        <li><a href="#数组与指针"><strong>数组与指针</strong></a></li>
+        <li><a href="#字符串的常见问题"><strong>字符串的常见问题</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#4-字符串与数组的区别">4. <strong>字符串与数组的区别</strong></a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#1-指针的基本概念">1. <strong>指针的基本概念</strong></a>
+      <ol>
+        <li><a href="#指针声明"><strong>指针声明</strong></a></li>
+        <li><a href="#指针的地址和解引用"><strong>指针的地址和解引用</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#2-指针与数组的关系">2. <strong>指针与数组的关系</strong></a></li>
+    <li><a href="#3-指针与函数">3. <strong>指针与函数</strong></a>
+      <ol>
+        <li><a href="#通过指针传递参数"><strong>通过指针传递参数</strong></a></li>
+        <li><a href="#函数指针"><strong>函数指针</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#4-指针的分类">4. <strong>指针的分类</strong></a>
+      <ol>
+        <li><a href="#空指针null指针"><strong>空指针（NULL指针）</strong></a></li>
+        <li><a href="#悬空指针"><strong>悬空指针</strong></a></li>
+        <li><a href="#野指针"><strong>野指针</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#5-指针与动态内存管理">5. <strong>指针与动态内存管理</strong></a></li>
+    <li><a href="#6-指针的常见错误">6. <strong>指针的常见错误</strong></a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#1-结构体struct">1. <strong>结构体（Struct）</strong></a>
+      <ol>
+        <li><a href="#结构体的声明"><strong>结构体的声明</strong></a></li>
+        <li><a href="#结构体变量的定义与访问"><strong>结构体变量的定义与访问</strong></a></li>
+        <li><a href="#结构体初始化"><strong>结构体初始化</strong></a></li>
+        <li><a href="#结构体数组"><strong>结构体数组</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#2-结构体与指针">2. <strong>结构体与指针</strong></a>
+      <ol>
+        <li><a href="#结构体指针的声明"><strong>结构体指针的声明</strong></a></li>
+        <li><a href="#通过指针访问结构体成员"><strong>通过指针访问结构体成员</strong></a></li>
+        <li><a href="#结构体指针与动态内存分配"><strong>结构体指针与动态内存分配</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#3-联合体union">3. <strong>联合体（Union）</strong></a>
+      <ol>
+        <li><a href="#联合体的声明"><strong>联合体的声明</strong></a></li>
+        <li><a href="#联合体的使用"><strong>联合体的使用</strong></a></li>
+        <li><a href="#联合体的大小"><strong>联合体的大小</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#4-结构体与联合体的比较">4. <strong>结构体与联合体的比较</strong></a></li>
+    <li><a href="#5-嵌套结构体">5. <strong>嵌套结构体</strong></a></li>
+    <li><a href="#6-指向结构体数组的指针">6. <strong>指向结构体数组的指针</strong></a></li>
+    <li><a href="#7-位域bit-fields">7. <strong>位域（Bit Fields）</strong></a>
+      <ol>
+        <li><a href="#位域的声明"><strong>位域的声明</strong></a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#1-文件操作">1. <strong>文件操作</strong></a>
+      <ol>
+        <li><a href="#文件指针"><strong>文件指针</strong></a></li>
+        <li><a href="#打开和关闭文件"><strong>打开和关闭文件</strong></a></li>
+        <li><a href="#读写文件"><strong>读写文件</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#字符读写"><strong>字符读写</strong></a></li>
+    <li><a href="#字符串读写"><strong>字符串读写</strong></a></li>
+    <li><a href="#格式化读写"><strong>格式化读写</strong></a></li>
+    <li><a href="#二进制文件操作"><strong>二进制文件操作</strong></a>
+      <ol>
+        <li><a href="#文件定位"><strong>文件定位</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#2-预处理器指令">2. <strong>预处理器指令</strong></a>
+      <ol>
+        <li><a href="#include文件包含"><strong><code>#include</code>：文件包含</strong></a></li>
+        <li><a href="#define宏定义"><strong><code>#define</code>：宏定义</strong></a></li>
+        <li><a href="#条件编译"><strong>条件编译</strong></a></li>
+        <li><a href="#undef取消宏定义"><strong><code>#undef</code>：取消宏定义</strong></a></li>
+        <li><a href="#pragma特殊指令"><strong><code>#pragma</code>：特殊指令</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#3-宏与内联函数的区别">3. <strong>宏与内联函数的区别</strong></a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/c%E8%AF%AD%E8%A8%80/" >
+                C语言
+            </a>
+        
+            <a href="/categories/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/" >
+                大学学习
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/c%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">C语言入门基础</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            C语言是一种高效的编程语言，广泛用于系统开发。其核心内容包括：
+1. 基础语法：变量、控制结构和输入输出。
+2. 数组与字符串：存储相同类型的数据和文本。
+3. 指针：存储变量地址，常用于数组和函数操作。
+4. 文件操作：读写外部文件。
+5. 预处理器指令：控制编译行为。
+
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 12, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 9 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="第一部分c语言基础概念详解"><strong>第一部分：C语言基础概念详解</strong>
+</h1><h2 id="1-c语言的起源与特点">1. <strong>C语言的起源与特点</strong>
+</h2><p>C语言诞生于20世纪70年代初，最初用于开发UNIX操作系统。它的设计目标是使得代码更高效且能够直接操作硬件，因此C语言也被称为“低级语言的高级化”。以下是C语言的几个主要特点：</p>
+<ul>
+<li><strong>高效性</strong>：C语言编写的程序运行速度非常快，尤其适合底层开发，如操作系统、驱动程序等。</li>
+<li><strong>可移植性</strong>：C语言代码具有良好的跨平台移植性，只需少量修改就可以在不同平台上编译运行。</li>
+<li><strong>灵活性</strong>：C语言允许直接访问内存，可以进行精细的内存操作（如指针操作）。</li>
+<li><strong>丰富的运算符</strong>：C语言提供了丰富的运算符集，能够进行各种类型的数据运算和逻辑运算。</li>
+</ul>
+<h2 id="2-程序的基本结构">2. <strong>程序的基本结构</strong>
+</h2><p>每个C语言程序都由以下几个主要部分组成：</p>
+<ul>
+<li><strong>预处理指令</strong>：使用 <code>#include</code>来引入标准库，如 <code>stdio.h</code>，为输入输出提供函数。</li>
+<li><strong>主函数 <code>main()</code></strong>：每个C程序的入口点是 <code>main()</code>函数，程序的执行从 <code>main()</code>开始。其返回类型通常是 <code>int</code>，表示程序的执行状态（<code>0</code>通常表示成功）。</li>
+</ul>
+<p>一个简单的C语言程序如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Hello, World!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3-变量和数据类型">3. <strong>变量和数据类型</strong>
+</h2><p>C语言是一种<strong>静态类型语言</strong>，这意味着在使用变量之前，必须声明变量的类型。主要的数据类型有：</p>
+<ul>
+<li><strong>整数类型</strong> (<code>int</code>)：用于存储整型数值，通常占用4字节。
+<ul>
+<li>例：<code>int a = 10;</code></li>
+</ul>
+</li>
+<li><strong>浮点类型</strong> (<code>float</code>, <code>double</code>)：用于存储小数，<code>float</code>通常占用4字节，<code>double</code>占用8字节。
+<ul>
+<li>例：<code>float pi = 3.14;</code></li>
+</ul>
+</li>
+<li><strong>字符类型</strong> (<code>char</code>)：用于存储单个字符，占用1字节。
+<ul>
+<li>例：<code>char letter = 'A';</code></li>
+</ul>
+</li>
+</ul>
+<p>C语言允许使用<strong>修饰符</strong>来改变基本类型的特性，如：</p>
+<ul>
+<li><code>short</code>：表示短整型，减少内存占用；</li>
+<li><code>long</code>：表示长整型，增加数值范围；</li>
+<li><code>unsigned</code>：表示无符号类型，仅存储非负数。</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">positive_num</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// 无符号整数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">long</span> <span class="kt">long</span> <span class="n">large_num</span> <span class="o">=</span> <span class="mi">1234567890</span><span class="p">;</span> <span class="c1">// 长整型
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4-常量">4. <strong>常量</strong>
+</h2><p>常量是指在程序运行期间其值不可改变的量。C语言通过 <code>const</code>关键字来声明常量。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">days_in_week</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="c1">// 一周的天数不会改变
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="5-基本输入输出">5. <strong>基本输入输出</strong>
+</h2><ul>
+<li><strong>输出函数 <code>printf()</code></strong>：用于向屏幕输出信息，常见的占位符有：
+<ul>
+<li><code>%d</code>：输出整数；</li>
+<li><code>%f</code>：输出浮点数；</li>
+<li><code>%c</code>：输出字符；</li>
+<li><code>%s</code>：输出字符串。</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Integer: %d, Float: %.2f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">3.1415</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>输入函数 <code>scanf()</code></strong>：用于从键盘读取输入，常见的格式符号与 <code>printf()</code>相似，使用 <code>&amp;</code>符号来获取变量的地址。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">);</span> <span class="c1">// 读取整数
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="6-运算符">6. <strong>运算符</strong>
+</h2><p>C语言的运算符种类繁多，主要分为以下几类：</p>
+<ul>
+<li><strong>算术运算符</strong>：用于基本的数学运算，包括：
+<ul>
+<li><code>+</code>：加法；</li>
+<li><code>-</code>：减法；</li>
+<li><code>*</code>：乘法；</li>
+<li><code>/</code>：除法（整数除法时，结果为整数）；</li>
+<li><code>%</code>：取模运算（只适用于整数）。</li>
+</ul>
+</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// result = 1
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>关系运算符</strong>：用于比较两个值，返回布尔结果（<code>1</code>表示真，<code>0</code>表示假）。
+<ul>
+<li><code>==</code>：等于；</li>
+<li><code>!=</code>：不等于；</li>
+<li><code>&gt;</code>：大于；</li>
+<li><code>&lt;</code>：小于；</li>
+<li><code>&gt;=</code>：大于等于；</li>
+<li><code>&lt;=</code>：小于等于。</li>
+</ul>
+</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;a equals b&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>逻辑运算符</strong>：用于处理逻辑关系。
+<ul>
+<li><code>&amp;&amp;</code>：逻辑与，只有两个表达式都为真时，结果为真；</li>
+<li><code>||</code>：逻辑或，任一表达式为真，结果为真；</li>
+<li><code>!</code>：逻辑非，将表达式的结果取反。</li>
+</ul>
+</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Both a and b are positive numbers.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="7-条件控制结构">7. <strong>条件控制结构</strong>
+</h2><p>C语言中的条件控制结构用于控制程序执行的流程，主要包括：</p>
+<ul>
+<li><strong>if语句</strong>：用于条件判断，当条件成立时执行特定代码块。</li>
+<li><strong>else语句</strong>：在 <code>if</code>条件不成立时执行。</li>
+<li><strong>else if语句</strong>：用于多条件判断。</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Positive number&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Zero&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Negative number&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="8-循环控制结构">8. <strong>循环控制结构</strong>
+</h2><p>C语言提供了三种常用的循环结构：</p>
+<ul>
+<li><strong>for循环</strong>：常用于已知循环次数的情况。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>while循环</strong>：在条件成立时重复执行代码块，适用于未知循环次数的情况。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>do&hellip;while循环</strong>：先执行一次代码块，然后在条件成立时继续循环。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">do</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="9-函数与作用域">9. <strong>函数与作用域</strong>
+</h2><ul>
+<li><strong>函数</strong>是C语言中的重要组成部分，用于将代码逻辑封装成可重用的代码块。函数的声明和定义包括返回类型、函数名、参数列表和函数体。例如：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在调用函数时，参数会传递到函数内，函数执行完毕后将返回一个值。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="nf">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// result为8
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>局部变量与全局变量</strong>：C语言中的变量分为局部变量和全局变量。局部变量是在函数或代码块内部声明的变量，只能在其定义的范围内使用；全局变量是在函数外部声明的，整个程序都可以访问。</li>
+</ul>
+<h1 id="第二部分数组与字符串的详细介绍"><strong>第二部分：数组与字符串的详细介绍</strong>
+</h1><p>在上一部分中，我们讲到了C语言的基本概念、控制结构和函数等内容。现在，我们将深入探讨C语言中的<strong>数组</strong>与<strong>字符串</strong>，它们是编程中用于处理多个数据的一些关键工具。</p>
+<h2 id="1-数组概念">1. <strong>数组概念</strong>
+</h2><p>数组是存储<strong>相同数据类型</strong>元素的<strong>连续内存块</strong>。它使得我们可以用同一个变量名来处理一组值，而不是为每个值都声明一个独立的变量。数组的元素通过下标（索引）进行访问，索引从 <code>0</code>开始。</p>
+<h3 id="一维数组"><strong>一维数组</strong>
+</h3><ul>
+<li>一维数组可以看作是一个线性的数据集合。其语法为：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">data_type</span> <span class="n">array_name</span><span class="p">[</span><span class="n">array_size</span><span class="p">];</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例如，声明一个存储5个整数的数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span> <span class="c1">// 创建一个包含5个整数的数组
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们可以通过下标来给数组元素赋值和访问元素：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 给第一个元素赋值10
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">first_value</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 获取第一个元素的值
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>也可以使用循环来遍历数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span> <span class="c1">// 初始化数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="c1">// 依次输出每个元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="数组初始化"><strong>数组初始化</strong>
+</h3><p>数组可以在声明时直接初始化，也可以在运行时赋值：</p>
+<ul>
+<li>静态初始化（在声明时指定初始值）：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span> <span class="c1">// 初始化5个值
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>部分初始化时，未指定的元素会自动被初始化为 <code>0</code>：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">};</span> <span class="c1">// 数组的剩余元素被初始化为0
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="多维数组"><strong>多维数组</strong>
+</h3><p>C语言支持多维数组，常用的有二维数组。二维数组可以看作是一个<strong>矩阵</strong>，即行列形式的数据结构。声明语法如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">data_type</span> <span class="n">array_name</span><span class="p">[</span><span class="n">rows</span><span class="p">][</span><span class="n">cols</span><span class="p">];</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">];</span> <span class="c1">// 3行3列的二维数组
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>二维数组的元素可以通过两个下标进行访问：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// 将第一行第二列的元素赋值为5
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>二维数组的遍历通常使用嵌套循环：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在上述例子中，<code>matrix[2][3]</code>是一个2行3列的数组，遍历时通过嵌套的 <code>for</code>循环访问每个元素。</p>
+<h2 id="2-字符串">2. <strong>字符串</strong>
+</h2><p>字符串在C语言中被视为<strong>字符数组</strong>。C语言中没有专门的字符串数据类型，因此字符串通常是一个以空字符 <code>\0</code> 结尾的字符数组。该空字符标志着字符串的结束，且不会被显示输出。</p>
+<h3 id="字符串的声明与初始化"><strong>字符串的声明与初始化</strong>
+</h3><p>字符串可以通过字符数组来声明，并且可以直接初始化为字符串常量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Hello&#34;</span><span class="p">;</span> <span class="c1">// 自动在末尾添加&#39;\0&#39;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意，这里的 <code>str</code>数组长度为6，因为 <code>&quot;Hello&quot;</code>有5个字符，加上末尾的空字符 <code>\0</code>总共6个字节。我们也可以手动初始化字符串：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="sc">&#39;l&#39;</span><span class="p">,</span> <span class="sc">&#39;l&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39;\0&#39;</span><span class="p">};</span> <span class="c1">// 手动添加结束符
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="字符串输入输出"><strong>字符串输入输出</strong>
+</h3><p>可以使用 <code>printf()</code>输出字符串，也可以使用 <code>scanf()</code>读取字符串。特别地，<code>scanf()</code>读取字符串时，不需要写 <code>&amp;</code>符号，因为字符串本质上是指针（稍后我们会详细讨论指针）。</p>
+<ul>
+<li>输出字符串：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%s&#34;</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span> <span class="c1">// 输出字符串
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>输入字符串：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">scanf</span><span class="p">(</span><span class="s">&#34;%s&#34;</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span> <span class="c1">// 从用户输入获取字符串
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>不过，使用 <code>scanf()</code>时有一个重要问题：它只能读取<strong>空格之前的内容</strong>，遇到空格会停止输入。如果需要读取包含空格的字符串，可以使用 <code>gets()</code>函数（已废弃，不推荐）或 <code>fgets()</code>函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">fgets</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">str</span><span class="p">),</span> <span class="n">stdin</span><span class="p">);</span> <span class="c1">// 读取带有空格的输入
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="常用字符串处理函数"><strong>常用字符串处理函数</strong>
+</h3><p>C语言的 <code>string.h</code>库提供了一系列处理字符串的函数，如：</p>
+<ul>
+<li><code>strlen()</code>：计算字符串长度。</li>
+<li><code>strcpy()</code>：复制字符串。</li>
+<li><code>strcat()</code>：拼接字符串。</li>
+<li><code>strcmp()</code>：比较两个字符串。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">str1</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Hello&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">str2</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;World&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">strcat</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">);</span> <span class="c1">// 将str2拼接到str1后
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">str1</span><span class="p">);</span> <span class="c1">// 输出&#34;HelloWorld&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3-数组与字符串的常见操作">3. <strong>数组与字符串的常见操作</strong>
+</h2><h3 id="数组与指针"><strong>数组与指针</strong>
+</h3><p>在C语言中，数组名实际上是一个指向数组第一个元素的指针。我们可以通过指针运算来访问数组元素：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">arr</span><span class="p">;</span> <span class="c1">// p指向数组的第一个元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span> <span class="c1">// 输出第二个元素的值，结果为2
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="字符串的常见问题"><strong>字符串的常见问题</strong>
+</h3><ul>
+<li><strong>数组越界</strong>：如果字符串数组的大小不足以容纳字符串和结束符 <code>\0</code>，可能会导致内存越界的问题。因此在声明字符串数组时要确保有足够的空间。</li>
+<li><strong>空字符问题</strong>：字符串末尾必须有一个 <code>\0</code>，否则可能导致程序在输出或操作字符串时出现错误或崩溃。</li>
+</ul>
+<h2 id="4-字符串与数组的区别">4. <strong>字符串与数组的区别</strong>
+</h2><p>尽管字符串是以字符数组的形式存在，但处理方式上仍有细微的区别：</p>
+<ul>
+<li>字符数组可以包含任意字符，不必以 <code>\0</code>结尾；</li>
+<li>字符串必须以 <code>\0</code>结尾，<code>printf</code>等函数遇到 <code>\0</code>时才会停止输出。</li>
+</ul>
+<h1 id="第三部分指针详解"><strong>第三部分：指针详解</strong>
+</h1><p>在前面的部分，我们讨论了数组和字符串，并简要提到了指针的概念。现在我们将深入讨论<strong>指针</strong>，这是C语言中最强大、但也最难掌握的概念之一。指针在C语言中的作用非常重要，尤其是在处理内存、数组、函数参数和动态分配内存时。</p>
+<h2 id="1-指针的基本概念">1. <strong>指针的基本概念</strong>
+</h2><p>指针是<strong>存储另一个变量的地址</strong>的变量。也就是说，指针指向存储在内存中的一个特定位置，而这个位置存储了某个值。通过指针，可以间接地访问和修改存储在该位置的值。</p>
+<h3 id="指针声明"><strong>指针声明</strong>
+</h3><p>在C语言中，指针通过类型名和一个星号（<code>*</code>）声明。它的基本语法为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">data_type</span> <span class="o">*</span><span class="n">pointer_name</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>data_type</code>：指针所指向的变量的类型，例如 <code>int</code>, <code>float</code>等。</li>
+<li><code>pointer_name</code>：指针变量的名称。</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>  <span class="c1">// 声明一个指向整数的指针p
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="指针的地址和解引用"><strong>指针的地址和解引用</strong>
+</h3><ul>
+<li><strong>&amp;运算符</strong>：取地址运算符，返回变量的内存地址。</li>
+<li>*<strong>运算符</strong>：解引用运算符，返回指针指向的变量的值。</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>  <span class="c1">// p存储变量a的地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Address of a: %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span> <span class="c1">// 输出变量a的地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Value of a: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span><span class="p">);</span>  <span class="c1">// 通过指针访问变量a的值，结果为10
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>在这个例子中，<code>p</code>存储了 <code>a</code>的地址，而 <code>*p</code>则访问 <code>a</code>的值。</p>
+<h2 id="2-指针与数组的关系">2. <strong>指针与数组的关系</strong>
+</h2><p>在C语言中，数组名实际上就是一个<strong>指向数组第一个元素的指针</strong>。因此，指针和数组之间有非常密切的关系。</p>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">arr</span><span class="p">;</span> <span class="c1">// p指向数组的第一个元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span><span class="p">);</span>    <span class="c1">// 输出10，相当于arr[0]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span> <span class="c1">// 输出20，相当于arr[1]
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里，<code>p</code>指向 <code>arr[0]</code>，<code>p + 1</code>指向 <code>arr[1]</code>，通过解引用 <code>*(p+1)</code>可以访问数组的第二个元素。</p>
+<p><strong>总结指针与数组的关系</strong>：</p>
+<ul>
+<li><code>arr</code>实际上是一个指向 <code>arr[0]</code>的指针；</li>
+<li><code>arr[i]</code>等价于 <code>*(arr + i)</code>；</li>
+<li>指针可以通过指针运算遍历数组。</li>
+</ul>
+<h2 id="3-指针与函数">3. <strong>指针与函数</strong>
+</h2><p>在C语言中，指针与函数有着紧密的关系。通过指针，我们可以实现以下两种主要功能：</p>
+<ul>
+<li><strong>函数参数传递</strong>：通过传递指针，可以使得函数内部对传递参数的修改在函数外部生效。</li>
+<li><strong>指向函数的指针</strong>：通过指针来引用和调用函数。</li>
+</ul>
+<h3 id="通过指针传递参数"><strong>通过指针传递参数</strong>
+</h3><p>C语言中函数的参数传递是<strong>值传递</strong>，也就是说，函数接收到的是参数的副本。如果希望函数修改原始参数，可以通过指针来传递参数的地址。</p>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>  <span class="c1">// 传递x和y的地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;x = %d, y = %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>  <span class="c1">// 输出：x = 10, y = 5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在这个例子中，<code>swap</code>函数通过指针修改了 <code>x</code>和 <code>y</code>的值，使得函数外的 <code>x</code>和 <code>y</code>被交换。</p>
+<h3 id="函数指针"><strong>函数指针</strong>
+</h3><p>指针不仅可以指向变量，还可以指向<strong>函数</strong>。一个函数指针可以存储某个函数的地址，并通过这个指针调用该函数。</p>
+<p>函数指针的声明语法如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">return_type</span> <span class="p">(</span><span class="o">*</span><span class="n">pointer_name</span><span class="p">)(</span><span class="n">parameter_types</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例如，声明一个指向返回 <code>int</code>类型、接受两个 <code>int</code>参数的函数指针：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">func_ptr</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们可以将一个函数的地址赋给函数指针，并通过指针调用该函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">func_ptr</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="n">add</span><span class="p">;</span>  <span class="c1">// 将函数add的地址赋给指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="nf">func_ptr</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>  <span class="c1">// 通过指针调用函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Result: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>  <span class="c1">// 输出：Result: 7
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4-指针的分类">4. <strong>指针的分类</strong>
+</h2><p>指针在C语言中有多个分类，每种指针类型在不同的场景下使用。以下是几种常见的指针类型：</p>
+<h3 id="空指针null指针"><strong>空指针（NULL指针）</strong>
+</h3><p>空指针是指向**&ldquo;无效&quot;地址**的指针。通常将一个指针赋值为 <code>NULL</code>来表明它不指向任何有效的内存地址。在实际编程中，空指针常用于指针初始化或检查指针是否有效。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">// p不指向任何有效地址
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用空指针可以避免一些未初始化指针带来的错误。</p>
+<h3 id="悬空指针"><strong>悬空指针</strong>
+</h3><p>悬空指针是指一个指针指向了被释放或不存在的内存地址。它是造成<strong>内存访问错误</strong>的常见原因。为了避免悬空指针，在释放动态分配的内存后，应该将指针设为 <code>NULL</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="nf">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span> <span class="c1">// 动态分配内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>  <span class="c1">// 释放内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">p</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>  <span class="c1">// 避免悬空指针
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="野指针"><strong>野指针</strong>
+</h3><p>野指针指的是指向未知地址或非法内存地址的指针。野指针的行为是不可预料的，可能导致程序崩溃或产生未定义的行为。在使用指针时，要确保指针指向合法的内存区域。</p>
+<h2 id="5-指针与动态内存管理">5. <strong>指针与动态内存管理</strong>
+</h2><p>C语言提供了一套标准库函数来进行<strong>动态内存分配</strong>，它们包括：</p>
+<ul>
+<li><code>malloc()</code>：分配指定大小的内存块，返回指向该内存块的指针。如果分配失败，返回 <code>NULL</code>。</li>
+<li><code>calloc()</code>：与 <code>malloc()</code>类似，但会初始化分配的内存为0。</li>
+<li><code>free()</code>：释放之前用 <code>malloc()</code>或 <code>calloc()</code>分配的内存块。</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="nf">malloc</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span> <span class="c1">// 分配5个int大小的内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Memory allocation failed</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 初始化数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 输出数组内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>  <span class="c1">// 释放内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在这个例子中，<code>malloc</code>函数分配了足够存储5个整数的内存空间，并通过指针 <code>p</code>访问和操作这些内存。</p>
+<h2 id="6-指针的常见错误">6. <strong>指针的常见错误</strong>
+</h2><ul>
+<li><strong>未初始化的指针</strong>：指针在使用前必须初始化。如果未初始化就使用指针，可能会导致程序崩溃或产生不确定的行为。</li>
+<li><strong>内存泄漏</strong>：使用 <code>malloc</code>或 <code>calloc</code>动态分配内存后，必须使用 <code>free</code>释放内存，否则会导致内存泄漏。</li>
+<li><strong>解引用空指针</strong>：解引用空指针会导致程序崩溃。在解引用指针之前，必须确保指针指向有效的内存区域。</li>
+</ul>
+<h1 id="第四部分结构体联合体与指针的结合使用"><strong>第四部分：结构体、联合体与指针的结合使用</strong>
+</h1><p>在上一部分中，我们深入讨论了C语言中的指针。现在我们继续探讨<strong>结构体</strong>和<strong>联合体</strong>，并进一步学习它们如何与指针结合使用。在C语言中，结构体和联合体是非常重要的数据类型，常用于定义复杂的数据结构，例如链表、树等。</p>
+<h2 id="1-结构体struct">1. <strong>结构体（Struct）</strong>
+</h2><p>结构体是一种用户自定义的数据类型，它允许将不同类型的变量组合成一个单一的实体。结构体特别适合用于描述复杂的对象或记录，例如描述一名学生的学号、姓名和成绩等信息。</p>
+<h3 id="结构体的声明"><strong>结构体的声明</strong>
+</h3><p>结构体的声明格式如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">structure_name</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data_type1</span> <span class="n">member1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data_type2</span> <span class="n">member2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例如，定义一个表示学生信息的结构体：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Student</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>        <span class="c1">// 学号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span> <span class="c1">// 姓名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">float</span> <span class="n">grade</span><span class="p">;</span>   <span class="c1">// 成绩
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="结构体变量的定义与访问"><strong>结构体变量的定义与访问</strong>
+</h3><p>定义结构体变量时，可以使用结构体名称。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Student</span> <span class="n">s1</span><span class="p">;</span> <span class="c1">// 定义结构体变量s1
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>访问结构体的成员时使用点运算符（<code>.</code>）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">s1</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">1001</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">strcpy</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="s">&#34;Alice&#34;</span><span class="p">);</span> <span class="c1">// 将字符串&#34; Alice&#34;复制到name成员
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">s1</span><span class="p">.</span><span class="n">grade</span> <span class="o">=</span> <span class="mf">95.5</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>通过这种方式，我们可以操作和访问结构体中的各个成员。</p>
+<h3 id="结构体初始化"><strong>结构体初始化</strong>
+</h3><p>结构体变量可以在声明时初始化：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Student</span> <span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1001</span><span class="p">,</span> <span class="s">&#34;Alice&#34;</span><span class="p">,</span> <span class="mf">95.5</span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="结构体数组"><strong>结构体数组</strong>
+</h3><p>与基本类型数组类似，我们可以定义结构体数组来存储多个结构体变量。例如，定义一个存储多名学生信息的结构体数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Student</span> <span class="n">students</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="mi">1001</span><span class="p">,</span> <span class="s">&#34;Alice&#34;</span><span class="p">,</span> <span class="mf">95.5</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="mi">1002</span><span class="p">,</span> <span class="s">&#34;Bob&#34;</span><span class="p">,</span> <span class="mf">89.0</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="mi">1003</span><span class="p">,</span> <span class="s">&#34;Charlie&#34;</span><span class="p">,</span> <span class="mf">92.3</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="2-结构体与指针">2. <strong>结构体与指针</strong>
+</h2><p>指针可以与结构体结合使用，以更高效地操作结构体，尤其是在函数参数传递和动态内存分配时。</p>
+<h3 id="结构体指针的声明"><strong>结构体指针的声明</strong>
+</h3><p>结构体指针的声明与普通指针相同，只是类型为结构体类型。例如，声明一个指向 <code>Student</code>结构体的指针：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Student</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们可以让指针 <code>p</code>指向某个结构体变量的地址：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s1</span><span class="p">;</span> <span class="c1">// p指向结构体变量s1的地址
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="通过指针访问结构体成员"><strong>通过指针访问结构体成员</strong>
+</h3><p>通过指针访问结构体成员时，不能直接使用点运算符，而是使用箭头运算符（<code>-&gt;</code>）。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;ID: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">);</span>       <span class="c1">// 访问结构体成员id
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Name: %s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>   <span class="c1">// 访问结构体成员name
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Grade: %.2f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">grade</span><span class="p">);</span> <span class="c1">// 访问结构体成员grade
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这种方式避免了结构体的大量复制，特别是在传递结构体作为函数参数时，指针更加高效。</p>
+<h3 id="结构体指针与动态内存分配"><strong>结构体指针与动态内存分配</strong>
+</h3><p>结构体指针可以与 <code>malloc()</code>函数结合，动态分配结构体内存。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Student</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="k">struct</span> <span class="n">Student</span> <span class="o">*</span><span class="p">)</span><span class="nf">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">Student</span><span class="p">));</span> <span class="c1">// 动态分配结构体内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">-&gt;</span><span class="n">id</span> <span class="o">=</span> <span class="mi">1004</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">strcpy</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">,</span> <span class="s">&#34;David&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">-&gt;</span><span class="n">grade</span> <span class="o">=</span> <span class="mf">88.5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>分配完成后，可以像普通结构体指针一样操作和访问结构体成员，使用完成后需要记得释放内存：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span> <span class="c1">// 释放内存
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3-联合体union">3. <strong>联合体（Union）</strong>
+</h2><p><strong>联合体</strong>与结构体类似，也是一种自定义的数据类型，但它允许多个成员共用同一块内存空间。联合体中的所有成员<strong>共享同一个内存地址</strong>，因此在某一时刻，联合体只能存储一个成员的值。</p>
+<h3 id="联合体的声明"><strong>联合体的声明</strong>
+</h3><p>联合体的声明格式与结构体类似：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">union</span> <span class="n">UnionName</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data_type1</span> <span class="n">member1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data_type2</span> <span class="n">member2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">union</span> <span class="n">Data</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="联合体的使用"><strong>联合体的使用</strong>
+</h3><p>定义联合体变量时，可以像结构体一样操作。因为所有成员共享同一块内存，修改一个成员的值会覆盖其他成员的值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">union</span> <span class="n">Data</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="p">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;d.i = %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="n">i</span><span class="p">);</span> <span class="c1">// 输出：d.i = 10
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="p">.</span><span class="n">f</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;d.f = %.2f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="n">f</span><span class="p">);</span> <span class="c1">// 输出：d.f = 3.14
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;d.i = %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="n">i</span><span class="p">);</span>   <span class="c1">// 输出的d.i值可能是未定义的，因为d.f覆盖了内存
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="联合体的大小"><strong>联合体的大小</strong>
+</h3><p>由于联合体的所有成员共享同一个内存，因此联合体的大小等于<strong>它所有成员中最大类型的大小</strong>。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">union</span> <span class="n">Data</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Size of union: %ld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">d</span><span class="p">));</span> <span class="c1">// 输出联合体的大小，取决于成员中最大的类型
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4-结构体与联合体的比较">4. <strong>结构体与联合体的比较</strong>
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">特性</th>
+          <th style="text-align: left">结构体</th>
+          <th style="text-align: left">联合体</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">内存分配</td>
+          <td style="text-align: left">每个成员都有独立的内存空间</td>
+          <td style="text-align: left">所有成员共享同一块内存</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">使用场景</td>
+          <td style="text-align: left">需要同时存储多个不同类型的数据</td>
+          <td style="text-align: left">需要节省内存且一次只使用一个成员</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">成员访问</td>
+          <td style="text-align: left">可以同时访问多个成员</td>
+          <td style="text-align: left">只能访问最后一次赋值的成员</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">大小</td>
+          <td style="text-align: left">总大小等于所有成员的大小之和</td>
+          <td style="text-align: left">大小等于最大成员的大小</td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="5-嵌套结构体">5. <strong>嵌套结构体</strong>
+</h2><p>在C语言中，结构体可以嵌套，即一个结构体的成员可以是另一个结构体。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Date</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">day</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">month</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Student</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="n">Date</span> <span class="n">birthdate</span><span class="p">;</span> <span class="c1">// 嵌套Date结构体
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>通过这种方式，可以创建更复杂的数据结构。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Student</span> <span class="n">s1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s1</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">1001</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">strcpy</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="s">&#34;Alice&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">s1</span><span class="p">.</span><span class="n">birthdate</span><span class="p">.</span><span class="n">day</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s1</span><span class="p">.</span><span class="n">birthdate</span><span class="p">.</span><span class="n">month</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s1</span><span class="p">.</span><span class="n">birthdate</span><span class="p">.</span><span class="n">year</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="6-指向结构体数组的指针">6. <strong>指向结构体数组的指针</strong>
+</h2><p>指针不仅可以指向单个结构体变量，还可以指向结构体数组。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Student</span> <span class="n">students</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Student</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">students</span><span class="p">;</span> <span class="c1">// p指向结构体数组的第一个元素
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以通过指针和下标一起操作结构体数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1001</span><span class="p">;</span> <span class="c1">// 通过指针访问数组元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="7-位域bit-fields">7. <strong>位域（Bit Fields）</strong>
+</h2><p>位域是一种特殊的结构体成员，用于控制某个成员占用的比特位数。位域用于节省内存空间，通常在需要精确控制内存分配的情况下使用，例如嵌入式系统中。</p>
+<h3 id="位域的声明"><strong>位域的声明</strong>
+</h3><p>位域声明时，需要指定成员占用的位数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">a</span> <span class="p">:</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// a占用4位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">b</span> <span class="p">:</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// b占用4位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="n">bitField</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在这个例子中，<code>a</code>和 <code>b</code>各占用4位，总共占用1个字节。</p>
+<h1 id="第五部分文件操作与预处理器指令"><strong>第五部分：文件操作与预处理器指令</strong>
+</h1><p>在前面四部分的基础上，本部分将讨论<strong>文件操作</strong>和<strong>预处理器指令</strong>，它们是C语言编程中非常实用且重要的功能。文件操作使得程序可以读写外部文件，而预处理器指令则帮助程序员更灵活地管理代码和进行条件编译。</p>
+<h2 id="1-文件操作">1. <strong>文件操作</strong>
+</h2><p>文件操作是指通过程序与外部文件进行交互，比如读取文件内容或向文件中写入数据。C语言中，文件操作主要通过标准库函数来实现，这些函数定义在 <code>stdio.h</code>头文件中。</p>
+<h3 id="文件指针"><strong>文件指针</strong>
+</h3><p>在C语言中，文件通过<strong>文件指针</strong>进行操作。<code>FILE</code>类型是一个结构体，表示文件流，而 <code>FILE *</code>则是文件指针，用来引用和操作文件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">FILE</span> <span class="o">*</span><span class="n">file_pointer</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="打开和关闭文件"><strong>打开和关闭文件</strong>
+</h3><p>使用 <code>fopen()</code>函数来打开文件，并返回一个 <code>FILE *</code>指针。如果文件打开失败，<code>fopen()</code>会返回 <code>NULL</code>。其基本语法如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">FILE</span> <span class="o">*</span><span class="nf">fopen</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">mode</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>filename</code>：文件名。</li>
+<li><code>mode</code>：文件打开模式，有以下几种常见模式：
+<ul>
+<li><code>&quot;r&quot;</code>：以只读模式打开文件，文件必须存在。</li>
+<li><code>&quot;w&quot;</code>：以写入模式打开文件，若文件不存在则创建，若文件存在则清空文件内容。</li>
+<li><code>&quot;a&quot;</code>：以追加模式打开文件，文件必须存在。</li>
+<li><code>&quot;r+&quot;</code>：以读写模式打开文件，文件必须存在。</li>
+<li><code>&quot;w+&quot;</code>：以读写模式打开文件，若文件不存在则创建，若文件存在则清空文件内容。</li>
+</ul>
+</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">FILE</span> <span class="o">*</span><span class="n">fp</span> <span class="o">=</span> <span class="nf">fopen</span><span class="p">(</span><span class="s">&#34;data.txt&#34;</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">);</span> <span class="c1">// 打开文件data.txt用于读取
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="n">fp</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Error: Could not open file.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>当操作完文件后，必须使用 <code>fclose()</code>函数关闭文件，以释放系统资源：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="读写文件"><strong>读写文件</strong>
+</h3><p>C语言提供了多种函数用于文件的读写操作，包括单字符、字符串和格式化数据的读写。</p>
+<h2 id="字符读写"><strong>字符读写</strong>
+</h2><ul>
+<li><code>fgetc()</code>：从文件中读取一个字符。</li>
+<li><code>fputc()</code>：将一个字符写入文件。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">ch</span> <span class="o">=</span> <span class="nf">fgetc</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span> <span class="c1">// 从文件中读取一个字符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">fputc</span><span class="p">(</span><span class="sc">&#39;A&#39;</span><span class="p">,</span> <span class="n">fp</span><span class="p">);</span>      <span class="c1">// 向文件写入字符&#39;A&#39;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="字符串读写"><strong>字符串读写</strong>
+</h2><ul>
+<li><code>fgets()</code>：从文件中读取一行字符串，最多读取 <code>n-1</code>个字符（<code>n</code>是指定的大小），并在末尾添加 <code>'\0'</code>。</li>
+<li><code>fputs()</code>：向文件写入一个字符串。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="nf">fgets</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">fp</span><span class="p">);</span>  <span class="c1">// 从文件中读取一行，存储在buffer中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">fputs</span><span class="p">(</span><span class="s">&#34;Hello, World!&#34;</span><span class="p">,</span> <span class="n">fp</span><span class="p">);</span> <span class="c1">// 向文件写入字符串
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="格式化读写"><strong>格式化读写</strong>
+</h2><ul>
+<li><code>fprintf()</code>：将格式化的数据写入文件。</li>
+<li><code>fscanf()</code>：从文件中读取格式化的数据。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">fprintf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s">&#34;ID: %d, Name: %s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="s">&#34;Alice&#34;</span><span class="p">);</span> <span class="c1">// 向文件写入格式化数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">fscanf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s">&#34;%d %s&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span> <span class="c1">// 从文件中读取格式化数据
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="二进制文件操作"><strong>二进制文件操作</strong>
+</h2><p>对于需要精确控制数据格式的场景，C语言提供了二进制文件的读写函数：</p>
+<ul>
+<li><code>fread()</code>：从文件中读取二进制数据。</li>
+<li><code>fwrite()</code>：向文件中写入二进制数据。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="nf">fwrite</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span> <span class="mi">5</span><span class="p">,</span> <span class="n">fp</span><span class="p">);</span>  <span class="c1">// 写入5个整数到文件中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nf">fread</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span> <span class="mi">5</span><span class="p">,</span> <span class="n">fp</span><span class="p">);</span>   <span class="c1">// 从文件中读取5个整数
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="文件定位"><strong>文件定位</strong>
+</h3><p>文件定位函数用于在文件中移动读写指针：</p>
+<ul>
+<li><code>fseek()</code>：将文件指针移动到指定位置。</li>
+<li><code>ftell()</code>：返回文件指针的当前偏移量。</li>
+<li><code>rewind()</code>：将文件指针重置到文件开头。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">fseek</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SEEK_SET</span><span class="p">);</span>  <span class="c1">// 移动到文件开头
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">long</span> <span class="n">position</span> <span class="o">=</span> <span class="nf">ftell</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>  <span class="c1">// 获取当前指针位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">rewind</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>  <span class="c1">// 重置到文件开头
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="2-预处理器指令">2. <strong>预处理器指令</strong>
+</h2><p>预处理器指令是由**<code>#</code>**号开头的指令，它们在编译器编译代码之前执行预处理工作。常见的预处理器指令包括文件包含、宏定义、条件编译等。</p>
+<h3 id="include文件包含"><strong><code>#include</code>：文件包含</strong>
+</h3><p><code>#include</code>指令用于将外部文件的内容包含到当前文件中。常见的有两种包含形式：</p>
+<ul>
+<li><strong>尖括号形式</strong>：用于包含标准库文件。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>双引号形式</strong>：用于包含用户自定义的头文件。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;myheader.h&#34;</span><span class="cp">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="define宏定义"><strong><code>#define</code>：宏定义</strong>
+</h3><p>宏定义用于定义常量或简单的函数。在预处理阶段，所有宏的使用都会被替换为定义的内容。</p>
+<ul>
+<li>定义常量：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define PI 3.14159
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用 <code>PI</code>时，编译器会将其替换为 <code>3.14159</code>。</p>
+<ul>
+<li>宏函数：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define SQUARE(x) ((x) * (x))
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用 <code>SQUARE(5)</code>时，编译器会将其替换为 <code>((5) * (5))</code>。</p>
+<h3 id="条件编译"><strong>条件编译</strong>
+</h3><p>条件编译指令用于控制代码的编译行为，允许编译器根据条件选择性地编译某些代码。</p>
+<ul>
+<li><code>#if</code>、<code>#elif</code>、<code>#else</code>、<code>#endif</code>：根据条件选择性地编译代码。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define DEBUG 1
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#if DEBUG
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Debug mode is on.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#else
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Release mode is on.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>#ifdef</code>和 <code>#ifndef</code>：判断某个宏是否被定义。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#ifdef PI
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;PI is defined.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifndef PI
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;PI is not defined.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="undef取消宏定义"><strong><code>#undef</code>：取消宏定义</strong>
+</h3><p>使用 <code>#undef</code>可以取消某个宏的定义：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#undef PI
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="pragma特殊指令"><strong><code>#pragma</code>：特殊指令</strong>
+</h3><p><code>#pragma</code>指令是编译器特定的指令，用于设置编译器的特性。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#pragma pack(1)  </span><span class="c1">// 设置结构体成员的对齐方式为1字节
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3-宏与内联函数的区别">3. <strong>宏与内联函数的区别</strong>
+</h2><ul>
+<li>宏在预处理阶段展开，不执行类型检查，可能会导致意外的错误。</li>
+<li>内联函数在编译时替换成函数代码，执行类型检查，通常比宏更安全。</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define MAX(a, b) ((a) &gt; (b) ? (a) : (b)) </span><span class="c1">// 宏
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">inline</span> <span class="kt">int</span> <span class="nf">max</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">?</span> <span class="nl">a</span> <span class="p">:</span> <span class="n">b</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// 内联函数
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="zuoliangyu/zuoliangyu_blog_discussed"
+    data-repo-id="R_kgDOMuHuNg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOMuHuNs4CiRiV"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 Example Person
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script
+  src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js"
+  crossorigin="anonymous"
+></script>
+<link
+  rel="stylesheet"
+  href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css"
+  crossorigin="anonymous"
+/>
+<script>
+  NProgress.start();
+  document.addEventListener("readystatechange", () => {
+    if (document.readyState === "interactive") NProgress.inc(0.8);
+    if (document.readyState === "complete") NProgress.done();
+  });
+</script>
+<script
+    src="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/ribbon.min.js"
+    integrity="sha384-UEK8ZiP3VgFNP8KnKMKDmd4pAUAOJ59Y2Jo3ED2Z5qKQf6HLHovMxq7Beb9CLPUe"
+    crossorigin="anonymous"
+    size="300"
+    alpha="0.6"
+    zindex="-1"
+    defer
+></script>
+
+    </body>
+    
+</html>
