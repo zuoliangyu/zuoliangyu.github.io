@@ -1,0 +1,22 @@
+name: 建议
+description: 对导航页的改进建议，或希望收录 / 调整的站点
+labels: [enhancement]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 建议类型
+      options:
+        - 收录新站点
+        - 调整分类或说明
+        - 页面功能 / 样式
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 具体内容
+      placeholder: 站点地址、希望的说明文字、想要的功能等
+    validations:
+      required: true

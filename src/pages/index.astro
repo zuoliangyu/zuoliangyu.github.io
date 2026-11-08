@@ -1,0 +1,128 @@
+---
+import { getCollection } from 'astro:content';
+import { repoMeta } from '../lib/github';
+import '../styles/global.css';
+
+const entries = await getCollection('sites');
+const sites = await Promise.all(
+  entries.map(async (e) => ({
+    id: e.id,
+    ...e.data,
+    source: e.data.source ?? (e.data.repo ? `https://github.com/${e.data.repo}` : undefined),
+    meta: e.data.repo ? await repoMeta(e.data.repo) : null,
+  })),
+);
+
+// 分类按 sites.yaml 中首次出现的顺序。
+const categories = [...new Set(sites.map((s) => s.category))];
+const grouped = categories.map((c) => ({ name: c, items: sites.filter((s) => s.category === c) }));
+
+const buildTime = new Date();
+const fmtDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Asia/Shanghai' });
+const host = (url: string) => new URL(url).host + new URL(url).pathname.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>左岚的站点导航</title>
+    <meta name="description" content="左岚（zuoliangyu）在 GitHub Pages 上的全部站点：蓝桥杯仿真实验台、电赛真题、嵌入式工具、社区导览与博客。" />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>左岚的站点导航</h1>
+      <p class="lead">
+        散落在 GitHub Pages 上的工具、资料和博客，集中在这一页。点卡片标题直接打开，备用地址和源码链接在卡片底部。
+      </p>
+      <div class="controls">
+        <input id="q" type="search" placeholder="搜索名称、说明或标签…" autocomplete="off" aria-label="搜索站点" />
+        <nav class="chips" aria-label="分类筛选">
+          <button type="button" class="chip is-active" data-cat="">全部 <span>{sites.length}</span></button>
+          {grouped.map((g) => (
+            <button type="button" class="chip" data-cat={g.name}>{g.name} <span>{g.items.length}</span></button>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      {grouped.map((g) => (
+        <section class="group" data-group={g.name}>
+          <h2>{g.name}</h2>
+          <div class="grid">
+            {g.items.map((s) => (
+              <article
+                class="card"
+                data-cat={s.category}
+                data-search={[s.name, s.summary, s.category, ...s.tags].join(' ').toLowerCase()}
+              >
+                <h3><a href={s.url}>{s.name}</a></h3>
+                <p class="url">{host(s.url)}</p>
+                <p class="summary">{s.summary}</p>
+                {s.tags.length > 0 && (
+                  <ul class="tags">{s.tags.map((t) => <li>{t}</li>)}</ul>
+                )}
+                <footer>
+                  <div class="links">
+                    <a class="btn primary" href={s.url}>打开</a>
+                    {s.mirrors.map((m) => <a class="btn" href={m.url}>{m.label}</a>)}
+                    {s.source && <a class="btn" href={s.source}>源码</a>}
+                  </div>
+                  {s.meta && (
+                    <div class="meta">
+                      {s.meta.language && <span>{s.meta.language}</span>}
+                      <span title="Star">★ {s.meta.stars}</span>
+                      <span title="最近推送">{fmtDate(s.meta.pushedAt)}</span>
+                    </div>
+                  )}
+                </footer>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+      <p id="empty" hidden>没有匹配的站点。</p>
+    </main>
+
+    <footer class="site-footer">
+      <a href="https://github.com/zuoliangyu">GitHub @zuoliangyu</a>
+      <span>·</span>
+      <span>数据更新于 {fmtDate(buildTime.toISOString())}</span>
+    </footer>
+
+    <script>
+      const q = document.getElementById('q') as HTMLInputElement;
+      const chips = [...document.querySelectorAll<HTMLButtonElement>('.chip')];
+      const cards = [...document.querySelectorAll<HTMLElement>('.card')];
+      const groups = [...document.querySelectorAll<HTMLElement>('.group')];
+      const empty = document.getElementById('empty')!;
+      let cat = '';
+
+      function apply() {
+        const terms = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+        let shown = 0;
+        for (const c of cards) {
+          const ok =
+            (!cat || c.dataset.cat === cat) && terms.every((t) => c.dataset.search!.includes(t));
+          c.hidden = !ok;
+          if (ok) shown++;
+        }
+        for (const g of groups) g.hidden = !g.querySelector('.card:not([hidden])');
+        empty.hidden = shown > 0;
+      }
+
+      q.addEventListener('input', apply);
+      for (const chip of chips) {
+        chip.addEventListener('click', () => {
+          cat = chip.dataset.cat ?? '';
+          chips.forEach((c) => c.classList.toggle('is-active', c === chip));
+          apply();
+        });
+      }
+    </script>
+  </body>
+</html>

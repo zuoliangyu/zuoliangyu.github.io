@@ -1,0 +1,30 @@
+name: 链接失效 / 页面异常
+description: 某个站点打不开、跳转错误或显示异常
+labels: [bug]
+body:
+  - type: input
+    id: site
+    attributes:
+      label: 站点名称或地址
+      placeholder: 例如 蓝桥杯单片机在线实验台 / https://zuoliangyu.github.io/lanqiao-mcu-lab/
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 问题类型
+      options:
+        - 打不开（404 / 超时）
+        - 跳转到了错误的地址
+        - 说明或信息有误
+        - 页面显示异常
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 详细描述
+      description: 浏览器、设备、截图等
+    validations:
+      required: false
