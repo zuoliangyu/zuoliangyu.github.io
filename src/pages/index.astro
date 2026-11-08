@@ -20,10 +20,20 @@ const grouped = categories.map((c) => ({ name: c, items: sites.filter((s) => s.c
 const BILIBILI = 'https://space.bilibili.com/27619688';
 const GITHUB = 'https://github.com/zuoliangyu';
 
+// GitHub linguist 配色，用于卡片上的语言圆点
+const LANG_COLOR: Record<string, string> = {
+  TypeScript: '#3178c6',
+  JavaScript: '#f1e05a',
+  Python: '#3572a5',
+  Astro: '#ff5a03',
+  HTML: '#e34c26',
+  Rust: '#dea584',
+};
+
+const totalStars = sites.reduce((n, s) => n + (s.meta?.stars ?? 0), 0);
 const buildTime = new Date();
 const fmtDate = (iso: string) =>
   new Date(iso).toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Asia/Shanghai' });
-const host = (url: string) => new URL(url).host + new URL(url).pathname.replace(/\/$/, '');
 ---
 
 <!doctype html>
@@ -32,36 +42,47 @@ const host = (url: string) => new URL(url).host + new URL(url).pathname.replace(
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>左岚的站点导航</title>
-    <meta name="description" content="左岚（zuoliangyu）在 GitHub Pages 上的全部站点：蓝桥杯仿真实验台、电赛真题、嵌入式工具、社区导览与博客。" />
+    <meta name="description" content="左岚（zuoliangyu）在 GitHub Pages 上的全部站点：蓝桥杯仿真实验台、电赛与蓝桥杯真题、嵌入式工具、社区导览与博客。" />
     <meta name="author" content="左岚" />
     <link rel="icon" href="/favicon.ico" />
   </head>
   <body>
-    <header class="hero">
-      <h1>左岚的站点导航</h1>
-      <p class="lead">
-        散落在 GitHub Pages 上的工具、资料和博客，集中在这一页。点卡片标题直接打开，备用地址和源码链接在卡片底部。
-      </p>
-      <p class="author">
-        作者 <strong>左岚</strong>
-        <a class="author-link" href={BILIBILI}>哔哩哔哩</a>
-        <a class="author-link" href={GITHUB}>GitHub</a>
-      </p>
-      <div class="controls">
+    <header class="profile">
+      <img class="avatar" src="/avatar.webp" alt="左岚的头像" width="72" height="72" />
+      <div class="profile-text">
+        <h1>左岚的站点导航</h1>
+        <p class="stats">
+          <span>{sites.length} 个站点</span>
+          <span>{categories.length} 个分类</span>
+          {totalStars > 0 && <span>★ {totalStars}</span>}
+        </p>
+      </div>
+      <nav class="social" aria-label="作者主页">
+        <a class="social-link bilibili" href={BILIBILI}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2.6a1 1 0 0 1 1.4 0L11 5h2l2.4-2.4a1 1 0 1 1 1.4 1.4L15.8 5H18a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h2.2l-1-1a1 1 0 0 1 0-1.4ZM6 7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H6Zm2.5 4a1.25 1.25 0 0 1 1.25 1.25v1.5a1.25 1.25 0 1 1-2.5 0v-1.5A1.25 1.25 0 0 1 8.5 11Zm7 0a1.25 1.25 0 0 1 1.25 1.25v1.5a1.25 1.25 0 1 1-2.5 0v-1.5A1.25 1.25 0 0 1 15.5 11Z" /></svg>
+          哔哩哔哩
+        </a>
+        <a class="social-link" href={GITHUB}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg>
+          GitHub
+        </a>
+      </nav>
+    </header>
+
+    <div class="toolbar">
+      <div class="toolbar-inner">
         <input id="q" type="search" placeholder="搜索名称、说明或标签…" autocomplete="off" aria-label="搜索站点" />
         <nav class="chips" aria-label="分类筛选">
-          <button type="button" class="chip is-active" data-cat="">全部 <span>{sites.length}</span></button>
-          {grouped.map((g) => (
-            <button type="button" class="chip" data-cat={g.name}>{g.name} <span>{g.items.length}</span></button>
-          ))}
+          <button type="button" class="chip is-active" data-cat="">全部</button>
+          {grouped.map((g) => <button type="button" class="chip" data-cat={g.name}>{g.name}</button>)}
         </nav>
       </div>
-    </header>
+    </div>
 
     <main>
       {grouped.map((g) => (
         <section class="group" data-group={g.name}>
-          <h2>{g.name}</h2>
+          <h2>{g.name}<span class="count">{g.items.length}</span></h2>
           <div class="grid">
             {g.items.map((s) => (
               <article
@@ -70,24 +91,24 @@ const host = (url: string) => new URL(url).host + new URL(url).pathname.replace(
                 data-search={[s.name, s.summary, s.category, ...s.tags].join(' ').toLowerCase()}
               >
                 <h3><a href={s.url}>{s.name}</a></h3>
-                <p class="url">{host(s.url)}</p>
-                <p class="summary">{s.summary}</p>
-                {s.tags.length > 0 && (
-                  <ul class="tags">{s.tags.map((t) => <li>{t}</li>)}</ul>
+                {s.meta && (
+                  <p class="meta">
+                    {s.meta.language && (
+                      <span>
+                        <i class="dot" style={`background:${LANG_COLOR[s.meta.language] ?? 'var(--muted)'}`}></i>
+                        {s.meta.language}
+                      </span>
+                    )}
+                    <span title="Star">★ {s.meta.stars}</span>
+                    <span title="最近推送">更新于 {fmtDate(s.meta.pushedAt)}</span>
+                  </p>
                 )}
-                <footer>
-                  <div class="links">
-                    <a class="btn primary" href={s.url}>打开</a>
-                    {s.mirrors.map((m) => <a class="btn" href={m.url}>{m.label}</a>)}
-                    {s.source && <a class="btn" href={s.source}>源码</a>}
-                  </div>
-                  {s.meta && (
-                    <div class="meta">
-                      {s.meta.language && <span>{s.meta.language}</span>}
-                      <span title="Star">★ {s.meta.stars}</span>
-                      <span title="最近推送">{fmtDate(s.meta.pushedAt)}</span>
-                    </div>
-                  )}
+                <p class="summary">{s.summary}</p>
+                {s.tags.length > 0 && <ul class="tags">{s.tags.map((t) => <li>{t}</li>)}</ul>}
+                <footer class="links">
+                  <a class="btn primary" href={s.url}>打开</a>
+                  {s.mirrors.map((m) => <a class="btn" href={m.url}>{m.label}</a>)}
+                  {s.source && <a class="btn" href={s.source}>源码</a>}
                 </footer>
               </article>
             ))}
@@ -99,11 +120,8 @@ const host = (url: string) => new URL(url).host + new URL(url).pathname.replace(
 
     <footer class="site-footer">
       <span>© {buildTime.getFullYear()} 左岚</span>
-      <span>·</span>
       <a href={BILIBILI}>哔哩哔哩</a>
-      <span>·</span>
       <a href={GITHUB}>GitHub</a>
-      <span>·</span>
       <span>数据更新于 {fmtDate(buildTime.toISOString())}</span>
     </footer>
 
