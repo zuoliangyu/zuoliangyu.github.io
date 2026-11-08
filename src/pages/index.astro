@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { repoMeta } from '../lib/github';
+import Mascot from '../components/Mascot.astro';
 import '../styles/global.css';
 
 const entries = await getCollection('sites');
@@ -45,16 +46,6 @@ const fmtDate = (iso: string) =>
     <meta name="description" content="左岚（zuoliangyu）在 GitHub Pages 上的全部站点：蓝桥杯仿真实验台、电赛与蓝桥杯真题、嵌入式工具、社区导览与博客。" />
     <meta name="author" content="左岚" />
     <link rel="icon" href="/favicon.ico" />
-    <!--
-      看板娘加载链路是串行的：widget 脚本 → 提示语 → 模型列表 → 模型配置 → moc/贴图。
-      提前连上模型 CDN，并在宽屏（widget 只在 ≥768px 加载）上预取前几环，缩短人物出现前的等待。
-    -->
-    <link rel="preconnect" href="https://fastly.jsdelivr.net" crossorigin />
-    <link rel="preload" href="/live2d-widget/live2d.min.js" as="script" media="(min-width: 768px)" />
-    <link rel="preload" href="/live2d-widget/waifu-tips.js" as="script" media="(min-width: 768px)" />
-    <link rel="preload" href="/live2d-widget/waifu.css" as="style" media="(min-width: 768px)" />
-    <link rel="preload" href="/live2d-widget/waifu-tips.json" as="fetch" crossorigin media="(min-width: 768px)" />
-    <link rel="preload" href="https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/model_list.json" as="fetch" crossorigin media="(min-width: 768px)" />
   </head>
   <body>
     <header class="profile">
@@ -165,7 +156,6 @@ const fmtDate = (iso: string) =>
         });
       }
     </script>
-    <!-- 看板娘（live2d-widget，与 Hugo 博客同款）；autoload.js 内部判断屏宽 ≥ 768 才加载 -->
-    <script is:inline src="/live2d-widget/autoload.js"></script>
+    <Mascot />
   </body>
 </html>

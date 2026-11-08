@@ -1,0 +1,316 @@
+---
+// 看板娘：永雏塔菲 Q 版立绘 + 说话气泡。纯 CSS 动画，只加载一张图片，不依赖外部 CDN。
+---
+
+<div class="mascot" id="mascot" hidden>
+  <p class="bubble" id="mascot-bubble" role="status" aria-live="polite"></p>
+  <button class="close" id="mascot-close" type="button" title="让塔菲休息一下" aria-label="隐藏看板娘">×</button>
+  <img
+    class="figure"
+    id="mascot-figure"
+    src="/taffy.webp"
+    alt="永雏塔菲"
+    width="168"
+    height="170"
+    draggable="false"
+  />
+</div>
+<button class="summon" id="mascot-summon" type="button" hidden>召唤塔菲</button>
+
+<style>
+  .mascot {
+    position: fixed;
+    right: 28px;
+    bottom: 0;
+    z-index: 20;
+    width: 168px;
+    user-select: none;
+  }
+
+  .figure {
+    display: block;
+    width: 168px;
+    height: auto;
+    cursor: pointer;
+    transform-origin: 50% 100%;
+    animation: float 3.6s ease-in-out infinite;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+  }
+
+  .figure.poke {
+    animation: poke 0.45s ease-out, float 3.6s ease-in-out 0.45s infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-6px) rotate(-1.2deg);
+    }
+  }
+
+  @keyframes poke {
+    0% {
+      transform: scale(1, 1);
+    }
+    30% {
+      transform: scale(1.06, 0.9);
+    }
+    60% {
+      transform: scale(0.96, 1.05) translateY(-8px);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+
+  .bubble {
+    position: absolute;
+    right: 8px;
+    bottom: calc(100% + 6px);
+    width: max-content;
+    max-width: 230px;
+    margin: 0;
+    padding: 9px 13px;
+    border: 1px solid #f6c1d3;
+    border-radius: 14px;
+    background: #fff7fa;
+    color: #4a3a40;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    box-shadow: 0 6px 18px rgba(251, 114, 153, 0.18);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s, transform 0.25s;
+    pointer-events: none;
+  }
+
+  .bubble::after {
+    content: '';
+    position: absolute;
+    right: 46px;
+    bottom: -7px;
+    width: 12px;
+    height: 12px;
+    border-right: 1px solid #f6c1d3;
+    border-bottom: 1px solid #f6c1d3;
+    background: #fff7fa;
+    transform: rotate(45deg);
+  }
+
+  .bubble.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .bubble :global(strong) {
+    color: #e0457b;
+  }
+
+  .close {
+    position: absolute;
+    top: 6px;
+    left: 2px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .mascot:hover .close,
+  .close:focus-visible {
+    opacity: 1;
+  }
+
+  .summon {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 20;
+    padding: 6px 14px;
+    border: 1px solid #f6c1d3;
+    border-radius: 999px;
+    background: #fff7fa;
+    color: #e0457b;
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(251, 114, 153, 0.18);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .bubble,
+    .bubble::after,
+    .summon {
+      border-color: #6b3a4c;
+      background: #2a1d23;
+      color: #f3dde5;
+    }
+
+    .bubble :global(strong),
+    .summon {
+      color: #ff8fb3;
+    }
+  }
+
+  /* 窄屏上会挡住卡片，不显示 */
+  @media (max-width: 767px) {
+    .mascot,
+    .summon {
+      display: none !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .figure,
+    .figure.poke {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  const HIDE_KEY = 'mascot-hidden-at';
+  const HIDE_MS = 24 * 3600 * 1000;
+
+  const root = document.getElementById('mascot')!;
+  const bubble = document.getElementById('mascot-bubble')!;
+  const figure = document.getElementById('mascot-figure')!;
+  const summon = document.getElementById('mascot-summon')!;
+
+  const pick = <T,>(list: T[]) => list[Math.floor(Math.random() * list.length)];
+
+  const POKE = [
+    '关注塔菲喵～',
+    '关注塔菲谢谢喵！',
+    '诶嘿，被你戳到了～',
+    '再戳的话塔菲要生气了喵！',
+    '塔菲在这里陪你哦～',
+    '今天也要元气满满！',
+  ];
+  const IDLE = [
+    '要不要去蓝桥杯在线实验台试试？不用板子也能调程序哦～',
+    '备赛加油喵！',
+    '找不到想要的站点？上面可以搜索哦～',
+    '累了就去 B 站看看主人的视频吧～',
+    '关注塔菲喵～',
+  ];
+
+  function greeting() {
+    const h = new Date().getHours();
+    if (h >= 5 && h < 11) return '早上好！今天也要元气满满哦～';
+    if (h >= 11 && h < 14) return '中午好，记得按时吃饭喵～';
+    if (h >= 14 && h < 18) return '下午好，学累了就歇一会儿吧～';
+    if (h >= 18 && h < 23) return '晚上好，今天过得怎么样？';
+    return '这么晚还没睡吗？熬夜会变成熊猫的！';
+  }
+
+  let hideTimer = 0;
+  let lastSaid = 0;
+
+  // text 中的 {} 替换为加粗的 strong，用 DOM 拼接避免注入
+  function say(text: string, strong?: string, ms = 4500) {
+    bubble.replaceChildren();
+    const [before, after = ''] = text.split('{}');
+    bubble.append(before);
+    if (strong !== undefined) {
+      const b = document.createElement('strong');
+      b.textContent = strong;
+      bubble.append(b, after);
+    }
+    bubble.classList.add('show');
+    lastSaid = Date.now();
+    clearTimeout(hideTimer);
+    hideTimer = window.setTimeout(() => bubble.classList.remove('show'), ms);
+  }
+
+  function show() {
+    root.hidden = false;
+    summon.hidden = true;
+  }
+
+  function hide() {
+    root.hidden = true;
+    summon.hidden = false;
+  }
+
+  const hiddenAt = Number(localStorage.getItem(HIDE_KEY));
+  if (hiddenAt && Date.now() - hiddenAt < HIDE_MS) {
+    hide();
+  } else {
+    localStorage.removeItem(HIDE_KEY);
+    show();
+    setTimeout(() => say(greeting()), 600);
+    setTimeout(() => say('欢迎来到{}！', '左岚的站点导航'), 6000);
+  }
+
+  document.getElementById('mascot-close')!.addEventListener('click', () => {
+    say('那塔菲先去休息啦，有事再叫我喵～', undefined, 1500);
+    setTimeout(() => {
+      localStorage.setItem(HIDE_KEY, String(Date.now()));
+      hide();
+    }, 1500);
+  });
+
+  summon.addEventListener('click', () => {
+    localStorage.removeItem(HIDE_KEY);
+    show();
+    say('塔菲回来啦！');
+  });
+
+  figure.addEventListener('click', () => {
+    figure.classList.remove('poke');
+    void figure.offsetWidth; // 重新触发动画
+    figure.classList.add('poke');
+    say(pick(POKE));
+  });
+
+  // 悬停提示：进入一个新目标时说一次
+  let lastTarget: Element | null = null;
+  document.addEventListener('mouseover', (e) => {
+    const t = (e.target as Element).closest('a, button, input');
+    if (!t || t === lastTarget || root.contains(t) || t === summon) return;
+    lastTarget = t;
+
+    const card = t.closest('.card');
+    const href = t.getAttribute('href') ?? '';
+    if (card && (t.matches('h3 a') || t.matches('.btn.primary'))) {
+      say('要去看看{}吗？', card.querySelector('h3')!.textContent!.trim());
+    } else if (card && t.textContent!.trim() === '源码') {
+      say('源码在这里，觉得好用就点个 Star 吧～');
+    } else if (card && t.matches('.btn')) {
+      say('这是备用地址，主站打不开的话就点这里～');
+    } else if (t.matches('.chip')) {
+      const name = t.textContent!.trim();
+      if (name === '全部') say('看看全部站点吧～');
+      else say('只看「{}」分类吗？', name);
+    } else if (t.matches('#q')) {
+      say('在找什么站点呢？名称、说明、标签都能搜哦～');
+    } else if (href.includes('bilibili.com')) {
+      say('这是主人的哔哩哔哩，记得一键三连喵！');
+    } else if (href.includes('github.com')) {
+      say('要去 GitHub 看看吗？');
+    }
+  });
+
+  document.addEventListener('mouseout', (e) => {
+    if (!(e.relatedTarget as Element | null)?.closest?.('a, button, input')) lastTarget = null;
+  });
+
+  // 闲置时偶尔说一句
+  setInterval(() => {
+    if (root.hidden || document.hidden || Date.now() - lastSaid < 30000) return;
+    say(pick(IDLE));
+  }, 10000);
+</script>
