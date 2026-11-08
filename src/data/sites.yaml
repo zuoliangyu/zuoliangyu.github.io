@@ -46,6 +46,14 @@
     - label: Netlify
       url: https://nuedc-topic.netlify.app/
 
+- id: lqb-topic
+  name: 蓝桥杯电子类历年真题
+  category: 竞赛资料
+  url: https://zuoliangyu.github.io/LQB_TOPIC/
+  repo: zuoliangyu/LQB_TOPIC
+  summary: 第六届至第十七届蓝桥杯电子类真题在线浏览，涵盖单片机、嵌入式、物联网、EDA、FPGA 赛道，可按届或按赛道查找，PDF 支持页内预览。
+  tags: [蓝桥杯, 真题]
+
 - id: micu-omniprobe
   name: MICU-OmniProbe 用户文档
   category: 嵌入式工具
