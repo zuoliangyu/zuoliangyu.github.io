@@ -4,103 +4,130 @@
 #   id        唯一标识（必填）
 #   name      卡片标题（必填）
 #   category  分类（必填）
-#   url       主访问地址（必填）
+#   url       主访问地址（必填），统一用 Netlify
 #   summary   一句话说明（必填）
 #   repo      owner/repo，构建时用于补全 star、最近更新、语言；留空则不补全
 #   tags      标签列表
-#   mirrors   备用地址，如 Netlify 镜像：[{ label, url }]
+#   mirrors   备用地址，统一放 GitHub Pages：[{ label, url }]
 #   source    源码地址；默认取 https://github.com/<repo>
 
 - id: lanqiao-mcu-lab
   name: 蓝桥杯单片机在线实验台
   category: 蓝桥杯
-  url: https://zuoliangyu.github.io/lanqiao-mcu-lab/
+  url: https://lanqiao-mcu-lab.netlify.app/
   repo: zuoliangyu/lanqiao-mcu-lab
   summary: CT107D（STC15F2K60S2）浏览器仿真。载入 Keil 生成的 HEX 即可运行 8051 固件，模拟数码管、LED、按键、DS18B20、DS1302、PCF8591、AT24C02、超声波、测频、串口等外设，不用板子也能调程序。
   tags: [STC15, 8051, 仿真]
+  mirrors:
+    - label: GitHub Pages
+      url: https://zuoliangyu.github.io/lanqiao-mcu-lab/
 
 - id: lanqiao-embedded-lab
   name: 蓝桥杯嵌入式在线实验台
   category: 蓝桥杯
-  url: https://zuoliangyu.github.io/lanqiao-embedded-lab/
+  url: https://lanqiao-embedded-lab.netlify.app/
   repo: zuoliangyu/lanqiao-embedded-lab
   summary: CT117E-M4（STM32G431）浏览器仿真。载入 ELF / AXF / HEX 在浏览器中运行固件，模拟 LCD、按键、LED、ADC、定时器、EEPROM、串口等。
   tags: [STM32G431, Cortex-M4, 仿真]
+  mirrors:
+    - label: GitHub Pages
+      url: https://zuoliangyu.github.io/lanqiao-embedded-lab/
 
 - id: lanqiao-stc-pitfalls
   name: 蓝桥杯单片机踩坑知识库
   category: 蓝桥杯
-  url: https://zuoliangyu.github.io/lanqiao-stc-pitfalls/
+  url: https://lanqiao-stc-pitfalls.netlify.app/
   repo: zuoliangyu/lanqiao-stc-pitfalls
   summary: 蓝桥杯单片机备赛中的踩坑实录与排查经验。
   tags: [STC15, 备赛, 文档]
+  mirrors:
+    - label: GitHub Pages
+      url: https://zuoliangyu.github.io/lanqiao-stc-pitfalls/
 
 - id: nuedc-topic
   name: 电赛历年真题
   category: 竞赛资料
-  url: https://zuoliangyu.github.io/NUEDC_TOPIC/
+  url: https://nuedc-topic.netlify.app/
   repo: zuoliangyu/NUEDC_TOPIC
   summary: 全国大学生电子设计竞赛历年真题在线浏览，持续更新到 2026 年。
   tags: [电赛, 真题]
   mirrors:
-    - label: Netlify
-      url: https://nuedc-topic.netlify.app/
+    - label: GitHub Pages
+      url: https://zuoliangyu.github.io/NUEDC_TOPIC/
 
 - id: lqb-topic
   name: 蓝桥杯电子类历年真题
   category: 竞赛资料
-  url: https://zuoliangyu.github.io/LQB_TOPIC/
+  url: https://lqb-topic.netlify.app/
   repo: zuoliangyu/LQB_TOPIC
   summary: 第六届至第十七届蓝桥杯电子类真题在线浏览，涵盖单片机、嵌入式、物联网、EDA、FPGA 赛道，可按届或按赛道查找，PDF 支持页内预览。
   tags: [蓝桥杯, 真题]
+  mirrors:
+    - label: GitHub Pages
+      url: https://zuoliangyu.github.io/LQB_TOPIC/
 
 - id: micu-omniprobe
   name: MICU-OmniProbe 用户文档
   category: 嵌入式工具
-  url: https://zuoliangyu.github.io/MICU-OmniProbe/
+  url: https://micu-omniprobe.netlify.app/
   repo: zuoliangyu/MICU-OmniProbe
   summary: 一体化桌面调试与分析工作台的使用文档：固件烧录、Cortex-M 源码调试、RTT、串口 / Modbus、蓝牙与日志分析。
   tags: [调试, RTT, 串口, 桌面应用]
+  mirrors:
+    - label: GitHub Pages
+      url: https://zuoliangyu.github.io/MICU-OmniProbe/
 
 - id: timing-studio
   name: Timing Studio
   category: 嵌入式工具
-  url: https://zuoliangyu.github.io/timing-studio/
+  url: https://timing-studio.netlify.app/
   repo: zuoliangyu/timing-studio
   summary: 简洁、高质量的数字时序图编辑器，在本地浏览器中运行，Rust / WASM 核心加 React 前端。
   tags: [时序图, WASM]
+  mirrors:
+    - label: GitHub Pages
+      url: https://zuoliangyu.github.io/timing-studio/
 
 - id: keil-keygen-web
   name: Keil Keygen Web
   category: 嵌入式工具
-  url: https://zuoliangyu.github.io/Keil_Keygen_Web/
+  url: https://keil-keygen-web.netlify.app/
   repo: zuoliangyu/Keil_Keygen_Web
   summary: 纯静态的 Keil 序列号工具，所有计算都在浏览器内完成。
   tags: [Keil]
+  mirrors:
+    - label: GitHub Pages
+      url: https://zuoliangyu.github.io/Keil_Keygen_Web/
 
 - id: micu-ai-lib
   name: MICU AI 开放社区
   category: 社区
-  url: https://zuoliangyu.github.io/micu-ai-lib/
+  url: https://micu-ai-lib.netlify.app/
   repo: zuoliangyu/micu-ai-lib
   summary: 米醋电子工作室与社区成员的 AI 项目导览，定时从各成员仓库自动聚合。
   tags: [AI, 项目导航]
   mirrors:
-    - label: Netlify
-      url: https://micu-ai-lib.netlify.app/
+    - label: GitHub Pages
+      url: https://zuoliangyu.github.io/micu-ai-lib/
 
 - id: hugo-blog
   name: 左岚の博客
   category: 博客
-  url: https://zuoliangyu.github.io/hugo_blog/
+  url: https://zuoliangyu-blog.netlify.app/
   repo: zuoliangyu/hugo_blog
-  summary: Hugo 博客（Stack 主题），原先挂在根地址，现迁到 /hugo_blog/。
+  summary: Hugo 博客（Stack 主题），电子信息工程的学习笔记。
   tags: [Hugo, 博客]
+  mirrors:
+    - label: GitHub Pages
+      url: https://zuoliangyu.github.io/hugo_blog/
 
 - id: zuolan-blog
   name: 左岚の秘密基地
   category: 博客
-  url: https://zuoliangyu.github.io/zuolan_blog/
+  url: https://zuolan-blog.netlify.app/
   repo: zuoliangyu/zuolan_blog
   summary: Hexo 博客，电子信息工程专业的学习与生活记录。
   tags: [Hexo, 博客]
+  mirrors:
+    - label: GitHub Pages
+      url: https://zuoliangyu.github.io/zuolan_blog/

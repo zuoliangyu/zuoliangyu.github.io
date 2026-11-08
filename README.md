@@ -2,7 +2,7 @@
 
 左岚（zuoliangyu）的站点导航：把散落在 GitHub Pages 上的工具、资料和博客集中到一页，附说明和跳转。
 
-在线地址：https://zuoliangyu.github.io/
+在线地址：https://zuoliangyu.netlify.app/ （备用：https://zuoliangyu.github.io/）
 
 ## 新增 / 修改站点
 
@@ -22,4 +22,6 @@ npm run build    # 构建到 dist/
 
 ## 部署
 
-`.github/workflows/pages.yml`：推送 `main`、每日定时或手动触发时构建并发布到 GitHub Pages（仓库 Settings → Pages → Source 需为 GitHub Actions）。
+`.github/workflows/pages.yml`：推送 `main`、每日定时或手动触发时构建一次，同时发布到 Netlify（主站，需要仓库 secrets `NETLIFY_AUTH_TOKEN` / `NETLIFY_SITE_ID`）和 GitHub Pages（备用，Settings → Pages → Source 需为 GitHub Actions）。
+
+收录的各站点也一样：Netlify 为主站，GitHub Pages 为备用。

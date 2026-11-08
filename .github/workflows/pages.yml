@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to Netlify & GitHub Pages
 
 on:
   push:
@@ -38,6 +38,13 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
+
+      # 同一份产物发布到 Netlify（主站 zuoliangyu.netlify.app）。两边都挂在根路径，无需重写。
+      - name: 发布到 Netlify
+        run: npx --yes netlify-cli@26 deploy --prod --no-build --dir=dist --message "${{ github.sha }}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
   deploy:
     needs: build

@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
-// 用户站点仓库（zuoliangyu.github.io）直接挂在根路径，无需 base。
+// 主站 zuoliangyu.netlify.app 与备用 zuoliangyu.github.io 都挂在根路径，无需 base。
 export default defineConfig({
-  site: 'https://zuoliangyu.github.io',
+  site: 'https://zuoliangyu.netlify.app',
 });
