@@ -66,9 +66,36 @@ main,
 }
 
 .lead {
-  margin: 0 0 24px;
+  margin: 0 0 10px;
   color: var(--muted);
   max-width: 640px;
+}
+
+.author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.author strong {
+  color: var(--text);
+}
+
+.author-link {
+  padding: 1px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.85rem;
+}
+
+.author-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
 }
 
 .controls {

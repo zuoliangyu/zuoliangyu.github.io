@@ -17,6 +17,9 @@ const sites = await Promise.all(
 const categories = [...new Set(sites.map((s) => s.category))];
 const grouped = categories.map((c) => ({ name: c, items: sites.filter((s) => s.category === c) }));
 
+const BILIBILI = 'https://space.bilibili.com/27619688';
+const GITHUB = 'https://github.com/zuoliangyu';
+
 const buildTime = new Date();
 const fmtDate = (iso: string) =>
   new Date(iso).toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Asia/Shanghai' });
@@ -30,6 +33,7 @@ const host = (url: string) => new URL(url).host + new URL(url).pathname.replace(
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>左岚的站点导航</title>
     <meta name="description" content="左岚（zuoliangyu）在 GitHub Pages 上的全部站点：蓝桥杯仿真实验台、电赛真题、嵌入式工具、社区导览与博客。" />
+    <meta name="author" content="左岚" />
     <link rel="icon" href="/favicon.ico" />
   </head>
   <body>
@@ -37,6 +41,11 @@ const host = (url: string) => new URL(url).host + new URL(url).pathname.replace(
       <h1>左岚的站点导航</h1>
       <p class="lead">
         散落在 GitHub Pages 上的工具、资料和博客，集中在这一页。点卡片标题直接打开，备用地址和源码链接在卡片底部。
+      </p>
+      <p class="author">
+        作者 <strong>左岚</strong>
+        <a class="author-link" href={BILIBILI}>哔哩哔哩</a>
+        <a class="author-link" href={GITHUB}>GitHub</a>
       </p>
       <div class="controls">
         <input id="q" type="search" placeholder="搜索名称、说明或标签…" autocomplete="off" aria-label="搜索站点" />
@@ -89,7 +98,11 @@ const host = (url: string) => new URL(url).host + new URL(url).pathname.replace(
     </main>
 
     <footer class="site-footer">
-      <a href="https://github.com/zuoliangyu">GitHub @zuoliangyu</a>
+      <span>© {buildTime.getFullYear()} 左岚</span>
+      <span>·</span>
+      <a href={BILIBILI}>哔哩哔哩</a>
+      <span>·</span>
+      <a href={GITHUB}>GitHub</a>
       <span>·</span>
       <span>数据更新于 {fmtDate(buildTime.toISOString())}</span>
     </footer>
@@ -124,5 +137,7 @@ const host = (url: string) => new URL(url).host + new URL(url).pathname.replace(
         });
       }
     </script>
+    <!-- 看板娘（live2d-widget，与 Hugo 博客同款）；autoload.js 内部判断屏宽 ≥ 768 才加载 -->
+    <script is:inline src="/live2d-widget/autoload.js"></script>
   </body>
 </html>
